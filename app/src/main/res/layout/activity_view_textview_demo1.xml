@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--
+        TextView - 文本显示控件
+            text - 需要显示的文本内容
+            textColor - 文本的颜色
+            background - 文本的背景颜色
+            width - 宽度
+            height - 高度
+            lines - 行数
+            gravity - 对齐方式
+                top, right, bottom, left, center
+                注：支持“|”运算符
+    -->
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#00F"
+        android:background="#F00"
+        android:textSize="32dp"
+        android:lines="2"
+        android:gravity="right|bottom"
+        android:text="@string/text_short" />
+
+
+    <!--
+        ellipsize - 内容溢出时的显示方式
+            none - 截断
+            start - 开头部分用“...”表示
+            end - 结尾部分用“...”表示
+            middle - 中间部分用“...”表示（仅单行模式支持）
+            marquee - 跑马灯效果，后面有详细介绍（仅单行模式支持）
+        singleLine - 是否是单行显示
+            这个属性过时了，但是如果只显示一行，并且指定了 ellipsize 属性的话，则建议用 singleLine="true" 替换 lines="1"，否则在某些系统上会崩溃
+    -->
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:singleLine="true"
+        android:ellipsize="middle"
+        android:text="@string/text_long" />
+
+
+    <!--
+        minLines - 最小行数（区别于 lines 属性，lines 属性代表的是固定行数）
+        maxLines - 最大行数（区别于 lines 属性，lines 属性代表的是固定行数）
+    -->
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:minLines="2"
+        android:maxLines="3"
+        android:ellipsize="end"
+        android:text="@string/text_long" />
+
+
+    <!--
+        ellipsize="marquee" - 跑马灯效果，不支持调整速度（仅单行模式支持）
+            要想跑马灯，则 TextView 必须是焦点，所以还需要设置 focusable="true" 和 focusableInTouchMode="true"
+        marqueeRepeatLimit - 重复次数，如果需要无限循环的话则设置为 -1 或 marquee_forever
+
+    -->
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:singleLine="true"
+        android:ellipsize="marquee"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:text="@string/text_long" />
+
+
+    <!--
+        要想跑马灯，则 TextView 必须是焦点，如果要想两个 TextView 都跑马灯呢？那就自定义一个 TextView 告诉系统我也是焦点
+    -->
+    <com.webabcd.androiddemo.view.TextViewMarquee
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:singleLine="true"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="-1"
+        android:text="@string/text_long" />
+
+
+    <!--
+        在 java 中设置 TextView 的常用属性
+    -->
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp" />
+
+</LinearLayout>
