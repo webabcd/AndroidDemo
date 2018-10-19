@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--演示 TextView 的字体相关的使用-->
+
+    <!--
+        typeface - 字体
+            normal - 默认字体（在我的设备测试，效果同 sans）
+            sans - 非衬线字体（笔划粗细大致一样，没有额外的修饰）
+            serif - 衬线字体（笔划的起始和结束部分有额外的修饰）
+            monospace - 等宽字体（每一个字符都宽度相同）
+    -->
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:typeface="sans"
+        android:textSize="32dp"
+        android:text="kkkkkk0123456789" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:typeface="serif"
+        android:textSize="32dp"
+        android:text="0123456789kkkkkk" />
+
+    <!--
+        通过 typeface="monospace" 来保证每一个字符的宽度都是相同的
+    -->
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:typeface="monospace"
+        android:textSize="32dp"
+        android:text="kkkkkk0123456789" />
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:typeface="monospace"
+        android:textSize="32dp"
+        android:text="0123456789kkkkkk" />
+
+    <!--
+        使用自定义字体：把字体文件保存到如下位置 res/font/xxx.ttf
+        然后通过 fontFamily="@font/xxx" 来使用此字体（需要用 api26 或以上的 sdk 编译）
+    -->
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/myfont"
+        android:textSize="32dp"
+        android:lines="1"
+        android:text="你好 webabcd" />
+    <!--
+        在 java 中指定自定义字体
+    -->
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:typeface="monospace"
+        android:textSize="32dp"
+        android:lines="1"
+        android:text="你好 webabcd" />
+
+
+    <!--
+        textStyle - 文本样式
+            normal, bold, italic
+            注：支持“|”运算符
+    -->
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold|italic"
+        android:textSize="32dp"
+        android:lines="1"
+        android:text="你好 webabcd" />
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textSize="32dp"
+        android:lines="1"
+        android:text="你好 webabcd" />
+
+</LinearLayout>

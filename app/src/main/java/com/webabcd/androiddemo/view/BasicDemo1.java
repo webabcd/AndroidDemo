@@ -40,6 +40,8 @@ public class BasicDemo1 extends AppCompatActivity {
 
     private void showMessage()
     {
+        // 怎么java中创建view并添加到布局中
+
         // @string @color @style
 
         textView.setText(String.format("left:%d, top:%d, right:%d, bottom:%d, x:%f, y:%f, translationX:%f, translationY:%f",

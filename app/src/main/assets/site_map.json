@@ -9,15 +9,28 @@
     ]
   },
   {
+    "title": "view（文本类）",
+    "node": [
+      {
+        "title": "TextView 常用属性",
+        "url": ".view.text.TextViewDemo1"
+      },
+      {
+        "title": "TextView 字体相关",
+        "url": ".view.text.TextViewDemo2"
+      },
+      {
+        "title": "TextView sdfsdad",
+        "url": ".view.text.TextViewDemo3"
+      }
+    ]
+  },
+  {
     "title": "View",
     "node": [
       {
         "title": "android 基础示例 // 获取文本框的实际高度",
         "url": ".view.BasicDemo1"
-      },
-      {
-        "title": "TextView",
-        "url": ".view.TextViewDemo1"
       }
     ]
   },

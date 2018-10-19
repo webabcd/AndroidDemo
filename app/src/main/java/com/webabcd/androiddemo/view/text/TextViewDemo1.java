@@ -4,12 +4,13 @@
  * 演示 TextView 的常用属性的使用
  */
 
-package com.webabcd.androiddemo.view;
+package com.webabcd.androiddemo.view.text;
 
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.widget.TextView;
@@ -18,32 +19,30 @@ import com.webabcd.androiddemo.R;
 
 public class TextViewDemo1 extends AppCompatActivity {
 
-    private TextView _textView6;
+    private TextView _textView5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_textview_demo1);
+        setContentView(R.layout.activity_view_text_textviewdemo1);
 
-        _textView6 = (TextView) findViewById(R.id.textView6);
+        _textView5 = (TextView) findViewById(R.id.textView5);
 
         sample();
     }
 
     // 在 java 中设置 TextView 的常用属性
     private void sample() {
-        // 将字体文件保存到 assets 文件夹，然后通过如下方式指定字体
-        Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/myfont.ttf");
-        _textView6.setTypeface(typeface);
-
-        _textView6.setTextColor(Color.BLUE);
-        _textView6.setGravity(Gravity.CENTER);
-        _textView6.setText(R.string.text_short);
+        _textView5.setTextColor(Color.BLUE);
+        _textView5.setGravity(Gravity.CENTER);
+        _textView5.setMaxLines(3);
+        _textView5.setEllipsize(TextUtils.TruncateAt.END);
+        _textView5.setText(R.string.text_long);
         /**
          * TypedValue.COMPLEX_UNIT_PX - px
          * TypedValue.COMPLEX_UNIT_DIP - dp
          * TypedValue.COMPLEX_UNIT_SP - sp
          */
-        _textView6.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 32);
+        _textView5.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 14);
     }
 }

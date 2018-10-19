@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--
+    android:shadowColor:设置阴影颜色,需要与shadowRadius一起使用哦!
+android:shadowRadius:设置阴影的模糊程度,设为0.1就变成字体颜色了,建议使用3.0
+android:shadowDx:设置阴影在水平方向的偏移,就是水平方向阴影开始的横坐标位置
+android:shadowDy:设置阴影在竖直方向的偏移,就是竖直方向阴影开始的纵坐标位置
+    -->
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="32dp"
+        android:textColor="#f00"
+        android:shadowColor="#00f"
+        android:shadowDx="10.0"
+        android:shadowDy="10.0"
+        android:shadowRadius="3.0"
+        android:text="我有阴影" />
+
+
+<!--
+设置图片的核心其实就是:drawableXxx;可以设置四个方向的图片: drawableTop(上),drawableButtom(下),drawableLeft(左),drawableRight(右) 另外,你也可以使用drawablePadding来设置图片与文字间的间距！
+-->
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:drawableTop="@drawable/pic_sample_son"
+        android:drawableLeft="@drawable/pic_sample_son"
+        android:drawableRight="@drawable/pic_sample_son"
+        android:drawableBottom="@drawable/pic_sample_son"
+        android:drawablePadding="0dp"
+        android:text="你好" />
+
+</LinearLayout>

@@ -17,16 +17,14 @@
             </intent-filter>
         </activity>
         <activity android:name=".view.BasicDemo1" />
-
         <activity android:name=".ui.BasicDemo1" />
-        <activity android:name=".view.TextViewDemo1" />
-
-
+        <activity android:name=".view.text.TextViewDemo1" />
         <activity android:name=".service.BasicDemo1" />
+
         <service android:name=".service.DownloadService" />
 
-
-
+        <activity android:name=".view.text.TextViewDemo2" />
+        <activity android:name=".view.text.TextViewDemo3"></activity>
     </application>
 
 </manifest>

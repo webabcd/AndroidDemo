@@ -2,7 +2,7 @@
  * TextViewMarquee - 允许一个页面内存在多个跑马灯的 TextView
  */
 
-package com.webabcd.androiddemo.view;
+package com.webabcd.androiddemo.view.text;
 
 import android.content.Context;
 import android.util.AttributeSet;
