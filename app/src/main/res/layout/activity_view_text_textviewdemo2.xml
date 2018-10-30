@@ -18,7 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:typeface="sans"
-        android:textSize="32dp"
+        android:textSize="24dp"
         android:text="kkkkkk0123456789" />
 
     <TextView
@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:typeface="serif"
-        android:textSize="32dp"
+        android:textSize="24dp"
         android:text="0123456789kkkkkk" />
 
     <!--
@@ -39,7 +39,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:typeface="monospace"
-        android:textSize="32dp"
+        android:textSize="24dp"
         android:text="kkkkkk0123456789" />
     <TextView
         android:id="@+id/textView4"
@@ -47,7 +47,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:typeface="monospace"
-        android:textSize="32dp"
+        android:textSize="24dp"
         android:text="0123456789kkkkkk" />
 
     <!--
@@ -60,7 +60,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:fontFamily="@font/myfont"
-        android:textSize="32dp"
+        android:textSize="24dp"
         android:lines="1"
         android:text="你好 webabcd" />
     <!--
@@ -72,7 +72,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:typeface="monospace"
-        android:textSize="32dp"
+        android:textSize="24dp"
         android:lines="1"
         android:text="你好 webabcd" />
 
@@ -88,7 +88,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:textStyle="bold|italic"
-        android:textSize="32dp"
+        android:textSize="24dp"
         android:lines="1"
         android:text="你好 webabcd" />
     <TextView
@@ -96,7 +96,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:textSize="32dp"
+        android:textSize="24dp"
+        android:lines="1"
+        android:text="你好 webabcd" />
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textSize="24dp"
         android:lines="1"
         android:text="你好 webabcd" />
 

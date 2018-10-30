@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.webabcd.androiddemo">
 
+    <uses-permission  android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -18,13 +20,15 @@
         </activity>
         <activity android:name=".view.BasicDemo1" />
         <activity android:name=".ui.BasicDemo1" />
-        <activity android:name=".view.text.TextViewDemo1" />
+
         <activity android:name=".service.BasicDemo1" />
 
         <service android:name=".service.DownloadService" />
 
+        <activity android:name=".view.text.TextViewDemo1" />
         <activity android:name=".view.text.TextViewDemo2" />
-        <activity android:name=".view.text.TextViewDemo3"></activity>
+        <activity android:name=".view.text.TextViewDemo3" />
+        <activity android:name=".view.text.TextViewDemo4" />
     </application>
 
 </manifest>

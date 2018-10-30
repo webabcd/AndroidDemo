@@ -20,8 +20,12 @@
         "url": ".view.text.TextViewDemo2"
       },
       {
-        "title": "TextView sdfsdad",
+        "title": "TextView 阴影和图文",
         "url": ".view.text.TextViewDemo3"
+      },
+      {
+        "title": "TextView 的 html 支持",
+        "url": ".view.text.TextViewDemo4"
       }
     ]
   },

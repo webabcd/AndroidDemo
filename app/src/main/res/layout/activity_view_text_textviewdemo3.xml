@@ -5,10 +5,11 @@
     android:orientation="vertical">
 
     <!--
-    android:shadowColor:设置阴影颜色,需要与shadowRadius一起使用哦!
-android:shadowRadius:设置阴影的模糊程度,设为0.1就变成字体颜色了,建议使用3.0
-android:shadowDx:设置阴影在水平方向的偏移,就是水平方向阴影开始的横坐标位置
-android:shadowDy:设置阴影在竖直方向的偏移,就是竖直方向阴影开始的纵坐标位置
+        阴影效果
+            shadowColor - 阴影颜色
+            shadowRadius - 阴影的模糊程度
+            shadowDx - 阴影水平方向的偏移量
+            shadowDy - 阴影垂直方向的偏移量
     -->
     <TextView
         android:id="@+id/textView1"
@@ -17,16 +18,20 @@ android:shadowDy:设置阴影在竖直方向的偏移,就是竖直方向阴影�
         android:textSize="32dp"
         android:textColor="#f00"
         android:shadowColor="#00f"
-        android:shadowDx="10.0"
-        android:shadowDy="10.0"
+        android:shadowDx="5.0"
+        android:shadowDy="5.0"
         android:shadowRadius="3.0"
         android:text="我有阴影" />
 
-
-<!--
-设置图片的核心其实就是:drawableXxx;可以设置四个方向的图片: drawableTop(上),drawableButtom(下),drawableLeft(左),drawableRight(右) 另外,你也可以使用drawablePadding来设置图片与文字间的间距！
--->
-
+    <!--
+        图文效果
+            drawableLeft - 文本左侧的图片
+            drawableTop - 文本上侧的图片
+            drawableRight - 文本右侧的图片
+            drawableBottom - 文本下侧的图片
+            drawablePadding - 文本与四周图片间的间距
+            注：图片位置的调整和图片大小的调整需要在 java 中修改
+    -->
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
@@ -34,10 +39,20 @@ android:shadowDy:设置阴影在竖直方向的偏移,就是竖直方向阴影�
         android:layout_marginTop="10dp"
         android:gravity="center"
         android:drawableTop="@drawable/pic_sample_son"
-        android:drawableLeft="@drawable/pic_sample_son"
-        android:drawableRight="@drawable/pic_sample_son"
         android:drawableBottom="@drawable/pic_sample_son"
         android:drawablePadding="0dp"
+        android:text="你好" />
+
+    <!--
+        图文效果
+            在 java 中设置图文效果，并为 png 图标着色
+    -->
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
         android:text="你好" />
 
 </LinearLayout>
