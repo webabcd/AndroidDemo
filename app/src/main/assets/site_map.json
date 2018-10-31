@@ -26,6 +26,10 @@
       {
         "title": "TextView 的 html 支持",
         "url": ".view.text.TextViewDemo4"
+      },
+      {
+        "title": "TextView 的 Spannable（自定义显示样式）",
+        "url": ".view.text.TextViewDemo5"
       }
     ]
   },

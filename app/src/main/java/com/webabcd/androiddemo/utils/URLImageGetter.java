@@ -1,11 +1,12 @@
 /**
  * 实现 Html.ImageGetter 接口，用于解析并呈现 img 标签
+ *
+ * 本例可以显示本地图片，drawable 图片，http 图片
  */
 
 package com.webabcd.androiddemo.utils;
 
 import android.content.Context;
-import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.text.Html;
@@ -27,15 +28,28 @@ public class URLImageGetter implements Html.ImageGetter {
     // 将指定的 url 转换为一个 Drawable 对象
     @Override
     public Drawable getDrawable(String source) {
-        URLImageGetterDrawable urlImageGetterDrawable = new URLImageGetterDrawable();
+        if (source.indexOf("/mnt") == 0) { // 显示本地图片，路径类似 /mnt/sdcard/xxx.jpg
+            Drawable drawable = Drawable.createFromPath(source);
+            drawable.setBounds(0, 0, drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight());
 
-        // 启动一个异步任务去处理 img 的 src 的图片下载，并将图片转换为 Drawable 对象（这里的 URLImageGetterDrawable 对象会在异步任务中完成对其 drawable 属性的赋值）
-        ImageGetterAsyncTask asyncTask = new ImageGetterAsyncTask(urlImageGetterDrawable);
-        asyncTask.execute(source);
+            return drawable;
+        } else if (Helper.isUInt(source)) { // 显示 drawable 中的图片，路径类似 R.drawable.pic_sample_son
+            Drawable drawable = _context.getResources().getDrawable(Integer.parseInt(source));
+            drawable.setBounds(0, 0, drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight());
 
-        return urlImageGetterDrawable;
+            return drawable;
+        } else { // 显示 http 图片
+            URLImageGetterDrawable urlImageGetterDrawable = new URLImageGetterDrawable();
+
+            // 启动一个异步任务去处理 img 的 src 的图片下载，并将图片转换为 Drawable 对象（这里的 URLImageGetterDrawable 对象会在异步任务中完成对其 drawable 属性的赋值）
+            ImageGetterAsyncTask asyncTask = new ImageGetterAsyncTask(urlImageGetterDrawable);
+            asyncTask.execute(source);
+
+            return urlImageGetterDrawable;
+        }
     }
 
+    // 异步加载图片
     public class ImageGetterAsyncTask extends AsyncTask<String, Void, Drawable> {
         private URLImageGetterDrawable _urlImageGetterDrawable;
 

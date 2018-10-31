@@ -6,6 +6,8 @@ import android.content.res.AssetManager;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Helper {
     public static String getAssetString(String fileName, Context context) {
@@ -21,6 +23,15 @@ public class Helper {
             e.printStackTrace();
         }
         return stringBuilder.toString();
+    }
+
+    public static boolean isUInt(String str){
+        Pattern pattern = Pattern.compile("[0-9]+");
+        Matcher isNum = pattern.matcher(str);
+        if( !isNum.matches() ){
+            return false;
+        }
+        return true;
     }
 }
 

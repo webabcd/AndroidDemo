@@ -10,4 +10,11 @@
         -->
     </style>
 
+    <style name="TextAppearanceSpanStyle" parent="@android:style/Widget.TextView">
+        <item name="android:textColor">#FF0000</item>
+        <item name="android:textStyle">italic</item>
+        <item name="android:fontFamily">serif</item>
+        <item name="android:textSize">32dp</item>
+    </style>
+
 </resources>
