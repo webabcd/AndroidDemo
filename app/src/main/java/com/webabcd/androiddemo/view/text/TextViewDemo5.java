@@ -2,6 +2,7 @@
  * TextView - 文本显示控件
  *
  * 演示如何通过 SpannableString 或 SpannableStringBuilder 来设置 TextView 中的文本的显示样式
+ * SpannableStringBuilder 对比 SpannableString 的区别就是，可以对 SpannableStringBuilder 中的文本做编辑（比如 append, insert 之类的）
  *
  * ForegroundColorSpan - 文本颜色
  * BackgroundColorSpan - 背景颜色
@@ -125,6 +126,8 @@ public class TextViewDemo5 extends AppCompatActivity {
         spannableStringBuilder.setSpan(underlineSpan, 0, 6, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         spannableStringBuilder.setSpan(superscriptSpan, 7, 14, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         spannableStringBuilder.setSpan(subscriptSpan, 14, 21, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        // 删除指定的 span
+        // spannableStringBuilder.removeSpan(subscriptSpan);
 
         // 显示指定的 SpannableStringBuilder 对象
         _textView1.setText(spannableStringBuilder);
@@ -156,6 +159,8 @@ public class TextViewDemo5 extends AppCompatActivity {
         spanString.setSpan(absoluteSizeSpan, 7, 14, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         spanString.setSpan(relativeSizeSpan, 15, 22, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         spanString.setSpan(scaleXSpan, 23, 30, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        // 删除指定的 span
+        // spanString.removeSpan(scaleXSpan);
 
         // 显示指定的 SpannableString 对象
         _textView2.setText(spanString);
@@ -187,6 +192,7 @@ public class TextViewDemo5 extends AppCompatActivity {
             public void updateDrawState(TextPaint ds) { // 可以在此处设置可点击文本的样式
                 ds.setColor(Color.parseColor("#FF0000"));
                 ds.bgColor = Color.parseColor("#00FF00");
+                // 显示下划线
                 ds.setUnderlineText(true);
             }
         };

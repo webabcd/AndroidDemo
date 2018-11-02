@@ -37,7 +37,7 @@
             end - 结尾部分用“...”表示
             middle - 中间部分用“...”表示（仅单行模式支持）
             marquee - 跑马灯效果，后面有详细介绍（仅单行模式支持）
-        singleLine - 是否是单行显示
+        singleLine - 是否是单行显示（默认值是 false）
             这个属性过时了，但是如果只显示一行，并且指定了 ellipsize 属性的话，则建议用 singleLine="true" 替换 lines="1"，否则在某些系统上会崩溃
     -->
     <TextView
@@ -105,5 +105,20 @@
         android:lineSpacingExtra="2dp"
         android:lineSpacingMultiplier="1.5"
         android:text="@string/text_long" />
+
+    <!--
+        autoLink - 是否需要自动识别电话/邮箱/链接，并将文本显示为可点击的链接且具有相应的行为
+            none - 不识别
+            phone - 识别电话，在 java 中为 setAutoLinkMask(Linkify.PHONE_NUMBERS)
+            email - 识别邮箱，在 java 中为 setAutoLinkMask(Linkify.EMAIL_ADDRESSES)
+            web - 识别链接，在 java 中为 setAutoLinkMask(Linkify.WEB_URLS)
+            all - 识别电话/邮箱/链接，在 java 中为 setAutoLinkMask(Linkify.ALL)
+    -->
+    <TextView
+        android:id="@+id/textView7"
+        android:autoLink="all"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="我的电话是 13911111111，我的邮箱是 email@hotmail.com，我的博客是 http://webabcd.cnblogs.com" />
 
 </LinearLayout>

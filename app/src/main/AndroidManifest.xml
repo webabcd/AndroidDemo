@@ -28,7 +28,8 @@
         <activity android:name=".view.text.TextViewDemo2" />
         <activity android:name=".view.text.TextViewDemo3" />
         <activity android:name=".view.text.TextViewDemo4" />
-        <activity android:name=".view.text.TextViewDemo5"></activity>
+        <activity android:name=".view.text.TextViewDemo5" />
+        <activity android:name=".view.text.TextViewDemo6"></activity>
     </application>
 
 </manifest>
