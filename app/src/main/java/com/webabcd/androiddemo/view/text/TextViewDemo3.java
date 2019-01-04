@@ -28,7 +28,9 @@ public class TextViewDemo3 extends AppCompatActivity {
         _textView2 = (TextView) findViewById(R.id.textView2);
         _textView3 = (TextView) findViewById(R.id.textView3);
 
+        // 调整图片的位置和图片的大小
         sample1();
+        // 在 java 中设置图文效果，并为 png 图标着色
         sample2();
     }
 
@@ -39,7 +41,6 @@ public class TextViewDemo3 extends AppCompatActivity {
         Drawable[] drawable = _textView2.getCompoundDrawables();
 
         // 修改 TextView 上侧的图片的大小和位置
-        // setBounds() 函数的 4 个参数分别代表：左偏移量、上偏移量、宽、高
         drawable[1].setBounds(0, 0, 40, 20);
 
         // 设置 TextView 的四个方向上的图片
@@ -51,7 +52,6 @@ public class TextViewDemo3 extends AppCompatActivity {
         // 获取 Drawable 对象
         Drawable d1 = getResources().getDrawable(R.drawable.ic_expand_more).mutate();
         // 设置图片的位置和大小
-        // setBounds() 函数的 4 个参数分别代表：左偏移量、上偏移量、宽、高
         d1.setBounds(0,0,32,32);
         // 为 png 图标着色
         d1.setColorFilter(Color.RED, PorterDuff.Mode.SRC_ATOP);

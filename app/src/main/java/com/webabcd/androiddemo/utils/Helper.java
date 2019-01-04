@@ -2,6 +2,10 @@ package com.webabcd.androiddemo.utils;
 
 import android.content.Context;
 import android.content.res.AssetManager;
+import android.content.res.Resources;
+import android.graphics.Point;
+import android.support.v4.content.ContextCompat;
+import android.view.WindowManager;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -32,6 +36,53 @@ public class Helper {
             return false;
         }
         return true;
+    }
+
+    /**
+     * 获取状态栏的高度
+     */
+    public static int getStatusBarHeight(Context context)
+    {
+        int result = 0;
+        int resourceId = context.getResources().getIdentifier("status_bar_height", "dimen", "android");
+        if (resourceId > 0) {
+            result = context.getResources().getDimensionPixelSize(resourceId);
+        }
+
+        return result;
+    }
+
+    /**
+     * 获取屏幕的尺寸
+     */
+    public static Point getScreenSize(Context context)
+    {
+        WindowManager windowManager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+        Point screenSize = new Point();
+        windowManager.getDefaultDisplay().getSize(screenSize);
+
+        return screenSize;
+    }
+
+    /**
+     * 获取虚拟按键栏的高度
+     */
+    public static int getNavigationBarHeight(Context context) {
+        int result = 0;
+        Resources res = context.getResources();
+        int resourceId = res.getIdentifier("navigation_bar_height", "dimen", "android");
+        if (resourceId > 0) {
+            result = res.getDimensionPixelSize(resourceId);
+        }
+
+        return result;
+    }
+
+    /**
+     * 获取屏幕方向 Configuration.ORIENTATION_PORTRAIT 或 Configuration.ORIENTATION_LANDSCAPE
+     */
+    public static int getScreenOrientation(Context context) {
+        return context.getResources().getConfiguration().orientation;
     }
 }
 

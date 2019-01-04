@@ -29,7 +29,10 @@
         <activity android:name=".view.text.TextViewDemo3" />
         <activity android:name=".view.text.TextViewDemo4" />
         <activity android:name=".view.text.TextViewDemo5" />
-        <activity android:name=".view.text.TextViewDemo6"></activity>
+        <activity android:name=".view.text.TextViewDemo6" />
+        <activity android:name=".view.text.EditTextDemo1" />
+        <activity android:name=".view.text.EditTextDemo2" />
+        <activity android:name=".view.text.EditTextDemo3" />
     </application>
 
 </manifest>

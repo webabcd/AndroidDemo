@@ -1,6 +1,6 @@
 /**
  * TextView - 文本显示控件
- * <p>
+ *
  * 演示 TextView 的常用行为
  */
 
@@ -9,6 +9,7 @@ package com.webabcd.androiddemo.view.text;
 import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
@@ -32,6 +33,7 @@ public class TextViewDemo6 extends AppCompatActivity {
     private TextView _textView2;
     private TextView _textView3;
     private TextView _textView4;
+    private TextView _textView5;
 
     private Button _button1;
     private Button _button4;
@@ -45,6 +47,7 @@ public class TextViewDemo6 extends AppCompatActivity {
         _textView2 = (TextView) findViewById(R.id.textView2);
         _textView3 = (TextView) findViewById(R.id.textView3);
         _textView4 = (TextView) findViewById(R.id.textView4);
+        _textView5 = (TextView) findViewById(R.id.textView5);
 
         _button1 = (Button) findViewById(R.id.button1);
         _button4 = (Button) findViewById(R.id.button4);
@@ -57,6 +60,8 @@ public class TextViewDemo6 extends AppCompatActivity {
         sample3();
         // 监听 TextView 的文本变化事件
         sample4();
+        // 文本的选中
+        sample5();
     }
 
     private void sample1() {
@@ -163,7 +168,6 @@ public class TextViewDemo6 extends AppCompatActivity {
             }
         });
     }
-
     private TextWatcher _textWatcher = new TextWatcher() {
         @Override
         public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -180,4 +184,13 @@ public class TextViewDemo6 extends AppCompatActivity {
             Toast.makeText(TextViewDemo6.this, "afterTextChanged", Toast.LENGTH_SHORT).show();
         }
     };
+
+    private void sample5() {
+        // 文本是否可以被选中
+        _textView5.setTextIsSelectable(true);
+        // 获取焦点后是否自动选中全部文本
+        _textView5.setSelectAllOnFocus(false);
+        // 选中文本的背景色
+        _textView5.setHighlightColor(ContextCompat.getColor(this,R.color.orange));
+    }
 }

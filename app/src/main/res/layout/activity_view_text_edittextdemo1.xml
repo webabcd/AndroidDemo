@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--演示 EditText（继承自 TextView） 的常用属性的使用-->
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"  />
+
+    <!--
+        background - 背景。如果不需要任何背景的话就设置为 @null
+        inputType - 输入类型（比如 textPassword 代表密码，number 代表数字，详细说明见后）
+        background - 文本的背景颜色
+        maxLength - 最大字符数
+        hint - 提示信息，即 placeholder
+        textColorHint - 提示信息的颜色
+        drawableLeft, drawableTop, drawableRight, drawableBottom, drawablePadding - 这几个属性的说明请参见 TextViewDemo3 中的介绍
+    -->
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:padding="10dp"
+        android:background="@null"
+        android:inputType="phone"
+        android:maxLength="11"
+        android:hint="请输入手机号"
+        android:textColorHint="@color/gray"
+        android:drawablePadding="10dp"
+        android:drawableLeft="@drawable/pic_sample_son"
+        android:drawableBottom="@drawable/shape_edittext_bottom_line" />
+
+    <!--
+        inputType 的详细说明如下：
+            android:inputType="none" // 普通字符
+            android:inputType="text" // 普通字符
+            android:inputType="textCapCharacters" // 普通字符（默认为 shift 按下状态）
+            android:inputType="textCapWords" // 单词首字母大写
+            android:inputType="textCapSentences" // 仅第一个字母大写
+            android:inputType="textAutoCorrect" // 自动完成
+            android:inputType="textAutoComplete" //自动完成
+            android:inputType="textMultiLine" // 多行输入
+            android:inputType="textImeMultiLine" // 输入法多行（不一定支持）
+            android:inputType="textNoSuggestions" // 不提示
+            android:inputType="textUri" // URI格式
+            android:inputType="textEmailAddress" // 电子邮件地址格式
+            android:inputType="textEmailSubject" // 邮件主题格式
+            android:inputType="textShortMessage" // 短消息格式
+            android:inputType="textLongMessage" // 长消息格式
+            android:inputType="textPersonName" // 人名格式
+            android:inputType="textPostalAddress" // 邮政格式
+            android:inputType="textPassword" // 密码
+            android:inputType="textVisiblePassword" // 密码可见
+            android:inputType="textWebEditText" // 作为网页表单的文本格式
+            android:inputType="textFilter" // 文本筛选格式
+            android:inputType="textPhonetic" // 拼音输入格式
+            android:inputType="number" // 数字格式
+            android:inputType="numberSigned" // 有符号数字格式
+            android:inputType="numberDecimal" // 可以带小数点的浮点格式
+            android:inputType="phone" // 拨号键盘
+            android:inputType="datetime" // 日期键盘
+            android:inputType="date" // 日期键盘
+            android:inputType="time" // 时间键盘
+    -->
+</LinearLayout>

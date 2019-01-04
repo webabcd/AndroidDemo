@@ -34,9 +34,13 @@ public class TextViewDemo4 extends AppCompatActivity {
         _textView3 = (TextView) findViewById(R.id.textView3);
         _textView4 = (TextView) findViewById(R.id.textView4);
 
+        // TextView 解析并显示 html（TextView 仅支持部分 html 标签）
         sample1();
+        // TextView 显示 html 中的 img（img 的 src 来自一个 url）
         sample2();
+        // TextView 显示自定义 html 标签
         sample3();
+        // TextView 显示自定义 html 标签（处理标签属性）
         sample4();
     }
 
