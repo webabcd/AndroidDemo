@@ -34,7 +34,7 @@
         android:hint="请输入手机号"
         android:textColorHint="@color/gray"
         android:drawablePadding="10dp"
-        android:drawableLeft="@drawable/pic_sample_son"
+        android:drawableLeft="@drawable/img_sample_son"
         android:drawableBottom="@drawable/shape_edittext_bottom_line" />
 
     <!--

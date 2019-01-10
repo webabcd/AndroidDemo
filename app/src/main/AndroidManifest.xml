@@ -33,6 +33,8 @@
         <activity android:name=".view.text.EditTextDemo1" />
         <activity android:name=".view.text.EditTextDemo2" />
         <activity android:name=".view.text.EditTextDemo3" />
+        <activity android:name=".async.ThreadDemo1" />
+        <activity android:name=".async.ThreadDemo2"></activity>
     </application>
 
 </manifest>

@@ -69,7 +69,7 @@ public class TextViewDemo4 extends AppCompatActivity {
     // TextView 显示 html 中的 img（img 的 src 来自一个 url）
     private void sample2() {
         String html = "<img src='https://www.baidu.com/img/bd_logo.png' />"; // 一个 http 图片
-        html += "<img src='" + R.drawable.pic_sample_son + "' />"; // 一个 drawable 图片
+        html += "<img src='" + R.drawable.img_sample_son + "' />"; // 一个 drawable 图片
 
         // 在 setText() 中指定一个自定义 ImageGetter 去解析并显示 img 标签
         URLImageGetter urlImageGetter = new URLImageGetter(_textView2, this);

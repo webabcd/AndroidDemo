@@ -33,7 +33,7 @@ public class URLImageGetter implements Html.ImageGetter {
             drawable.setBounds(0, 0, drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight());
 
             return drawable;
-        } else if (Helper.isUInt(source)) { // 显示 drawable 中的图片，路径类似 R.drawable.pic_sample_son
+        } else if (Helper.isUInt(source)) { // 显示 drawable 中的图片，路径类似 R.drawable.img_sample_son
             Drawable drawable = _context.getResources().getDrawable(Integer.parseInt(source));
             drawable.setBounds(0, 0, drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight());
 
