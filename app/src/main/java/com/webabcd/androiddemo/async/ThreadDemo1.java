@@ -5,11 +5,15 @@
  *     setName() - 指定线程的名字
  *     start() - 启动线程
  *     setPriority() - 设置线程的优先级
+ *         Thread.MIN_PRIORITY(1), Thread.NORM_PRIORITY(5), Thread.MAX_PRIORITY(10)
  *     setDaemon() - 指定是否为守护线程
  *         用户线程 - 主线程结束了，用户线程也不会退出，相当于前台线程，此值为默认值
  *         守护线程 - 主线程结束了，守护线程会自动退出，相当于后台线程
+ *     getId(), getName()， getPriority()， isDaemon() - 获取线程的标识、名字、优先级、是否是守护进程
  *     getState() - 获取线程的状态（Thread.State 枚举）
  *         NEW, RUNNABLE, BLOCKED, WAITING, TIMED_WAITING, TERMINATED - 具体说明参见 /res/drawable/img_thread_state.png 图例
+ *     Thread.currentThread() - 获取当前 Thread 对象
+ *     Thread.sleep() - 让当前 Thread 等待指定的时间
  */
 
 package com.webabcd.androiddemo.async;
@@ -58,7 +62,7 @@ public class ThreadDemo1 extends AppCompatActivity {
 
     private class MyThread extends Thread {
         public MyThread(String name){
-            super.setName(name);
+            super(name);
         }
 
         @Override

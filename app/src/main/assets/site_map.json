@@ -9,6 +9,26 @@
       {
         "title": "Thread 演示 Object 的 wait() notify() notifyAll() 的使用",
         "url": ".async.ThreadDemo2"
+      },
+      {
+        "title": "Thread 演示 join() 的用法",
+        "url": ".async.ThreadDemo3"
+      },
+      {
+        "title": "Thread 演示 interrupt 的用法",
+        "url": ".async.ThreadDemo4"
+      },
+      {
+        "title": "Thread 的异常处理",
+        "url": ".async.ThreadDemo5"
+      },
+      {
+        "title": "ThreadPool 的基础",
+        "url": ".async.ThreadPoolDemo1"
+      },
+      {
+        "title": "ThreadPool 的关闭",
+        "url": ".async.ThreadPoolDemo2"
       }
     ]
   },
@@ -55,8 +75,7 @@
       {
         "title": "EditText 选中和光标",
         "url": ".view.text.EditTextDemo2"
-      }
-    ,
+      },
       {
         "title": "EditText 软键盘",
         "url": ".view.text.EditTextDemo3"

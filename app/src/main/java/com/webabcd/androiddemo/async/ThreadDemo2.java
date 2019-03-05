@@ -5,6 +5,7 @@
  * 1、调用 Object 的 wait() 后，会阻塞当前线程
  * 2、调用 Object 的 notify() 后，多线程中的某一个被 wait() 阻塞的线程会被唤醒（具体是哪个线程会被唤醒是由系统决定的，无法预知）
  * 3、调用 Object 的 notifyAll() 后，多线程中的所有被 wait() 阻塞的线程都会被唤醒
+ * 注：wait() 可以指定超时时间
  *
  * 本示例通过生产者/消费者模型来演示 wait() notify() notifyAll() 的使用，同时演示 notify() 造成的死锁
  * 关于本例中的生产者/消费者模型，说明如下：
@@ -91,7 +92,7 @@ public class ThreadDemo2 extends AppCompatActivity {
                 while (list.size() >= max){
                     try{
                         Log.d(LOG_TAG, threadName + " wait");
-                        this.wait(); // 指定超时时间
+                        this.wait(); // 可以指定超时时间
                         Log.d(LOG_TAG, threadName + " wait end");
                     }
                     catch (Exception e){
