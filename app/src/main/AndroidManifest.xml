@@ -39,7 +39,12 @@
         <activity android:name=".async.ThreadDemo4" />
         <activity android:name=".async.ThreadDemo5" />
         <activity android:name=".async.ThreadPoolDemo1" />
-        <activity android:name=".async.ThreadPoolDemo2"></activity>
+        <activity android:name=".async.ThreadPoolDemo2" />
+        <activity android:name=".async.AsyncTaskDemo1" />
+        <activity android:name=".async.HandlerDemo1" />
+        <activity android:name=".async.HandlerDemo2" />
+        <activity android:name=".async.HandlerDemo3" />
+        <activity android:name=".async.ThreadDemo6"></activity>
     </application>
 
 </manifest>

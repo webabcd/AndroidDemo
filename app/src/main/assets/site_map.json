@@ -23,12 +23,32 @@
         "url": ".async.ThreadDemo5"
       },
       {
+        "title": "Thread 导致的内存泄漏",
+        "url": ".async.ThreadDemo6"
+      },
+      {
+        "title": "Handler 的使用",
+        "url": ".async.HandlerDemo1"
+      },
+      {
+        "title": "Handler 和 Looper 的使用",
+        "url": ".async.HandlerDemo2"
+      },
+      {
+        "title": "Handler 导致的 Activity 内存泄漏",
+        "url": ".async.HandlerDemo3"
+      },
+      {
         "title": "ThreadPool 的基础",
         "url": ".async.ThreadPoolDemo1"
       },
       {
         "title": "ThreadPool 的关闭",
         "url": ".async.ThreadPoolDemo2"
+      },
+      {
+        "title": "AsyncTask 的使用",
+        "url": ".async.AsyncTaskDemo1"
       }
     ]
   },

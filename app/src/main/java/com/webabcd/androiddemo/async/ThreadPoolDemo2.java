@@ -4,6 +4,8 @@
  * shutdown() - 将线程池的 isShutdown 状态设置为 true，不允许再向线程池中添加任务，等线程池中的所有任务都执行完毕后线程池就会被关闭
  * shutdownNow() - 将线程池的 isShutdown 状态设置为 true，不允许再向线程池中添加任务，未执行的任务不会再执行，调用每个线程的 interrupt() 方法，等线程池中的所有任务都执行完毕后线程池就会被关闭
  * awaitTermination() - 阻塞并等待指定的时间，然后判断线程池中的所有任务是否都执行完毕了，如果线程池中的所有任务都执行完毕了则 isTerminated 状态为 true
+ *
+ * 注：如果线程中有 io 阻塞的话，先要把这个 io 干掉
  */
 
 package com.webabcd.androiddemo.async;

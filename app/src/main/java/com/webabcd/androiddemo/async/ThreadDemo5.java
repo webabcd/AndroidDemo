@@ -6,12 +6,9 @@ package com.webabcd.androiddemo.async;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.TextView;
 
 import com.webabcd.androiddemo.R;
-
-import java.util.concurrent.TimeUnit;
 
 public class ThreadDemo5 extends AppCompatActivity {
 

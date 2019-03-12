@@ -42,11 +42,13 @@ public class ThreadDemo1 extends AppCompatActivity {
     {
         // 通过继承 Thread 类的方式启动线程
         MyThread thread1 = new MyThread("thread1");
+        thread1.setDaemon(true);
         thread1.start();
 
         // 通过实现 Runnable 接口的方式启动线程（注：Thread 实现了 Runnable 接口）
         MyRunnable myRunnable = new MyRunnable();
         Thread thread2 = new Thread(myRunnable, "thread2");
+        thread2.setDaemon(true);
         thread2.start();
 
         // 通过 Thread 的匿名类的方式启动线程
@@ -57,6 +59,7 @@ public class ThreadDemo1 extends AppCompatActivity {
             }
         });
         thread3.setName("thread3");
+        thread3.setDaemon(true);
         thread3.start();
     }
 
