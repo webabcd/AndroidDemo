@@ -49,6 +49,14 @@
       {
         "title": "AsyncTask 的使用",
         "url": ".async.AsyncTaskDemo1"
+      },
+      {
+        "title": "Timer 和 TimerTask 的使用",
+        "url": ".async.TimerDemo1"
+      },
+      {
+        "title": "ThreadLocal 的使用",
+        "url": ".async.ThreadLocalDemo1"
       }
     ]
   },

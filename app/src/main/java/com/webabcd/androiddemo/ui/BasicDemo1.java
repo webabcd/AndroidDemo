@@ -32,6 +32,14 @@ public class BasicDemo1 extends AppCompatActivity {
         textView4.setTextColor(ContextCompat.getColor(this,R.color.blue));
 
 
+
+
+
+
+        // padding 上右下左？
+
+
+
         // 如何在后台从资源文件中获取字符串（分为有Context和没有Context如何获取）
         // 插件的使用，findviewbyme，还有json转实体类那个
     }
