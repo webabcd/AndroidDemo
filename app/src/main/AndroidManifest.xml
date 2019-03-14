@@ -46,7 +46,9 @@
         <activity android:name=".async.HandlerDemo3" />
         <activity android:name=".async.ThreadDemo6" />
         <activity android:name=".async.TimerDemo1" />
-        <activity android:name=".async.ThreadLocalDemo1"></activity>
+        <activity android:name=".async.ThreadLocalDemo1" />
+        <activity android:name=".async.FutureTaskDemo1" />
+        <activity android:name=".async.FutureTaskDemo2"></activity>
     </application>
 
 </manifest>

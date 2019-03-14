@@ -15,7 +15,7 @@
         "url": ".async.ThreadDemo3"
       },
       {
-        "title": "Thread 演示 interrupt 的用法",
+        "title": "Thread 演示 interrupt() 的用法",
         "url": ".async.ThreadDemo4"
       },
       {
@@ -45,6 +45,14 @@
       {
         "title": "ThreadPool 的关闭",
         "url": ".async.ThreadPoolDemo2"
+      },
+      {
+        "title": "Callable, Future, FutureTask 的使用",
+        "url": ".async.FutureTaskDemo1"
+      },
+      {
+        "title": "Future, FutureTask 的关闭和异常处理",
+        "url": ".async.FutureTaskDemo2"
       },
       {
         "title": "AsyncTask 的使用",

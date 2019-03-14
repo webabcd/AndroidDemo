@@ -1,5 +1,5 @@
 /**
- * ThreadPool 的基础
+ * ThreadPool 的基础（线程池用于控制最大线程数，以及复用空闲线程）
  *
  * Executors - 用于创建线程池
  *     newFixedThreadPool(int nThreads) - 创建一个指定大小的线程池

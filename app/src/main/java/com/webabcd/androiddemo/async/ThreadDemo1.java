@@ -10,6 +10,7 @@
  *         用户线程 - 主线程结束了，用户线程也不会退出，相当于前台线程，此值为默认值
  *         守护线程 - 主线程结束了，守护线程会自动退出，相当于后台线程
  *     getId(), getName()， getPriority()， isDaemon() - 获取线程的标识、名字、优先级、是否是守护进程
+ *     isAlive() - 获取线程的存活状态（准备运行或者正在运行，则返回 true）
  *     getState() - 获取线程的状态（Thread.State 枚举）
  *         NEW, RUNNABLE, BLOCKED, WAITING, TIMED_WAITING, TERMINATED - 具体说明参见 /res/drawable/img_thread_state.png 图例
  *     Thread.currentThread() - 获取当前 Thread 对象

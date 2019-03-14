@@ -1,6 +1,7 @@
 /**
- * ThreadLocal 的使用
- *     用于在线程外创建一个只有本线程可以操作的变量（每个线程只能操作自己的变量）
+ * ThreadLocal 的使用，ThreadLocal 用于在线程外创建一个只有本线程可以操作的变量（每个线程只能操作自己的变量）
+ *     initialValue() - 初始值
+ *     set(), get(), remove() - 设置, 获取, 移除
  */
 
 package com.webabcd.androiddemo.async;

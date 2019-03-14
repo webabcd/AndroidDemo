@@ -1,7 +1,21 @@
 /**
- * Timer 和 TimerTask 的使用
- *     Timer 用于延迟或循环执行 TimerTask
- *     一个 Timer 对象只会有一个关联的 Thread
+ * Timer 和 TimerTask 的使用（Timer 用于延迟或循环执行 TimerTask）
+ *
+ * Timer - 计时器
+ *     new Timer(boolean isDaemon) - 实例化 Timer 并指定其是否是守护线程
+ *     schedule(TimerTask task, long delay) - 延迟指定的时间后执行指定的 TimerTask 任务
+ *     schedule(TimerTask task, long delay, long period) - 延迟指定的时间后，按照间隔时间循环执行指定的 TimerTask 任务
+ *         间隔时间指的是相对于上一次 task 任务执行完成之后的时间
+ *     scheduleAtFixedRate(TimerTask task, long delay, long period) - 延迟指定的时间后，按照间隔时间循环执行指定的 TimerTask 任务
+ *         间隔时间指的尽量按此时间为周期循环执行 task 任务
+ *     cancel() - 把当前任务队列中的所有 TimerTask 任务都取消
+ *     purge() - 把当前任务队列中的所有被标记为取消的 TimerTask 任务的引用都设置为 null
+ *
+ * TimerTask - 计时器需要执行的具体任务（实现了 Runnable 接口）
+ *     cancel() - 把当前 TimerTask 任务从任务队列中取消
+ *
+ *
+ * 注：一个 Timer 对象只会有一个关联的 Thread
  */
 
 package com.webabcd.androiddemo.async;
