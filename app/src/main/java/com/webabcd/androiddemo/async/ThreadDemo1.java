@@ -21,11 +21,14 @@ package com.webabcd.androiddemo.async;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 
 import com.webabcd.androiddemo.R;
 
 public class ThreadDemo1 extends AppCompatActivity {
+
+    private final String LOG_TAG = "ThreadDemo1";
 
     private TextView _textView1;
 
@@ -57,11 +60,20 @@ public class ThreadDemo1 extends AppCompatActivity {
             @Override
             public void run() {
                 writeMessage(String.format("线程%s（thread id: %d）启动了", Thread.currentThread().getName(), Thread.currentThread().getId()));
+                Log.d(LOG_TAG, String.format("thread3(3) alive:%b, state:%s", Thread.currentThread().isAlive(), Thread.currentThread().getState())); // alive:true, state:RUNNABLE
             }
         });
         thread3.setName("thread3");
         thread3.setDaemon(true);
+        Log.d(LOG_TAG, String.format("thread3(1) alive:%b, state:%s", thread3.isAlive(), thread3.getState())); // alive:false, state:NEW
         thread3.start();
+        Log.d(LOG_TAG, String.format("thread3(2) alive:%b, state:%s", thread3.isAlive(), thread3.getState())); // alive:true, state:RUNNABLE
+        try {
+            thread3.join();
+        } catch (InterruptedException e) {
+
+        }
+        Log.d(LOG_TAG, String.format("thread3(4) alive:%b, state:%s", thread3.isAlive(), thread3.getState())); // alive:false, state:TERMINATED
     }
 
     private class MyThread extends Thread {

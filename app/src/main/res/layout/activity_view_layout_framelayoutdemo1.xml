@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    FrameLayout - 帧布局控件（就是把控件一个一个地放到左上角）
+        foreground - 前景图片（永远处于帧布局的最上面）
+        foregroundGravity - 前景图片的显示位置
+-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:foreground="@drawable/img_sample_son"
+    android:foregroundGravity="center_horizontal|top">
+
+    <TextView
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:background="@color/red"/>
+
+    <TextView
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:background="@color/green"/>
+
+    <TextView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:background="@color/blue"/>
+</FrameLayout>

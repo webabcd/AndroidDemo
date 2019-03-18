@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    RelativeLayout - 相对布局控件
+-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/view1"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@color/red" />
+
+    <!--
+        layout_above - 位于指定 id 控件的上方
+        layout_below - 位于指定 id 控件的下方
+    -->
+    <TextView
+        android:id="@+id/view2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/view1"
+        android:background="@color/green" />
+
+    <!--
+        layout_alignStart - 与指定 id 控件的左边对齐（api level 17 或以上），相当于以前的 layout_alignLeft
+        layout_alignEnd - 与指定 id 控件的右边对齐（api level 17 或以上），相当于以前的 layout_alignRight
+        layout_alignTop - 与指定 id 控件的上边对齐
+        layout_alignBottom - 与指定 id 控件的下边对齐
+        layout_alignBaseline - 与指定 id 控件的基准线对齐
+        layout_toStartOf - 位于指定 id 控件的左侧（api level 17 或以上），相当于以前的 layout_toLeftOf
+        layout_toEndOf - 位于指定 id 控件的右侧（api level 17 或以上），相当于以前的 layout_toRightOf
+    -->
+    <TextView
+        android:id="@+id/view3"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignTop="@id/view2"
+        android:layout_toEndOf="@+id/view2"
+        android:background="@color/blue" />
+
+    <!--
+        layout_alignParentStart - 与父容器左侧对齐（api level 17 或以上），相当于以前的 layout_alignParentLeft
+        layout_alignParentEnd - 与父容器右侧对齐（api level 17 或以上），相当于以前的 layout_alignParentRight
+        layout_alignParentTop - 与父容器上侧对齐
+        layout_alignParentBottom - 与父容器下侧对齐
+        layout_centerInParent - 相对于父容器是否既水平居中又垂直居中
+        layout_centerHorizontal - 相对于父容器是否水平居中
+        layout_centerVertical - 相对于父容器是否垂直居中
+    -->
+    <TextView
+        android:id="@+id/view4"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/orange" />
+
+
+    <!--
+        注：
+        从上面的说明中可以看到在 api level 17 或以上新增了一些属性，就是把 Left 换成 Start，把 Right 换成 End，这是为了支持从右到左（RTL）的文字排列格式
+        为了方便理解，我上面的说明都是按照文字从左到右排列的情况下解释的
+    -->
+
+</RelativeLayout>

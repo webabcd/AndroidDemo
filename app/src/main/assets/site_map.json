@@ -1,5 +1,34 @@
 [
   {
+    "title": "view（布局类）",
+    "node": [
+      {
+        "title": "FrameLayout",
+        "url": ".view.layout.FrameLayoutDemo1"
+      },
+      {
+        "title": "LinearLayout",
+        "url": ".view.layout.LinearLayoutDemo1"
+      },
+      {
+        "title": "RelativeLayout",
+        "url": ".view.layout.RelativeLayoutDemo1"
+      },
+      {
+        "title": "TableLayout",
+        "url": ".view.layout.TableLayoutDemo1"
+      },
+      {
+        "title": "GridLayout",
+        "url": ".view.layout.GridLayoutDemo1"
+      },
+      {
+        "title": "ConstraintLayout",
+        "url": ".view.layout.ConstraintLayoutDemo1"
+      }
+    ]
+  },
+  {
     "title": "async",
     "node": [
       {

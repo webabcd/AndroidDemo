@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    LinearLayout - 线性布局控件
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--
+        orientation - 排列方向（vertical 或 horizontal）
+        layout_weight - 空间权重
+            以本例来说，LinearLayout 中的 3 个控件在排列方向上采用 wrap_content 占位
+            1、LinearLayout 中的每个控件占用了 0 空间
+            2、可用于分配的空间为 match_parent - 0 = match_parent
+            3、LinearLayout 中所有控件的 layout_weight 的和为 6，第一个控件的 layout_weight 为 1
+            4、所以第一个控件的空间权重为 0 + 1/6 * match_parent
+            5、所以第二个控件的空间权重为 0 + 2/6 * match_parent
+            6、所以第三个控件的空间权重为 0 + 3/6 * match_parent
+    -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="50dp" android:orientation="horizontal">
+        <TextView android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_weight="1" android:background="@color/red" />
+        <TextView android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_weight="2" android:background="@color/green" />
+        <TextView android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_weight="3" android:background="@color/blue" />
+    </LinearLayout>
+
+    <!--
+        layout_weight - 空间权重
+            以本例来说，LinearLayout 中的 3 个控件在排列方向上采用 match_parent 占位
+            1、LinearLayout 中的每个控件占用了 match_parent 空间
+            2、可用于分配的空间为 match_parent - 3 * match_parent = -2 * match_parent
+            3、LinearLayout 中所有控件的 layout_weight 的和为 6，第一个控件的 layout_weight 为 1
+            4、所以第一个控件的空间权重为 match_parent + 1/6 * (-2 * match_parent) =  4/6 * match_parent
+            5、所以第二个控件的空间权重为 match_parent + 2/6 * (-2 * match_parent) =  2/6 * match_parent
+            6、所以第三个控件的空间权重为 match_parent + 3/6 * (-2 * match_parent) =  0 * match_parent
+    -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="50dp" android:orientation="horizontal" android:layout_marginTop="10dp">
+        <TextView android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" android:background="@color/red" />
+        <TextView android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="2" android:background="@color/green" />
+        <TextView android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="3" android:background="@color/blue" />
+    </LinearLayout>
+
+    <!--
+        layout_weight - 空间权重
+            以本例来说（参考本文件的第一个示例），指定了 LinearLayout 中的所有控件的总的空间权重 weightSum 为 10
+            1、所以第一个控件的空间权重为 0 + 1/10 * match_parent
+            2、所以第二个控件的空间权重为 0 + 2/10 * match_parent
+            3、所以第三个控件的空间权重为 0 + 3/10 * match_parent
+    -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="50dp" android:orientation="horizontal" android:layout_marginTop="10dp" android:weightSum="10">
+        <TextView android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_weight="1" android:background="@color/red" />
+        <TextView android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_weight="2" android:background="@color/green" />
+        <TextView android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_weight="3" android:background="@color/blue" />
+    </LinearLayout>
+
+    <!--
+        divider - 分隔线的资源
+        showDividers - 分隔线的显示方式
+            none - 不显示
+            beginning - 在第一个控件的起始处显示分隔线
+            middle - 在每个控件之间显示分隔线
+            end - 在最后控件的结尾处显示分隔线
+        dividerPadding  - 分隔线的 padding
+            水平排列就是上下 padding
+            垂直排列就是左右 padding
+    -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="50dp" android:orientation="horizontal" android:layout_marginTop="10dp"
+        android:divider="@drawable/shape_vertical_dividers" android:showDividers="beginning|middle|end" android:dividerPadding="10dp"  >
+        <TextView android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_weight="1" android:background="@color/red" />
+        <TextView android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_weight="2" android:background="@color/green" />
+        <TextView android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_weight="3" android:background="@color/blue" />
+    </LinearLayout>
+
+</LinearLayout>
