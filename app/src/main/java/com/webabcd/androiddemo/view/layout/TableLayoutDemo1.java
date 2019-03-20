@@ -1,3 +1,7 @@
+/**
+ * TableLayout - 表格布局控件
+ */
+
 package com.webabcd.androiddemo.view.layout;
 
 import android.support.v7.app.AppCompatActivity;

@@ -1,9 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    ConstraintLayout - 约束布局控件
+        用于参照指定控件来定位当前控件，参照控件可以是指定 id 的控件，也可以是固定值“parent”（父容器）
+
+    本例由于演示 ConstraintLayout 的基础
+-->
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".view.layout.ConstraintLayoutDemo1">
+    android:layout_height="match_parent">
+
+    <!--
+        layout_constraintLeft_toLeftOf - 约束当前控件的左侧，使其与位于指定控件的左侧
+        layout_constraintLeft_toRightOf - 约束当前控件的左侧，使其与位于指定控件的右侧
+        layout_constraintRight_toLeftOf
+        layout_constraintRight_toRightOf
+        layout_constraintTop_toTopOf
+        layout_constraintTop_toBottomOf
+        layout_constraintBottom_toTopOf
+        layout_constraintBottom_toBottomOf
+        layout_constraintBaseline_toBaselineOf
+        layout_constraintStart_toEndOf
+        layout_constraintStart_toStartOf
+        layout_constraintEnd_toStartOf
+        layout_constraintEnd_toEndOf
+
+        layout_goneMarginLeft - 当指定的参照控件的 visibility 为 gone 时，当前控件的 MarginLeft 值
+        layout_goneMarginTop
+        layout_goneMarginRight
+        layout_goneMarginBottom
+        layout_goneMarginStart
+        layout_goneMarginEnd
+
+        注：上面的 Start 和 End 用于支持从右到左（RTL）的文字排列方式，对于从左到右的文字排列方式 Start 就是 Left，End 就是 Right
+    -->
+    <TextView android:id="@+id/textView1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="TextView1" />
+    <TextView android:id="@+id/textView2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="TextView2"
+        app:layout_constraintLeft_toRightOf="@+id/textView1"
+        app:layout_goneMarginLeft="10dp" />
+    <TextView android:id="@+id/textView3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="TextView3"
+        app:layout_constraintLeft_toRightOf="@+id/textView2"
+        android:visibility="gone" />
+    <TextView android:id="@+id/textView4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="TextView4"
+        app:layout_constraintLeft_toRightOf="@+id/textView3"
+        app:layout_goneMarginLeft="10dp" />
+
+    <!--
+        layout_constraintCircle - 约束当前控件，使其位于相对于指定控件的 layout_constraintCircleAngle 角度和 layout_constraintCircleRadius 距离的位置
+        layout_constraintCircleAngle - 以指定控件的 Y 轴向上方向为零角度，顺时针方向的角度
+        layout_constraintCircleRadius - 以指定控的中心点为起点，当前控件的中心点为终点的距离
+    -->
+    <TextView android:id="@+id/textView5" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="TextView5"
+        app:layout_constraintCircle="@+id/textView1"
+        app:layout_constraintCircleAngle="120"
+        app:layout_constraintCircleRadius="150dp" />
+
+    <!--
+        layout_constraintDimensionRatio - 约束当前控件的宽高比（需要将 layout_width 和 layout_height 的其中之一设置为 0）
+            比如 2:1 代表宽高比为 2:1
+            比如 H,2:1 代表宽高比为 2:1
+            比如 W,2:1 代表高宽比为 2:1
+        注：下面的示例中控件的上下左右约束分别相对于父容器的上下左右定位，则会居中显示
+    -->
+    <TextView android:id="@+id/textView6" android:layout_width="wrap_content" android:background="@color/orange" android:text="TextView6"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintDimensionRatio="2:1" />
+
+    <!--
+        layout_constraintHorizontal_bias - 位于相对于屏幕左侧到右侧的指定百分比的位置（需要设置 layout_constraintLeft_toLeftOf="parent" 和 app:layout_constraintRight_toRightOf="parent"）
+        layout_constraintVertical_bias - 位于相对于屏幕上侧到下侧的指定百分比的位置（需要设置 layout_constraintTop_toTopOf="parent" 和 app:layout_constraintBottom_toBottomOf="parent"）
+    -->
+    <TextView android:id="@+id/textView7" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="TextView7"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintVertical_bias="1.0"/>
+
+
+    <!--
+        Guideline - 辅助线，仅设计时可见
+            orientation - 辅助线的方向（horizontal 或 vertical）
+            layout_constraintGuide_begin - 辅助线相对于屏幕上侧的距离（horizontal）或辅助线相对于屏幕左侧的距离（vertical）
+            layout_constraintGuide_end - 辅助线相对于屏幕下侧的距离（horizontal）或辅助线相对于屏幕右侧的距离（vertical）
+            layout_constraintGuide_percent - 辅助线相对于屏幕上侧到下侧的百分比（horizontal）或辅助线相对于屏幕左侧到右侧的百分比（vertical）
+    -->
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="100dp" />
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="100dp" />
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.2" />
 
 </android.support.constraint.ConstraintLayout>

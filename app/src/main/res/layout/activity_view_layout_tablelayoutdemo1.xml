@@ -1,9 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.layout.TableLayoutDemo1">
+    android:orientation="vertical">
 
-</android.support.constraint.ConstraintLayout>
+    <!--
+        TableLayout - 表格布局控件
+            stretchColumns - 需要被拉伸的列，多个用“,”隔开，全部列都需要被拉伸则可以设置为“*”
+
+            layout_span - 设置该控件的水平方向上的单元格合并数
+            layout_column - 设置该控件位于指定列
+    -->
+    <TableLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:stretchColumns="2">
+        <TableRow>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/white"
+                android:text="1111111111" android:background="@color/red" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/white"
+                android:text="2222222222" android:background="@color/green" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/white"
+                android:text="3333333333" android:background="@color/blue" />
+        </TableRow>
+        <TableRow>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/white"
+                android:text="1111111111" android:background="@color/red"
+                android:layout_column="1" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/white"
+                android:text="2222222222" android:background="@color/green" />
+        </TableRow>
+        <TableRow>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/white"
+                android:text="1111111111" android:background="@color/red"
+                android:layout_span="2" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/white"
+                android:text="2222222222" android:background="@color/green" />
+        </TableRow>
+    </TableLayout>
+
+    <!--
+        TableLayout - 表格布局控件
+            collapseColumns - 需要隐藏的列，多个用“,”隔开
+            shrinkColumns - 允许被收缩的的列，多个用“,”隔开
+    -->
+    <TableLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp"
+        android:collapseColumns="0,2"
+        android:shrinkColumns="1">
+        <TableRow>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/white"
+                android:text="1111111111" android:background="@color/red" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/white"
+                android:text="2222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222" android:lines="1" android:background="@color/green" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/white"
+                android:text="3333333333" android:background="@color/blue" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/white"
+                android:text="4444444444" android:background="@color/orange" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/white"
+                android:text="5555555555" android:background="@color/purple" />
+        </TableRow>
+    </TableLayout>
+
+</LinearLayout>

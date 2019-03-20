@@ -23,8 +23,16 @@
         "url": ".view.layout.GridLayoutDemo1"
       },
       {
-        "title": "ConstraintLayout",
+        "title": "ConstraintLayout 基础",
         "url": ".view.layout.ConstraintLayoutDemo1"
+      },
+      {
+        "title": "ConstraintLayout 链",
+        "url": ".view.layout.ConstraintLayoutDemo2"
+      },
+      {
+        "title": "ConstraintLayout 屏障/分组/占位",
+        "url": ".view.layout.ConstraintLayoutDemo3"
       }
     ]
   },

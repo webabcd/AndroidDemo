@@ -54,7 +54,9 @@
         <activity android:name=".view.layout.TableLayoutDemo1" />
         <activity android:name=".view.layout.GridLayoutDemo1" />
         <activity android:name=".view.layout.FrameLayoutDemo1" />
-        <activity android:name=".view.layout.ConstraintLayoutDemo1"></activity>
+        <activity android:name=".view.layout.ConstraintLayoutDemo1" />
+        <activity android:name=".view.layout.ConstraintLayoutDemo2" />
+        <activity android:name=".view.layout.ConstraintLayoutDemo3"></activity>
     </application>
 
 </manifest>
