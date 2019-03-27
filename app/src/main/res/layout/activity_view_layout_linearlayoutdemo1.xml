@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
     LinearLayout - 线性布局控件
+        orientation - 排列方向（vertical 或 horizontal）
 -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -8,7 +9,6 @@
     android:orientation="vertical">
 
     <!--
-        orientation - 排列方向（vertical 或 horizontal）
         layout_weight - 空间权重
             以本例来说，LinearLayout 中的 3 个控件在排列方向上采用 wrap_content 占位
             1、LinearLayout 中的每个控件占用了 0 空间

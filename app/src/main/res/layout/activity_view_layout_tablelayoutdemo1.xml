@@ -39,8 +39,8 @@
 
     <!--
         TableLayout - 表格布局控件
+            shrinkColumns - 允许被收缩的列，多个用“,”隔开，全部列都需要被收缩则可以设置为“*”
             collapseColumns - 需要隐藏的列，多个用“,”隔开
-            shrinkColumns - 允许被收缩的的列，多个用“,”隔开
     -->
     <TableLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp"
         android:collapseColumns="0,2"

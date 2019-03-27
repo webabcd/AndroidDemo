@@ -1,38 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-    GridLayout - 网格布局控件
-        orientation - 控件的排列方向（horizontal 或 vertical）
-        columnCount - 最大列数，当排列方向为 horizontal 时此值有用
-        rowCount - 最大行数，当排列方向为 vertical 时此值有用
-
-        layout_rowSpan - 设置该控件的行合并数（如果需要拉伸控件则将 layout_gravity 设置为 fill 即可）
-        layout_columnSpan - 设置该控件的列合并数（如果需要拉伸控件则将 layout_gravity 设置为 fill 即可）
-        layout_row - 设置该控件位于指定行
-        layout_column - 设置该控件位于指定列
--->
-<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
-    android:columnCount="3">
+    android:orientation="vertical">
 
-    <Button android:text="1"
-        android:layout_columnSpan="2"
-        android:layout_gravity="fill" />
-    <Button android:text="2" />
-    <Button android:text="3"
-        android:layout_rowSpan="2"
-        android:layout_gravity="fill" />
-    <Button android:text="4" />
-    <Button android:text="5" />
-    <Button android:text="6" />
-    <Button android:text="7" />
-    <Button android:text="8"
-        android:layout_row="3"
-        android:layout_column="2"/>
-    <Button android:text="9" />
-    <Button android:text="10" />
-    <Button android:text="11" />
-    <Button android:text="12" />
+    <!--
+        GridLayout - 网格布局控件
+            orientation - 控件的排列方向（horizontal 或 vertical）
+            columnCount - 最大列数，当排列方向为 horizontal 时此值有用
+            rowCount - 最大行数，当排列方向为 vertical 时此值有用
 
-</GridLayout>
+            layout_rowSpan - 设置该控件的行合并数（如果需要拉伸控件则将 layout_gravity 设置为 fill 即可）
+            layout_columnSpan - 设置该控件的列合并数（如果需要拉伸控件则将 layout_gravity 设置为 fill 即可）
+            layout_row - 设置该控件位于指定行
+            layout_column - 设置该控件位于指定列
+    -->
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:columnCount="3">
+
+        <Button android:text="1"
+            android:layout_columnSpan="2"
+            android:layout_gravity="fill" />
+        <Button android:text="2" />
+        <Button android:text="3"
+            android:layout_rowSpan="2"
+            android:layout_gravity="fill" />
+        <Button android:text="4" />
+        <Button android:text="5" />
+        <Button android:text="6"
+            android:layout_row="2"
+            android:layout_column="2"/>
+        <Button android:text="7" />
+        <Button android:text="8" />
+        <Button android:text="9" />
+
+    </GridLayout>
+
+
+    <!--
+        GridLayout - 网格布局控件
+            layout_rowWeight - 控件在行方向（垂直方向）上所占空间的比重
+            layout_columnWeight - 控件在列方向（水平方向）上所占空间的比重
+    -->
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:rowCount="3">
+
+        <Button android:text="1" android:layout_columnWeight="1" android:layout_rowWeight="1" />
+        <Button android:text="2" android:layout_columnWeight="1" android:layout_rowWeight="2" />
+        <Button android:text="3" android:layout_columnWeight="1" android:layout_rowWeight="1" />
+        <Button android:text="4" android:layout_columnWeight="2" android:layout_rowWeight="1" />
+        <Button android:text="5" android:layout_columnWeight="2" android:layout_rowWeight="2" />
+        <Button android:text="6" android:layout_columnWeight="2" android:layout_rowWeight="1" />
+
+    </GridLayout>
+
+</LinearLayout>
