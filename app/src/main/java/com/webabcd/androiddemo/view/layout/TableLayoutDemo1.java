@@ -21,6 +21,7 @@ public class TableLayoutDemo1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_layout_tablelayoutdemo1);
 
+        // 演示如何在 java 中控制 TableLayout 布局，仅代码演示，没有对应的显示效果
         sample();
     }
 
@@ -43,5 +44,6 @@ public class TableLayoutDemo1 extends AppCompatActivity {
         layoutParams.column = 1;
         textView.setLayoutParams(layoutParams);
 
+        tableLayout.addView(textView);
     }
 }

@@ -20,10 +20,13 @@ public class RelativeLayoutDemo1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_layout_relativelayoutdemo1);
 
+        // 演示如何在 java 中控制 RelativeLayout 布局，仅代码演示，没有对应的显示效果
         sample();
     }
 
     private void sample() {
+        RelativeLayout relativeLayout = new RelativeLayout(this);
+
         TextView textView = new TextView(this);
         // 第 1 个参数对应 xml 中的 layout_width（像素值）
         // 第 2 个参数对应 xml 中的 layout_height（像素值）
@@ -32,5 +35,7 @@ public class RelativeLayoutDemo1 extends AppCompatActivity {
         layoutParams.addRule(RelativeLayout.ABOVE, R.id.textView1); // layout_above
         layoutParams.addRule(RelativeLayout.CENTER_HORIZONTAL, R.id.textView1); // layout_centerHorizontal
         textView.setLayoutParams(layoutParams);
+
+        relativeLayout.addView(textView);
     }
 }

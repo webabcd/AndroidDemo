@@ -18,6 +18,7 @@ public class FrameLayoutDemo1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_layout_framelayoutdemo1);
 
+        // 演示如何在 java 中控制 FrameLayout 布局，仅代码演示，没有对应的显示效果
         sample();
     }
 

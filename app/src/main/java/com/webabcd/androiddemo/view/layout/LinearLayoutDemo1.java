@@ -19,6 +19,7 @@ public class LinearLayoutDemo1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_layout_linearlayoutdemo1);
 
+        // 演示如何在 java 中控制 LinearLayout 布局，仅代码演示，没有对应的显示效果
         sample();
     }
 
@@ -43,5 +44,7 @@ public class LinearLayoutDemo1 extends AppCompatActivity {
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT,
                 1.0f);
         textView.setLayoutParams(layoutParams);
+
+        linearLayout.addView(textView);
     }
 }

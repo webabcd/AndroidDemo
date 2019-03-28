@@ -12,9 +12,13 @@
 
     <!--
         链式约束分为横向链和纵向链
-        下面的例子是一个横向链（即当 a 的左侧约束至父容器的左侧，a 的右侧约束至 b 的左侧；b 的左侧约束至 a 的右侧，b 的右侧约束至 c 的左侧；c 的左侧约束至 b 的右侧，c 的右侧约束至父容器的右侧；这种方式的约束则可以称 a b c 为 横向链式约束）
+        下面的例子是一个横向链（即当 a 的左侧约束至父容器的左侧，a 的右侧约束至 b 的左侧；b 的左侧约束至 a 的右侧，b 的右侧约束至 c 的左侧；c 的左侧约束至 b 的右侧，c 的右侧约束至父容器的右侧；这种方式的约束则可以称 a b c 为横向链式约束）
 
-        layout_constraintHorizontal_chainStyle - 链式约束的样式
+        layout_constraintHorizontal_chainStyle - 水平链式约束的样式
+            spread - 链中的所有控件平均分配空间
+            spread_inside - 链中的所有控件平均分配空间（链的两端的控件贴紧父容器）
+            packed - 链中的所有控件一个紧挨着一个
+        layout_constraintVertical_chainStyle - 垂直链式约束的样式
             spread - 链中的所有控件平均分配空间
             spread_inside - 链中的所有控件平均分配空间（链的两端的控件贴紧父容器）
             packed - 链中的所有控件一个紧挨着一个

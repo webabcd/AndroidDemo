@@ -20,24 +20,33 @@ public class GridLayoutDemo1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_layout_gridlayoutdemo1);
 
+        // 演示如何在 java 中控制 GridLayout 布局，仅代码演示，没有对应的显示效果
         sample();
     }
 
     private void sample() {
         GridLayout gridLayout = new GridLayout(this);
+        // 对应 xml 中的 orientation
         gridLayout.setOrientation(GridLayout.VERTICAL);
+        // 对应 xml 中的 columnCount
         gridLayout.setColumnCount(10);
+        // 对应 xml 中的 rowCount
         gridLayout.setRowCount(10);
 
-
-        /*
         TextView textView = new TextView(this);
-        GridLayout.Spec rowSpec = GridLayout.spec(0, 2, GridLayout.UNDEFINED);
-        GridLayout.Spec columnSpec = GridLayout.spec(i, 1, GridLayout.UNDEFINED);
+        // 第 1 个参数对应 xml 中的 layout_row
+        // 第 2 个参数对应 xml 中的 layout_rowSpan
+        // 第 3 个参数对应 xml 中的 layout_gravity
+        // 第 4 个参数对应 xml 中的 layout_rowWeight
+        GridLayout.Spec rowSpec = GridLayout.spec(0, 2, GridLayout.FILL,1.0f);
+        // 第 1 个参数对应 xml 中的 layout_column
+        // 第 2 个参数对应 xml 中的 layout_columnSpan
+        // 第 3 个参数对应 xml 中的 layout_gravity
+        // 第 4 个参数对应 xml 中的 layout_columnWeight
+        GridLayout.Spec columnSpec = GridLayout.spec(0, 2, GridLayout.FILL, GridLayout.UNDEFINED);
         GridLayout.LayoutParams layoutParams = new GridLayout.LayoutParams(rowSpec, columnSpec);
-
-
         textView.setLayoutParams(layoutParams);
-        */
+
+        gridLayout.addView(textView);
     }
 }
