@@ -1,8 +1,9 @@
 /**
  * ReentrantLock 实现了 Lock 接口，关于 Lock 的相关知识点请参见“concurrent.LockDemo1”, “concurrent.LockDemo2”, “concurrent.LockDemo3”
+ *     顾名思义，ReentrantLock 是可重入锁，也就是说 ReentrantLock 可以递归调用，即支持嵌套
  *
  * ReentrantLock
- *     ReentrantLock(boolean fair) - 实例化 ReentrantLock 并指定其是否为公平锁，默认是非公平锁
+ *     new ReentrantLock(boolean fair) - 实例化 ReentrantLock 并指定其是否为公平锁，默认是非公平锁
  *         公平锁 - 按照请求锁的顺序来获取锁
  *         非公平锁 - 是否能获取到锁与请求锁的顺序无关
  *     isFair() - 是否是公平锁

@@ -60,7 +60,11 @@
         <activity android:name=".concurrent.LockDemo1" />
         <activity android:name=".concurrent.LockDemo2" />
         <activity android:name=".concurrent.LockDemo3" />
-        <activity android:name=".concurrent.ReentrantLockDemo1"></activity>
+        <activity android:name=".concurrent.ReentrantLockDemo1" />
+        <activity android:name=".concurrent.SynchronizedDemo1" />
+        <activity android:name=".concurrent.SynchronizedDemo2" />
+        <activity android:name=".concurrent.ReadWriteLockDemo1" />
+        <activity android:name=".concurrent.ReentrantReadWriteLockDemo1"></activity>
     </application>
 
 </manifest>

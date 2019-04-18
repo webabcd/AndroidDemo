@@ -17,6 +17,22 @@
       {
         "title": "Lock 演示 ReentrantLock 的使用",
         "url": ".concurrent.ReentrantLockDemo1"
+      },
+      {
+        "title": "synchronized 锁方法",
+        "url": ".concurrent.SynchronizedDemo1"
+      },
+      {
+        "title": "synchronized 锁代码块",
+        "url": ".concurrent.SynchronizedDemo2"
+      },
+      {
+        "title": "ReadWriteLock 基础",
+        "url": ".concurrent.ReadWriteLockDemo1"
+      },
+      {
+        "title": "ReadWriteLock 演示 ReentrantReadWriteLock 的使用",
+        "url": ".concurrent.ReentrantReadWriteLockDemo1"
       }
     ]
   },
