@@ -56,7 +56,11 @@
         <activity android:name=".view.layout.FrameLayoutDemo1" />
         <activity android:name=".view.layout.ConstraintLayoutDemo1" />
         <activity android:name=".view.layout.ConstraintLayoutDemo2" />
-        <activity android:name=".view.layout.ConstraintLayoutDemo3"></activity>
+        <activity android:name=".view.layout.ConstraintLayoutDemo3" />
+        <activity android:name=".concurrent.LockDemo1" />
+        <activity android:name=".concurrent.LockDemo2" />
+        <activity android:name=".concurrent.LockDemo3" />
+        <activity android:name=".concurrent.ReentrantLockDemo1"></activity>
     </application>
 
 </manifest>

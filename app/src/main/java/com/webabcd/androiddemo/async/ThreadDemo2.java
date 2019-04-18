@@ -7,6 +7,10 @@
  * 3、调用 Object 的 notifyAll() 后，多线程中的所有被 wait() 阻塞的线程都会被唤醒
  * 注：wait() 可以指定超时时间
  *
+ *
+ * 注：关于 Condition 的 await() signal() signalAll() 的说明，请参见“concurrent.LockDemo3”
+ *
+ *
  * 本示例通过生产者/消费者模型来演示 wait() notify() notifyAll() 的使用，同时演示 notify() 造成的死锁
  * 关于本例中的生产者/消费者模型，说明如下：
  * 1、Pool 是仓库，最多保存 1 件商品
@@ -124,6 +128,7 @@ public class ThreadDemo2 extends AppCompatActivity {
                         Log.d(LOG_TAG, e.toString());
                     }
                 }
+
                 int serialNo = list.remove(0);
                 Log.d(LOG_TAG, threadName + " serialNo: " + String.valueOf(serialNo));
 
