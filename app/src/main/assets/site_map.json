@@ -33,6 +33,10 @@
       {
         "title": "ReadWriteLock 演示 ReentrantReadWriteLock 的使用",
         "url": ".concurrent.ReentrantReadWriteLockDemo1"
+      },
+      {
+        "title": "volatile 与原子性, 可见性, 有序性",
+        "url": ".concurrent.VolatileDemo1"
       }
     ]
   },
