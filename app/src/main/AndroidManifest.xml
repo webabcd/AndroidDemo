@@ -65,7 +65,10 @@
         <activity android:name=".concurrent.SynchronizedDemo2" />
         <activity android:name=".concurrent.ReadWriteLockDemo1" />
         <activity android:name=".concurrent.ReentrantReadWriteLockDemo1" />
-        <activity android:name=".concurrent.VolatileDemo1"></activity>
+        <activity android:name=".concurrent.VolatileDemo1" />
+        <activity android:name=".concurrent.CountDownLatchDemo1" />
+        <activity android:name=".concurrent.CyclicBarrierDemo1" />
+        <activity android:name=".concurrent.SemaphoreDemo1"></activity>
     </application>
 
 </manifest>

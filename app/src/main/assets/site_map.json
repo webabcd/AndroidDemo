@@ -37,6 +37,18 @@
       {
         "title": "volatile 与原子性, 可见性, 有序性",
         "url": ".concurrent.VolatileDemo1"
+      },
+      {
+        "title": "CountDownLatch",
+        "url": ".concurrent.CountDownLatchDemo1"
+      },
+      {
+        "title": "CyclicBarrier",
+        "url": ".concurrent.CyclicBarrierDemo1"
+      },
+      {
+        "title": "Semaphore",
+        "url": ".concurrent.SemaphoreDemo1"
       }
     ]
   },
