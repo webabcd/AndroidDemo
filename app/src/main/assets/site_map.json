@@ -49,6 +49,10 @@
       {
         "title": "Semaphore",
         "url": ".concurrent.SemaphoreDemo1"
+      },
+      {
+        "title": "atomic 原子操作",
+        "url": ".concurrent.AtomicDemo1"
       }
     ]
   },

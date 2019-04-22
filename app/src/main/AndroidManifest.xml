@@ -68,7 +68,8 @@
         <activity android:name=".concurrent.VolatileDemo1" />
         <activity android:name=".concurrent.CountDownLatchDemo1" />
         <activity android:name=".concurrent.CyclicBarrierDemo1" />
-        <activity android:name=".concurrent.SemaphoreDemo1"></activity>
+        <activity android:name=".concurrent.SemaphoreDemo1" />
+        <activity android:name=".concurrent.AtomicDemo1"></activity>
     </application>
 
 </manifest>

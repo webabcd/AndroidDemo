@@ -35,7 +35,7 @@ public class SemaphoreDemo1 extends AppCompatActivity {
 
     private TextView _textView1;
 
-    // 实例化一个许可证中心，该中心拥有的许可证数量为 5 个，
+    // 实例化一个许可证中心，该中心拥有的许可证数量为 5 个
     private Semaphore _semaphore = new Semaphore(5);
 
     protected void onCreate(Bundle savedInstanceState) {
