@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--
+        9patch（nine patch）图片
+        9patch 图片的编辑工具在类似如下的路径 C:\Android\sdk\tools\lib\draw9patch.jar
+    -->
+
+    <!--
+        原始图
+    -->
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/img_dialog_original"/>
+
+    <!--
+        原始图，拉伸
+    -->
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:background="@drawable/img_dialog_original"/>
+
+    <!--
+        9patch 图，拉伸
+    -->
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:background="@drawable/img_dialog_ninepatch"/>
+
+</LinearLayout>

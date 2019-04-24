@@ -1,5 +1,5 @@
 /**
- * FrameLayout - 帧布局控件
+ * FrameLayout - 叠加布局控件
  */
 
 package com.webabcd.androiddemo.view.layout;

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-    FrameLayout - 帧布局控件（就是把控件一个一个地放到左上角）
+    FrameLayout - 叠加布局控件（就是把控件一个一个地放到左上角）
         foreground - 前景图片（永远处于帧布局的最上面）
         foregroundGravity - 前景图片的显示位置
 -->

@@ -69,7 +69,15 @@
         <activity android:name=".concurrent.CountDownLatchDemo1" />
         <activity android:name=".concurrent.CyclicBarrierDemo1" />
         <activity android:name=".concurrent.SemaphoreDemo1" />
-        <activity android:name=".concurrent.AtomicDemo1"></activity>
+        <activity android:name=".concurrent.AtomicDemo1" />
+        <activity android:name=".view.button.ButtonDemo1" />
+        <activity android:name=".view.button.ImageButtonDemo1" />
+        <activity android:name=".view.media.ImageViewDemo1" />
+        <activity android:name=".view.button.ButtonDemo2" />
+        <activity android:name=".view.media.ImageView2" />
+        <activity android:name=".view.media.ImageViewDemo2" />
+        <activity android:name=".view.media.ImageViewDemo3" />
+        <activity android:name=".view.media.NinePatchDemo1"></activity>
     </application>
 
 </manifest>

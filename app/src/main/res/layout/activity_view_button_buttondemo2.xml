@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--
+        设置 button 的背景样式（详见 drawable/shape_button_background.xml）
+        设置 button 的文字颜色
+    -->
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_button_background"
+        android:textColor="@color/orange"
+        android:text="按钮 1" />
+
+    <!--
+        设置 button 的各种状态下的背景样式（详见 drawable/selector_button_background.xml）
+        设置 button 的各种状态下的文字颜色（详见 color/selector_button_textcolor.xml）
+    -->
+    <Button
+        android:id="@+id/button2"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/selector_button_background"
+        android:textColor="@color/selector_button_textcolor"
+        android:text="按钮 2" />
+
+    <!--
+        在 java 中设置 button 的各种状态下的背景样式和文字颜色
+    -->
+    <Button
+        android:id="@+id/button3"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="按钮 3" />
+
+</LinearLayout>

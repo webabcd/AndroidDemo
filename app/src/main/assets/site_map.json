@@ -1,5 +1,39 @@
 [
   {
+    "title": "view（按钮类）",
+    "node": [
+      {
+        "title": "Button 响应单击事件的方法",
+        "url": ".view.button.ButtonDemo1"
+      },
+      {
+        "title": "Button 样式",
+        "url": ".view.button.ButtonDemo2"
+      },
+      {
+        "title": "ImageButton 图片按钮",
+        "url": ".view.button.ImageButtonDemo1"
+      }
+    ]
+  },
+  {
+    "title": "view（媒体类）",
+    "node": [
+      {
+        "title": "ImageView 基础",
+        "url": ".view.media.ImageViewDemo1"
+      },
+      {
+        "title": "ImageView 的 scaleType",
+        "url": ".view.media.ImageViewDemo2"
+      },
+      {
+        "title": "9patch（nine patch）图片",
+        "url": ".view.media.NinePatchDemo1"
+      }
+    ]
+  },
+  {
     "title": "concurrent",
     "node": [
       {
@@ -39,15 +73,15 @@
         "url": ".concurrent.VolatileDemo1"
       },
       {
-        "title": "CountDownLatch",
+        "title": "CountDownLatch 信号数量",
         "url": ".concurrent.CountDownLatchDemo1"
       },
       {
-        "title": "CyclicBarrier",
+        "title": "CyclicBarrier 屏障",
         "url": ".concurrent.CyclicBarrierDemo1"
       },
       {
-        "title": "Semaphore",
+        "title": "Semaphore 许可证中心",
         "url": ".concurrent.SemaphoreDemo1"
       },
       {
@@ -60,35 +94,35 @@
     "title": "view（布局类）",
     "node": [
       {
-        "title": "FrameLayout",
+        "title": "FrameLayout 叠加布局",
         "url": ".view.layout.FrameLayoutDemo1"
       },
       {
-        "title": "LinearLayout",
+        "title": "LinearLayout 线性布局",
         "url": ".view.layout.LinearLayoutDemo1"
       },
       {
-        "title": "RelativeLayout",
+        "title": "RelativeLayout 相对布局",
         "url": ".view.layout.RelativeLayoutDemo1"
       },
       {
-        "title": "TableLayout",
+        "title": "TableLayout 表格布局",
         "url": ".view.layout.TableLayoutDemo1"
       },
       {
-        "title": "GridLayout",
+        "title": "GridLayout 网格布局",
         "url": ".view.layout.GridLayoutDemo1"
       },
       {
-        "title": "ConstraintLayout 基础",
+        "title": "ConstraintLayout 约束布局（基础）",
         "url": ".view.layout.ConstraintLayoutDemo1"
       },
       {
-        "title": "ConstraintLayout 链",
+        "title": "ConstraintLayout 约束布局控件（链）",
         "url": ".view.layout.ConstraintLayoutDemo2"
       },
       {
-        "title": "ConstraintLayout 屏障/分组/占位",
+        "title": "ConstraintLayout 约束布局控件（屏障/分组/占位）",
         "url": ".view.layout.ConstraintLayoutDemo3"
       }
     ]

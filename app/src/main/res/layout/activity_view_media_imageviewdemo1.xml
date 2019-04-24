@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--
+        ImageView - 图片控件
+    -->
+
+    <!--
+        用 background 显示图片，图片会自动拉伸并填充满整个控件
+    -->
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:background="@drawable/img_sample_son"/>
+
+    <!--
+        用 src 显示图片，默认情况下图片会等比缩放，其他更多的缩放方式的相关介绍请参见 view/media/ImageViewDemo2
+        用 src 显示图片，图片支持通过 alpha 来指定不透明度
+    -->
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:src="@drawable/img_sample_son"
+        android:alpha="0.3"/>
+
+    <!--
+        为了让 ImageView 支持 maxWidth 和 maxHeight 需要将 adjustViewBounds 设置为 true
+    -->
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/img_sample_son"
+        android:adjustViewBounds="true"
+        android:maxHeight="100px"
+        android:maxWidth="200px" />
+
+    <!--
+        在 java 中设置 ImageView 的 src 或 background
+    -->
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

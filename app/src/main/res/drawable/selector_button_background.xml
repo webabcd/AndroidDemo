@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        state_enabled="false" - 按钮不可用
+        state_pressed="false" - 按钮没有被按下
+        state_pressed="true" - 按钮被按下
+
+        注意：selector 是按照顺序匹配状态的。比如一个按钮既是 state_enabled="false" 又是 state_pressed="false"，那么就看哪个状态的定义靠前就用哪个状态的样式
+    -->
+
+    <item android:state_enabled="false">
+        <shape>
+            <solid android:color="@color/gray" />
+            <stroke android:width="1dp" android:color="@color/blue" />
+            <corners android:radius="5dp" />
+        </shape>
+    </item>
+    <item android:state_pressed="false">
+        <shape>
+            <solid android:color="@color/red" />
+            <stroke android:width="1dp" android:color="@color/blue" />
+            <corners android:radius="5dp" />
+        </shape>
+    </item>
+    <item android:state_pressed="true">
+        <shape>
+            <solid android:color="@color/green" />
+            <stroke android:width="1dp" android:color="@color/blue" />
+            <corners android:radius="5dp" />
+        </shape>
+    </item>
+</selector>

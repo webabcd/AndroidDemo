@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--
+        ImageView - 图片控件
+            scaleType - 缩放方式
+    -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!--
+            fitCenter（ImageView.ScaleType.FIT_CENTER） - 等比缩放，居中显示。当 ImageView 的 width 和 height 为 wrap_content 时则按照原图大小显示
+                此值为默认值
+        -->
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:background="@color/orange"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img_sample_son" />
+
+        <!--
+            fitStart（ImageView.ScaleType.FIT_START） - 等比缩放，居左显示
+        -->
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:background="@color/orange"
+            android:scaleType="fitStart"
+            android:src="@drawable/img_sample_son" />
+
+        <!--
+            fitEnd（ImageView.ScaleType.FIT_END） - 等比缩放，居右显示
+        -->
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:background="@color/orange"
+            android:scaleType="fitEnd"
+            android:src="@drawable/img_sample_son" />
+
+        <!--
+            fitXY（ImageView.ScaleType.FIT_XY） - 拉伸并充满
+        -->
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:background="@color/orange"
+            android:scaleType="fitXY"
+            android:src="@drawable/img_sample_son" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!--
+            center（ImageView.ScaleType.CENTER） - 不缩放，居中显示，原图大小显示
+        -->
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:background="@color/orange"
+            android:scaleType="center"
+            android:src="@drawable/img_sample_son" />
+
+        <!--
+            centerCrop（ImageView.ScaleType.CENTER_CROP） - 等比缩放，居中显示，呈现的图片的宽大于等于控件的宽，呈现的图片的高大于等于控件的高
+        -->
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:background="@color/orange"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img_sample_son" />
+
+        <!--
+            centerInside（ImageView.ScaleType.CENTER_INSIDE） - 等比缩放，居中显示，，呈现的图片的宽小于等于控件的宽，呈现的图片的高小于等于控件的高
+        -->
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:background="@color/orange"
+            android:scaleType="centerInside"
+            android:src="@drawable/img_sample_son" />
+
+    </LinearLayout>
+
+    <!--
+        matrix（ImageView.ScaleType.MATRIX） - 呈现的图片和控件的左上角点对齐，原图大小显示
+    -->
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="5dp"
+        android:background="@color/orange"
+        android:scaleType="matrix"
+        android:src="@drawable/img_sample_son" />
+
+</LinearLayout>
