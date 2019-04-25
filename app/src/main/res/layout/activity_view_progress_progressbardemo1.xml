@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--
+        ProgressBar - 进度条控件
+            min - 最小值
+            max - 最大值
+            progress - 进度值（相当于播放器的当前播放位置）
+            secondaryProgress - 第二进度的进度值（相当于播放器的当前已缓冲位置）
+            indeterminate - 进度是否不可知
+    -->
+
+    <!--
+        圈圈
+    -->
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <!--
+        小圈圈（style="@android:style/Widget.ProgressBar.Small"）
+    -->
+    <ProgressBar
+        style="@android:style/Widget.ProgressBar.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"/>
+
+    <!--
+        大圈圈（style="@android:style/Widget.ProgressBar.Large"）
+    -->
+    <ProgressBar
+        style="@android:style/Widget.ProgressBar.Large"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"/>
+
+    <!--
+        长条（style="@android:style/Widget.ProgressBar.Horizontal"）
+        进度可知（indeterminate 默认值为 false）
+    -->
+    <ProgressBar
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:min="0"
+        android:max="100"
+        android:progress="30"
+        android:secondaryProgress="50"/>
+
+    <!--
+        长条（style="@android:style/Widget.ProgressBar.Horizontal"）
+        进度不可知（indeterminate="true"）
+    -->
+    <ProgressBar
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:indeterminate="true" />
+
+</LinearLayout>

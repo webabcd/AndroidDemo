@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--
+        ProgressBar - 进度条控件
+            indeterminateDrawable - 圈圈进度条的样式（参见 drawable/layerlist_progressbar_indeterminate）
+            indeterminateDuration - 圈圈旋转一圈所用的时间（单位：毫秒）
+            progressDrawable - 长条进度条的样式（参见 drawable/layerlist_progressbar_progress）
+    -->
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:indeterminateDrawable="@drawable/layerlist_progressbar_indeterminate"
+        android:indeterminateDuration="3000"/>
+
+    <ProgressBar
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:min="0"
+        android:max="100"
+        android:progress="30"
+        android:secondaryProgress="50"
+        android:progressDrawable="@drawable/layerlist_progressbar_progress"/>
+
+</LinearLayout>

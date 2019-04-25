@@ -1,5 +1,27 @@
 [
   {
+    "title": "view（自定义）",
+    "node": [
+      {
+        "title": "aaaaaaaaaaa",
+        "url": ".view.custom.MyLoadingDemo1"
+      }
+    ]
+  },
+  {
+    "title": "view（进度类）",
+    "node": [
+      {
+        "title": "ProgressBar 基础",
+        "url": ".view.progress.ProgressBarDemo1"
+      },
+      {
+        "title": "ProgressBar 样式",
+        "url": ".view.progress.ProgressBarDemo2"
+      }
+    ]
+  },
+  {
     "title": "view（选择类）",
     "node": [
       {

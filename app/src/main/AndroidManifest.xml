@@ -85,7 +85,10 @@
         <activity android:name=".view.selection.RadioButtonDemo2" />
         <activity android:name=".view.selection.CheckBoxDemo2" />
         <activity android:name=".view.selection.ToggleButtonDemo2" />
-        <activity android:name=".view.selection.SwitchDemo2"></activity>
+        <activity android:name=".view.selection.SwitchDemo2" />
+        <activity android:name=".view.progress.ProgressBarDemo1" />
+        <activity android:name=".view.progress.ProgressBarDemo2" />
+        <activity android:name=".view.custom.MyLoadingDemo1"></activity>
     </application>
 
 </manifest>
