@@ -6,7 +6,9 @@
         state_pressed="false" - 按钮没有被按下
         state_pressed="true" - 按钮被按下
 
-        注意：selector 是按照顺序匹配状态的。比如一个按钮既是 state_enabled="false" 又是 state_pressed="false"，那么就看哪个状态的定义靠前就用哪个状态的样式
+        注意：
+        1、selector 是按照顺序匹配状态的，先匹配到哪个就用哪个。比如一个按钮既是 state_enabled="false" 又是 state_pressed="false"，那么就看哪个状态的定义靠前就用哪个状态的样式
+        2、一个 item 是可以有多个 state 的
     -->
 
     <item android:state_enabled="false">

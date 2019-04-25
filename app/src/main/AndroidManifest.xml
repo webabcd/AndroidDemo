@@ -77,7 +77,15 @@
         <activity android:name=".view.media.ImageView2" />
         <activity android:name=".view.media.ImageViewDemo2" />
         <activity android:name=".view.media.ImageViewDemo3" />
-        <activity android:name=".view.media.NinePatchDemo1"></activity>
+        <activity android:name=".view.media.NinePatchDemo1" />
+        <activity android:name=".view.selection.RadioButtonDemo1" />
+        <activity android:name=".view.selection.CheckBoxDemo1" />
+        <activity android:name=".view.selection.ToggleButtonDemo1" />
+        <activity android:name=".view.selection.SwitchDemo1" />
+        <activity android:name=".view.selection.RadioButtonDemo2" />
+        <activity android:name=".view.selection.CheckBoxDemo2" />
+        <activity android:name=".view.selection.ToggleButtonDemo2" />
+        <activity android:name=".view.selection.SwitchDemo2"></activity>
     </application>
 
 </manifest>

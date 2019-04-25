@@ -17,4 +17,8 @@
         <item name="android:textSize">32dp</item>
     </style>
 
+    <style name="SwitchTextAppearance" parent="@android:style/TextAppearance.Holo.Small">
+        <item name="android:textColor">@color/orange</item>
+    </style>
+
 </resources>

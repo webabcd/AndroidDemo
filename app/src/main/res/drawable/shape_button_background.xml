@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <!--背景-->
+    <!--填充-->
     <solid android:color="@android:color/transparent" />
     <!--边框-->
     <stroke

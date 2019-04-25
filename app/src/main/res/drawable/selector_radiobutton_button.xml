@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        state_enabled="true" - 可用
+        state_enabled="false" - 不可用
+        state_checked="true" - 选中
+        state_checked="false" - 未选中
+
+        注意：可以直接在 item 的 drawable 指定图片，但是这样只能按照原图的大小显示，如果需要指定图片的显示大小的话，则需要像本例这样使用 layer-list
+    -->
+
+    <item
+        android:state_enabled="true"
+        android:state_checked="true"
+        android:drawable="@drawable/layerlist_radiobutton_button_checked" />
+    <item
+        android:state_enabled="true"
+        android:state_checked="false"
+        android:drawable="@drawable/layerlist_radiobutton_button_unchecked" />
+</selector>

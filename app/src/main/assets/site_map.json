@@ -1,5 +1,42 @@
 [
   {
+    "title": "view（选择类）",
+    "node": [
+      {
+        "title": "RadioButton 基础",
+        "url": ".view.selection.RadioButtonDemo1"
+      },
+      {
+        "title": "RadioButton 样式",
+        "url": ".view.selection.RadioButtonDemo2"
+      },
+      {
+        "title": "CheckBox 基础",
+        "url": ".view.selection.CheckBoxDemo1"
+      },
+      {
+        "title": "CheckBox 样式",
+        "url": ".view.selection.CheckBoxDemo2"
+      },
+      {
+        "title": "ToggleButton 基础",
+        "url": ".view.selection.ToggleButtonDemo1"
+      },
+      {
+        "title": "ToggleButton 样式",
+        "url": ".view.selection.ToggleButtonDemo2"
+      },
+      {
+        "title": "Switch 基础",
+        "url": ".view.selection.SwitchDemo1"
+      },
+      {
+        "title": "Switch 样式",
+        "url": ".view.selection.SwitchDemo2"
+      }
+    ]
+  },
+  {
     "title": "view（按钮类）",
     "node": [
       {

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--填充-->
+    <solid android:color="@color/green" />
+    <!--边框（因为 track 的高度与 thumb 是一样的，所以如果需要 track 比 thumb 的高度小的话，可以像下面这样将边框设置为透明）-->
+    <stroke
+        android:width="8dp"
+        android:color="#00ffffff" />
+    <!--圆角-->
+    <corners android:radius="10dp" />
+
+    <!--注：无法通过 size 来设置 switch 的 track 的高-->
+    <!--<size android:height="5dp" />-->
+</shape>

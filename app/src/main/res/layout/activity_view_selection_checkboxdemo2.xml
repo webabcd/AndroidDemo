@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--
+        CheckBox - 复选框控件
+            button - 设置复选框图片在各种状态下的样式（参见 drawable/selector_checkbox_button.xml）
+    -->
+
+    <CheckBox
+        android:id="@+id/checkBox1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:button="@drawable/selector_checkbox_button"
+        android:text="checkBox1" />
+
+    <CheckBox
+        android:id="@+id/checkBox2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:button="@drawable/selector_checkbox_button"
+        android:text="checkBox2" />
+
+    <!--
+        在 java 中设置 CheckBox 的 button
+        调整复选框的图标与文字的间距可以通过 padding 来实现
+    -->
+    <CheckBox
+        android:id="@+id/checkBox3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:text="checkBox2" />
+
+</LinearLayout>

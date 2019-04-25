@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--
+        这样可以指定图片的显示大小
+    -->
+    <item
+        android:width="32dp"
+        android:height="32dp"
+        android:drawable="@drawable/img_dialog_ninepatch" />
+</layer-list>

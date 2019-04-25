@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--
+        Switch - 状态切换控件
+            checked - 选中状态
+    -->
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true" />
+
+    <!--
+        Switch - 状态切换控件
+            switchMinWidth - 控件的宽度
+            showText - 是否需要显示 textOff 和 textOn 指定的文本
+            textOn - 选中状态时，thumb 上显示的文本
+            textOff - 未选中状态时，thumb 上显示的文本
+    -->
+    <Switch
+        android:id="@+id/switch2"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:switchMinWidth="200dp"
+        android:showText="true"
+        android:textOff="关"
+        android:textOn="开" />
+
+</LinearLayout>
+

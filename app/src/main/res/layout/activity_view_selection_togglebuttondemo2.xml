@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--
+        ToggleButton - 双状态按钮
+            setButtonDrawable() - 设置双状态按钮在各种状态下的样式（参见 drawable/selector_togglebutton_button.xml）
+    -->
+    <ToggleButton
+        android:id="@+id/toggleButton1"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:button="@drawable/selector_togglebutton_button"
+        android:textOff="@null"
+        android:textOn="@null"/>
+
+    <!--
+        在 java 中设置 ToggleButton 的 button
+    -->
+    <ToggleButton
+        android:id="@+id/toggleButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textOff="关"
+        android:textOn="开"/>
+
+</LinearLayout>

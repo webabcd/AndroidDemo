@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--
+        RadioGroup - 单选框组（要声明 id 否则会有问题）
+        RadioButton - 单选框（要声明 id 否则会有问题）
+            button - 设置单选框图片在各种状态下的样式（参见 drawable/selector_radiobutton_button.xml）
+    -->
+
+    <RadioGroup
+        android:id="@+id/radioGroup1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/radioButton1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@drawable/selector_radiobutton_button"
+            android:checked="true"
+            android:text="radioButton1" />
+
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@drawable/selector_radiobutton_button"
+            android:text="radioButton2" />
+    </RadioGroup>
+
+
+    <!--
+        在 java 中设置 RadioButton 的 button
+        调整单选框的图标与文字的间距可以通过 padding 来实现
+    -->
+    <RadioGroup
+        android:id="@+id/radioGroup2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/radioButton3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:text="radioButton3" />
+
+        <RadioButton
+            android:id="@+id/radioButton4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:text="radioButton4" />
+    </RadioGroup>
+
+</LinearLayout>
