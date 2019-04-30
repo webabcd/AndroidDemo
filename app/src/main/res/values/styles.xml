@@ -17,8 +17,33 @@
         <item name="android:textSize">32dp</item>
     </style>
 
-    <style name="SwitchTextAppearance" parent="@android:style/TextAppearance.Holo.Small">
+
+    <!--
+        引用示例参见 view/selection/SwitchDemo2
+    -->
+    <style name="MySwitchTextAppearance" parent="@android:style/TextAppearance.Holo.Small">
         <item name="android:textColor">@color/orange</item>
+    </style>
+
+
+    <!--
+        引用示例参见 view/progress/SeekBarDemo2（通过 minHeight, maxHeight 来指定 SeekBar 的高度）
+    -->
+    <style name="MySeekBarStyle" >
+        <item name="android:minHeight">10dp</item>
+        <item name="android:maxHeight">10dp</item>
+        <item name="android:progressDrawable">@drawable/layerlist_seekbar_progress</item>
+        <item name="android:thumb">@drawable/selector_seekbar_thumb</item>
+    </style>
+
+
+    <!--
+        引用示例参见 view/progress/RatingBarDemo2（通过 minHeight, maxHeight 来指定 RatingBar 的高度）
+    -->
+    <style name="MyRatingBarStyle" parent="@android:style/Widget.RatingBar">
+        <item name="android:minHeight">40dp</item>
+        <item name="android:maxHeight">40dp</item>
+        <item name="android:progressDrawable">@drawable/layerlist_ratingbar_progress</item>
     </style>
 
 </resources>

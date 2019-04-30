@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--
+        SeekBar - 拖动条
+            注：自定义 SeekBar 的样式时，默认 progressBar 会变成与 thumb 一样高，可以通过设置 SeekBar 的 minHeight, maxHeight 来避免这种情况
+    -->
+
+    <!--
+        通过 style 自定义 SeekBar 的样式（参见 values/styles.xml 中的“MySeekBarStyle”）
+    -->
+    <SeekBar
+        android:id="@+id/seekBar1"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:min="0"
+        android:max="100"
+        android:progress="10"
+        android:secondaryProgress="70"
+        style="@style/MySeekBarStyle" />
+
+    <!--
+        通过 progressDrawable, thumb 自定义 SeekBar 的样式（参见 drawable/layerlist_seekbar_progress, drawable/selector_seekbar_thumb）
+    -->
+    <SeekBar
+        android:id="@+id/seekBar2"
+        android:layout_marginTop="10dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:min="0"
+        android:max="100"
+        android:progress="10"
+        android:secondaryProgress="70"
+
+        android:minHeight="10dp"
+        android:maxHeight="10dp"
+        android:progressDrawable="@drawable/layerlist_seekbar_progress"
+        android:thumb="@drawable/selector_seekbar_thumb"/>
+
+    <!--
+        在 java 中设置 SeekBar 的样式
+    -->
+    <SeekBar
+        android:id="@+id/seekBar3"
+        android:layout_marginTop="10dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:min="0"
+        android:max="100"
+        android:progress="10"
+        android:secondaryProgress="70"/>
+
+</LinearLayout>

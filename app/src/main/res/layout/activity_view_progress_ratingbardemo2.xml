@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--
+        RatingBar - 评分条
+    -->
+
+    <!--
+        通过 style 自定义 RatingBar 的样式（参见 values/styles.xml 中的“MyRatingBarStyle”）
+    -->
+    <RatingBar
+        android:id="@+id/ratingBar1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/MyRatingBarStyle"/>
+
+    <!--
+        通过 progressDrawable 自定义 RatingBar 的样式（参见 drawable/layerlist_ratingbar_progress）
+        通过 minHeight, maxHeight 来指定 RatingBar 的高度
+    -->
+    <RatingBar
+        android:id="@+id/ratingBar2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:numStars="5"
+        android:stepSize="0.5"
+        android:rating="3"
+        android:minHeight="40dp"
+        android:maxHeight="40dp"
+        android:progressDrawable="@drawable/layerlist_ratingbar_progress"/>
+
+</LinearLayout>

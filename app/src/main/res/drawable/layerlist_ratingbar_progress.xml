@@ -1,0 +1,24 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        这里用于定义评分条“星星”的图片资源
+        注：评分条的多个“星星”之间的间隔要通过“星星”图片自身的透明部分来实现（无法在代码中指定）
+        注：不能用 shape 或 .9 图片（因为用 shape 或 .9 图片话，他们会拉伸显示，而不会平铺显示，这样就无法实现多个“星星”的效果了）
+    -->
+
+    <!--
+        0 分图片
+    -->
+    <item android:id="@android:id/background" android:drawable="@drawable/ic_ratingbar_background" />
+
+    <!--
+        0.5 分的右半边图片
+    -->
+    <item android:id="@android:id/secondaryProgress" android:drawable="@drawable/ic_ratingbar_secondaryprogress" />
+
+    <!--
+        1 分图片以及 0.5 分的左半边图片
+    -->
+    <item android:id="@android:id/progress" android:drawable="@drawable/ic_ratingbar_progress" />
+
+</layer-list>

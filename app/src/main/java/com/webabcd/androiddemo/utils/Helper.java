@@ -4,8 +4,11 @@ import android.content.Context;
 import android.content.res.AssetManager;
 import android.content.res.Resources;
 import android.graphics.Point;
+import android.graphics.drawable.Drawable;
 import android.support.v4.content.ContextCompat;
 import android.view.WindowManager;
+
+import com.webabcd.androiddemo.R;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -83,6 +86,23 @@ public class Helper {
      */
     public static int getScreenOrientation(Context context) {
         return context.getResources().getConfiguration().orientation;
+    }
+
+    /**
+     * dp 转 px
+     */
+    public static int dp2px(Context context, int dpValue) {
+        float scale = context.getResources().getDisplayMetrics().density;
+        int pxValue = (int) (dpValue * scale + 0.5f);
+
+        return pxValue;
+    }
+
+    /**
+     * id 转 drawable
+     */
+    public static Drawable id2drawable(Context context, int drawableId) {
+        return context.getResources().getDrawable(drawableId);
     }
 }
 

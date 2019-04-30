@@ -18,6 +18,22 @@
       {
         "title": "ProgressBar 样式",
         "url": ".view.progress.ProgressBarDemo2"
+      },
+      {
+        "title": "SeekBar 基础",
+        "url": ".view.progress.SeekBarDemo1"
+      },
+      {
+        "title": "SeekBar 样式",
+        "url": ".view.progress.SeekBarDemo2"
+      },
+      {
+        "title": "RatingBar 基础",
+        "url": ".view.progress.RatingBarDemo1"
+      },
+      {
+        "title": "RatingBar 样式",
+        "url": ".view.progress.RatingBarDemo2"
       }
     ]
   },

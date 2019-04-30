@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--
+        SeekBar - 拖动条
+            min - 最小值
+            max - 最大值
+            progress - 进度值（相当于播放器的当前播放位置）
+            secondaryProgress - 第二进度的进度值（相当于播放器的当前已缓冲位置）
+    -->
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <SeekBar
+        android:id="@+id/seekBar1"
+        android:layout_width="300dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:min="0"
+        android:max="100"
+        android:progress="10"
+        android:secondaryProgress="70" />
+
+</LinearLayout>

@@ -30,6 +30,8 @@ public class SwitchDemo2 extends AppCompatActivity {
     private void sample() {
         _switch2.setThumbResource(R.drawable.selector_switch_thumb);
         _switch2.setTrackResource(R.drawable.selector_switch_track);
-        _switch2.setSwitchTextAppearance(this, R.style.SwitchTextAppearance);
+
+        // 参见 values/styles.xml 中的“MySwitchTextAppearance”
+        _switch2.setSwitchTextAppearance(this, R.style.MySwitchTextAppearance);
     }
 }

@@ -1,0 +1,37 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        拖动条背景的样式
+    -->
+    <item android:id="@android:id/background">
+        <shape>
+            <solid android:color="@color/red" />
+            <corners android:radius="10dp" />
+        </shape>
+    </item>
+
+    <!--
+        拖动条第二进度的样式
+    -->
+    <item android:id="@android:id/secondaryProgress">
+        <clip>
+            <shape>
+                <solid android:color="@color/green" />
+                <corners android:radius="10dp" />
+            </shape>
+        </clip>
+    </item>
+
+    <!--
+        拖动条进度的样式
+    -->
+    <item android:id="@android:id/progress">
+        <clip>
+            <shape>
+                <solid android:color="@color/blue" />
+                <corners android:radius="10dp" />
+            </shape>
+        </clip>
+    </item>
+
+</layer-list>
