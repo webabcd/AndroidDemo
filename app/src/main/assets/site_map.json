@@ -71,6 +71,14 @@
       {
         "title": "Switch 样式",
         "url": ".view.selection.SwitchDemo2"
+      },
+      {
+        "title": "NumberPicker 基础",
+        "url": ".view.selection.NumberPickerDemo1"
+      },
+      {
+        "title": "NumberPicker 样式",
+        "url": ".view.selection.NumberPickerDemo2"
       }
     ]
   },

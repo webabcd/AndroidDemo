@@ -92,7 +92,12 @@
         <activity android:name=".view.progress.SeekBarDemo1" />
         <activity android:name=".view.progress.SeekBarDemo2" />
         <activity android:name=".view.progress.RatingBarDemo1" />
-        <activity android:name=".view.progress.RatingBarDemo2"></activity>
+        <activity android:name=".view.progress.RatingBarDemo2" />
+        <activity android:name=".view.time.DatePickerDemo1" />
+        <activity android:name=".view.time.TimePickerDemo1" />
+        <activity android:name=".view.time.CalendarViewDemo1" />
+        <activity android:name=".view.selection.NumberPickerDemo1" />
+        <activity android:name=".view.selection.NumberPickerDemo2"></activity>
     </application>
 
 </manifest>
