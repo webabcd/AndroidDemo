@@ -1,5 +1,7 @@
 /**
  * 实现 Html.TagHandler 接口，用于解析并呈现自定义标签（本例是 <hello /> 标签）
+ *
+ * 本类的使用请参见 view/text/TextViewDemo4.java
  */
 
 package com.webabcd.androiddemo.utils;

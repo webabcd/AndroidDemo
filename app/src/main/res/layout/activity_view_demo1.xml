@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="300px"
+        android:layout_margin="50dp"
+        android:background="@color/yellow">
+
+        <TextView
+            android:id="@+id/view1"
+            android:layout_width="200px"
+            android:layout_height="100px"
+            android:background="@color/red"
+            android:textColor="@color/white"
+            android:text="view1"/>
+
+        <TextView
+            android:id="@+id/view2"
+            android:layout_width="200px"
+            android:layout_height="100px"
+            android:layout_marginLeft="100px"
+            android:layout_marginTop="50px"
+            android:background="@color/green"
+            android:textColor="@color/white"
+            android:text="view2"/>
+
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="scrollTo"/>
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="scrollBy"/>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

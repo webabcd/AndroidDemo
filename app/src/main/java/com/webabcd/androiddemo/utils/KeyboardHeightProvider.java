@@ -2,6 +2,8 @@
  * 用于获取软键盘的高度
  *
  * 原理就是使用一个全屏的 PopupWindow，当弹出软键盘时其会收缩，然后根据其收缩后的大小来计算软键盘的高度
+ *
+ * 本类的使用请参见 view/text/EditTextDemo3.java
  */
 
 package com.webabcd.androiddemo.utils;

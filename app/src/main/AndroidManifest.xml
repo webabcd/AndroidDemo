@@ -18,7 +18,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.BasicDemo1" />
+        <activity android:name=".view.ViewDemo1" />
         <activity android:name=".ui.BasicDemo1" />
         <activity android:name=".service.BasicDemo1" />
 
@@ -97,7 +97,12 @@
         <activity android:name=".view.time.TimePickerDemo1" />
         <activity android:name=".view.time.CalendarViewDemo1" />
         <activity android:name=".view.selection.NumberPickerDemo1" />
-        <activity android:name=".view.selection.NumberPickerDemo2"></activity>
+        <activity android:name=".view.selection.NumberPickerDemo2" />
+        <activity android:name=".ui.UIDemo1" />
+        <activity android:name=".view.custom.MyLayoutDemo1" />
+        <activity android:name=".view.custom.CustomView1Demo" />
+        <activity android:name=".view.custom.CustomView2Demo" />
+        <activity android:name=".view.custom.CustomView3Demo"></activity>
     </application>
 
 </manifest>

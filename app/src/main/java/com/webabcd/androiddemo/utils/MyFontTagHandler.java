@@ -1,5 +1,7 @@
 /**
  * 实现 Html.TagHandler 接口，用于解析并呈现自定义标签（本例是 <myfont /> 标签），同时处理该自定义标签的自定义属性（本例处理了 <myfont /> 标签的 color 属性和 size 属性）
+ *
+ * 本类的使用请参见 view/text/TextViewDemo4.java
  */
 
 package com.webabcd.androiddemo.utils;

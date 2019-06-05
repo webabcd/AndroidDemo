@@ -1,7 +1,8 @@
 /**
- * 实现 Html.ImageGetter 接口，用于解析并呈现 img 标签
- *
+ * 实现 Html.ImageGetter 接口，用于解析并呈现 <img /> 标签
  * 本例可以显示本地图片，drawable 图片，http 图片
+ *
+ * 本类的使用请参见 view/text/TextViewDemo4.java
  */
 
 package com.webabcd.androiddemo.utils;

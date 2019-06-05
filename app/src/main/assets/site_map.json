@@ -3,8 +3,38 @@
     "title": "view（自定义）",
     "node": [
       {
+        "title": "通过一个自定义 View 来演示 measure, layout, draw",
+        "url": ".view.custom.CustomView1Demo"
+      },
+      {
+        "title": "通过一个自定义 ViewGroup 来演示 measure, layout, draw",
+        "url": ".view.custom.CustomView2Demo"
+      },
+      {
         "title": "aaaaaaaaaaa",
-        "url": ".view.custom.MyLoadingDemo1"
+        "url": ".view.custom.MyLayoutDemo1"
+      },
+      {
+        "title": "dddddddddddd",
+        "url": ".view.custom.CustomView3Demo"
+      }
+    ]
+  },
+  {
+    "title": "UI",
+    "node": [
+      {
+        "title": "UIDemo1",
+        "url": ".ui.UIDemo1"
+      }
+    ]
+  },
+  {
+    "title": "view（基础）",
+    "node": [
+      {
+        "title": "位置",
+        "url": ".view.ViewDemo1"
       }
     ]
   },
@@ -326,15 +356,6 @@
       {
         "title": "EditText 软键盘",
         "url": ".view.text.EditTextDemo3"
-      }
-    ]
-  },
-  {
-    "title": "View",
-    "node": [
-      {
-        "title": "android 基础示例 // 获取文本框的实际高度",
-        "url": ".view.BasicDemo1"
       }
     ]
   },
