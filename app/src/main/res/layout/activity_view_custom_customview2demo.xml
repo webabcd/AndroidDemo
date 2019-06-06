@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    CustomView2 - 继承 ViewGroup 实现一个自定义的 ViewGroup（用于演示 measure, layout, draw）
+-->
 <com.webabcd.androiddemo.view.custom.CustomView2 xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"

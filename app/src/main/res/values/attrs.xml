@@ -19,4 +19,9 @@
     <declare-styleable name="CustomView2">
 
     </declare-styleable>
+
+    <declare-styleable name="CustomView3">
+        <attr name="usernameLabel" format="string" />
+        <attr name="passwordLabel" format="string" />
+    </declare-styleable>
 </resources>
