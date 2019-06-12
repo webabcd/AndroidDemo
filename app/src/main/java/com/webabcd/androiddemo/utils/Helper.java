@@ -104,5 +104,9 @@ public class Helper {
     public static Drawable id2drawable(Context context, int drawableId) {
         return context.getResources().getDrawable(drawableId);
     }
+
+    public static String int2Hex(int intValue) {
+        return String.format("%02x", intValue);
+    }
 }
 

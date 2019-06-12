@@ -1,27 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!--name 是自定义属性名，一般采用驼峰命名，可以随意。 format 是属性的单位-->
-    <!--dimension（字体大小）string（字符串）color（颜色）boolean（布尔类型）float（浮点型）integer（整型）enmu（枚举）fraction（百分比）等。不了解的可以百度一把。-->
-    <attr name="titleSize" format="dimension"></attr>
-    <attr name="titleText" format="string"></attr>
-    <attr name="titleColor" format="color"></attr>
-    <attr name="titleBackgroundColor" format="color"></attr>
-   <!--https://blog.csdn.net/wshiduo/article/details/57417582-->
-
-    <!--name 是自定义控件的类名-->
     <declare-styleable name="CustomView1">
-        <attr name="titleSize"></attr>
-        <attr name="titleText"></attr>
-        <attr name="titleColor"></attr>
-        <attr name="titleBackgroundColor"></attr>
+        <attr name="titleSize" format="dimension" />
+        <attr name="titleText" format="string" />
+        <attr name="titleColor" format="color" />
+        <attr name="titleBackgroundColor" format="color" />
     </declare-styleable>
 
-    <declare-styleable name="CustomView2">
 
-    </declare-styleable>
+    <declare-styleable name="CustomView2" />
+
 
     <declare-styleable name="CustomView3">
         <attr name="usernameLabel" format="string" />
         <attr name="passwordLabel" format="string" />
+    </declare-styleable>
+
+
+    <!--演示自定义控件的自定义属性-->
+    <!--
+        attr - 用于定义一个属性
+            name - 属性名
+            format - 属性值的类型（string, integer, boolean, float, fraction, color, dimension, enum, flags, reference）
+    -->
+    <!--
+        在 <resources /> 节点下定义属性，其可被所有控件引用
+    -->
+    <attr name="myAttr01" format="string" />
+    <!--
+        declare-styleable - 用于定义一个自定义控件的全部自定义属性
+            name - 自定义控件的类名
+        对于本例来说：
+        1、在自定义控件的实现代码中，通过 com.webabcd.androiddemo.R.styleable.CustomView4 来引用这套属性资源
+        2、在自定义控件的使用的 xml 中，声明命名空间 xmlns:app="http://schemas.android.com/apk/res-auto" 后，
+           在 <com.webabcd.androiddemo.view.custom.CustomView4 /> 中可以通过 app:attr01, app:attr02 之类的来设置自定义属性
+    -->
+    <declare-styleable name="CustomView4">
+        <!--
+            通过如下方式可以直接引用系统自带的属性，在 java 中通过 com.webabcd.androiddemo.R.styleable.CustomView4_android_text 来标识此属性
+        -->
+        <attr name="android:text" />
+        <!--
+            在 java 中通过 com.webabcd.androiddemo.R.styleable.CustomView4_attr01 来标识此属性
+        -->
+        <attr name="attr01" format="string" />
+        <attr name="attr02" format="integer" />
+        <attr name="attr03" format="boolean" />
+        <attr name="attr04" format="float" />
+        <!--
+            百分数类型，比如 30%
+        -->
+        <attr name="attr05" format="fraction" />
+        <!--
+            颜色类型，比如 #ffff0000
+        -->
+        <attr name="attr06" format="color" />
+        <!--
+            尺寸类型，比如 24sp
+        -->
+        <attr name="attr07" format="dimension" />
+        <!--
+            枚举类型的定义
+        -->
+        <attr name="attr08" format="enum">
+            <enum name="enum1" value="0" />
+            <enum name="enum2" value="1" />
+            <enum name="enum3" value="2" />
+        </attr>
+        <!--
+            支持 flag 的枚举类型的定义
+        -->
+        <attr name="attr09" format="flags">
+            <flag name = "flag1" value = "1" />
+            <flag name = "flag2" value = "2" />
+            <flag name = "flag3" value = "4" />
+            <flag name = "flag4" value = "8" />
+            <flag name = "flag5" value = "16" />
+        </attr>
+        <!--
+            引用类型，比如 @drawable/img_sample_son
+        -->
+        <attr name="attr10" format="reference" />
+        <!--
+            一个属性可以支持多个类型
+        -->
+        <attr name="attr11" format="reference|string" />
+        <!--
+            引用在 <resources /> 节点下定义的属性
+        -->
+        <attr name="myAttr01" />
     </declare-styleable>
 </resources>

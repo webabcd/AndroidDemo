@@ -102,7 +102,8 @@
         <activity android:name=".view.custom.MyLayoutDemo1" />
         <activity android:name=".view.custom.CustomView1Demo" />
         <activity android:name=".view.custom.CustomView2Demo" />
-        <activity android:name=".view.custom.CustomView3Demo"></activity>
+        <activity android:name=".view.custom.CustomView3Demo" />
+        <activity android:name=".view.custom.CustomView4Demo"></activity>
     </application>
 
 </manifest>

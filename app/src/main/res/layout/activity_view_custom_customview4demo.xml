@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="运行结果请见 Logcat 日志" />
+
+    <!--
+        演示自定义控件的自定义属性的使用
+        声明命名空间 xmlns:app="http://schemas.android.com/apk/res-auto" 后，在 <com.webabcd.androiddemo.view.custom.CustomView4 /> 中可以通过 app:attr01, app:attr02 之类的来设置自定义属性
+
+        android:text - 设置自定义控件引用的系统自带的属性
+        app:attr05 - 设置百分数类型的属性
+        app:attr07 - 设置尺寸类型的属性
+        app:attr09 - 设置 flag 类型的枚举
+        app:attr11 - 此属性支持多个类型
+    -->
+    <com.webabcd.androiddemo.view.custom.CustomView4
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="i am webabcd"
+        app:attr01="abc"
+        app:attr02="100"
+        app:attr03="true"
+        app:attr04="0.5"
+        app:attr05="50%"
+        app:attr06="#ff0000"
+        app:attr07="10sp"
+        app:attr08="enum3"
+        app:attr09="flag1|flag4|flag5"
+        app:attr10="@drawable/img_sample_son"
+        app:myAttr01="webabcd" />
+
+    <com.webabcd.androiddemo.view.custom.CustomView4
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:attr11="green" />
+
+    <com.webabcd.androiddemo.view.custom.CustomView4
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:attr11="@drawable/img_sample_son" />
+
+</LinearLayout>

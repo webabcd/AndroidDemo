@@ -15,6 +15,10 @@
         "url": ".view.custom.CustomView3Demo"
       },
       {
+        "title": "自定义控件的自定义属性",
+        "url": ".view.custom.CustomView4Demo"
+      },
+      {
         "title": "aaaaaaaaaaa",
         "url": ".view.custom.MyLayoutDemo1"
       },

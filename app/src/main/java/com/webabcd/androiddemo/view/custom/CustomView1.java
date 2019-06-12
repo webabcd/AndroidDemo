@@ -88,6 +88,7 @@ public class CustomView1 extends View {
         super(context, attrs);
 
         // 属性定义在 res/values/attrs.xml
+        // 获取用户在 xml 端设置的自定义属性的值
         final TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.CustomView1, 0, 0);
         if (a != null) {
             int n = a.getIndexCount();
@@ -109,9 +110,9 @@ public class CustomView1 extends View {
                 }
             }
             a.recycle();
-
-            init();
         }
+
+        init();
     }
 
     private void init() {
