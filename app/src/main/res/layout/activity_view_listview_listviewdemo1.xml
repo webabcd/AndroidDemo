@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--
+        ListView 显示 res/values/arrays.xml 中定义的数组数据（参见 res/values/arrays.xml 中的名为 arrayCountry 的数组）
+            entries - 指定需要显示的数组资源
+    -->
+    <ListView
+        android:id="@+id/listView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/arrayCountry" />
+
+    <ListView
+        android:id="@+id/listView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10sp" />
+
+    <ListView
+        android:id="@+id/listView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10sp" />
+
+</LinearLayout>

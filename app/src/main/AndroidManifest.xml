@@ -11,6 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".view.listview.ListViewDemo3"></activity>
+        <activity android:name=".view.listview.ListViewDemo2" />
+        <activity android:name=".view.listview.ListViewDemo1" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -103,7 +106,11 @@
         <activity android:name=".view.custom.CustomView1Demo" />
         <activity android:name=".view.custom.CustomView2Demo" />
         <activity android:name=".view.custom.CustomView3Demo" />
-        <activity android:name=".view.custom.CustomView4Demo"></activity>
+        <activity android:name=".view.custom.CustomView4Demo" />
+        <activity android:name=".view.ViewDemo2" />
+        <activity android:name=".view.ViewDemo3" />
+        <activity android:name=".activity.ActivityDemo1" />
+        <activity android:name=".view.webview.WebViewDemo1" />
     </application>
 
 </manifest>

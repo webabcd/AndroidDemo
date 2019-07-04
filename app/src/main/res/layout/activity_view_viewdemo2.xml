@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--
+        layout_margin, layout_marginLeft, layout_marginTop, layout_marginRight, layout_marginBottom, layout_marginStart, layout_marginEnd - 控件与父容器的间距
+            layout_marginStart - 文字是从左到右排列方式的话则与 layout_marginLeft 一致，反之则与 layout_marginRight 一致
+            layout_marginEnd - 文字是从左到右排列方式的话则与 layout_marginRight 一致，反之则与 layout_marginLeft 一致
+        padding, paddingLeft, paddingTop, paddingRight, paddingBottom, paddingStart, paddingEnd - 控件边框与控件内容的间距
+            paddingStart - 文字是从左到右排列方式的话则与 paddingLeft 一致，反之则与 paddingRight 一致
+            paddingEnd - 文字是从左到右排列方式的话则与 paddingRight 一致，反之则与 paddingLeft 一致
+    -->
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/red"
+        android:textColor="@color/white"
+        android:text="textView1"
+        android:layout_margin="20sp"
+        android:padding="20sp" />
+
+    <!--
+        在 java 代码中设置 margin 和 padding
+    -->
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/red"
+        android:textColor="@color/white"
+        android:text="textView2" />
+
+    <!--
+        visibility - 可见性
+            visible - 可见（在 java 中通过 setVisibility(View.VISIBLE) 设置）
+            invisible - 不可见，但是占位（在 java 中通过 setVisibility(View.INVISIBLE) 设置）
+            gone - 不可见，且不占位（在 java 中通过 setVisibility(View.GONE) 设置）
+    -->
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/red"
+        android:textColor="@color/white"
+        android:text="textView3"
+        android:visibility="gone" />
+
+    <!--
+        alpha - 不透明度（在 java 中通过 setAlpha() 设置）
+    -->
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/red"
+        android:textColor="@color/white"
+        android:text="textView4"
+        android:alpha="0.3" />
+
+</LinearLayout>

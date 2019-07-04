@@ -39,7 +39,7 @@ public class ViewDemo1 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_demo1);
+        setContentView(R.layout.activity_view_viewdemo1);
 
         _view1 = (TextView) findViewById(R.id.view1);
         _view2 = (TextView) findViewById(R.id.view2);
