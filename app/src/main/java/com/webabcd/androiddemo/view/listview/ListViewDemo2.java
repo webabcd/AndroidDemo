@@ -33,8 +33,8 @@ public class ListViewDemo2 extends AppCompatActivity {
     }
 
     private void sample() {
-        String[] nameList = new String[]{"中国", "美国", "印度"};
-        String[] commentList = new String[]{"我是中国", "我是美国", "我是印度"};
+        String[] nameList = new String[]{"中国", "美国", "日本"};
+        String[] commentList = new String[]{"我是中国", "我是美国", "我是日本"};
         int[] imgIdList = new int[]{R.drawable.img_sample_son, R.drawable.img_sample_son, R.drawable.img_sample_son};
 
         // List<Map<String, Object>> - 数据源
@@ -55,7 +55,7 @@ public class ListViewDemo2 extends AppCompatActivity {
                 itemList, // 数据源
                 R.layout.item_view_listview_listviewdemo2, // 自定义项模板（参见 res/layout/item_view_listview_listviewdemo2.xml）
                 new String[]{"logo", "name", "comment"}, // 数据的 key
-                new int[]{R.id.logo, R.id.name, R.id.comment}); // 项模板中的控件 id（控件的数据会被自动赋值为上面相同位置的 key 对应的 value）
+                new int[]{R.id.imgLogo, R.id.txtName, R.id.txtComment}); // 项模板中的控件 id（控件的数据会被自动赋值为上面相同位置的 key 对应的 value）
         _listView1.setAdapter(myAdapter);
     }
 }
