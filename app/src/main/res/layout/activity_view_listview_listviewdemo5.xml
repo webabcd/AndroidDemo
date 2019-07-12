@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--
+        choiceMode - 选中模式
+            none - 不允许选中
+                对应 java 端的 setChoiceMode(ListView.CHOICE_MODE_NONE)
+            singleChoice - 单选模式
+                对应 java 端的 setChoiceMode(ListView.CHOICE_MODE_SINGLE)
+            multipleChoice - 多选模式
+                对应 java 端的 setChoiceMode(ListView.CHOICE_MODE_MULTIPLE)
+            multipleChoiceModal - 多选模式（需要和 ActionBar ActionMode 配合）
+                对应 java 端的 setChoiceMode(ListView.CHOICE_MODE_MULTIPLE_MODAL)
+    -->
+
+    <ListView
+        android:id="@+id/listView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:choiceMode="multipleChoice"/>
+
+</LinearLayout>

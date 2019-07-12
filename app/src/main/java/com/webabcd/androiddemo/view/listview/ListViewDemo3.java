@@ -99,6 +99,7 @@ public class ListViewDemo3 extends AppCompatActivity {
             this._context = context;
         }
 
+        // 需要呈现的 item 的总数
         @Override
         public int getCount() {
             return _myDataList.size();
@@ -131,23 +132,25 @@ public class ListViewDemo3 extends AppCompatActivity {
         }
         */
 
-        // 每构造一个 item 就会调用一次 getView()
-        // 数据量不大的话就可以像上面那样写
-        // 数量大的话则可以像下面这样写
-        // 下面这个是优化写法，其优化了以下两点
+        // 每构造一个 item 就会调用一次 getView() 来获取这个 item 的 view
+        // 数据量不大的话就可以像上面那样写，数量大的话则可以像下面这样写
+        // 下面这个写法是优化写法，其优化了如下两点
         // 1、只 inflate() 一次 xml
         // 2、不再频繁地调用 findViewById()
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
             ViewHolder holder = null;
             if (convertView == null) {
+                // 只 inflate() 一次 xml
                 convertView = LayoutInflater.from(_context).inflate(R.layout.item_view_listview_listviewdemo3, parent, false);
+
                 holder = new ViewHolder();
                 holder.imgLogo = (ImageView) convertView.findViewById(R.id.imgLogo);
                 holder.txtName = (TextView) convertView.findViewById(R.id.txtName);
                 holder.txtComment = (TextView) convertView.findViewById(R.id.txtComment);
                 convertView.setTag(holder); // 将 holder 保存到 convertView 中
             } else {
+                // 不再频繁地调用 findViewById()
                 holder = (ViewHolder) convertView.getTag();
             }
 

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        注意：
+        1、selector 是按照顺序匹配状态的，先匹配到哪个就用哪个。比如一个控件既是 state_enabled="false" 又是 state_pressed="false"，那么就看哪个状态的定义靠前就用哪个状态的样式
+        2、一个 item 是可以有多个 state 的
+    -->
+
+    <!--
+        本例用于指定 ListView 的 item 在选中状态下的样式和点击样式
+    -->
+
+    <!--点击样式-->
+    <item android:state_pressed="true">
+        <shape>
+            <solid android:color="@color/green" />
+            <stroke android:width="1dp" android:color="@color/blue" />
+            <corners android:radius="1dp" />
+        </shape>
+    </item>
+    <!--默认样式-->
+    <item>
+        <shape>
+            <solid android:color="@color/orange" />
+        </shape>
+    </item>
+</selector>
