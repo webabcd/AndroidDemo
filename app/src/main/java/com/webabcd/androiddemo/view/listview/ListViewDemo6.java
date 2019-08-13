@@ -179,7 +179,7 @@ public class ListViewDemo6 extends AppCompatActivity {
             ViewHolder holder = null;
             if (convertView == null) {
                 // 只 inflate() 一次 xml
-                convertView = LayoutInflater.from(_context).inflate(R.layout.item_view_listview_listviewdemo4, parent, false);
+                convertView = LayoutInflater.from(_context).inflate(R.layout.item_view_listview_listviewdemo6, parent, false);
 
                 holder = new ViewHolder();
                 holder.imgLogo = (ImageView) convertView.findViewById(R.id.imgLogo);

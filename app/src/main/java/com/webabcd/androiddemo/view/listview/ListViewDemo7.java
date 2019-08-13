@@ -1,5 +1,5 @@
 /**
- * ListView 的 item 的点击事件和长按事件
+ * ListView 的多布局（不同的 item 使用不同的项模板）
  *
  * 适配器中包含了数据和项模板
  */
@@ -9,16 +9,13 @@ package com.webabcd.androiddemo.view.listview;
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.webabcd.androiddemo.R;
 
@@ -26,6 +23,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ListViewDemo7 extends AppCompatActivity {
+
+    // 第 1 种布局类别：左对齐
+    private static final int TYPE_LEFT = 0;
+    // 第 2 种布局类别：右对齐
+    private static final int TYPE_RIGHT = 1;
 
     private ListView _listView1;
 
@@ -118,33 +120,73 @@ public class ListViewDemo7 extends AppCompatActivity {
             return position * 10;
         }
 
+        // 返回指定索引位置的 item 的布局类别
+        @Override
+        public int getItemViewType(int position) {
+            if (position % 2 == 0) {
+                return TYPE_LEFT;
+            } else {
+                return TYPE_RIGHT;
+            }
+        }
+
+        // 布局类别的数量
+        @Override
+        public int getViewTypeCount() {
+            return 2;
+        }
+
         // 每构造一个 item 就会调用一次 getView() 来获取这个 item 的 view
         // 每次绘制 item 都会调用 getView()
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            ViewHolder holder = null;
+            int type = getItemViewType(position);
+            ViewHolder1 holder1 = null;
+            ViewHolder2 holder2 = null;
             if (convertView == null) {
-                // 只 inflate() 一次 xml
-                convertView = LayoutInflater.from(_context).inflate(R.layout.item_view_listview_listviewdemo7, parent, false);
-
-                holder = new ViewHolder();
-                holder.imgLogo = (ImageView) convertView.findViewById(R.id.imgLogo);
-                holder.txtName = (TextView) convertView.findViewById(R.id.txtName);
-                holder.txtComment = (TextView) convertView.findViewById(R.id.txtComment);
-                convertView.setTag(holder); // 将 holder 保存到 convertView 中
+                if (type == TYPE_LEFT) { // 使用 TYPE_LEFT 布局类别的项模板
+                    convertView = LayoutInflater.from(_context).inflate(R.layout.item_view_listview_listviewdemo7_1, parent, false);
+                    holder1 = new ViewHolder1();
+                    holder1.imgLogo = (ImageView) convertView.findViewById(R.id.imgLogo);
+                    holder1.txtName = (TextView) convertView.findViewById(R.id.txtName);
+                    holder1.txtComment = (TextView) convertView.findViewById(R.id.txtComment);
+                    convertView.setTag(holder1);
+                } else if (type == TYPE_RIGHT) { // 使用 TYPE_RIGHT 布局类别的项模板
+                    convertView = LayoutInflater.from(_context).inflate(R.layout.item_view_listview_listviewdemo7_2, parent, false);
+                    holder2 = new ViewHolder2();
+                    holder2.imgLogo = (ImageView) convertView.findViewById(R.id.imgLogo);
+                    holder2.txtName = (TextView) convertView.findViewById(R.id.txtName);
+                    holder2.txtComment = (TextView) convertView.findViewById(R.id.txtComment);
+                    convertView.setTag(holder2);
+                }
             } else {
-                // 不再频繁地调用 findViewById()
-                holder = (ViewHolder) convertView.getTag();
+                if (type == TYPE_LEFT) {
+                    holder1 = (ViewHolder1) convertView.getTag();
+                } else if (type == TYPE_RIGHT) {
+                    holder2 = (ViewHolder2) convertView.getTag();
+                }
             }
 
-            holder.imgLogo.setBackgroundResource(_myDataList.get(position).getLogoId());
-            holder.txtName.setText(_myDataList.get(position).getName());
-            holder.txtComment.setText(_myDataList.get(position).getComment());
+            if (type == TYPE_LEFT) {
+                holder1.imgLogo.setBackgroundResource(_myDataList.get(position).getLogoId());
+                holder1.txtName.setText(_myDataList.get(position).getName());
+                holder1.txtComment.setText(_myDataList.get(position).getComment());
+            } else if (type == TYPE_RIGHT) {
+                holder2.imgLogo.setBackgroundResource(_myDataList.get(position).getLogoId());
+                holder2.txtName.setText(_myDataList.get(position).getName());
+                holder2.txtComment.setText(_myDataList.get(position).getComment());
+            }
 
             return convertView;
         }
 
-        class ViewHolder {
+        class ViewHolder1 {
+            ImageView imgLogo;
+            TextView txtName;
+            TextView txtComment;
+        }
+
+        class ViewHolder2 {
             ImageView imgLogo;
             TextView txtName;
             TextView txtComment;

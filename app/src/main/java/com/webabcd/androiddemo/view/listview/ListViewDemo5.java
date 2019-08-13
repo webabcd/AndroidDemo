@@ -24,9 +24,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.webabcd.androiddemo.R;
 
@@ -159,7 +161,17 @@ public class ListViewDemo5 extends AppCompatActivity {
                 holder.imgLogo = (ImageView) convertView.findViewById(R.id.imgLogo);
                 holder.txtName = (TextView) convertView.findViewById(R.id.txtName);
                 holder.txtComment = (TextView) convertView.findViewById(R.id.txtComment);
+                holder.button1 = (Button) convertView.findViewById(R.id.button1);
                 convertView.setTag(holder); // 将 holder 保存到 convertView 中
+
+                // 如果 ListView 的 item 中有 button 的话，默认情况下只能响应 button 的点击事件，而 item 的点击事件将被屏蔽
+                // 如果需要既响应 button 的点击事件，又响应 item 的点击事件的话，则需要将 item 的 descendantFocusability 设置为 blocksDescendants（详见：item_view_listview_listviewdemo5.xml）
+                holder.button1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Toast.makeText(ListViewDemo5.this, "button1 clicked: " + v.getTag(), Toast.LENGTH_SHORT).show();
+                    }
+                });
             } else {
                 // 不再频繁地调用 findViewById()
                 holder = (ViewHolder) convertView.getTag();
@@ -168,6 +180,7 @@ public class ListViewDemo5 extends AppCompatActivity {
             holder.imgLogo.setBackgroundResource(_myDataList.get(position).getLogoId());
             holder.txtName.setText(_myDataList.get(position).getName());
             holder.txtComment.setText(_myDataList.get(position).getComment());
+            holder.button1.setTag(position);
 
             // 如果当前 item 是选中状态则使用选中状态下的样式和点击样式，否则使用正常（未选中）状态下的样式和点击样式
             // 经测试，在 selector 中指定 state_selected="true 的话没有效果，所以就这么写了
@@ -184,6 +197,7 @@ public class ListViewDemo5 extends AppCompatActivity {
             ImageView imgLogo;
             TextView txtName;
             TextView txtComment;
+            Button button1;
         }
     }
 }

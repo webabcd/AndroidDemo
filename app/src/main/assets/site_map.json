@@ -27,7 +27,7 @@
         "url": ".view.listview.ListViewDemo6"
       },
       {
-        "title": "aaaaaaaaaa",
+        "title": "ListView 的多布局（不同的 item 使用不同的项模板）",
         "url": ".view.listview.ListViewDemo7"
       }
     ]

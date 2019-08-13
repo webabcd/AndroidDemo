@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    注：
+    如果 ListView 的 item 中有 button 的话，默认情况下只能响应 button 的点击事件，而 item 的点击事件将被屏蔽
+    如果需要既响应 button 的点击事件，又响应 item 的点击事件的话，则需要将 item 的 descendantFocusability 设置为 blocksDescendants
+-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingLeft="10dp"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:descendantFocusability="blocksDescendants">
 
     <ImageView
         android:id="@+id/imgLogo"
@@ -13,7 +19,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_weight="1">
 
         <TextView
             android:id="@+id/txtName"
@@ -30,5 +37,11 @@
             android:textSize="14sp" />
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="按钮 1"/>
 
 </LinearLayout>
