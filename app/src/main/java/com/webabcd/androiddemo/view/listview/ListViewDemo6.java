@@ -1,5 +1,5 @@
 /**
- * ListView 的表头，表尾，滚动条的显示与隐藏，数据更新与 ListView 刷新，滚动到指定位置
+ * ListView 的表头，表尾，滚动条的显示与隐藏，数据更新与 ListView 刷新，滚动到指定位置，监听 ListView 的滚动状态
  *
  * 适配器中包含了数据和项模板
  */
@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsListView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -30,6 +31,8 @@ public class ListViewDemo6 extends AppCompatActivity {
     private ListView _listView1;
     private Button _button1;
     private Button _button2;
+    private TextView _textView1;
+    private TextView _textView2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +42,8 @@ public class ListViewDemo6 extends AppCompatActivity {
         _listView1 = (ListView) findViewById(R.id.listView1);
         _button1 = (Button) findViewById(R.id.button1);
         _button2 = (Button) findViewById(R.id.button2);
+        _textView1 = (TextView) findViewById(R.id.textView1);
+        _textView2 = (TextView) findViewById(R.id.textView2);
 
         sample();
     }
@@ -98,7 +103,28 @@ public class ListViewDemo6 extends AppCompatActivity {
                 //     offset - 最终位置与指定滚动位置的偏移量（单位：像素）
                 //     duration - 滚动到指定位置的时间（单位：毫秒）
                 _listView1.smoothScrollToPositionFromTop(50, 0, 100);
+            }
+        });
 
+        // 监听 ListView 的滚动状态
+        _listView1.setOnScrollListener(new AbsListView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(AbsListView view, int scrollState) {
+                // 0 - AbsListView.OnScrollListener.SCROLL_STATE_IDLE（当前没有发生滚动）
+                // 1 - AbsListView.OnScrollListener.SCROLL_STATE_TOUCH_SCROLL（因为用户触摸导致的滚动）
+                // 2 - AbsListView.OnScrollListener.SCROLL_STATE_FLING（因为惯性导致的滚动）
+                _textView1.setText(String.format("scrollState:%d", scrollState));
+            }
+
+            @Override
+            public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+                // firstVisibleItem - 当前可视区第一条 item 的索引位置
+                // visibleItemCount - 当前可视区显示的 item 的总数
+                // totalItemCount - ListView 的 item 的总数
+                // AbsListView.getFirstVisiblePosition() - 当前可视区第一条 item 的索引位置
+                // AbsListView.getLastVisiblePosition() - 当前可视区最后一条 item 的索引位置
+                _textView2.setText(String.format("firstVisibleItem:%d, visibleItemCount:%d, totalItemCount:%d, AbsListView.getFirstVisiblePosition():%d, AbsListView.getLastVisiblePosition():%d",
+                        firstVisibleItem, visibleItemCount, totalItemCount, view.getFirstVisiblePosition(), view.getLastVisiblePosition()));
             }
         });
     }

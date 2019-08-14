@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    旋转一个图片， 用于 ProgressBar 的 indeterminateDrawable 属性，旋转速度通过 ProgressBar 的 indeterminateDuration 属性来指定
+-->
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-
     <item>
         <rotate
             android:drawable="@drawable/img_sample_son"
@@ -9,5 +11,4 @@
             android:pivotY="50.0%"
             android:toDegrees="360.0" />
     </item>
-
 </layer-list>

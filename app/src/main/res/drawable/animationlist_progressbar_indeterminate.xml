@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    帧动画， 用于 ProgressBar 的 indeterminateDrawable 属性，旋转速度通过 duration 指定（单位：毫秒）
+-->
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false">
+    <item android:duration="500" android:drawable="@drawable/img_sample_son" />
+    <item android:duration="500" android:drawable="@drawable/img_dialog_original" />
+    <item android:duration="500" android:drawable="@drawable/img_thread_state" />
+</animation-list>

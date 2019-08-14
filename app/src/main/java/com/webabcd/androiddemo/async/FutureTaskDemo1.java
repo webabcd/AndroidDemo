@@ -7,6 +7,9 @@
  *     FutureTask - 与 Callable 和 ThreadPool 或 Thread 结合使用，实现异步执行任务，然后同步获取结果（FutureTask 实现了 Future 接口和 Runnable 接口）
  *         V get() - 阻塞，直至异步任务返回结果
  *         V get(long timeout, TimeUnit unit) - 阻塞，直至异步任务返回结果，如果到了指定时间仍未返回结果则抛出 TimeoutException 异常
+ *
+ *
+ * 注： 因为 FutureTask 实现了 Runnable 接口，所以可以通过 Thread 来执行
  */
 
 package com.webabcd.androiddemo.async;

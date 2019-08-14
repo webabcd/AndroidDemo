@@ -6,18 +6,44 @@
 
     <!--
         ProgressBar - 进度条控件
-            indeterminateDrawable - 圈圈进度条的样式（参见 drawable/layerlist_progressbar_indeterminate）
+            indeterminateDrawable - 圈圈进度条的样式（参见 drawable/layerlist_progressbar_indeterminate, drawable/rotate_progressbar_indeterminate, drawable/animationlist_progressbar_indeterminate）
             indeterminateDuration - 圈圈旋转一圈所用的时间（单位：毫秒）
             progressDrawable - 长条进度条的样式（参见 drawable/layerlist_progressbar_progress）
     -->
 
+    <!--
+        旋转一个图片
+    -->
     <ProgressBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:indeterminateDrawable="@drawable/layerlist_progressbar_indeterminate"
-        android:indeterminateDuration="3000"/>
+        android:indeterminateDuration="1500"/>
 
+    <!--
+       旋转一个矢量图形
+    -->
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:indeterminateDrawable="@drawable/rotate_progressbar_indeterminate"
+        android:indeterminateDuration="1500"/>
+
+    <!--
+       帧动画
+       注：对于帧动画来说，设置 indeterminateDuration 属性无效，因为每帧的显示时长是通过 animation-list 的 item 的 duration 来指定的
+    -->
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:indeterminateDrawable="@drawable/animationlist_progressbar_indeterminate"/>
+
+    <!--
+        长进度条
+    -->
     <ProgressBar
         style="@android:style/Widget.ProgressBar.Horizontal"
         android:layout_width="300dp"

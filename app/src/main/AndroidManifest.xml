@@ -11,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.listview.ListViewDemo7"></activity>
+        <activity android:name=".view.listview.ListViewDemo9"></activity>
+        <activity android:name=".view.listview.ListViewDemo8" />
+        <activity android:name=".view.listview.ListViewDemo7" />
         <activity android:name=".view.listview.ListViewDemo6" />
         <activity android:name=".view.listview.ListViewDemo5" />
         <activity android:name=".view.listview.ListViewDemo4" />

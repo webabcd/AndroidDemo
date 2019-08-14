@@ -1,12 +1,13 @@
 /**
- * Future, FutureTask 的关闭和异常处理
+ * Future, FutureTask 的关闭和异常处理（具体的异常捕获和处理的说明详见下面的示例代码）
  *     boolean cancel(boolean mayInterruptIfRunning) - 取消 Future 异步任务，成功地调用 cancel() 则返回 true（如果异步任务的状态是已取消或者已中断，则返回 false）
  *         mayInterruptIfRunning 为 false 的方式：只会设置异步任务的状态为取消状态
  *         mayInterruptIfRunning 为 true 的方式：调用异步任务线程的 interrupt() 方法，同时设置异步任务的状态为取消状态
  *     isCancelled() - 异步任务是否是取消状态，被取消或者被中断则此值为 true
  *     isDone() - 异步任务是否是完成状态，正常完成或者发生异常或者被取消或者被中断则此值为 true
  *
- *     具体的异常捕获和处理的说明详见下面的示例代码
+ *
+ * 注： 因为 FutureTask 实现了 Runnable 接口，所以可以通过 Thread 来执行
  */
 
 package com.webabcd.androiddemo.async;

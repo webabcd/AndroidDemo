@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--
+        com.webabcd.androiddemo.view.listview.ListViewDemo8LoadMoreListView - 自定义的用于支持滚动到底部加载更多数据的 ListView
+    -->
+    <com.webabcd.androiddemo.view.listview.ListViewDemo8LoadMoreListView
+        android:id="@+id/listView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>
