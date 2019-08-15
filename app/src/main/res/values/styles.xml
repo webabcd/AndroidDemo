@@ -26,6 +26,25 @@
 
 
     <!--
+        自定义主题 1（属性的名字和类型是在 res/values/attrs.xml 中定义的）
+        引用示例参见 ui/ThemeDemo2
+    -->
+    <style name="ThemeDemo2Theme1" parent="AppTheme" >
+        <item name="myTitleColor">@color/red</item>
+        <item name="myTitleBackgroundColor">@color/green</item>
+    </style>
+    <!--
+        自定义主题 2（属性的名字和类型是在 res/values/attrs.xml 中定义的）
+        引用示例参见 ui/ThemeDemo2
+    -->
+    <style name="ThemeDemo2Theme2" parent="AppTheme" >
+        <item name="myTitleColor">@color/blue</item>
+        <item name="myTitleBackgroundColor">@color/orange</item>
+    </style>
+
+
+
+    <!--
         引用示例参见 view/text/TextViewDemo5
     -->
     <style name="TextAppearanceSpanStyle" parent="@android:style/Widget.TextView">

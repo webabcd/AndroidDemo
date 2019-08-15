@@ -34,12 +34,16 @@ public class ThemeDemo1 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        // 指定主题（注：在 java 中指定主题需要在 onCreate() 之前指定才会生效）
+        super.onCreate(savedInstanceState);
+
+        // 指定主题（注：在 java 中指定主题需要在 setContentView() 之前指定才会生效）
         // 也可以在 AndroidManifest.xml 中针对 application 或 activity 指定主题
-        // ThemeDemo1Theme 主题的定义参见 res/values/styles.xml（其继承了 @android:style/Theme.Light 主题，并重写了其中的一些样式）
+        // ThemeDemo1Theme 主题的定义参见 res/values/styles.xml（其继承了 Theme.AppCompat.Light.DarkActionBar 主题，并重写了其中的一些样式）
         setTheme(R.style.ThemeDemo1Theme);
 
-        super.onCreate(savedInstanceState);
+        // 在 java 中指定 application 级别的主题
+        // getApplication().setTheme(R.style.ThemeDemo1Theme);
+
         setContentView(R.layout.activity_ui_themedemo1);
     }
 }

@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--
+        用于演示如何自定义主题
+    -->
+    <attr name="myTitleColor" format="color" />
+    <attr name="myTitleBackgroundColor" format="color" />
+
+
     <declare-styleable name="CustomView1">
         <attr name="titleSize" format="dimension" />
         <attr name="titleText" format="string" />

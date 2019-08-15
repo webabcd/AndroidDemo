@@ -100,6 +100,10 @@
         "url": ".ui.ThemeDemo1"
       },
       {
+        "title": "自定义主题，动态更换主题",
+        "url": ".ui.ThemeDemo2"
+      },
+      {
         "title": "StyleDemo1",
         "url": ".ui.StyleDemo1"
       },

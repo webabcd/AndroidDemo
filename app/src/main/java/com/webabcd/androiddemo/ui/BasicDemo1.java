@@ -18,6 +18,7 @@ public class BasicDemo1 extends AppCompatActivity {
     // 新开个页面写个 v7 包的说明
     // v7 包用于兼容老系统，但它不是只为了兼容 android 2.1 以下的操作系统
     // 实际上 google 会不断更新 v7 包的，比如本例中引用的 com.android.support:appcompat-v7:27.1.1，其表示兼容到 api 27
+    // 比如一般用 AppCompatActivity 而不是 Activity，带 AppCompat 一般就是兼容包里的，因为他会不断更新，所以建议用这个
 
 
     @Override

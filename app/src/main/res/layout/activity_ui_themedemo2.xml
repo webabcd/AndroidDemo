@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--
+        textColor 和 background 的值的定义来自 res/values/attrs.xml
+        主题定义来自 res/values/styles.xml
+    -->
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="32dp"
+        android:text="我是 TextView"
+        android:textColor="?attr/myTitleColor"
+        android:background="?attr/myTitleBackgroundColor"/>
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="更换主题" />
+
+</LinearLayout>
