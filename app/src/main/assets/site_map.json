@@ -1,5 +1,14 @@
 [
   {
+    "title": "resource",
+    "node": [
+      {
+        "title": "aaaaaaaa",
+        "url": ".resource.WebViewDemo1"
+      }
+    ]
+  },
+  {
     "title": "view（ListView）",
     "node": [
       {
@@ -85,6 +94,18 @@
       {
         "title": "UIDemo1",
         "url": ".ui.UIDemo1"
+      },
+      {
+        "title": "主题简介，继承主题并重写其中的一些样式，指定主题",
+        "url": ".ui.ThemeDemo1"
+      },
+      {
+        "title": "StyleDemo1",
+        "url": ".ui.StyleDemo1"
+      },
+      {
+        "title": "android 基础示例",
+        "url": ".ui.BasicDemo1"
       }
     ]
   },
@@ -373,15 +394,6 @@
       {
         "title": "ThreadLocal 的使用",
         "url": ".async.ThreadLocalDemo1"
-      }
-    ]
-  },
-  {
-    "title": "UI",
-    "node": [
-      {
-        "title": "android 基础示例",
-        "url": ".ui.BasicDemo1"
       }
     ]
   },

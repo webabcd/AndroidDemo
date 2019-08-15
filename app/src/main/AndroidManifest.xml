@@ -11,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.listview.ListViewDemo9"></activity>
+        <activity android:name=".ui.StyleDemo1"></activity>
+        <activity android:name=".ui.ThemeDemo1" />
+        <activity android:name=".view.listview.ListViewDemo9" />
         <activity android:name=".view.listview.ListViewDemo8" />
         <activity android:name=".view.listview.ListViewDemo7" />
         <activity android:name=".view.listview.ListViewDemo6" />
@@ -81,11 +83,9 @@
         <activity android:name=".concurrent.AtomicDemo1" />
         <activity android:name=".view.button.ButtonDemo1" />
         <activity android:name=".view.button.ImageButtonDemo1" />
-        <activity android:name=".view.media.ImageViewDemo1" />
         <activity android:name=".view.button.ButtonDemo2" />
-        <activity android:name=".view.media.ImageView2" />
+        <activity android:name=".view.media.ImageViewDemo1" />
         <activity android:name=".view.media.ImageViewDemo2" />
-        <activity android:name=".view.media.ImageViewDemo3" />
         <activity android:name=".view.media.NinePatchDemo1" />
         <activity android:name=".view.selection.RadioButtonDemo1" />
         <activity android:name=".view.selection.CheckBoxDemo1" />
@@ -102,9 +102,6 @@
         <activity android:name=".view.progress.SeekBarDemo2" />
         <activity android:name=".view.progress.RatingBarDemo1" />
         <activity android:name=".view.progress.RatingBarDemo2" />
-        <activity android:name=".view.time.DatePickerDemo1" />
-        <activity android:name=".view.time.TimePickerDemo1" />
-        <activity android:name=".view.time.CalendarViewDemo1" />
         <activity android:name=".view.selection.NumberPickerDemo1" />
         <activity android:name=".view.selection.NumberPickerDemo2" />
         <activity android:name=".ui.UIDemo1" />

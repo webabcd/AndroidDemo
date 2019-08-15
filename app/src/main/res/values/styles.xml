@@ -1,15 +1,33 @@
 <resources>
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
-        <!--
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-        -->
+    <!--
+        默认主题，继承 Theme.AppCompat.Light.DarkActionBar 主题
+        引用示例参见 AndroidManifest.xml
+    -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar" />
+
+
+    <!--
+        继承上面的 AppTheme 主题，即继承 Theme.AppCompat.Light.DarkActionBar 主题，并重写其中的一些样式（其他的更多可重写的样式查文档吧）
+        引用示例参见 ui/ThemeDemo1
+    -->
+    <style name="ThemeDemo1Theme" parent="AppTheme">
+        <!--AppBar 的背景-->
+        <item name="colorPrimary">@color/red</item>
+        <!--控件被选中时的颜色-->
+        <item name="colorAccent">@color/purple</item>
+        <!--页面背景色-->
+        <item name="android:windowBackground">@color/orange</item>
+        <!--顶部 StatusBar 的背景-->
+        <item name="android:statusBarColor">@color/blue</item>
+        <!--底部 NavigationBar 的背景-->
+        <item name="android:navigationBarColor">@color/green</item>
     </style>
 
+
+    <!--
+        引用示例参见 view/text/TextViewDemo5
+    -->
     <style name="TextAppearanceSpanStyle" parent="@android:style/Widget.TextView">
         <item name="android:textColor">#FF0000</item>
         <item name="android:textStyle">italic</item>

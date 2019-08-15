@@ -7,15 +7,11 @@
 package com.webabcd.androiddemo.view.text;
 
 import android.annotation.SuppressLint;
-import android.graphics.Color;
-import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.support.v4.graphics.TypefaceCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextPaint;
-import android.util.TypedValue;
-import android.view.Gravity;
 import android.widget.TextView;
 
 import com.webabcd.androiddemo.R;

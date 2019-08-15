@@ -5,10 +5,7 @@ import android.content.res.AssetManager;
 import android.content.res.Resources;
 import android.graphics.Point;
 import android.graphics.drawable.Drawable;
-import android.support.v4.content.ContextCompat;
 import android.view.WindowManager;
-
-import com.webabcd.androiddemo.R;
 
 import java.io.BufferedReader;
 import java.io.IOException;

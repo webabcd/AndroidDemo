@@ -9,7 +9,6 @@ package com.webabcd.androiddemo.view.text;
 import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
@@ -191,6 +190,6 @@ public class TextViewDemo6 extends AppCompatActivity {
         // 获取焦点后是否自动选中全部文本
         _textView5.setSelectAllOnFocus(false);
         // 选中文本的背景色
-        _textView5.setHighlightColor(ContextCompat.getColor(this,R.color.orange));
+        _textView5.setHighlightColor(getResources().getColor(R.color.orange));
     }
 }

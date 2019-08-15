@@ -22,7 +22,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.webabcd.androiddemo.R;
-import com.webabcd.androiddemo.view.button.ButtonDemo1;
 
 import java.util.ArrayList;
 import java.util.List;
