@@ -1,5 +1,38 @@
 [
   {
+    "title": "UI",
+    "node": [
+      {
+        "title": "主题简介，继承主题并重写其中的一些样式，指定主题",
+        "url": ".ui.ThemeDemo1"
+      },
+      {
+        "title": "自定义主题，动态更换主题",
+        "url": ".ui.ThemeDemo2"
+      },
+      {
+        "title": "Matrix 变换（用于做位移，旋转，缩放，扭曲等变换）",
+        "url": ".ui.MatrixDemo1"
+      },
+      {
+        "title": "bbbbbbbbbb",
+        "url": ".ui.AnimationDemo1"
+      },
+      {
+        "title": "StyleDemo1",
+        "url": ".ui.StyleDemo1"
+      },
+      {
+        "title": "android 基础示例",
+        "url": ".ui.BasicDemo1"
+      },
+      {
+        "title": "UIDemo1",
+        "url": ".ui.UIDemo1"
+      }
+    ]
+  },
+  {
     "title": "resource",
     "node": [
       {
@@ -85,31 +118,6 @@
         "title": "dddddddddddd",
 
         "url": ".view.custom.CustomView3Demo"
-      }
-    ]
-  },
-  {
-    "title": "UI",
-    "node": [
-      {
-        "title": "UIDemo1",
-        "url": ".ui.UIDemo1"
-      },
-      {
-        "title": "主题简介，继承主题并重写其中的一些样式，指定主题",
-        "url": ".ui.ThemeDemo1"
-      },
-      {
-        "title": "自定义主题，动态更换主题",
-        "url": ".ui.ThemeDemo2"
-      },
-      {
-        "title": "StyleDemo1",
-        "url": ".ui.StyleDemo1"
-      },
-      {
-        "title": "android 基础示例",
-        "url": ".ui.BasicDemo1"
       }
     ]
   },
