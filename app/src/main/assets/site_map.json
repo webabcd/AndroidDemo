@@ -15,6 +15,10 @@
         "url": ".ui.MatrixDemo1"
       },
       {
+        "title": "Matrix 变换（通过自定义控件实现）",
+        "url": ".ui.MatrixDemo2"
+      },
+      {
         "title": "bbbbbbbbbb",
         "url": ".ui.AnimationDemo1"
       },
