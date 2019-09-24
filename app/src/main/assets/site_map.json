@@ -19,8 +19,16 @@
         "url": ".ui.MatrixDemo2"
       },
       {
-        "title": "bbbbbbbbbb",
+        "title": "视图动画（View Animation）基础",
         "url": ".ui.AnimationDemo1"
+      },
+      {
+        "title": "视图动画（View Animation）插值器（Interpolator）",
+        "url": ".ui.AnimationDemo2"
+      },
+      {
+        "title": "视图动画（View Animation）自定义 Interpolator",
+        "url": ".ui.AnimationDemo3"
       },
       {
         "title": "StyleDemo1",

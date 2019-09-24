@@ -1,0 +1,17 @@
+<!--
+    定义一个 translate 动画，并指定其 interpolator（关于各种 interpolator 的解释参见 ui/AnimationDemo2.java 中的说明）
+
+    本例指定了 interpolator="@android:anim/bounce_interpolator" 即使用内置的 bounce_interpolator 插值器
+    如果需要自己定义已有插值器的参数（参见 res/anim/accelerateinterpolator_animationdemo2.xml），则类似这样设置即可 interpolator="@anim/accelerateinterpolator_animationdemo2"
+-->
+
+<translate xmlns:android="http://schemas.android.com/apk/res/android"
+    android:duration="2000"
+    android:fillAfter="true"
+    android:fillBefore="false"
+    android:fromXDelta="0%p"
+    android:interpolator="@android:anim/bounce_interpolator"
+    android:toXDelta="50%p">
+
+</translate>
+

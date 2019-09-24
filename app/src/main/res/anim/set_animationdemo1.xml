@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    set - 用于定义一组动画，如果只需要某一个动画的话则根节点直接写 translate 或 scale 或 rotate 或 alpha 就好，另外 set 里是可以嵌套 set 的
+        duration - 动画的持续时间，单位：毫秒
+        startOffset - 动画启动后在此值指定的时间后再真正开始动画，单位：毫秒
+        fillAfter="true", fillBefore="false" - 动画结束后保持动画结束后的状态
+        fillAfter="false", fillBefore="true" - 动画结束后还原到动画开始之前的的状态
+
+    注1：
+    以上这些属性也适用于 translate, scale, rotate, alpha
+    如果在 set 中设置了这些属性，则其子控件们都会继承其值
+    如果在 set 中设置了这些属性，然后又在子控件中设置这些属性，则子控件中的设置是无效的
+
+    注2：
+    在 set 中设置 repeatMode, repeatCount 是无效的，需要在 translate, scale, rotate, alpha 中设置才能生效
+-->
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:duration="3000"
+    android:startOffset="1000"
+    android:fillAfter="true"
+    android:fillBefore="false">
+
+    <!--
+        位移动画
+            fromXDelta, toXDelta - 动画开始和结束时 x 轴方向上的位置（以左上角顶点为原点）
+            toXDelta, toYDelta - 动画开始和结束时 y 轴方向上的位置（以左上角顶点为原点）
+            repeatMode - 动画结束后的重复方式
+                restart - 重头播放（对应 java 中的 Animation.RESTART）
+                reverse - 来回播放（对应 java 中的 Animation.REVERSE）
+            repeatCount - 动画重复次数（-1 代表无限重复）
+    -->
+    <translate
+        android:fromXDelta="0%p"
+        android:fromYDelta="0%p"
+        android:toXDelta="10%p"
+        android:toYDelta="10%p" />
+
+    <!--
+        缩放动画
+            fromXScale, toXScale - 动画开始和结束时 x 轴方向上的缩放倍数
+            fromYScale, toYScale - 动画开始和结束时 y 轴方向上的缩放倍数
+            pivotX, pivotY - 缩放中心点坐标
+            repeatMode - 动画结束后的重复方式
+                restart - 重头播放（对应 java 中的 Animation.RESTART）
+                reverse - 来回播放（对应 java 中的 Animation.REVERSE）
+            repeatCount - 动画重复次数（-1 代表无限重复）
+    -->
+    <scale
+        android:fromXScale="1.0"
+        android:fromYScale="1.0"
+        android:toXScale="1.2"
+        android:toYScale="1.2"
+        android:pivotX="50%"
+        android:pivotY="50%" />
+
+    <!--
+        旋转动画
+            fromDegrees, toDegrees - 动画开始和结束时的角度（顺时针方向为正）
+            pivotX, pivotY - 旋转中心点坐标
+            repeatMode - 动画结束后的重复方式
+                restart - 重头播放（对应 java 中的 Animation.RESTART）
+                reverse - 来回播放（对应 java 中的 Animation.REVERSE）
+            repeatCount - 动画重复次数（-1 代表无限重复）
+    -->
+    <rotate
+        android:fromDegrees="0"
+        android:toDegrees="30"
+        android:pivotX="50%"
+        android:pivotY="50%" />
+
+    <!--
+        不透明度动画
+            fromAlpha, toAlpha - 动画开始和结束时的不透明度
+            repeatMode - 动画结束后的重复方式
+                restart - 重头播放（对应 java 中的 Animation.RESTART）
+                reverse - 来回播放（对应 java 中的 Animation.REVERSE）
+            repeatCount - 动画重复次数（-1 代表无限重复）
+    -->
+    <alpha
+        android:fromAlpha="1.0"
+        android:toAlpha="0.7" />
+</set>
+
+<!--
+    注：以上 fromXDelta, fromYDelta, toXDelta, toYDelta, pivotX, pivotY 属性值支持的类型如下
+    1、数值：比如 20px，20dp 之类的。在 java 中对应的类型为 Animation.ABSOLUTE
+    2、百分数：比如 50%（相对于自身的百分比）。在 java 中对应的类型为 Animation.RELATIVE_TO_SELF
+    3、百分数p：比如 50%p（相对于父控件的百分比）。在 java 中对应的类型为 Animation.RELATIVE_TO_PARENT
+-->

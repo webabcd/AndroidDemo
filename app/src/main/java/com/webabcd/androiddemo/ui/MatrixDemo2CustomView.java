@@ -8,6 +8,7 @@
  * 2、对于类似 LinearLayout 之类的控件来说，其本身是不会调用 onDraw() 的，因为绘制部分都是通过它的子控件来完成的
  *    如果需要调用 onDraw() 做一些额外绘制的话，则需要在构造函数中调用 setWillNotDraw(false)，但是是无法在 LinearLayout 的 onDraw() 中对整个 LinearLayout 做 matrix 变换
  * 3、对于类似 LinearLayout 之类的控件来说，有一些类似 setRotation(), setScaleX(), setTranslationX() 之类的方法可以调用
+ * 4、另外也可以考虑用 Animation 的方式实现类似的变换
  */
 
 package com.webabcd.androiddemo.ui;

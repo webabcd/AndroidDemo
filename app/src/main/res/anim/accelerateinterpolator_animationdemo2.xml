@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    自己定义已有插值器的参数
+-->
+<accelerateInterpolator
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:factor="1">
+</accelerateInterpolator>
