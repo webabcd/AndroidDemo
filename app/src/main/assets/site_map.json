@@ -35,6 +35,10 @@
         "url": ".ui.AnimationDemo4"
       },
       {
+        "title": "属性动画（Property Animation）中的 ValueAnimator",
+        "url": ".ui.AnimationDemo5"
+      },
+      {
         "title": "StyleDemo1",
         "url": ".ui.StyleDemo1"
       },

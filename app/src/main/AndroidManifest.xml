@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.AnimationDemo4"></activity>
+        <activity android:name=".ui.AnimationDemo5"></activity>
+        <activity android:name=".ui.AnimationDemo4" />
         <activity android:name=".ui.AnimationDemo3" />
         <activity android:name=".ui.AnimationDemo2" />
         <activity android:name=".ui.MatrixDemo2" />

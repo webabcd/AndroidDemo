@@ -1,5 +1,7 @@
 /**
  * Matrix 变换（用于做位移，旋转，缩放，扭曲等变换）
+ * Matrix 变换只是改变了 View 的视觉效果，而并没有改变 View 的属性（比如 left, top, right, bottom 之类的都是不变的）
+ *
  *
  * Matrix - Matrix 变换
  *     public Matrix(Matrix src) - 根据已有矩阵来实例化矩阵

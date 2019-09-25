@@ -1,7 +1,8 @@
 /**
  * 视图动画（View Animation）插值器（Interpolator）
+ * 视图动画只是改变了 View 的视觉效果，而并没有改变 View 的属性（比如 left, top, right, bottom 之类的都是不变的）
  * View Animation（视图动画）即 Tween Animation（补间动画）
- * 视图动画支持插值器，相当于 easing 动画
+ * 视图动画支持插值器（用于计算不同时间点的动画结果的比例值），相当于 easing 动画，默认值是 LinearInterpolator 匀速变化
  *
  *
  * BounceInterpolator - 动画结束前来回弹几下
@@ -27,6 +28,8 @@
  *
  * AnticipateOvershootInterpolator - 开始结束都垃一下
  *     构造函数有一个 float tension 参数，用于指定拉力的程度，默认值为 1
+ *
+ * AnimationUtils.loadInterpolator(Context context, int id) - 获取 xml 中定义的 Interpolator 对象
  *
  *
  * 注：以上所有插值器都有一个 public float getInterpolation(float input) 方法，用于获取指定值（0 - 1 之间）的插值后的结果
@@ -87,7 +90,7 @@ public class AnimationDemo2 extends AppCompatActivity {
         _button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // 使用在 res/anim/accelerateinterpolator_animationdemo2.xml 中定义的动画
+                // AnimationUtils.loadAnimation() - 从 xml 中加载 Animation
                 Animation animation = AnimationUtils.loadAnimation(AnimationDemo2.this, R.anim.translate_animationdemo2);
                 _textView1.startAnimation(animation);
             }

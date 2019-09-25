@@ -1,0 +1,25 @@
+<!--
+    ValueAnimator - 控制值的变化
+        startOffset - 动画启动的延迟时间，单位：毫秒
+        duration - 动画的持续时间，单位：毫秒
+        valueType - 值的类型 intType, floatType, colorType, pathType
+        valueFrom - 起始值
+        valueTo - 结束值
+        repeatMode - 动画结束后的重复方式
+            restart - 重头播放（对应 java 中的 ValueAnimator.RESTART）
+            reverse - 来回播放（对应 java 中的 ValueAnimator.REVERSE）
+        repeatCount - 重复次数（-1 为无限循环）
+        interpolator - 指定此动画的 Interpolator（关于 Interpolator 参见 ui/AnimationDemo2 和 ui/AnimationDemo3）
+-->
+
+<animator xmlns:android="http://schemas.android.com/apk/res/android"
+    android:startOffset="100"
+    android:duration="2000"
+    android:valueType="floatType"
+    android:valueFrom="0dp"
+    android:valueTo="200dp"
+    android:repeatMode="reverse"
+    android:repeatCount="0"
+    android:interpolator="@android:anim/bounce_interpolator">
+
+</animator>

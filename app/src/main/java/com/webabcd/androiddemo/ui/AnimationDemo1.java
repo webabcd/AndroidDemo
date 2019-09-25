@@ -1,5 +1,6 @@
 /**
  * 视图动画（View Animation）基础
+ * 视图动画只是改变了 View 的视觉效果，而并没有改变 View 的属性（比如 left, top, right, bottom 之类的都是不变的）
  * View Animation（视图动画）即 Tween Animation（补间动画）
  * 本例中定义动画的 xml 请参见 res/anim/set_animationdemo1.xml
  *
@@ -14,6 +15,7 @@
  *         onAnimationStart - 动画开始
  *         onAnimationEnd - 动画结束
  *         onAnimationRepeat - 动画重复
+ * AnimationUtils.loadAnimation(Context context, int id) - 获取 xml 中定义的 Animation 对象
  *
  *
  * View - 视图
@@ -54,6 +56,7 @@ public class AnimationDemo1 extends AppCompatActivity {
     }
 
     private void sample() {
+        // AnimationUtils.loadAnimation() - 从 xml 中加载 Animation
         final Animation animation = AnimationUtils.loadAnimation(AnimationDemo1.this, R.anim.set_animationdemo1);
 
         _button1.setOnClickListener(new View.OnClickListener() {
