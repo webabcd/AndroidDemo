@@ -99,7 +99,7 @@ public class Helper {
      * id 转 drawable
      */
     public static Drawable id2drawable(Context context, int drawableId) {
-        return context.getResources().getDrawable(drawableId);
+        return context.getResources().getDrawable(drawableId, null);
     }
 
     public static String int2Hex(int intValue) {

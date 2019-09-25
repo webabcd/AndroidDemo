@@ -1,5 +1,6 @@
 /**
  * 视图动画（View Animation）插值器（Interpolator）
+ * View Animation（视图动画）即 Tween Animation（补间动画）
  * 视图动画支持插值器，相当于 easing 动画
  *
  *

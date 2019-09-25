@@ -31,6 +31,10 @@
         "url": ".ui.AnimationDemo3"
       },
       {
+        "title": "帧动画（Drawable Animation）",
+        "url": ".ui.AnimationDemo4"
+      },
+      {
         "title": "StyleDemo1",
         "url": ".ui.StyleDemo1"
       },

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    animation-list - 帧动画
+        oneshot - 是否只播放一次（false 代表循环播放）
+        item - 帧
+            duration - 此帧显示的时长（单位：毫秒）
+            drawable - 此帧显示的图片
+-->
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false">
+    <item android:duration="100" android:drawable="@drawable/img_sample_son" />
+    <item android:duration="200" android:drawable="@drawable/img_dialog_original" />
+    <item android:duration="300" android:drawable="@drawable/img_thread_state" />
+</animation-list>

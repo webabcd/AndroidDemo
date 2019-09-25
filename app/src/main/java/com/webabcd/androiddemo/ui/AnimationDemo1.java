@@ -1,5 +1,6 @@
 /**
  * 视图动画（View Animation）基础
+ * View Animation（视图动画）即 Tween Animation（补间动画）
  * 本例中定义动画的 xml 请参见 res/anim/set_animationdemo1.xml
  *
  *
@@ -7,7 +8,7 @@
  *     addAnimation(Animation a) - 添加动画
  * TranslateAnimation, ScaleAnimation, AlphaAnimation, RotateAnimation - 位移动画，缩放动画，不透明度动画，旋转动画。均继承自 Animation
  *     在构造函数中指定动画的参数，不同动画的不同参数的解释看 res/anim/set_animationdemo1.xml 中的说明吧
- * Animation - 动画
+ * Animation - 动画（在 xml 定义的各种视图动画均需要放在 res/anim 目录下）
  *     setDuration(), setStartOffset(), setFillAfter(), setFillBefore(), setRepeatCount(), setRepeatMode() - 具体解释看 res/anim/set_animationdemo1.xml 中的说明吧
  *     setAnimationListener() - 设置动画监听器
  *         onAnimationStart - 动画开始
