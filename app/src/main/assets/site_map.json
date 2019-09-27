@@ -39,6 +39,14 @@
         "url": ".ui.AnimationDemo5"
       },
       {
+        "title": "属性动画（Property Animation）中的 ObjectAnimator",
+        "url": ".ui.AnimationDemo6"
+      },
+      {
+        "title": "属性动画（Property Animation）中的 ViewPropertyAnimator",
+        "url": ".ui.AnimationDemo7"
+      },
+      {
         "title": "StyleDemo1",
         "url": ".ui.StyleDemo1"
       },

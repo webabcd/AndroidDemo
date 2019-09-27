@@ -21,7 +21,7 @@ public class AnimationDemo3CustomInterpolator extends BaseInterpolator {
     }
 
     // 传入一个动画的时间点值（0 - 1 之间，0 对应动画开始的时间点，1 对应动画结束的时间点），返回插值结果（允许不在 0 - 1 之间）
-    // 这个插值结果就是指定时间点的动画结果的比例值，这个比例值乘以（目标位置 - 初始位置）就是动画当前时间点的位置
+    // 这个插值结果就是指定时间点的动画结果的比例值，这个比例值乘以（目标位置 - 初始位置）就是动画当前时间点的相对于初始位置的位置
     @Override
     public float getInterpolation(float input) {
         return (float) Math.pow(input, mPow);

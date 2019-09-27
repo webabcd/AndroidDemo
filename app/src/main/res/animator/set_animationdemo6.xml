@@ -1,0 +1,55 @@
+<!--
+    set - 用于定义一组 ObjectAnimator 动画，支持嵌套，对应 java 中的 AnimatorSet
+        ordering - 子元素的执行顺序
+            sequentially - 顺序执行
+            together - 并行执行
+
+    objectAnimator - 用于控制某对象的某属性的变化（具体控制的是哪个对象，需要在 java 中通过 setTarget() 绑定）
+        propertyName - 需要控制的属性
+            比如  alpha, translationX, translationY, scaleX, scaleY, rotation, rotationX, rotationY 之类的
+        startOffset - 动画启动的延迟时间，单位：毫秒
+        duration - 动画的持续时间，单位：毫秒
+        valueType - 值的类型 intType, floatType, colorType, pathType
+        valueFrom - 起始值
+        valueTo - 结束值
+        repeatMode - 动画结束后的重复方式
+            restart - 重头播放（对应 java 中的 ObjectAnimator.RESTART）
+            reverse - 来回播放（对应 java 中的 ObjectAnimator.REVERSE）
+        repeatCount - 重复次数（-1 为无限循环）
+        interpolator - 指定此动画的 Interpolator（关于 Interpolator 参见 ui/AnimationDemo2 和 ui/AnimationDemo3）
+-->
+
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:ordering="sequentially">
+    <objectAnimator
+        android:duration="1000"
+        android:propertyName="translationX"
+        android:valueFrom="0dp"
+        android:valueTo="100dp"
+        android:valueType="floatType" />
+
+    <set android:ordering="together">
+        <objectAnimator
+            android:duration="3000"
+            android:propertyName="rotation"
+            android:valueFrom="0"
+            android:valueTo="360"
+            android:valueType="floatType" />
+
+        <set android:ordering="sequentially">
+            <objectAnimator
+                android:duration="1500"
+                android:propertyName="alpha"
+                android:valueFrom="1"
+                android:valueTo="0"
+                android:valueType="floatType" />
+            <objectAnimator
+                android:duration="1500"
+                android:propertyName="alpha"
+                android:valueFrom="0"
+                android:valueTo="1"
+                android:valueType="floatType" />
+        </set>
+    </set>
+
+</set>
