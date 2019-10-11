@@ -1,160 +1,190 @@
+/**
+ * WebView 基础
+ *     loadUrl("https://www.baidu.com") - 加载一个 http 或 https 的网页
+ *     loadUrl("file:///android_asset/xxx.html"), loadUrl("file:///android_res/xxx.html") - 加载包内的 html 文件
+ *     loadUrl("file://" + Environment.getExternalStorageDirectory().getAbsolutePath() + "/xxx.html") - 加载存储中的 html 文件
+ *     loadDataWithBaseURL(null, "html content", "text/html", "utf-8", null) - 加载指定的 html 字符串
+ */
+
 package com.webabcd.androiddemo.view.webview;
 
-import android.app.AlertDialog;
 import android.graphics.Bitmap;
+import android.net.http.SslError;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.KeyEvent;
-import android.view.View;
-import android.webkit.CookieManager;
-import android.webkit.CookieSyncManager;
-import android.webkit.JavascriptInterface;
-import android.webkit.JsResult;
+import android.view.ViewGroup;
+import android.webkit.SslErrorHandler;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.ProgressBar;
-import android.widget.Toast;
+import android.widget.TextView;
 
-import com.webabcd.androiddemo.MainActivity;
 import com.webabcd.androiddemo.R;
 
 public class WebViewDemo1 extends AppCompatActivity {
 
-    private WebView webView;
-    private ProgressBar progressBar;
+    private TextView mTextView1;
+    private TextView mTextView2;
+    private TextView mTextView3;
+    private WebView mWebView1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_webview_webviewdemo1);
 
-        CookieSyncManager syncManager = CookieSyncManager.createInstance(this);
-        syncManager.sync();
+        mTextView1 = findViewById(R.id.textView1);
+        mTextView2 = findViewById(R.id.textView2);
+        mTextView3 = findViewById(R.id.textView3);
+        mWebView1 = findViewById(R.id.webView1);
 
-        CookieManager cookieManager = CookieManager.getInstance();
-        String cookies = cookieManager.getCookie("http://updataios.test.itv.cn");
-        if (cookies == null) {
-            return;
-        }
-
-        progressBar= (ProgressBar)findViewById(R.id.progressbar);//进度条
-
-        webView = (WebView) findViewById(R.id.webview);
-//        webView.loadUrl("file:///android_asset/test.html");//加载asset文件夹下html
-        webView.loadUrl("http://updataios.test.itv.cn/cookie.aspx");//加载url
-
-        //使用webview显示html代码
-//        webView.loadDataWithBaseURL(null,"<html><head><title> 欢迎您 </title></head>" +
-//                "<body><h2>使用webview显示 html代码</h2></body></html>", "text/html" , "utf-8", null);
-
-        webView.addJavascriptInterface(this,"android");//添加js监听 这样html就能调用客户端
-        webView.setWebChromeClient(webChromeClient);
-        webView.setWebViewClient(webViewClient);
-
-        WebSettings webSettings=webView.getSettings();
-        webSettings.setJavaScriptEnabled(true);//允许使用js
-
-        /**
-         * LOAD_CACHE_ONLY: 不使用网络，只读取本地缓存数据
-         * LOAD_DEFAULT: （默认）根据cache-control决定是否从网络上取数据。
-         * LOAD_NO_CACHE: 不使用缓存，只从网络获取数据.
-         * LOAD_CACHE_ELSE_NETWORK，只要本地有，无论是否过期，或者no-cache，都使用缓存中的数据。
-         */
-        webSettings.setCacheMode(WebSettings.LOAD_NO_CACHE);//不使用缓存，只从网络获取数据.
-
-        //支持屏幕缩放
-        webSettings.setSupportZoom(true);
-        webSettings.setBuiltInZoomControls(true);
-
-        //不显示webview缩放按钮
-//        webSettings.setDisplayZoomControls(false);
+        sample();
     }
 
-    //WebViewClient主要帮助WebView处理各种通知、请求事件
-    private WebViewClient webViewClient=new WebViewClient(){
+    private void sample() {
+        // clearCache(boolean includeDiskFiles) - 清除缓存
+        //     false - 仅清除内存缓存
+        //     true - 清除内存缓存和硬盘缓存
+        mWebView1.clearCache(true);
+        // clearHistory() - 清除访问的历史记录
+        mWebView1.clearHistory();
+        // clearFormData() - 清除表单的自动完成填充的数据
+        mWebView1.clearFormData();
+
+
+        // canGoBack(), goBack(), canGoForward(), goForward() - 页面导航管理，含义分别为：是否可以后退，后退网页，是否可以前进，前进网页
+        // canGoBackOrForward(int steps), goBackOrForward(int steps) - 能后退或前进的步数，后退或前进指定步数的网页。负数为后退，正式为前进
+        // reload(), stopLoading() - 刷新页面，停止加载
+
+
+        // 当 WebView 不可见或切换到后台时，通过如下接口来降低 cpu 的占用
+        // onPause(), onResume() - 停止 js 的执行，恢复 js 的执行
+        // pauseTimers(), resumeTimers() - 停止 js 的计时器的执行，恢复 js 的计时器的执行
+
+
+        // getSettings() - 获取 WebSettings 对象，用于对 WebView 做一些设置
+        WebSettings webSettings = mWebView1.getSettings();
+
+        // setJavaScriptEnabled() - 是否启用 javascript 支持
+        webSettings.setJavaScriptEnabled(true);
+
+        // setUseWideViewPort() - 是否启用对 html 中 viewport 的支持
+        webSettings.setUseWideViewPort(true);
+        // setLoadWithOverviewMode() - 是否需要缩小内容以适应屏幕的宽度
+        webSettings.setLoadWithOverviewMode(true);
+
+        // setSupportZoom() - 是否需要支持缩放
+        webSettings.setSupportZoom(true);
+        // setBuiltInZoomControls() - 是否启用 WebView 内置的缩放功能
+        webSettings.setBuiltInZoomControls(true);
+        // setDisplayZoomControls() - 是否显示缩放按钮
+        webSettings.setDisplayZoomControls(false);
+
+        // setCacheMode() - 指定缓存方式
+        //     LOAD_DEFAULT - 根据 html 中的 cache-control 决定是否从网络上请求数据，默认值
+        //     LOAD_CACHE_ONLY - 不请求网络，只读取本地缓存数据
+        //     LOAD_NO_CACHE - 不使用本地缓存，只从网络请求数据.
+        //     LOAD_CACHE_ELSE_NETWORK - 优先从本地缓存获取数据，没有的话则请求网络
+        webSettings.setCacheMode(WebSettings.LOAD_DEFAULT);
+        // setAllowFileAccess() - 是否可以访问本地存储文件（比如通过 file 协议访问 sd 卡中的资源）（注：通过 file 协议访问包内资源不会受此影响）
+        webSettings.setAllowFileAccess(true);
+        // setJavaScriptCanOpenWindowsAutomatically() - 是否支持 javascript 打开新窗口
+        webSettings.setJavaScriptCanOpenWindowsAutomatically(true);
+        // setLoadsImagesAutomatically() - 是否自动加载图片资源
+        webSettings.setLoadsImagesAutomatically(true);
+        // setDefaultTextEncodingName() - 指定编码格式
+        webSettings.setDefaultTextEncodingName("UTF-8");
+        // setMixedContentMode() - 设置 http 和 https 混用的模式
+        //     MIXED_CONTENT_ALWAYS_ALLOW - 允许加载的 https 页面引用 http 资源
+        //     MIXED_CONTENT_NEVER_ALLOW - 不允许加载的 https 页面引用 http 资源
+        //     MIXED_CONTENT_COMPATIBILITY_MODE - 加载 https 页面后，由系统决定其引用的哪类 http 资源可以加载，哪类 http 资源不可以加载
+        webSettings.setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
+
+
+        // loadUrl() - 加载指定的 url
+        mWebView1.loadUrl("https://www.baidu.com");
+        // setWebViewClient() - 事件监听
+        mWebView1.setWebViewClient(webViewClient);
+        // setWebChromeClient() -  事件监听
+        mWebView1.setWebChromeClient(webChromeClient);
+    }
+
+    // WebViewClient 事件监听
+    private WebViewClient webViewClient = new WebViewClient() {
+        // 开始加载
         @Override
-        public void onPageFinished(WebView view, String url) {//页面加载完成
-            progressBar.setVisibility(View.GONE);
+        public void onPageStarted(WebView view, String url, Bitmap favicon) {
+            mTextView1.setText("onPageStarted");
         }
 
+        // 加载完成
         @Override
-        public void onPageStarted(WebView view, String url, Bitmap favicon) {//页面开始加载
-            progressBar.setVisibility(View.VISIBLE);
+        public void onPageFinished(WebView view, String url) {
+            mTextView1.setText("onPageFinished");
         }
 
+        // 加载任意资源时的回调（比如请求 html, css, js, jpg 等资源时都会触发此函数）
         @Override
-        public boolean shouldOverrideUrlLoading(WebView view, String url) {
-            Log.i("ansen","拦截url:"+url);
-            if(url.equals("http://www.google.com/")){
-                Toast.makeText(WebViewDemo1.this,"国内不能访问google,拦截该url",Toast.LENGTH_LONG).show();
-                return true;//表示我已经处理过了
-            }
-            return super.shouldOverrideUrlLoading(view, url);
+        public void onLoadResource(WebView view, String url) {
+            mTextView3.setText(String.format("onLoadResource: %s", url));
         }
 
+        // 加载失败（errorCode 为 http status code）
+        @Override
+        public void onReceivedError(WebView view, int errorCode, String description, String failingUrl){
+
+        }
+
+        // 加载 https 失败
+        @Override
+        public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError error) {
+            // 取消
+            // handler.cancel();
+
+            // 继续
+            // handler.proceed();
+        }
     };
 
-    //WebChromeClient主要辅助WebView处理Javascript的对话框、网站图标、网站title、加载进度等
-    private WebChromeClient webChromeClient=new WebChromeClient(){
-        //不支持js的alert弹窗，需要自己监听然后通过dialog弹窗
-        @Override
-        public boolean onJsAlert(WebView webView, String url, String message, JsResult result) {
-            AlertDialog.Builder localBuilder = new AlertDialog.Builder(webView.getContext());
-            localBuilder.setMessage(message).setPositiveButton("确定",null);
-            localBuilder.setCancelable(false);
-            localBuilder.create().show();
-
-            //注意:
-            //必须要这一句代码:result.confirm()表示:
-            //处理结果为确定状态同时唤醒WebCore线程
-            //否则不能继续点击按钮
-            result.confirm();
-            return true;
-        }
-
-        //获取网页标题
-        @Override
-        public void onReceivedTitle(WebView view, String title) {
-            super.onReceivedTitle(view, title);
-            Log.i("ansen","网页标题:"+title);
-        }
-
-        //加载进度回调
+    // WebChromeClient 事件监听
+    private WebChromeClient webChromeClient = new WebChromeClient() {
+        // 加载进度（0 - 100 之间）
         @Override
         public void onProgressChanged(WebView view, int newProgress) {
-            progressBar.setProgress(newProgress);
+            mTextView1.setText(String.format("onProgressChanged: %d", newProgress));
+        }
+
+        // 拿到 html 中的 title
+        @Override
+        public void onReceivedTitle(WebView view, String title) {
+            mTextView2.setText(String.format("onReceivedTitle: %s", title));
         }
     };
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        Log.i("ansen","是否有上一个页面:"+webView.canGoBack());
-        if (webView.canGoBack() && keyCode == KeyEvent.KEYCODE_BACK){//点击返回按钮的时候判断有没有上一页
-            webView.goBack(); // goBack()表示返回webView的上一页面
+        // 用户按下返回键时，如果页面可后退则后退
+        if (keyCode == KeyEvent.KEYCODE_BACK && mWebView1.canGoBack()) {
+            mWebView1.goBack();
             return true;
         }
-        return super.onKeyDown(keyCode,event);
+
+        return super.onKeyDown(keyCode, event);
     }
 
-    /**
-     * JS调用android的方法
-     * @param str
-     * @return
-     */
-    @JavascriptInterface //仍然必不可少
-    public void  getClient(String str){
-        Log.i("ansen","html调用客户端:"+str);
-    }
-
+    // 释放资源
     @Override
     protected void onDestroy() {
-        super.onDestroy();
+        // 从父容器中移除 WebView
+        ((ViewGroup) mWebView1.getParent()).removeView(mWebView1);
+        // 移除 WebView 内的所有控件
+        mWebView1.removeAllViews();
+        // destroy() - 销毁
+        mWebView1.destroy();
+        mWebView1 = null;
 
-        //释放资源
-        webView.destroy();
-        webView=null;
+        super.onDestroy();
     }
 }

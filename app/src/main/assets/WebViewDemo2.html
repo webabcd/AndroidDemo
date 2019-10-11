@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>html title</title>
+
+    <script>
+    function androidCallJs1(p1, p2) {
+        document.getElementById("lblMsg").innerHTML = "android 通过 loadUrl() 的方式调用了 js " + p1 + p2;
+    }
+
+    function androidCallJs2(p1, p2) {
+        document.getElementById("lblMsg").innerHTML = "android 通过 evaluateJavascript() 的方式调用了 js " + p1 + p2;
+        return "ok";
+    }
+
+    function jsCallAndroid() {
+        // myObject 对象是 java 端通过 addJavascriptInterface() 指定的
+        // myObject 对象的 jsCallAndroid() 函数是 java 端通过 @JavascriptInterface 映射的
+        var result = myObject.jsCallAndroid("p1", "p2");
+        document.getElementById("lblMsg").innerHTML = "js 调用 android 的返回值: " + result;
+    }
+
+    </script>
+
+</head>
+
+<p id="lblMsg">
+
+</p>
+
+<p>
+    <button onclick="jsCallAndroid()">js 调用 android（addJavascriptInterface() 方式）</button>
+</p>
+
+</html>

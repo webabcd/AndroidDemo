@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.widget.ImageView;
 
 import com.webabcd.androiddemo.R;
+import com.webabcd.androiddemo.utils.Helper;
 
 public class ImageViewDemo1 extends AppCompatActivity {
 
@@ -26,9 +27,9 @@ public class ImageViewDemo1 extends AppCompatActivity {
 
     private void sample() {
         // 设置 src
-        _imageView4.setImageDrawable(getResources().getDrawable(R.drawable.img_sample_son));
+        _imageView4.setImageDrawable(Helper.id2drawable(this, R.drawable.img_sample_son));
 
         // 设置 background
-        // _imageView4.setBackground(getResources().getDrawable(R.drawable.img_sample_son));
+        // _imageView4.setBackground(Helper.id2drawable(this, R.drawable.img_sample_son));
     }
 }

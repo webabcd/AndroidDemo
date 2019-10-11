@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>html title</title>
+
+    <script>
+    function interceptUrl() {
+        // 通过自定义协议跳转结合 shouldOverrideUrlLoading() 拦截来实现 js 调用 android
+        document.location = "js://cn.webabcd.jscallandroid/?p1=p1&p2=p2";
+    }
+
+    function interceptAlert() {
+        alert("alert message");
+    }
+
+    function interceptConfirm() {
+        var result = confirm("confirm message");
+        alert("confirm result: " + result);
+    }
+
+    function interceptPrompt() {
+        var result = prompt("prompt message");
+        alert("prompt result: " + result);
+    }
+    </script>
+
+</head>
+
+<p>
+    <button onclick="interceptUrl()">WebView 拦截 url 跳转</button>
+</p>
+
+<p>
+    <button onclick="interceptAlert()">WebView 拦截 alert 框</button>
+</p>
+
+<p>
+    <button onclick="interceptConfirm()">WebView 拦截 confirm 框</button>
+</p>
+
+<p>
+    <button onclick="interceptPrompt()">WebView 拦截 prompt 框</button>
+</p>
+
+<p>
+    <!--用于演示 WebView 拦截文件选择框-->
+    <input type="file" />
+</p>
+
+</html>
