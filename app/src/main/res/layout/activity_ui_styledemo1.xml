@@ -1,9 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.StyleDemo1">
+    android:orientation="vertical">
 
-</android.support.constraint.ConstraintLayout>
+    <!--默认样式-->
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="button1"/>
+
+    <!--使用 sdk 中的 Widget.Button 样式-->
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@android:style/Widget.Button"
+        android:text="button2"/>
+
+    <!--使用 v7 包中的 Widget.AppCompat.Button 样式-->
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Widget.AppCompat.Button"
+        android:text="button3"/>
+
+    <!--
+        自定义样式
+        使用 v7 包中的 Widget.AppCompat.Button 样式，并重写其中的一些样式（参见 res/values/styles.xml）
+    -->
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/StyleDemo1ButtonStyle"
+        android:text="button4"/>
+
+    <!--演示如何在 java 中动态更换样式资源-->
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="button5"/>
+
+</LinearLayout>

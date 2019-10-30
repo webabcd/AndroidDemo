@@ -2,11 +2,9 @@
 
     <!--
         默认主题，继承 Theme.AppCompat.Light.DarkActionBar 主题
-        引用示例参见 AndroidManifest.xml
+        引用示例参见 AndroidManifest.xml（作用于整个 application）
     -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar" />
-
-
     <!--
         继承上面的 AppTheme 主题，即继承 Theme.AppCompat.Light.DarkActionBar 主题，并重写其中的一些样式（其他的更多可重写的样式查文档吧）
         引用示例参见 ui/ThemeDemo1
@@ -22,6 +20,16 @@
         <item name="android:statusBarColor">@color/blue</item>
         <!--底部 NavigationBar 的背景-->
         <item name="android:navigationBarColor">@color/green</item>
+    </style>
+
+
+    <!--
+        继承 v7 包的 Widget.AppCompat.Button 样式，并重写其中的一些样式
+        引用示例参见 ui/StyleDemo1
+    -->
+    <style name="StyleDemo1ButtonStyle" parent="Widget.AppCompat.Button">
+        <item name="android:textColor">@color/orange</item>
+        <item name="android:background">@color/green</item>
     </style>
 
 

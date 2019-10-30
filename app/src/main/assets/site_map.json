@@ -53,16 +53,16 @@
     "title": "UI",
     "node": [
       {
+        "title": "样式简介，自定义样式，动态更换样式",
+        "url": ".ui.StyleDemo1"
+      },
+      {
         "title": "主题简介，继承主题并重写其中的一些样式，指定主题",
         "url": ".ui.ThemeDemo1"
       },
       {
         "title": "自定义主题，动态更换主题",
         "url": ".ui.ThemeDemo2"
-      },
-      {
-        "title": "StyleDemo1",
-        "url": ".ui.StyleDemo1"
       },
       {
         "title": "android 基础示例",
