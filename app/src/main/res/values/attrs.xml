@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!--
-        用于演示如何自定义主题
+        用于演示如何自定义主题（参见：ui/ThemeDemo2）
     -->
     <attr name="myTitleColor" format="color" />
     <attr name="myTitleBackgroundColor" format="color" />
 
 
+    <!--参见：view/custom/CustomView1-->
     <declare-styleable name="CustomView1">
         <attr name="titleSize" format="dimension" />
         <attr name="titleText" format="string" />
@@ -15,16 +16,18 @@
     </declare-styleable>
 
 
+    <!--参见：view/custom/CustomView2-->
     <declare-styleable name="CustomView2" />
 
 
+    <!--参见：view/custom/CustomView3-->
     <declare-styleable name="CustomView3">
         <attr name="usernameLabel" format="string" />
         <attr name="passwordLabel" format="string" />
     </declare-styleable>
 
 
-    <!--演示自定义控件的自定义属性-->
+    <!--演示自定义控件的自定义属性（参见：view/custom/CustomView4）-->
     <!--
         attr - 用于定义一个属性
             name - 属性名

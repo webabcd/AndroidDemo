@@ -9,7 +9,7 @@
             restart - 重头播放（对应 java 中的 ValueAnimator.RESTART）
             reverse - 来回播放（对应 java 中的 ValueAnimator.REVERSE）
         repeatCount - 重复次数（-1 为无限循环）
-        interpolator - 指定此动画的 Interpolator（关于 Interpolator 参见 ui/AnimationDemo2 和 ui/AnimationDemo3）
+        interpolator - 指定此动画的 Interpolator（关于 Interpolator 参见 animation/AnimationDemo2 和 animation/AnimationDemo3）
 -->
 
 <animator xmlns:android="http://schemas.android.com/apk/res/android"

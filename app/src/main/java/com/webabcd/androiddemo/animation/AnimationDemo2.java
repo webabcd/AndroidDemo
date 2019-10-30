@@ -35,7 +35,7 @@
  * 注：以上所有插值器都有一个 public float getInterpolation(float input) 方法，用于获取指定值（0 - 1 之间）的插值后的结果
  */
 
-package com.webabcd.androiddemo.ui;
+package com.webabcd.androiddemo.animation;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -70,7 +70,7 @@ public class AnimationDemo2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ui_animationdemo2);
+        setContentView(R.layout.activity_animation_animationdemo2);
 
         _textView1 = findViewById(R.id.textView1);
         _button1 = findViewById(R.id.button1);

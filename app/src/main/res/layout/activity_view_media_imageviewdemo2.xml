@@ -14,7 +14,7 @@
                 center（ImageView.ScaleType.CENTER） - 不缩放，居中显示，原图大小显示
                 centerCrop（ImageView.ScaleType.CENTER_CROP） - 等比缩放，居中显示，呈现的图片的宽大于等于控件的宽，呈现的图片的高大于等于控件的高
                 centerInside（ImageView.ScaleType.CENTER_INSIDE） - 等比缩放，居中显示，，呈现的图片的宽小于等于控件的宽，呈现的图片的高小于等于控件的高
-                matrix（ImageView.ScaleType.MATRIX） - 呈现的图片和控件的左上角点对齐，原图大小显示（关于 matrix 转换详见 ui/MatrixDemo1.java）
+                matrix（ImageView.ScaleType.MATRIX） - 呈现的图片和控件的左上角点对齐，原图大小显示（关于 matrix 转换详见 animation/MatrixDemo1.java）
     -->
 
     <LinearLayout
@@ -108,7 +108,7 @@
     </LinearLayout>
 
     <!--
-        matrix（ImageView.ScaleType.MATRIX） - 呈现的图片和控件的左上角点对齐，原图大小显示（关于 matrix 转换详见 ui/MatrixDemo1.java）
+        matrix（ImageView.ScaleType.MATRIX） - 呈现的图片和控件的左上角点对齐，原图大小显示（关于 matrix 转换详见 animation/MatrixDemo1.java）
     -->
     <ImageView
         android:layout_width="50dp"

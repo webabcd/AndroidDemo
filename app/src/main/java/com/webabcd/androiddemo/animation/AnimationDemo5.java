@@ -24,7 +24,7 @@
  * Animator - 控制器
  *     setStartDelay() - 设置动画启动的延迟时间，单位：毫秒
  *     setDuration() - 设置动画的持续时间，单位：毫秒
- *     setInterpolator() - 指定此动画的 Interpolator（关于 Interpolator 参见 ui/AnimationDemo2 和 ui/AnimationDemo3）
+ *     setInterpolator() - 指定此动画的 Interpolator（关于 Interpolator 参见 animation/AnimationDemo2 和 animation/AnimationDemo3）
  *     addListener() - 动画事件
  *         onAnimationStart() - 动画开始
  *         onAnimationEnd() - 动画结束
@@ -34,7 +34,7 @@
  * AnimatorInflater.loadAnimator(Context context, int id) - 获取 xml 中定义的 Animator 对象
  */
 
-package com.webabcd.androiddemo.ui;
+package com.webabcd.androiddemo.animation;
 
 import android.animation.Animator;
 import android.animation.AnimatorInflater;
@@ -55,7 +55,7 @@ public class AnimationDemo5 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ui_animationdemo5);
+        setContentView(R.layout.activity_animation_animationdemo5);
 
         mTextView1 = findViewById(R.id.textView1);
         mTextView2 = findViewById(R.id.textView2);
@@ -114,7 +114,7 @@ public class AnimationDemo5 extends AppCompatActivity {
         Point point1 = new Point(0, 0);
         Point point2 = new Point(200, 50);
 
-        // 创建 ValueAnimator 对象，指定 TypeEvaluator（参见 ui/AnimationDemo5CustomTypeEvaluator.java）和动画的起始点（当然根据你的 Interpolator 的不同，计算出的结果可能不在此起始点之间）
+        // 创建 ValueAnimator 对象，指定 TypeEvaluator（参见 animation/AnimationDemo5CustomTypeEvaluator.java）和动画的起始点（当然根据你的 Interpolator 的不同，计算出的结果可能不在此起始点之间）
         ValueAnimator animator = ValueAnimator.ofObject(new AnimationDemo5CustomTypeEvaluator(), point1, point2);
         // 设置动画的一些参数
         animator.setStartDelay(100);

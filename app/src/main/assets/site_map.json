@@ -9,16 +9,8 @@
     ]
   },
   {
-    "title": "UI",
+    "title": "Animation",
     "node": [
-      {
-        "title": "主题简介，继承主题并重写其中的一些样式，指定主题",
-        "url": ".ui.ThemeDemo1"
-      },
-      {
-        "title": "自定义主题，动态更换主题",
-        "url": ".ui.ThemeDemo2"
-      },
       {
         "title": "Matrix 变换（用于做位移，旋转，缩放，扭曲等变换）",
         "url": ".ui.MatrixDemo1"
@@ -54,6 +46,19 @@
       {
         "title": "属性动画（Property Animation）中的 ViewPropertyAnimator",
         "url": ".ui.AnimationDemo7"
+      }
+    ]
+  },
+  {
+    "title": "UI",
+    "node": [
+      {
+        "title": "主题简介，继承主题并重写其中的一些样式，指定主题",
+        "url": ".ui.ThemeDemo1"
+      },
+      {
+        "title": "自定义主题，动态更换主题",
+        "url": ".ui.ThemeDemo2"
       },
       {
         "title": "StyleDemo1",

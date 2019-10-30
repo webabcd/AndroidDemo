@@ -11,7 +11,7 @@
  * 4、另外也可以考虑用 Animation 的方式实现类似的变换
  */
 
-package com.webabcd.androiddemo.ui;
+package com.webabcd.androiddemo.animation;
 
 import android.content.Context;
 import android.graphics.Canvas;

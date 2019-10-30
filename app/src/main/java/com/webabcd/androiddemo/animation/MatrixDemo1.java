@@ -27,7 +27,7 @@
  * Y = x * M21 + y * M22 + OffsetY
  */
 
-package com.webabcd.androiddemo.ui;
+package com.webabcd.androiddemo.animation;
 
 import android.graphics.Matrix;
 import android.support.v7.app.AppCompatActivity;
@@ -55,7 +55,7 @@ public class MatrixDemo1 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ui_matrixdemo1);
+        setContentView(R.layout.activity_animation_matrixdemo1);
 
         _imageView1 = findViewById(R.id.imageView1);
 

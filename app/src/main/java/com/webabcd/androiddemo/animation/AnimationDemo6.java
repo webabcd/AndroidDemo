@@ -5,7 +5,7 @@
  * 3、TypeEvaluator - 用于根据从 TimeInterpolator 获取到的比例值，计算出对应的实际位置
  *
  * ObjectAnimator - 用于将对象的某属性的变化动画化，继承自 ValueAnimator（在 xml 定义的各种值控制器均需要放在 res/animator 目录下）
- *     因为 ObjectAnimator 继承自 ValueAnimator，这部分仔细看 ValueAnimator 就好，关于 ValueAnimator 请参见 ui/AnimationDemo5.java
+ *     因为 ObjectAnimator 继承自 ValueAnimator，这部分仔细看 ValueAnimator 就好，关于 ValueAnimator 请参见 animation/AnimationDemo5.java
  *     相对于 ValueAnimator 来说 ObjectAnimator 的 ofInt(), ofFloat(), ofArgb(), ofObject() 方法均多了两个参数
  *         第一个参数：用于指定当前 ObjectAnimator 需要绑定到的对象
  *         第二个参数：用于指定当前 ObjectAnimator 需要绑定到的属性名称
@@ -20,14 +20,14 @@
  *     以上，只是用于设置不同 ObjectAnimator 之间的调用顺序，要启动此 AnimatorSet 的话还是要调用 start() 方法
  *
  * Animator - 控制器
- *     这部分的说明，请参见 ui/AnimationDemo5.java
+ *     这部分的说明，请参见 animation/AnimationDemo5.java
  *     setTarget(Object target) - 如果 Animator 是 ObjectAnimator 或 AnimatorSet 的话就通过此方法将 xml 中定义的 ObjectAnimator 或 AnimatorSet 绑定到指定的对象
  *
  * AnimatorInflater.loadAnimator(Context context, int id) - 获取 xml 中定义的 Animator 对象
  */
 
 
-package com.webabcd.androiddemo.ui;
+package com.webabcd.androiddemo.animation;
 
 import android.animation.Animator;
 import android.animation.AnimatorInflater;
@@ -48,7 +48,7 @@ public class AnimationDemo6 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ui_animationdemo6);
+        setContentView(R.layout.activity_animation_animationdemo6);
 
         mTextView1 = findViewById(R.id.textView1);
         mTextView2 = findViewById(R.id.textView2);

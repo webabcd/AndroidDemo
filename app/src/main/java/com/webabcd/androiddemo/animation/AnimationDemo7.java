@@ -9,7 +9,7 @@
  * ViewPropertyAnimator - 用于简化动画的实现（支持链式语法）
  *     setStartDelay() - 设置动画启动的延迟时间，单位：毫秒
  *     setDuration() - 设置动画的持续时间，单位：毫秒
- *     setInterpolator() - 指定此动画的 Interpolator（关于 Interpolator 参见 ui/AnimationDemo2 和 ui/AnimationDemo3）
+ *     setInterpolator() - 指定此动画的 Interpolator（关于 Interpolator 参见 animation/AnimationDemo2 和 animation/AnimationDemo3）
  *     alpha() - alpha 动画到指定的值
  *     alphaBy() - alpha 动画偏移指定的值（这就是结尾有 By 和没有 By 的区别）
  *     rotation(), rotationBy(), rotationX(), rotationXBy(), rotationY(), rotationYBy() - 顾名思义
@@ -32,7 +32,7 @@
  * 注：对于动画来说，优先考虑用 ViewPropertyAnimator，不行再考虑用 ObjectAnimator， 再不行再考虑用 ValueAnimator， 还不行最后考虑自己写
  */
 
-package com.webabcd.androiddemo.ui;
+package com.webabcd.androiddemo.animation;
 
 import android.animation.Animator;
 import android.animation.ValueAnimator;
@@ -54,7 +54,7 @@ public class AnimationDemo7 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ui_animationdemo7);
+        setContentView(R.layout.activity_animation_animationdemo7);
 
         mTextView1 = findViewById(R.id.textView1);
         mTextView2 = findViewById(R.id.textView2);

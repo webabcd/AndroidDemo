@@ -4,7 +4,7 @@
  * Interpolator 用于计算不同时间点的动画结果的比例值
  */
 
-package com.webabcd.androiddemo.ui;
+package com.webabcd.androiddemo.animation;
 
 import android.view.animation.BaseInterpolator;
 

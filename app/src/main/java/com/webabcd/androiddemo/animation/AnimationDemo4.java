@@ -10,7 +10,7 @@
  *     isRunning() - 帧动画是否在运行中
  */
 
-package com.webabcd.androiddemo.ui;
+package com.webabcd.androiddemo.animation;
 
 import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.Drawable;
@@ -30,7 +30,7 @@ public class AnimationDemo4 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ui_animationdemo4);
+        setContentView(R.layout.activity_animation_animationdemo4);
 
         mImageView1 = findViewById(R.id.imageView1);
         mImageView2 = findViewById(R.id.imageView2);

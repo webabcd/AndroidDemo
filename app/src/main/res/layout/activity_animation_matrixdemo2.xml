@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.webabcd.androiddemo.ui.MatrixDemo2CustomView
+    <com.webabcd.androiddemo.animation.MatrixDemo2CustomView
         android:id="@+id/myView"
         android:layout_width="200dp"
         android:layout_height="200dp"

@@ -23,7 +23,7 @@
  *     clearAnimation() - 取消动画
  */
 
-package com.webabcd.androiddemo.ui;
+package com.webabcd.androiddemo.animation;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -45,7 +45,7 @@ public class AnimationDemo1 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ui_animationdemo1);
+        setContentView(R.layout.activity_animation_animationdemo1);
 
         _textView1 = findViewById(R.id.textView1);
         _textView2 = findViewById(R.id.textView2);

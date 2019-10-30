@@ -4,7 +4,7 @@
  * 本例用于根据从 TimeInterpolator 获取到的比例值，计算出 Point 的值
  */
 
-package com.webabcd.androiddemo.ui;
+package com.webabcd.androiddemo.animation;
 
 import android.animation.TypeEvaluator;
 import android.graphics.Point;

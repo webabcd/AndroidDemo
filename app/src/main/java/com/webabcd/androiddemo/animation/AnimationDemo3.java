@@ -5,10 +5,10 @@
  * 视图动画支持插值器（用于计算不同时间点的动画结果的比例值），相当于 easing 动画，默认值是 LinearInterpolator 匀速变化
  *
  *
- * 继承 BaseInterpolator 实现一个自定义的 Interpolator 请参见 ui/AnimationDemo3CustomInterpolator.java
+ * 继承 BaseInterpolator 实现一个自定义的 Interpolator 请参见 animation/AnimationDemo3CustomInterpolator.java
  */
 
-package com.webabcd.androiddemo.ui;
+package com.webabcd.androiddemo.animation;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -25,7 +25,7 @@ public class AnimationDemo3 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ui_animationdemo3);
+        setContentView(R.layout.activity_animation_animationdemo3);
 
         _textView1 = findViewById(R.id.textView1);
 
