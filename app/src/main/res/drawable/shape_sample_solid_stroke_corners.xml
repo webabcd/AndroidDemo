@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        solid - 填充
+            color - 填充的颜色
+
+        stroke - 描边
+            color - 描边的颜色
+            width - 描边的宽度
+            dashWidth - 每段虚线的实线部分的长度（指定为 0 的话则没有虚线）
+            dashGap - 每段虚线的空白部分的长度（指定为 0 的话则没有虚线）
+
+        corners - 圆角
+            radius - 圆角半径
+            topLeftRadius - 左上角的圆角的半径
+            topRightRadius - 右上角的圆角的半径
+            bottomLeftRadius - 左下角的圆角的半径
+            bottomRightRadius - 右下角的圆角的半径
+    -->
+
+    <solid android:color="#f00" />
+    <stroke
+        android:color="#00f"
+        android:width="20dp"
+        android:dashWidth="50dp"
+        android:dashGap="10dp" />
+    <corners android:radius="20dp" />
+</shape>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--线性渐变，参见 res/drawable/shape_sample_gradient_linear.xml-->
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:background="@drawable/shape_sample_gradient_linear" />
+
+    <!--放射性渐变，参见 res/drawable/shape_sample_gradient_radial.xml-->
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/shape_sample_gradient_radial" />
+
+    <!--扫描式渐变，参见 res/drawable/shape_sample_gradient_sweep.xml-->
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/shape_sample_gradient_sweep" />
+
+</LinearLayout>

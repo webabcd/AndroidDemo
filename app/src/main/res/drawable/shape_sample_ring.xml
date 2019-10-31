@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    shape - rectangle（矩形，默认值）；oval（圆形）；ring（环形）；line（直线）
+
+    innerRadiusRatio - 内环的半径的相对值（其真实值 = 引用此 xml 的 view 的宽度除以此相对值）
+    thicknessRatio - 环的厚度的相对值（其真实值 = 引用此 xml 的 view 的宽度除以此相对值）
+    innerRadius - 内环的半径的绝对值（指定此值的话，则 innerRadiusRatio 值将失效）
+    thickness - 环的厚度的绝对值（指定此值的话，则 thicknessRatio 值将失效）
+    useLevel - 设置为 false 否则不显示
+-->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="ring"
+    android:innerRadiusRatio="5.0"
+    android:thicknessRatio="20.0"
+    android:useLevel="false">
+
+    <solid android:color="#f00"/>
+
+</shape>

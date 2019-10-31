@@ -4,23 +4,35 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <!--
+        alpha - 不透明度（在 java 中通过 setAlpha() 设置）
+        颜色格式类似如下：
+            #RGB。如：#FF0000, #00FF00, #0000FF
+            #ARGB（A 为 Alpha 值）。如：#FFFF0000, #FF00FF00, #FF0000FF
+    -->
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="你好 webabcd"
         android:textColor="#FFFF0000"
-        android:background="#0000FF"/>
+        android:background="#0000FF"
+        android:alpha="0.7"/>
 
+    <!--
+        颜色格式类似如下（简化方式）：
+            #RGB。如：#F00
+            #ARGB（A 为 Alpha 值）。如：#FF00, #F0F0, #F00F
+    -->
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="你好 webabcd"
         android:textColor="#FF00"
-        android:background="#00F"
-        android:alpha="0.7"/>
+        android:background="#00F"/>
 
+    <!--在 java 中设置颜色-->
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"

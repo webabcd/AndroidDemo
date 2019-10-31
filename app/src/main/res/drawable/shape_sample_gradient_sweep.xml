@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    本例用于演示扫描式渐变色（扫描式渐变的意思就是转着圈渐变）
+-->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--
+        gradient - 渐变
+            type - linear（线性渐变）；radial（放射性渐变）；sweep（扫描线式渐变）
+            startColor - 渐变色开始色值
+            centerColor - 渐变色中间色值
+            endColor - 渐变色结束色值
+            centerX - 渐变中心点的 X 坐标的相对值（0.0 - 1.0 之间），仅 type 为 radial 或 sweep 时有效
+            centerX - 渐变中心点的 Y 坐标的相对值（0.0 - 1.0 之间），仅 type 为 radial 或 sweep 时有效
+     -->
+    <gradient
+        android:type="sweep"
+        android:centerX="0.3"
+        android:centerY="0.3"
+        android:startColor="#f00"
+        android:endColor="#00f"/>
+
+</shape>

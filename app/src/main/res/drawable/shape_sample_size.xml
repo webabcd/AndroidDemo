@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <!--
+        size - 尺寸
+            width - 宽度
+            height - 高度
+    -->
+
+    <!--
+        size 不一定会生效的
+        1、比如通过 background 引用此 xml 的话则 size 不生效，此矩形的宽高会与引用此 xml 的 view 的宽高一致
+        2、如果通过 drawableBottom 引用此 xml 的话则 size 就会生效
+    -->
+
+    <solid android:color="#00f" />
+    <size android:width="65535dp" android:height="10dp" />
+</shape>

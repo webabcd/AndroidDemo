@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    shape - rectangle（矩形，默认值）；oval（圆形）；ring（环形）；line（直线）
+-->
+
+<!--
+    此矩形显示的宽和高与引用此 xml 的 view 的宽和高一致
+-->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="#f00" />
+</shape>

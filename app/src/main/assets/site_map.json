@@ -65,12 +65,24 @@
         "url": ".ui.ThemeDemo2"
       },
       {
-        "title": "android 基础示例",
-        "url": ".ui.BasicDemo1"
+        "title": "颜色和不透明度",
+        "url": ".ui.ColorDemo1"
       },
       {
-        "title": "UIDemo1",
-        "url": ".ui.UIDemo1"
+        "title": "shape 渐变色（线性渐变，放射性渐变，扫描式渐变）",
+        "url": ".ui.ShapeDemo1"
+      },
+      {
+        "title": "shape 之填充，描边，圆角，尺寸，内部间距",
+        "url": ".ui.ShapeDemo2"
+      },
+      {
+        "title": "shape 形状（矩形，圆形，环形，直线）",
+        "url": ".ui.ShapeDemo3"
+      },
+      {
+        "title": "android 基础示例",
+        "url": ".ui.BasicDemo1"
       }
     ]
   },

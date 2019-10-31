@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    shape - rectangle（矩形，默认值）；oval（圆形）；ring（环形）；line（直线）
+-->
+
+<!--
+    此直线的粗细为 stroke 的 width 指定的值，长度与引用此 xml 的 view 的宽度一致
+-->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="line">
+    <stroke android:width="10dp" android:color="#f00" />
+</shape>

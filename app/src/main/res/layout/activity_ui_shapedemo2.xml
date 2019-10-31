@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--shape 之填充、描边、圆角，参见 res/drawable/shape_sample_solid_stroke_corners.xml-->
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:background="@drawable/shape_sample_solid_stroke_corners" />
+
+    <!--shape 之尺寸，参见 res/drawable/shape_sample_size.xml-->
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/orange"
+        android:drawableBottom="@drawable/shape_sample_size"/>
+
+    <!--shape 之内部间距，参见 res/drawable/shape_sample_padding.xml-->
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="10dp"
+        android:text="你好 webabcd"
+        android:background="@drawable/shape_sample_padding"/>
+
+</LinearLayout>
