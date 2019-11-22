@@ -6,7 +6,7 @@
     -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar" />
     <!--
-        继承上面的 AppTheme 主题，即继承 Theme.AppCompat.Light.DarkActionBar 主题，并重写其中的一些样式（其他的更多可重写的样式查文档吧）
+        继承上面的 AppTheme 主题，即继承 Theme.AppCompat.Light.DarkActionBar 主题，并重写其中的一些样式（关于修改主题中指定控件的默认样式请参见 ui/ThemeDemo3）
         引用示例参见 ui/ThemeDemo1
     -->
     <style name="ThemeDemo1Theme" parent="AppTheme">
@@ -20,16 +20,6 @@
         <item name="android:statusBarColor">@color/blue</item>
         <!--底部 NavigationBar 的背景-->
         <item name="android:navigationBarColor">@color/green</item>
-    </style>
-
-
-    <!--
-        继承 v7 包的 Widget.AppCompat.Button 样式，并重写其中的一些样式
-        引用示例参见 ui/StyleDemo1
-    -->
-    <style name="StyleDemo1ButtonStyle" parent="Widget.AppCompat.Button">
-        <item name="android:textColor">@color/orange</item>
-        <item name="android:background">@color/green</item>
     </style>
 
 
@@ -50,6 +40,33 @@
         <item name="myTitleBackgroundColor">@color/orange</item>
     </style>
 
+
+    <!--
+        通过主题修改控件的默认样式
+        通过“ctrl + 鼠标左键”一步一步地找出你需要修改的控件的默认样式，然后复制过来重写就好
+     -->
+    <style name="ThemeDemo3Theme" parent="AppTheme">
+        <item name="buttonStyle">@style/ThemeDemo3ButtonStyle</item>
+        <item name="android:textViewStyle">@style/ThemeDemo3TextViewStyle</item>
+    </style>
+    <style name="ThemeDemo3ButtonStyle" parent="android:Widget">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@color/orange</item>
+    </style>
+    <style name="ThemeDemo3TextViewStyle" parent="android:Widget.TextView">
+        <item name="android:textColor">@color/orange</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceLarge</item>
+    </style>
+
+
+    <!--
+        继承 v7 包的 Widget.AppCompat.Button 样式，并重写其中的一些样式
+        引用示例参见 ui/StyleDemo1
+    -->
+    <style name="StyleDemo1ButtonStyle" parent="Widget.AppCompat.Button">
+        <item name="android:textColor">@color/orange</item>
+        <item name="android:background">@color/green</item>
+    </style>
 
 
     <!--

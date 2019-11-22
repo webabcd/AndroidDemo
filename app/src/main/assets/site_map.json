@@ -65,6 +65,10 @@
         "url": ".ui.ThemeDemo2"
       },
       {
+        "title": "通过主题修改控件的默认样式",
+        "url": ".ui.ThemeDemo3"
+      },
+      {
         "title": "颜色和不透明度",
         "url": ".ui.ColorDemo1"
       },
