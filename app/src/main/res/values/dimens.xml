@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="dp32">32dp</dimen>
+    <dimen name="sp32">32sp</dimen>
+    <dimen name="px32">32px</dimen>
+</resources>

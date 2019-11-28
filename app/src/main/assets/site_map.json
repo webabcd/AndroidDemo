@@ -53,6 +53,10 @@
     "title": "UI",
     "node": [
       {
+        "title": "屏幕密度（物理分辨率, 逻辑分辨率, density, dpi, drawable 文件夹, mipmap 文件夹, dp, sp, px）",
+        "url": ".ui.DensityDemo1"
+      },
+      {
         "title": "样式简介，自定义样式，动态更换样式",
         "url": ".ui.StyleDemo1"
       },
@@ -83,10 +87,6 @@
       {
         "title": "shape 形状（矩形，圆形，环形，直线）",
         "url": ".ui.ShapeDemo3"
-      },
-      {
-        "title": "android 基础示例",
-        "url": ".ui.BasicDemo1"
       }
     ]
   },

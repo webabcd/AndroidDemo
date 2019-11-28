@@ -6,7 +6,8 @@
 
     <!--
         9patch（nine patch）图片
-        9patch 图片的编辑工具在类似如下的路径 C:\Android\sdk\tools\lib\draw9patch.jar
+        1、9patch 图片的命名格式 *.9.png
+        2、Android Studio 内置 9patch 图片的编辑工具，也可以使用类似如下路径 C:\Android\sdk\tools\lib\draw9patch.jar 的编辑工具
     -->
 
     <!--

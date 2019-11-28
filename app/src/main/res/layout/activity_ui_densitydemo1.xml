@@ -7,9 +7,7 @@
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="你好 webabcd"
-        android:textColor="#FFFF0000" />
+        android:layout_height="wrap_content" />
 
     <TextView
         android:id="@+id/textView2"
@@ -19,15 +17,11 @@
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/sample_hello1"
-        android:textColor="@color/orange" />
+        android:layout_height="wrap_content" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
-
-    <include layout="@layout/activity_ui_basic_demo1_child" />
 
 </LinearLayout>
