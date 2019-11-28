@@ -532,5 +532,14 @@
         "url": ".service.BasicDemo1"
       }
     ]
+  },
+  {
+    "title": "工具",
+    "node": [
+      {
+        "title": "生成 README.md",
+        "url": ".tools.GenerateReadme"
+      }
+    ]
   }
 ]
