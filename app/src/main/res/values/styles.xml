@@ -4,7 +4,12 @@
         默认主题，继承 Theme.AppCompat.Light.DarkActionBar 主题
         引用示例参见 AndroidManifest.xml（作用于整个 application）
     -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar" />
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar" >
+        <!--
+            用于全局指定 Spinner 弹出的下拉框的分隔线
+        -->
+        <item name="android:dropDownListViewStyle">@style/MyDropDownListViewStyle</item>
+    </style>
     <!--
         继承上面的 AppTheme 主题，即继承 Theme.AppCompat.Light.DarkActionBar 主题，并重写其中的一些样式（关于修改主题中指定控件的默认样式请参见 ui/ThemeDemo3）
         引用示例参见 ui/ThemeDemo1
@@ -85,6 +90,24 @@
     -->
     <style name="MySwitchTextAppearance" parent="@android:style/TextAppearance.Holo.Small">
         <item name="android:textColor">@color/orange</item>
+    </style>
+
+
+    <!--
+        引用示例参见 view/selection/SpinnerDemo2
+    -->
+    <style name="MySpinnerStyle" parent="Base.Widget.AppCompat.Spinner">
+        <!--
+            自定义 Spinner 右侧的箭头，以及 Spinner 本身的背景和边框
+        -->
+        <item name="android:background">@drawable/selector_spinner_background</item>
+    </style>
+    <!--
+        用于在某主题下全局指定 Spinner 弹出的下拉框的分隔线（需要在根主题中引用此样式，否则无效）
+    -->
+    <style name="MyDropDownListViewStyle" parent="android:style/Widget.ListView.DropDown">
+        <item name="android:divider">#ff0000</item>
+        <item name="android:dividerHeight">1dp</item>
     </style>
 
 

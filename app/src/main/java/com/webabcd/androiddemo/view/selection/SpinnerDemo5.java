@@ -1,10 +1,8 @@
 /**
- * ListView 通过自定义 BaseAdapter 显示数据
- *
- * 适配器中包含了数据和项模板
+ * Spinner - 列表选择框控件（演示如何通过自定义 BaseAdapter 显示数据）
  */
 
-package com.webabcd.androiddemo.view.listview;
+package com.webabcd.androiddemo.view.selection;
 
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
@@ -12,26 +10,31 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.webabcd.androiddemo.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListViewDemo3 extends AppCompatActivity {
+public class SpinnerDemo5 extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-    private ListView _listView1;
+    private Spinner mSpinner1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_listview_listviewdemo3);
+        setContentView(R.layout.activity_view_selection_spinnerdemo5);
 
-        _listView1 = (ListView) findViewById(R.id.listView1);
+        mSpinner1 = findViewById(R.id.spinner1);
+
+        // 选择项发生变化时触发的事件（注：第一次加载时也会触发此事件）
+        mSpinner1.setOnItemSelectedListener(this);
 
         sample();
     }
@@ -45,7 +48,28 @@ public class ListViewDemo3 extends AppCompatActivity {
 
         // 实例化自定义的 BaseAdapter
         MyAdapter myAdapter = new MyAdapter(myDataList, this);
-        _listView1.setAdapter(myAdapter);
+        mSpinner1.setAdapter(myAdapter);
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        // parent 就是 ListView
+        // view 就是被点击的 item
+        // position 就是被点击的 item 的索引位置
+        // id 就是被点击的 item 的 id（通过调用 BaseAdapter 的 getItemId(int position) 来获取此 id）
+
+        // 调用 BaseAdapter 的 getItem(int position)
+        // MyData myData = (MyData)parent.getAdapter().getItem(position);
+
+        // 与上面的代码其实是一样的，会调用 BaseAdapter 的 getItem(int position)
+        MyData myData = (MyData)parent.getItemAtPosition(position);
+
+        Toast.makeText(this,String.format("click position:%d, id:%d, data:%s", position, id, myData.getName()),Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
     }
 
     // 自定义实体类
@@ -120,7 +144,7 @@ public class ListViewDemo3 extends AppCompatActivity {
         /*
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            convertView = LayoutInflater.from(_context).inflate(R.layout.item_view_listview_listviewdemo3,parent,false);
+            convertView = LayoutInflater.from(_context).inflate(R.layout.item_view_selection_spinnerdemo5,parent,false);
 
             ImageView imgLogo = (ImageView) convertView.findViewById(R.id.imgLogo);
             TextView txtName = (TextView) convertView.findViewById(R.id.txtName);
@@ -144,7 +168,7 @@ public class ListViewDemo3 extends AppCompatActivity {
             ViewHolder holder = null;
             if (convertView == null) {
                 // 只 inflate() 一次 xml
-                convertView = LayoutInflater.from(_context).inflate(R.layout.item_view_listview_listviewdemo3, parent, false);
+                convertView = LayoutInflater.from(_context).inflate(R.layout.item_view_selection_spinnerdemo5, parent, false);
 
                 holder = new ViewHolder();
                 holder.imgLogo = (ImageView) convertView.findViewById(R.id.imgLogo);
@@ -170,5 +194,3 @@ public class ListViewDemo3 extends AppCompatActivity {
         }
     }
 }
-
-

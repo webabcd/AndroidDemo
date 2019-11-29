@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--
+        默认样式
+    -->
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:entries="@array/arrayCountry" />
+
+    <!--
+        dropDownWidth - 弹出的列表框的宽度
+        dropDownHorizontalOffset - 弹出的列表框的水平偏移距离（经测试，无效）
+        dropDownVerticalOffset - 弹出的列表框的垂直偏移距离
+        popupBackground - 弹出的列表框的背景
+        dropDownSelector - 选中了弹出的列表框的某一项时，此项的背景
+    -->
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:dropDownWidth="200dp"
+        android:dropDownVerticalOffset="100dp"
+        android:popupBackground="@color/blue"
+        android:dropDownSelector="@color/orange"
+        android:entries="@array/arrayCountry" />
+
+    <!--
+        spinnerMode - 弹出的列表框的模式
+            dropdown - 下拉框的风格，默认值
+            dialog - 对话框的风格
+        prompt - 当 spinnerMode 为 dialog 时，设置其标题（只能引用 strings.xml 中的资源，而不能直接指定字符串）
+    -->
+    <Spinner
+        android:id="@+id/spinner3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:spinnerMode="dialog"
+        android:prompt="@string/app_name"
+        android:entries="@array/arrayCountry" />
+
+    <!--
+        自定义 Spinner 右侧的箭头，以及 Spinner 本身的背景和边框（通过指定 style 属性来指定自定义样式，参见 values/styles.xml 中的 MySpinnerStyle）
+        自定义 Spinner 弹出的下拉框的分隔线（这个只能在某主题下全局指定，参见 values/styles.xml 中的 MyDropDownListViewStyle）
+    -->
+    <Spinner
+        android:id="@+id/spinner4"
+        android:layout_width="200sp"
+        android:layout_height="wrap_content"
+        android:dropDownVerticalOffset="20dp"
+        style="@style/MySpinnerStyle"
+        android:entries="@array/arrayCountry" />
+
+</LinearLayout>

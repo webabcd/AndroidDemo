@@ -38,10 +38,10 @@ public class ListViewDemo1 extends AppCompatActivity {
         _listView2.setAdapter(adapter2);
 
         // 通过指定的项模板（需要显示的样式）和数组（需要显示的数据）创建 ArrayAdapter
-        //     项模板为 simple_list_item_1（另外还有其他很多系统内置项模板，不一一列列举了，因为实际最常用的还是自定义项模板）
+        //     项模板为自定义的 res/layout/item_view_listview_listviewdemo1.xml
         //     数据来自指定的数组
         String[] arrayData = {"中国", "美国", "日本"};
-        ArrayAdapter<String> adapter3 = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1, arrayData);
+        ArrayAdapter<String> adapter3 = new ArrayAdapter<>(this,R.layout.item_view_listview_listviewdemo1, arrayData);
         _listView3.setAdapter(adapter3);
     }
 }
