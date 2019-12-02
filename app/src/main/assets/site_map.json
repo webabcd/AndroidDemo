@@ -9,6 +9,15 @@
     ]
   },
   {
+    "title": "resource",
+    "node": [
+      {
+        "title": "国际化（多语言）",
+        "url": ".resource.LocalizationDemo1"
+      }
+    ]
+  },
+  {
     "title": "Animation",
     "node": [
       {
@@ -87,15 +96,6 @@
       {
         "title": "shape 形状（矩形，圆形，环形，直线）",
         "url": ".ui.ShapeDemo3"
-      }
-    ]
-  },
-  {
-    "title": "resource",
-    "node": [
-      {
-        "title": "aaaaaaaa",
-        "url": ".resource.WebViewDemo1"
       }
     ]
   },
