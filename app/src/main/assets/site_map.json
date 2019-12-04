@@ -9,6 +9,23 @@
     ]
   },
   {
+    "title": "Activity",
+    "node": [
+      {
+        "title": "Activity 的生命周期",
+        "url": ".activity.ActivityDemo1"
+      },
+      {
+        "title": "Activity 的横屏和竖屏，以及横竖屏切换与状态保存",
+        "url": ".activity.ActivityDemo2"
+      },
+      {
+        "title": "aaaaaaa",
+        "url": ".activity.ActivityDemo3"
+      }
+    ]
+  },
+  {
     "title": "resource",
     "node": [
       {

@@ -14,6 +14,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -157,6 +159,15 @@ public class Helper {
             // e.printStackTrace();
         }
         return str;
+    }
+
+    /**
+     * 格式化时间
+     */
+    public static String formatDate(Date date, String pattern)
+    {
+        SimpleDateFormat dateFormat = new SimpleDateFormat(pattern);
+        return dateFormat.format(date);
     }
 }
 
