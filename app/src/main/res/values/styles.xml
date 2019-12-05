@@ -9,6 +9,11 @@
             用于全局指定 Spinner 弹出的下拉框的分隔线
         -->
         <item name="android:dropDownListViewStyle">@style/MyDropDownListViewStyle</item>
+
+        <!--
+            用于全局指定 activity 之间的跳转动画
+        -->
+        <item name="android:windowAnimationStyle">@style/MyActivityAnimation</item>
     </style>
     <!--
         继承上面的 AppTheme 主题，即继承 Theme.AppCompat.Light.DarkActionBar 主题，并重写其中的一些样式（关于修改主题中指定控件的默认样式请参见 ui/ThemeDemo3）
@@ -103,7 +108,7 @@
         <item name="android:background">@drawable/selector_spinner_background</item>
     </style>
     <!--
-        用于在某主题下全局指定 Spinner 弹出的下拉框的分隔线（需要在根主题中引用此样式，否则无效）
+        用于在某主题下全局指定 Spinner 弹出的下拉框的分隔线，需要在相应的主题中引用此样式
     -->
     <style name="MyDropDownListViewStyle" parent="android:style/Widget.ListView.DropDown">
         <item name="android:divider">#ff0000</item>
@@ -129,6 +134,22 @@
         <item name="android:minHeight">40dp</item>
         <item name="android:maxHeight">40dp</item>
         <item name="android:progressDrawable">@drawable/layerlist_ratingbar_progress</item>
+    </style>
+
+
+    <!--
+        用于全局指定 activity 之间的跳转动画，需要在相应的主题中引用此样式
+        假设从 A 跳转到 B，然后关闭 B，那么说明如下：
+            activityOpenEnterAnimation - A 跳转到 B 时，B 的出现动画
+            activityOpenExitAnimation - A 跳转到 B 时，A 的消失动画
+            activityCloseEnterAnimation - B 关闭时，A 的出现动画
+            activityCloseExitAnimation - B 关闭时，B 的消失动画
+    -->
+    <style name="MyActivityAnimation" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/activity_push_left_in</item>
+        <item name="android:activityOpenExitAnimation">@anim/activity_push_left_out</item>
+        <item name="android:activityCloseEnterAnimation">@anim/activity_zoom_enter</item>
+        <item name="android:activityCloseExitAnimation">@anim/activity_zoom_exit</item>
     </style>
 
 </resources>

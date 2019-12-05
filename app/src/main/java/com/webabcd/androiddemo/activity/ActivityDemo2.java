@@ -16,12 +16,13 @@
  *    portrait, ActivityInfo.SCREEN_ORIENTATION_PORTRAIT - 强制竖屏
  *    reversePortrait, ActivityInfo.SCREEN_ORIENTATION_REVERSE_PORTRAIT - 强制反向竖屏
  *    sensorPortrait, ActivityInfo.SCREEN_ORIENTATION_SENSOR_PORTRAIT - 根据传感器决定是竖屏还是反向竖屏
- *    behind, ActivityInfo.SCREEN_ORIENTATION_BEHIND - 上一个 activity 是什么方向，我就是什么方向
+ *    behind, ActivityInfo.SCREEN_ORIENTATION_BEHIND - 与该 activity 在 activity 堆栈中的下面那个 activity 的方向一致
  *
  *
  * 关于横竖屏切换与状态保存
  * 1、横竖屏切换时会销毁并重新创建 Activity，即生命周期为 onPause() -> onStop() -> onDestroy() -> onCreate() -> onStart() -> onResume()
  * 2、横竖屏切换时的状态保存可以通过 @Override onSaveInstanceState(Bundle outState) 和 @Override onRestoreInstanceState(Bundle savedInstanceState) 实现
+ * 注：除了在 onRestoreInstanceState(Bundle savedInstanceState) 获取 savedInstanceState 数据，也可以在 onCreate(Bundle savedInstanceState) 中获取
  *
  *
  * 关于 onSaveInstanceState() 和 onRestoreInstanceState() 的调用的常见场景总结一下：
@@ -90,12 +91,15 @@ public class ActivityDemo2 extends AppCompatActivity {
     // 调用了 onSaveInstanceState() 之后不一定会调用 onRestoreInstanceState()
     // 调用了 onSaveInstanceState() 之后，且 activity 被销毁了，然后再试图恢复时一般会调用 onRestoreInstanceState()
     // 如果系统调用了这个方法，那么会在 onStart() 之后调用
+    // 注：除了在这里获取 savedInstanceState 数据，也可以在 onCreate(Bundle savedInstanceState) 中获取
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
 
         // 恢复数据
-        String mTextView2_text = savedInstanceState.getString("mTextView2_text");
-        mTextView2.setText(mTextView2_text);
+        if (savedInstanceState != null && savedInstanceState.containsKey("mTextView2_text")) {
+            String mTextView2_text = savedInstanceState.getString("mTextView2_text");
+            mTextView2.setText(mTextView2_text);
+        }
     }
 }

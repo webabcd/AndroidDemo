@@ -13,12 +13,12 @@
         android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="启动另一个 activity 并传递数据，不接收返回结果"/>
+        android:text="关闭，不返回结果"/>
 
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="启动另一个 activity 并传递数据，并接收返回结果"/>
+        android:text="关闭，并返回数据"/>
 
 </LinearLayout>

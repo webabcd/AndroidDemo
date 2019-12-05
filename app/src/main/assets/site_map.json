@@ -20,8 +20,12 @@
         "url": ".activity.ActivityDemo2"
       },
       {
-        "title": "aaaaaaa",
+        "title": "Activity 之间的跳转和数据传递",
         "url": ".activity.ActivityDemo3"
+      },
+      {
+        "title": "Activity 之间的跳转动画（单独指定或全局指定）",
+        "url": ".activity.ActivityDemo4"
       }
     ]
   },
@@ -39,39 +43,39 @@
     "node": [
       {
         "title": "Matrix 变换（用于做位移，旋转，缩放，扭曲等变换）",
-        "url": ".ui.MatrixDemo1"
+        "url": ".animation.MatrixDemo1"
       },
       {
         "title": "Matrix 变换（通过自定义控件实现）",
-        "url": ".ui.MatrixDemo2"
+        "url": ".animation.MatrixDemo2"
       },
       {
         "title": "视图动画（View Animation）基础",
-        "url": ".ui.AnimationDemo1"
+        "url": ".animation.AnimationDemo1"
       },
       {
         "title": "视图动画（View Animation）插值器（Interpolator）",
-        "url": ".ui.AnimationDemo2"
+        "url": ".animation.AnimationDemo2"
       },
       {
         "title": "视图动画（View Animation）自定义 Interpolator",
-        "url": ".ui.AnimationDemo3"
+        "url": ".animation.AnimationDemo3"
       },
       {
         "title": "帧动画（Drawable Animation）",
-        "url": ".ui.AnimationDemo4"
+        "url": ".animation.AnimationDemo4"
       },
       {
         "title": "属性动画（Property Animation）中的 ValueAnimator",
-        "url": ".ui.AnimationDemo5"
+        "url": ".animation.AnimationDemo5"
       },
       {
         "title": "属性动画（Property Animation）中的 ObjectAnimator",
-        "url": ".ui.AnimationDemo6"
+        "url": ".animation.AnimationDemo6"
       },
       {
         "title": "属性动画（Property Animation）中的 ViewPropertyAnimator",
-        "url": ".ui.AnimationDemo7"
+        "url": ".animation.AnimationDemo7"
       }
     ]
   },
