@@ -11,7 +11,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.ActivityDemo4_2"></activity>
+        <activity
+            android:name=".activity.ActivityDemo6_2"
+            android:theme="@style/MyActivityDialog" />
+        <activity android:name=".activity.ActivityDemo6" />
+        <activity android:name=".activity.ActivityDemo4_3" />
+        <activity android:name=".activity.ActivityDemo5_3" />
+        <activity
+            android:name=".activity.ActivityDemo5_2"
+            android:taskAffinity="com.webabcd.androiddemo.task2" />
+        <activity
+            android:name=".activity.ActivityDemo5"
+            android:taskAffinity="com.webabcd.androiddemo.task1" />
+        <activity android:name=".activity.ActivityDemo4_2" />
         <activity android:name=".activity.ActivityDemo4" />
         <activity android:name=".activity.ActivityDemo3_2" />
         <activity android:name=".activity.ActivityDemo3" />

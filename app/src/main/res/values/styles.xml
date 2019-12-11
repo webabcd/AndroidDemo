@@ -4,17 +4,7 @@
         默认主题，继承 Theme.AppCompat.Light.DarkActionBar 主题
         引用示例参见 AndroidManifest.xml（作用于整个 application）
     -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar" >
-        <!--
-            用于全局指定 Spinner 弹出的下拉框的分隔线
-        -->
-        <item name="android:dropDownListViewStyle">@style/MyDropDownListViewStyle</item>
-
-        <!--
-            用于全局指定 activity 之间的跳转动画
-        -->
-        <item name="android:windowAnimationStyle">@style/MyActivityAnimation</item>
-    </style>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar" />
     <!--
         继承上面的 AppTheme 主题，即继承 Theme.AppCompat.Light.DarkActionBar 主题，并重写其中的一些样式（关于修改主题中指定控件的默认样式请参见 ui/ThemeDemo3）
         引用示例参见 ui/ThemeDemo1
@@ -114,6 +104,12 @@
         <item name="android:divider">#ff0000</item>
         <item name="android:dividerHeight">1dp</item>
     </style>
+    <style name="MyTheme_MyDropDownListViewStyle" parent="AppTheme" >
+        <!--
+            用于全局指定 Spinner 弹出的下拉框的分隔线
+        -->
+        <item name="android:dropDownListViewStyle">@style/MyDropDownListViewStyle</item>
+    </style>
 
 
     <!--
@@ -144,12 +140,31 @@
             activityOpenExitAnimation - A 跳转到 B 时，A 的消失动画
             activityCloseEnterAnimation - B 关闭时，A 的出现动画
             activityCloseExitAnimation - B 关闭时，B 的消失动画
+
+        引用示例参见 activity/ActivityDemo4_2, activity/ActivityDemo4_3
     -->
     <style name="MyActivityAnimation" parent="@android:style/Animation.Activity">
         <item name="android:activityOpenEnterAnimation">@anim/activity_push_left_in</item>
         <item name="android:activityOpenExitAnimation">@anim/activity_push_left_out</item>
         <item name="android:activityCloseEnterAnimation">@anim/activity_zoom_enter</item>
         <item name="android:activityCloseExitAnimation">@anim/activity_zoom_exit</item>
+    </style>
+    <style name="MyTheme_MyActivityAnimation" parent="AppTheme" >
+        <!--
+            用于全局指定 activity 之间的跳转动画
+        -->
+        <item name="android:windowAnimationStyle">@style/MyActivityAnimation</item>
+    </style>
+
+
+    <!--
+        在 AndroidManifest.xml 中的名为“.activity.ActivityDemo6_2”的 activity 节点会引用此主题，用于演示如何显示对话框样式的 activity
+    -->
+    <style name="MyActivityDialog" parent="@style/Theme.AppCompat.Dialog">
+        <!--
+            用于去掉对话框样式的 activity 的标题栏
+        -->
+        <item name="windowNoTitle">true</item>
     </style>
 
 </resources>

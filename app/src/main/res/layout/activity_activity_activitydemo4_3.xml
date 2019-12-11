@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/green">
+    android:background="@color/blue">
 
     <Button
         android:id="@+id/button1"
@@ -11,12 +11,5 @@
         android:layout_height="wrap_content"
         android:textAllCaps="false"
         android:text="关闭此 activity"/>
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        android:text="跳转到另一个 activity"/>
 
 </LinearLayout>

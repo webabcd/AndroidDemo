@@ -26,6 +26,14 @@
       {
         "title": "Activity 之间的跳转动画（单独指定或全局指定）",
         "url": ".activity.ActivityDemo4"
+      },
+      {
+        "title": "Activity 堆栈",
+        "url": ".activity.ActivityDemo5"
+      },
+      {
+        "title": "Activity 样式（隐藏状态栏；对话框样式）",
+        "url": ".activity.ActivityDemo6"
       }
     ]
   },
