@@ -11,6 +11,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".fragment.FragmentDemo1_2"></activity>
+        <activity android:name=".fragment.FragmentDemo3" />
+        <activity android:name=".fragment.FragmentDemo2" />
+        <activity android:name=".activity.ActivityDemo1_2" />
+        <activity android:name=".fragment.FragmentDemo1" />
+        <activity android:name=".designpattern.SingletonDemo" />
         <activity
             android:name=".activity.ActivityDemo6_2"
             android:theme="@style/MyActivityDialog" />
