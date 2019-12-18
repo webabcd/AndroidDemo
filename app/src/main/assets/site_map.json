@@ -31,6 +31,10 @@
       {
         "title": "Fragment 与 Activity 的交互",
         "url": ".fragment.FragmentDemo3"
+      },
+      {
+        "title": "Fragment 动画",
+        "url": ".fragment.FragmentDemo4"
       }
     ]
   },

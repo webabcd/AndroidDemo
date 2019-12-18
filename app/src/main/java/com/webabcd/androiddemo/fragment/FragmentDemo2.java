@@ -7,8 +7,17 @@
  *     add()/replace()/remove() - “添加/替换/删除”操作，会走 fragment 的生命周期
  *     findFragmentById()/findFragmentByTag() - 通过 id 或 tag 获取 fragment 对象
  *     show/hide() - “显示/隐藏”操作，类似 setVisibility() 操作，所以不会走 fragment 的生命周期
+ *
  *     addToBackStack() - 将 fragment 加入返回栈（类似 activity 堆栈），按返回键时会先恢复 fragment 返回栈中的对象
  *         加入 Fragment 返回堆栈，然后再离开的话则会走到 onDestroyView()，恢复时会从 onCreateView() 开始走
+ *     getBackStackEntryCount() - fragment 返回栈中的对象的数量
+ *     popBackStack() - 移出 fragment 返回栈的栈顶对象
+ *     popBackStack(String tag,int flags)
+ *         tag == null, flags == 0 - 移出返回栈的栈顶对象
+ *         tag == null, flags == 1 - 移出返回栈的全部对象
+ *         tag == 有值, flags == 0 - 移出返回栈中指定 tag 的 fragment 之上的全部 fragment
+ *         tag == 有值, flags == 1 - 移出返回栈中指定 tag 的 fragment 本身，和其之上的全部 fragment
+ *
  *
  *
  * 举个例子：
@@ -59,7 +68,7 @@
  * Fragment2_2: onStart
  * Fragment2_2: onResume
  *
- * 6、按返回键
+ * 6、点击 popBackStack() 按钮或者按返回键
  * Fragment2_2: onPause
  * Fragment2_2: onStop
  * Fragment2_2: onDestroyView
@@ -70,7 +79,7 @@
  * Fragment2_1: onStart
  * Fragment2_1: onResume
  *
- * 7、按返回键
+ * 7、点击 popBackStack() 按钮或者按返回键
  * Fragment2_1: onPause
  * Fragment2_1: onStop
  * Fragment2_1: onDestroyView
@@ -86,6 +95,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.webabcd.androiddemo.R;
 
@@ -97,6 +107,7 @@ public class FragmentDemo2 extends AppCompatActivity {
     private Button mButton4;
     private Button mButton5;
     private Button mButton6;
+    private Button mButton7;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -109,11 +120,13 @@ public class FragmentDemo2 extends AppCompatActivity {
         mButton4 = findViewById(R.id.button4);
         mButton5 = findViewById(R.id.button5);
         mButton6 = findViewById(R.id.button6);
+        mButton7 = findViewById(R.id.button7);
 
         sample();
     }
 
     private void sample() {
+        // add a fragment
         mButton1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -125,13 +138,15 @@ public class FragmentDemo2 extends AppCompatActivity {
                             // 在指定的 container 中添加指定的 fragment 对象，并指定其 tag
                             // 注：
                             // 1、在 beginTransaction() 和 commit() 中间可以有多个操作，它们会当做一个事务提交
-                            // 2、添加 fragment 时允许 tag 重复，之后通过 findFragmentByTag() 获取到的是最后一个相同 tag 的 fragment
+                            // 2、添加 fragment 时允许 tag 重复，之后通过 findFragmentByTag() 获取到的是最后一个相同 tag 的 fragment（建议 tag 不要重复）
+                            // 3、commit() 是异步的，同步的是 commitNow()
                             .add(R.id.container, new Fragment2_1(), "myTag")
                             .commit();
                 }
             }
         });
 
+        // replace the fragment
         mButton2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -147,6 +162,7 @@ public class FragmentDemo2 extends AppCompatActivity {
             }
         });
 
+        // remove the fragment
         mButton3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -162,6 +178,7 @@ public class FragmentDemo2 extends AppCompatActivity {
             }
         });
 
+        // show/hide the fragment
         mButton4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -185,6 +202,7 @@ public class FragmentDemo2 extends AppCompatActivity {
             }
         });
 
+        // add a fragment with addToBackStack()
         mButton5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -195,12 +213,13 @@ public class FragmentDemo2 extends AppCompatActivity {
                             .beginTransaction()
                             // 在指定的 container 中添加指定的 fragment 对象，并将其压入 fragment 返回栈
                             .add(R.id.container, new Fragment2_1(), "myTag_BackStack")
-                            .addToBackStack("")
+                            .addToBackStack(null)
                             .commit();
                 }
             }
         });
 
+        // replace the fragment with addToBackStack()
         mButton6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -211,9 +230,29 @@ public class FragmentDemo2 extends AppCompatActivity {
                             .beginTransaction()
                             // 在指定的 container 中替换指定的 fragment 对象
                             .replace(R.id.container, new Fragment2_2(), "myTag_BackStack")
-                            .addToBackStack("")
+                            .addToBackStack(null)
                             .commit();
                 }
+            }
+        });
+
+        // popBackStack()
+        mButton7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentManager fragmentManager = getSupportFragmentManager();
+
+                /**
+                 * popBackStack() - 移出 fragment 返回栈的栈顶对象
+                 * popBackStack(String tag,int flags)
+                 *     tag == null, flags == 0 - 移出返回栈的栈顶对象
+                 *     tag == null, flags == 1 - 移出返回栈的全部对象
+                 *     tag == 有值, flags == 0 - 移出返回栈中指定 tag 的 fragment 之上的全部 fragment
+                 *     tag == 有值, flags == 1 - 移出返回栈中指定 tag 的 fragment 本身，和其之上的全部 fragment
+                 */
+                fragmentManager.popBackStack(); // popBackStack() 是异步的，同步的是 popBackStackImmediate()
+
+                Toast.makeText(FragmentDemo2.this, String.format("getBackStackEntryCount: %d", fragmentManager.getBackStackEntryCount()), Toast.LENGTH_SHORT).show();
             }
         });
     }
