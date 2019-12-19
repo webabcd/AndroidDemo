@@ -9,6 +9,31 @@
     ]
   },
   {
+    "title": "view（弹出类）",
+    "node": [
+      {
+        "title": "AlertDialog 基础",
+        "url": ".view.flyout.AlertDialogDemo1"
+      },
+      {
+        "title": "AlertDialog 自定义",
+        "url": ".view.flyout.AlertDialogDemo2"
+      },
+      {
+        "title": "ProgressDialog 基础",
+        "url": ".view.flyout.ProgressDialogDemo1"
+      },
+      {
+        "title": "DatePickerDialog 基础",
+        "url": ".view.flyout.DatePickerDialogDemo1"
+      },
+      {
+        "title": "TimePickerDialog 基础",
+        "url": ".view.flyout.TimePickerDialogDemo1"
+      }
+    ]
+  },
+  {
     "title": "设计模式",
     "node": [
       {
