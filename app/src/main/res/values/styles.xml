@@ -167,4 +167,28 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+
+    <!--
+        用于设置 AlertDialog 的显示和隐藏动画
+        引用示例参见 view/flyout/AlertDialogDemo3
+    -->
+    <style name="MyAlertDialogStyle" parent="android:Animation">
+        <!--进入时的动画-->
+        <item name="android:windowEnterAnimation">@anim/alertdialog_enter</item>
+        <!--退出时的动画-->
+        <item name="android:windowExitAnimation">@anim/alertdialog_exit</item>
+    </style>
+
+
+    <!--
+        用于设置 PopupWindow 的显示和隐藏动画
+        引用示例参见 view/flyout/PopupWindowDemo1
+    -->
+    <style name="MyPopupWindowStyle" parent="android:Animation">
+        <!--进入时的动画-->
+        <item name="android:windowEnterAnimation">@anim/popupwindow_enter</item>
+        <!--退出时的动画-->
+        <item name="android:windowExitAnimation">@anim/popupwindow_exit</item>
+    </style>
+
 </resources>

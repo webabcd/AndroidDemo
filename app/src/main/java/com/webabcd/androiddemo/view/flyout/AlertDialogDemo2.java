@@ -3,7 +3,7 @@
  *
  * 通过 AlertDialog.Builder 的 setView() 来指定 AlertDialog 需要显示的 view
  *
- * 本例的自定义 view 的布局文件请参见：res/layout/customview_view_flyout_alertdialogdemo2.xml
+ * 本例的自定义 view 的布局文件请参见：res/layout/alertdialog_view_flyout_alertdialogdemo2.xml
  */
 
 package com.webabcd.androiddemo.view.flyout;
@@ -23,7 +23,6 @@ public class AlertDialogDemo2 extends AppCompatActivity {
 
     private Button mButton1;
 
-    private View mCustomView;
     private AlertDialog mAlert;
 
     @Override
@@ -38,12 +37,12 @@ public class AlertDialogDemo2 extends AppCompatActivity {
 
     private void sample() {
         // 从布局文件中加载 AlertDialog 需要显示的 view
-        LayoutInflater inflater = AlertDialogDemo2.this.getLayoutInflater();
-        mCustomView = inflater.inflate(R.layout.customview_view_flyout_alertdialogdemo2, null,false);
+        LayoutInflater inflater = this.getLayoutInflater();
+        View customView = inflater.inflate(R.layout.alertdialog_view_flyout_alertdialogdemo2, null,false);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(AlertDialogDemo2.this);
         // 指定 AlertDialog 需要显示的 view
-        builder.setView(mCustomView);
+        builder.setView(customView);
         // 点击空白处是否自动隐藏对话框（默认值为 true）
         builder.setCancelable(false);
         // 创建 AlertDialog 对象
@@ -60,14 +59,14 @@ public class AlertDialogDemo2 extends AppCompatActivity {
 
 
         // 设置自定义 view 中的显示内容
-        ((TextView)mCustomView.findViewById(R.id.textViewTitle)).setText("标题");
-        ((TextView)mCustomView.findViewById(R.id.textViewContent)).setText("内容");
-        ((Button)mCustomView.findViewById(R.id.buttonClose)).setText("X");
-        ((Button)mCustomView.findViewById(R.id.buttonConfirm)).setText("确认");
-        ((Button)mCustomView.findViewById(R.id.buttonCancel)).setText("取消");
+        ((TextView) customView.findViewById(R.id.textViewTitle)).setText("标题");
+        ((TextView) customView.findViewById(R.id.textViewContent)).setText("内容");
+        ((Button) customView.findViewById(R.id.buttonClose)).setText("X");
+        ((Button) customView.findViewById(R.id.buttonConfirm)).setText("确认");
+        ((Button) customView.findViewById(R.id.buttonCancel)).setText("取消");
 
         // 自定义 view 中的关闭按钮的点击事件
-        mCustomView.findViewById(R.id.buttonClose).setOnClickListener(new View.OnClickListener() {
+        customView.findViewById(R.id.buttonClose).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(AlertDialogDemo2.this, "点击了关闭按钮", Toast.LENGTH_SHORT).show();
@@ -76,7 +75,7 @@ public class AlertDialogDemo2 extends AppCompatActivity {
         });
 
         // 自定义 view 中的确认按钮的点击事件
-        mCustomView.findViewById(R.id.buttonConfirm).setOnClickListener(new View.OnClickListener() {
+        customView.findViewById(R.id.buttonConfirm).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(AlertDialogDemo2.this, "点击了确认按钮", Toast.LENGTH_SHORT).show();
@@ -85,7 +84,7 @@ public class AlertDialogDemo2 extends AppCompatActivity {
         });
 
         // 自定义 view 中的取消按钮的点击事件
-        mCustomView.findViewById(R.id.buttonCancel).setOnClickListener(new View.OnClickListener() {
+        customView.findViewById(R.id.buttonCancel).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(AlertDialogDemo2.this, "点击了取消按钮", Toast.LENGTH_SHORT).show();

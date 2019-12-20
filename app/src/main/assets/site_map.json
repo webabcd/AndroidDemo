@@ -20,6 +20,10 @@
         "url": ".view.flyout.AlertDialogDemo2"
       },
       {
+        "title": "AlertDialog 大小、位置和动画",
+        "url": ".view.flyout.AlertDialogDemo3"
+      },
+      {
         "title": "ProgressDialog 基础",
         "url": ".view.flyout.ProgressDialogDemo1"
       },
@@ -30,6 +34,10 @@
       {
         "title": "TimePickerDialog 基础",
         "url": ".view.flyout.TimePickerDialogDemo1"
+      },
+      {
+        "title": "PopupWindow 基础",
+        "url": ".view.flyout.PopupWindowDemo1"
       }
     ]
   },

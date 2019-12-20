@@ -64,7 +64,7 @@ public class FragmentDemo4 extends AppCompatActivity {
                 if (fragment != null) {
                     fragmentManager
                             .beginTransaction()
-                            .setCustomAnimations(R.anim.activity_push_left_in, R.anim.activity_push_left_out, R.anim.activity_zoom_enter, R.anim.activity_zoom_exit)
+                            .setCustomAnimations(R.anim.fragment_push_left_in, R.anim.fragment_push_left_out, R.anim.fragment_zoom_enter, R.anim.fragment_zoom_exit)
                             .replace(R.id.container, new Fragment4_1(), "myTag")
                             .addToBackStack(null)
                             .commit();
