@@ -1,7 +1,7 @@
 /**
  * AlertDialog 基础
  *
- * AlertDialog - 弹出对话框，有 4 种内置样式，分别是：普通对话框、普通列表对话框、单选框列表对话框和复选框列表对话框
+ * AlertDialog - 弹出式对话框，背景会自动灰色半透明。其有 4 种内置样式，分别是：普通对话框、普通列表对话框、单选框列表对话框和复选框列表对话框
  *     show() - 显示
  *     dismiss() - 隐藏
  * AlertDialog.Builder - 用于方便地创建 AlertDialog 对象（支持链式语法）

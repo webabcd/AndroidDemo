@@ -24,6 +24,10 @@
         "url": ".view.flyout.AlertDialogDemo3"
       },
       {
+        "title": "AlertDialog 样式",
+        "url": ".view.flyout.AlertDialogDemo4"
+      },
+      {
         "title": "ProgressDialog 基础",
         "url": ".view.flyout.ProgressDialogDemo1"
       },
@@ -38,6 +42,22 @@
       {
         "title": "PopupWindow 基础",
         "url": ".view.flyout.PopupWindowDemo1"
+      },
+      {
+        "title": "PopupMenu 基础",
+        "url": ".view.flyout.PopupMenuDemo1"
+      },
+      {
+        "title": "PopupMenu 样式",
+        "url": ".view.flyout.PopupMenuDemo2"
+      },
+      {
+        "title": "ContextMenu 基础",
+        "url": ".view.flyout.ContextMenuDemo1"
+      },
+      {
+        "title": "ContextMenu 样式",
+        "url": ".view.flyout.ContextMenuDemo2"
       }
     ]
   },

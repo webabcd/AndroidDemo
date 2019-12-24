@@ -51,8 +51,8 @@ public class AlertDialogDemo3 extends AppCompatActivity {
                 layoutParams.alpha = 0.3f;
                 dialogWindow.setAttributes(layoutParams);
 
-                // 设置对话框的显示和隐藏动画（参见 res/values/styles.xml 中的 MyAlertDialogStyle）
-                dialogWindow.setWindowAnimations(R.style.MyAlertDialogStyle);
+                // 设置对话框的显示和隐藏动画（参见 res/values/styles.xml 中的 MyAlertDialogAnimationStyle）
+                dialogWindow.setWindowAnimations(R.style.MyAlertDialogAnimationStyle);
             }
         });
     }

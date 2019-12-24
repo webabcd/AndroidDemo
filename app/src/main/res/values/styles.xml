@@ -172,7 +172,7 @@
         用于设置 AlertDialog 的显示和隐藏动画
         引用示例参见 view/flyout/AlertDialogDemo3
     -->
-    <style name="MyAlertDialogStyle" parent="android:Animation">
+    <style name="MyAlertDialogAnimationStyle" parent="android:Animation">
         <!--进入时的动画-->
         <item name="android:windowEnterAnimation">@anim/alertdialog_enter</item>
         <!--退出时的动画-->
@@ -191,4 +191,61 @@
         <item name="android:windowExitAnimation">@anim/popupwindow_exit</item>
     </style>
 
+
+    <!--
+        用于在某主题下全局指定 PopupMenu 的样式
+        引用示例参见 view/flyout/PopupMenuDemo2
+    -->
+    <style name="MyTheme_MyPopupMenuStyle" parent="AppTheme">
+        <!--PopupMenu 的背景颜色-->
+        <item name="android:itemBackground">@color/orange</item>
+        <item name="android:dropDownListViewStyle">@style/MyPopupMenuDivider</item>
+        <item name="android:textAppearanceSmallPopupMenu">@style/MyPopupMenuText</item>
+        <item name="android:textAppearanceLargePopupMenu">@style/MyPopupMenuText</item>
+    </style>
+    <!--PopupMenu 的显示的字体-->
+    <style name="MyPopupMenuText">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+    <!--PopupMenu 的分割线-->
+    <style name="MyPopupMenuDivider">
+        <item name="android:divider">@color/blue</item>
+        <item name="android:dividerHeight">2dp</item>
+    </style>
+
+
+    <!--
+        用于在某主题下全局指定 ContextMenu 的样式
+        引用示例参见 view/flyout/ContextMenuDemo2
+    -->
+    <style name="MyTheme_MyContextMenuStyle" parent="AppTheme">
+        <!--ContextMenu 的背景颜色-->
+        <item name="android:itemBackground">@color/orange</item>
+        <item name="android:listViewStyle">@style/listView</item>
+        <item name="android:itemTextAppearance">@style/MyContextMenuText</item>
+    </style>
+    <style name="listView" parent="@android:style/Widget.ListView.White">
+        <!--ContextMenu 的背景颜色-->
+        <item name="android:background">@color/orange</item>
+    </style>
+    <style name="MyContextMenuText" parent="@android:style/TextAppearance.Widget.IconMenu.Item">
+        <!--ContextMenu 的文字颜色-->
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+
+    <!--
+        用于通过 new AlertDialog.Builder() 的第 2 个参数指定 AlertDialog 的样式
+        引用示例参见 view/flyout/AlertDialogDemo4
+    -->
+    <style name="MyTheme_MyAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <!--AlertDialog 的背景颜色-->
+        <item name="android:background">@color/red</item>
+        <!--AlertDialog 的标题颜色和按钮颜色-->
+        <item name="android:textColor">@color/green</item>
+        <!--AlertDialog 的内容颜色-->
+        <item name="android:textColorPrimary">@color/blue</item>
+    </style>
 </resources>

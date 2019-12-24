@@ -33,6 +33,7 @@ public class ListViewDemo9 extends AppCompatActivity {
 
     private void sample() {
 
+        // 选中某项弹出上下文菜单
         // 编辑，删除操作
     }
 

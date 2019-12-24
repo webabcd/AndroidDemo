@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    用于构造 PopupMenu 的选项数据，参见 view/flyout/PopupMenuDemo1.java
+-->
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/menu0" android:title="menu 0">
+        <menu>
+            <group>
+                <item android:id="@+id/menu0_0" android:title="menu 0_0"/>
+                <item android:id="@+id/menu0_1" android:title="menu 0_1"/>
+                <item android:id="@+id/menu0_2" android:title="menu 0_2"/>
+            </group>
+        </menu>
+    </item>
+    <item android:id="@+id/menu1" android:title="menu 1"/>
+    <item android:id="@+id/menu2" android:title="menu 2" android:enabled="false"/>
+</menu>

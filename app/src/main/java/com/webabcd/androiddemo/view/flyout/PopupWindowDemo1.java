@@ -1,5 +1,5 @@
 /**
- * PopupWindow - 悬浮框
+ * PopupWindow - 悬浮框（与 AlertDialog 不同的是，PopupWindow 没有背景自动灰色半透明的效果）
  *
  * 本例会演示如何弹出一个自定义 view 的悬浮框，如何控制点击空白处和返回键的逻辑，以及如何指定悬浮框的位置和动画等
  */

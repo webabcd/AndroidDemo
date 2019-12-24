@@ -11,7 +11,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.flyout.AlertDialogDemo3"></activity>
+        <activity android:name=".view.flyout.AlertDialogDemo4"></activity>
+        <activity android:name=".view.flyout.ContextMenuDemo2" />
+        <activity android:name=".view.flyout.PopupMenuDemo2" />
+        <activity android:name=".view.flyout.ContextMenuDemo1" />
+        <activity android:name=".view.flyout.PopupMenuDemo1" />
+        <activity android:name=".view.flyout.AlertDialogDemo3" />
         <activity android:name=".view.flyout.PopupWindowDemo1" />
         <activity android:name=".view.flyout.TimePickerDialogDemo1" />
         <activity android:name=".view.flyout.DatePickerDialogDemo1" />
