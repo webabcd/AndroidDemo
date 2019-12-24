@@ -9,6 +9,19 @@
     ]
   },
   {
+    "title": "view（导航类）",
+    "node": [
+      {
+        "title": "ToolBar 基础",
+        "url": ".view.navigation.ToolBarDemo1"
+      },
+      {
+        "title": "ToolBar 显示自定义 view，清除自定义 view 与 Toolbar 两侧的间距，自定义弹出的 OptionMenu 的样式",
+        "url": ".view.navigation.ToolBarDemo2"
+      }
+    ]
+  },
+  {
     "title": "view（基础）",
     "node": [
       {
@@ -651,7 +664,7 @@
     "title": "服务",
     "node": [
       {
-        "title": "android 基础示例    http://androiddoc.qiniudn.com/reference/packages.html文档",
+        "title": "android 基础示例",
         "url": ".service.BasicDemo1"
       }
     ]

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--
+        Toolbar - 工具栏（导航栏）
+            layout_height - 高度
+            background - 背景
+            navigationIcon - 左侧按钮的图标
+
+        注：本例中的 Toolbar 来自 v7 包，如果要使用自定义属性，则要引入 xmlns:app="http://schemas.android.com/apk/res-auto"
+    -->
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar1"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/red"
+        app:navigationIcon="@drawable/img_sample_son">
+
+        <!--
+           Toolbar 中显示的自定义 view
+        -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/orange"
+            android:text="自定义 view"
+            android:textColor="#fff"
+            android:textSize="18sp" />
+
+    </android.support.v7.widget.Toolbar>
+
+</LinearLayout>
+

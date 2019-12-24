@@ -46,7 +46,7 @@
 
     <!--
         自定义 Spinner 右侧的箭头，以及 Spinner 本身的背景和边框（通过指定 style 属性来指定自定义样式，参见 values/styles.xml 中的 MySpinnerStyle）
-        自定义 Spinner 弹出的下拉框的分隔线（这个只能在某主题下全局指定，参见 values/styles.xml 中的 MyTheme_MyDropDownListViewStyle）
+        自定义 Spinner 弹出的下拉框的分隔线（这个只能在某主题下指定，参见 values/styles.xml 中的 MyTheme_MyDropDownListViewStyle）
     -->
     <Spinner
         android:id="@+id/spinner4"

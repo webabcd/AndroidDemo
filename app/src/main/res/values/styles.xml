@@ -98,7 +98,7 @@
         <item name="android:background">@drawable/selector_spinner_background</item>
     </style>
     <!--
-        用于在某主题下全局指定 Spinner 弹出的下拉框的分隔线，需要在相应的主题中引用此样式
+        用于在某主题下指定 Spinner 弹出的下拉框的分隔线，需要在相应的主题中引用此样式
     -->
     <style name="MyDropDownListViewStyle" parent="android:style/Widget.ListView.DropDown">
         <item name="android:divider">#ff0000</item>
@@ -106,7 +106,7 @@
     </style>
     <style name="MyTheme_MyDropDownListViewStyle" parent="AppTheme" >
         <!--
-            用于全局指定 Spinner 弹出的下拉框的分隔线
+            用于指定 Spinner 弹出的下拉框的分隔线
         -->
         <item name="android:dropDownListViewStyle">@style/MyDropDownListViewStyle</item>
     </style>
@@ -193,7 +193,7 @@
 
 
     <!--
-        用于在某主题下全局指定 PopupMenu 的样式
+        用于在某主题下指定 PopupMenu 的样式
         引用示例参见 view/flyout/PopupMenuDemo2
     -->
     <style name="MyTheme_MyPopupMenuStyle" parent="AppTheme">
@@ -217,7 +217,7 @@
 
 
     <!--
-        用于在某主题下全局指定 ContextMenu 的样式
+        用于在某主题下指定 ContextMenu 的样式
         引用示例参见 view/flyout/ContextMenuDemo2
     -->
     <style name="MyTheme_MyContextMenuStyle" parent="AppTheme">
@@ -248,4 +248,56 @@
         <!--AlertDialog 的内容颜色-->
         <item name="android:textColorPrimary">@color/blue</item>
     </style>
+
+
+    <!--
+        用于在某主题下指定 Toolbar 的样式
+        引用示例参见 view/navigation/ToolBarDemo2
+    -->
+    <style name="MyTheme_MyToolbarStyle" parent="AppTheme">
+        <item name="toolbarStyle">@style/MyToolbarStyle</item>
+        <item name="actionOverflowMenuStyle">@style/MyActionOverflowMenuStyle</item>
+        <!--OptionMenu 的背景颜色-->
+        <item name="android:itemBackground">@color/orange</item>
+        <item name="android:dropDownListViewStyle">@style/MyOptionMenuDivider</item>
+        <item name="android:textAppearanceSmallPopupMenu">@style/MyOptionMenuText</item>
+        <item name="android:textAppearanceLargePopupMenu">@style/MyOptionMenuText</item>
+    </style>
+    <!--
+        自定义 Toolbar 的样式，用于清除自定义 view 与 Toolbar 两侧的间距
+    -->
+    <style name="MyToolbarStyle" parent="Widget.AppCompat.Toolbar">
+        <!--自定义 view 与 Toolbar 左侧的间距-->
+        <item name="contentInsetStart">0dp</item>
+        <!--自定义 view 与 Toolbar 右侧的间距-->
+        <item name="contentInsetEnd">0dp</item>
+        <!--自定义 view 与 Toolbar 左侧导航按钮的间距-->
+        <item name="contentInsetStartWithNavigation">0dp</item>
+        <!--整个 Toolbar 的 paddingLeft-->
+        <item name="android:paddingLeft">0dp</item>
+        <!--整个 Toolbar 的 paddingRight-->
+        <item name="android:paddingRight">0dp</item>
+    </style>
+    <!--Toolbar 右侧按钮弹出的 OptionMenu 的位置-->
+    <style name="MyActionOverflowMenuStyle" parent="Widget.AppCompat.PopupMenu.Overflow">
+        <!--
+            true - 弹出的 OptionMenu 会遮盖 Toolbar 右侧按钮
+            false - 弹出的 OptionMenu 在 Toolbar 右侧按钮的下方显示
+         -->
+        <item name="android:overlapAnchor">false</item>
+        <!--弹出的 OptionMenu 的右侧与 Toolbar 右侧的水平边距-->
+        <item name="android:dropDownHorizontalOffset">-4dp</item>
+    </style>
+    <!--OptionMenu 的显示的字体-->
+    <style name="MyOptionMenuText">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+    <!--OptionMenu 的分割线-->
+    <style name="MyOptionMenuDivider">
+        <item name="android:divider">@color/blue</item>
+        <item name="android:dividerHeight">2dp</item>
+    </style>
+
 </resources>
