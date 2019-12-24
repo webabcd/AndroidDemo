@@ -7,7 +7,6 @@
 #### view（基础）
 1. 位置相关
 2. 边距相关，隐藏相关
-3. ccccccccccccccccccc
 
 #### view（文本类）
 1. TextView 常用属性
@@ -88,7 +87,6 @@
 6. ListView 的表头，表尾，分隔线，滚动条的显示与隐藏，数据更新与 ListView 刷新，滚动到指定位置，监听 ListView 的滚动状态
 7. ListView 的多布局（不同的 item 使用不同的项模板）
 8. ListView 滚动到底部加载更多数据
-9. ListView ddddddddddddd
 
 #### view（WebView）
 1. WebView 基础
@@ -102,8 +100,6 @@
 2. 通过一个自定义 ViewGroup 来演示 measure, layout, draw
 3. 自定义组合控件
 4. 自定义控件的自定义属性
-5. aaaaaaaaaaa
-6. dddddddddddd
 
 #### UI
 1. 屏幕密度（物理分辨率, 逻辑分辨率, density, dpi, drawable 文件夹, mipmap 文件夹, dp, sp, px）
@@ -178,7 +174,7 @@
 13. atomic 原子操作
 
 #### 服务
-1. android 基础示例    http://androiddoc.qiniudn.com/reference/packages.html文档
+1. android 基础示例
 
 #### 设计模式
 1. Singleton（单例模式）
