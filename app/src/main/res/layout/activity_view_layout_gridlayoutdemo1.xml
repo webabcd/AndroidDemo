@@ -7,13 +7,15 @@
     <!--
         GridLayout - 网格布局控件
             orientation - 控件的排列方向（horizontal 或 vertical）
-            columnCount - 最大列数，当排列方向为 horizontal 时此值有用
-            rowCount - 最大行数，当排列方向为 vertical 时此值有用
+            columnCount - 最大列数，实际列数会小于等于此值（会取一个保证横向能显示得下的值），当排列方向为 horizontal 时此值有用（行数不限制）
+            rowCount - 最大行数，实际行数会小于等于此值（会取一个保证竖向能显示得下的值），当排列方向为 vertical 时此值有用（列数不限制）
 
             layout_rowSpan - 设置该控件的行合并数（如果需要拉伸控件则将 layout_gravity 设置为 fill 即可）
             layout_columnSpan - 设置该控件的列合并数（如果需要拉伸控件则将 layout_gravity 设置为 fill 即可）
             layout_row - 设置该控件位于指定行
             layout_column - 设置该控件位于指定列
+
+        注：GridLayout 继承自 ViewGroup，其会把自身划分为“行数 * 列数”个网格
     -->
     <GridLayout
         android:layout_width="match_parent"

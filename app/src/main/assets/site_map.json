@@ -9,19 +9,6 @@
     ]
   },
   {
-    "title": "view（导航类）",
-    "node": [
-      {
-        "title": "ToolBar 基础",
-        "url": ".view.navigation.ToolBarDemo1"
-      },
-      {
-        "title": "ToolBar 显示自定义 view，清除自定义 view 与 Toolbar 两侧的间距，自定义弹出的 OptionMenu 的样式",
-        "url": ".view.navigation.ToolBarDemo2"
-      }
-    ]
-  },
-  {
     "title": "view（基础）",
     "node": [
       {
@@ -130,6 +117,27 @@
       {
         "title": "ConstraintLayout 约束布局控件（屏障/分组/占位）",
         "url": ".view.layout.ConstraintLayoutDemo3"
+      }
+    ]
+  },
+  {
+    "title": "view（导航类）",
+    "node": [
+      {
+        "title": "ToolBar 基础",
+        "url": ".view.navigation.ToolBarDemo1"
+      },
+      {
+        "title": "ToolBar 显示自定义 view，清除自定义 view 与 Toolbar 两侧的间距，自定义弹出的 OptionMenu 的样式",
+        "url": ".view.navigation.ToolBarDemo2"
+      },
+      {
+        "title": "TabBar 自己实现",
+        "url": ".view.navigation.TabBarDemo1"
+      },
+      {
+        "title": "DrawerLayout 基础",
+        "url": ".view.navigation.DrawerLayoutDemo1"
       }
     ]
   },

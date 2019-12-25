@@ -10,6 +10,10 @@
 
             layout_span - 设置该控件的水平方向上的单元格合并数
             layout_column - 设置该控件位于指定列
+
+        注：
+        1、TableLayout 是通过 TableRow 来一行一行地显示数据的
+        2、TableLayout 和 TableRow 均继承自 LinearLayout（相当于 TableLayout 是竖排的 LinearLayout；TableRow 是横排的 LinearLayout）
     -->
     <TableLayout android:layout_width="match_parent" android:layout_height="wrap_content"
         android:stretchColumns="2">

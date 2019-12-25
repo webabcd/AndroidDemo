@@ -7,7 +7,6 @@
 package com.webabcd.androiddemo.view.text;
 
 import android.graphics.Color;
-import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -37,6 +36,10 @@ public class TextViewDemo1 extends AppCompatActivity {
         _textView5.setGravity(Gravity.CENTER);
         _textView5.setMaxLines(3);
         _textView5.setEllipsize(TextUtils.TruncateAt.END);
+        /**
+         * setText(CharSequence text) - 指定显示的文本
+         * setText(int resid) - 指定显示的资源（会自动将资源转换为文本）
+         */
         _textView5.setText(R.string.text_long);
         /**
          * TypedValue.COMPLEX_UNIT_PX - px

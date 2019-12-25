@@ -6,9 +6,7 @@ package com.webabcd.androiddemo.view.layout;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.ViewGroup;
 import android.widget.GridLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.webabcd.androiddemo.R;
