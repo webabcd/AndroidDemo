@@ -3,7 +3,7 @@
  * Matrix 变换只是改变了 View 的视觉效果，而并没有改变 View 的属性（比如 left, top, right, bottom 之类的都是不变的）
  *
  *
- * Matrix - Matrix 变换
+ * Matrix - Matrix 变换（对 ImageView 做 Matrix 变换，需要将其 scaleType 设置为 matrix）
  *     public Matrix(Matrix src) - 根据已有矩阵来实例化矩阵
  *     setScale(), setRotate(), setTranslate(), setSkew() - 设置缩放、旋转、位移、扭曲。除了位移之外均可指定变换的中心点
  *         设置矩阵，会覆盖掉之前的值

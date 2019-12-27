@@ -59,7 +59,7 @@ public class AnimationDemo6 extends AppCompatActivity {
 
     private void sample1() {
         // 从 xml 中加载 Animator
-        Animator animator = AnimatorInflater.loadAnimator(this, R.animator.set_animationdemo6);
+        Animator animator = AnimatorInflater.loadAnimator(this, R.animator.set_animation_animationdemo6);
         // 将 Animator 绑定到指定的对象
         animator.setTarget(mTextView1);
         // 启动动画

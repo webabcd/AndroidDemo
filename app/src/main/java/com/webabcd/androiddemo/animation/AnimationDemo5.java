@@ -66,7 +66,7 @@ public class AnimationDemo5 extends AppCompatActivity {
 
     private void sample1() {
         // AnimatorInflater.loadAnimator() - 从 xml 中加载 ValueAnimator
-        ValueAnimator animator = (ValueAnimator) AnimatorInflater.loadAnimator(this, R.animator.animator_animationdemo5);
+        ValueAnimator animator = (ValueAnimator) AnimatorInflater.loadAnimator(this, R.animator.animator_animation_animationdemo5);
         // 启动动画
         animator.start();
 

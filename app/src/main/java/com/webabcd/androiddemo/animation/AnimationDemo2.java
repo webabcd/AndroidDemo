@@ -101,7 +101,7 @@ public class AnimationDemo2 extends AppCompatActivity {
             public void onClick(View v) {
                 Animation animation = AnimationUtils.loadAnimation(AnimationDemo2.this, R.anim.translate_animationdemo2);
                 // 设置动画的插值器（插值器来自资源文件）
-                animation.setInterpolator(AnimationDemo2.this, R.anim.accelerateinterpolator_animationdemo2);
+                animation.setInterpolator(AnimationDemo2.this, R.anim.accelerateinterpolator_animation_animationdemo2);
                 _textView1.startAnimation(animation);
             }
         });

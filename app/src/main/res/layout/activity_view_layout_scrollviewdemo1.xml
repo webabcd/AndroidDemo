@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--
+        ScrollView - 滚动容器
+            scrollbarThumbVertical - 设置垂直滑块的资源
+            scrollbarThumbHorizontal - 设置水平滑块的资源
+            scrollbarTrackVertical - 设置垂直滑块所属导轨的资源
+            scrollbarTrackHorizontal - 设置水平滑块所属导轨的资源
+            scrollbars - 如何显示滚动条（在 java 中通过 setVerticalScrollBarEnabled() 或 setHorizontalScrollBarEnabled() 指定）
+                none - 不显示
+                vertical - 显示垂直滚动条
+                horizontal - 显示水平滚动条
+    -->
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/orange"
+        android:scrollbarThumbVertical="@color/red"
+        android:scrollbarTrackVertical="@color/green">
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </ScrollView>
+
+</LinearLayout>

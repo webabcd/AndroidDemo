@@ -11,6 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".view.collection.ViewPagerDemo2"></activity>
+        <activity android:name=".view.layout.ScrollViewDemo1" />
+        <activity android:name=".view.collection.ViewPagerDemo1" />
+        <activity android:name=".view.collection.ViewFlipperDemo1" />
         <activity android:name=".view.navigation.DrawerLayoutDemo1" />
         <activity android:name=".view.navigation.TabBarDemo1" />
         <activity android:name=".view.navigation.ToolBarDemo2" />

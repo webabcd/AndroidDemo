@@ -6,6 +6,10 @@
 
     <!--
          scaleType="matrix"（ImageView.ScaleType.MATRIX） - 呈现的图片和控件的左上角点对齐，原图大小显示，可应用 matrix 转换
+
+         注：
+         1、如果需要对 ImageView 做 Matrix 变换，则必须将其 scaleType 设置为 matrix
+         2、如果不想将 scaleType 设置为 matrix 又想做 Matrix 变换怎么办？可以用 0 秒动画来实现
     -->
     <ImageView
         android:id="@+id/imageView1"
