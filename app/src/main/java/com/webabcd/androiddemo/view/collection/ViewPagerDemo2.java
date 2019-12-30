@@ -5,8 +5,11 @@
  *
  * 本例演示
  * 1、如何通过自定义的 PagerAdapter 来为 ViewPager 对象提供数据
- * 2、如何为 ViewPager 添加自定义的类似 Tab 控件的标题
- * 3、如何在 ViewPager 的页面切换时为 Tab 控件的标题切换增加动画效果
+ * 2、PagerAdapter 会缓存 3 个页，即当前页、左边页和右边页
+ *    需要被缓存就调用 instantiateItem()，不需要被缓存就调用 destroyItem()
+ * 3、如何为 ViewPager 添加自定义的类似 Tab 控件的标题
+ * 4、如何在 ViewPager 的页面切换时为 Tab 控件的标题切换增加动画效果
+ * 5、如何监听 ViewPager 的页面切换事件
  */
 
 package com.webabcd.androiddemo.view.collection;
@@ -171,7 +174,7 @@ public class ViewPagerDemo2 extends AppCompatActivity {
             return mViewList.size();
         }
 
-        // 不知道有啥用，固定这么写就好
+        // 固定这么写就好
         @Override
         public boolean isViewFromObject(View view, Object object) {
             return view == object;
@@ -183,6 +186,9 @@ public class ViewPagerDemo2 extends AppCompatActivity {
             View view = mViewList.get(position);
             container.addView(view);
 
+            // 用于验证 PagerAdapter 会缓存 3 个页，即当前页、左边页和右边页
+            Log.d(LOG_TAG, "instantiateItem: " + position);
+
             return view;
         }
 
@@ -190,6 +196,9 @@ public class ViewPagerDemo2 extends AppCompatActivity {
         @Override
         public void destroyItem(ViewGroup container, int position, Object object) {
             container.removeView(mViewList.get(position));
+
+            // 用于验证 PagerAdapter 会缓存 3 个页，即当前页、左边页和右边页
+            Log.d(LOG_TAG, "destroyItem: " + position);
         }
     }
 }

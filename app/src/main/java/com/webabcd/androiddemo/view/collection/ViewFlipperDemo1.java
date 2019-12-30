@@ -1,7 +1,7 @@
 /**
- * ViewFlipper - 页面翻转控件
+ * ViewFlipper - 页面翻页控件
  *
- * 本例介绍了如何让 ViewFlipper 自动翻转，以及如何通过手势操作翻转 ViewFlipper
+ * 本例介绍了如何让 ViewFlipper 自动翻页，以及如何通过手势操作翻页 ViewFlipper
  */
 
 package com.webabcd.androiddemo.view.collection;
@@ -15,9 +15,9 @@ import com.webabcd.androiddemo.R;
 
 public class ViewFlipperDemo1 extends AppCompatActivity {
 
-    // 用于演示 ViewFlipper 的自动翻转
+    // 用于演示 ViewFlipper 的自动翻页
     private ViewFlipper mViewFlipper1;
-    // 用于演示 ViewFlipper 的手势操作翻转
+    // 用于演示 ViewFlipper 的手势操作翻页
     private ViewFlipper mViewFlipper2;
 
     // 用于保存手指触摸屏幕时的 x 坐标
@@ -37,7 +37,7 @@ public class ViewFlipperDemo1 extends AppCompatActivity {
     private void sample() {
         /**
          * addView() - 为 ViewFlipper 添加一个子 view
-         * setFlipInterval() - 翻转动画的间隔时间，单位：毫秒
+         * setFlipInterval() - 翻页动画的间隔时间，单位：毫秒
          * setInAnimation() - 进入的动画
          * setOutAnimation() - 离开的动画
          * startFlipping() - 启动动画（默认是不会启动动画的）
@@ -50,7 +50,7 @@ public class ViewFlipperDemo1 extends AppCompatActivity {
     }
 
 
-    // 通过手势控制 ViewFlipper 的翻转
+    // 通过手势控制 ViewFlipper 的翻页
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         switch (event.getAction()) {
@@ -69,8 +69,8 @@ public class ViewFlipperDemo1 extends AppCompatActivity {
                 /**
                  * setInAnimation() - 进入的动画
                  * setOutAnimation() - 离开的动画
-                 * showNext() - 翻转到 ViewFlipper 中的下一个 view
-                 * showPrevious() - 翻转到 ViewFlipper 的上一个 view
+                 * showNext() - 翻页到 ViewFlipper 中的下一个 view
+                 * showPrevious() - 翻页到 ViewFlipper 的上一个 view
                  */
 
                 // 手指从右向左滑动（这里判断手指的横向移动距离要大于 100 才生效）

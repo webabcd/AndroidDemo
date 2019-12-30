@@ -22,6 +22,14 @@
       {
         "title": "ViewPager 基础 2",
         "url": ".view.collection.ViewPagerDemo2"
+      },
+      {
+        "title": "ViewPager 和 FragmentPagerAdapter",
+        "url": ".view.collection.ViewPagerDemo3"
+      },
+      {
+        "title": "ViewPager 和 FragmentStatePagerAdapter",
+        "url": ".view.collection.ViewPagerDemo4"
       }
     ]
   },

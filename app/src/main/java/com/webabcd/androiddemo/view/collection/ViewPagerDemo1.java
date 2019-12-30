@@ -5,7 +5,9 @@
  *
  * 本例演示
  * 1、如何通过自定义的 PagerAdapter 来为 ViewPager 对象提供数据
- * 2、如何为 ViewPager 的每个页面添加类似 Tab 控件的标题
+ * 2、PagerAdapter 会缓存 3 个页，即当前页、左边页和右边页
+ *    需要被缓存就调用 instantiateItem()，不需要被缓存就调用 destroyItem()
+ * 3、如何为 ViewPager 的每个页面添加类似 Tab 控件的标题
  */
 
 package com.webabcd.androiddemo.view.collection;
@@ -14,6 +16,7 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,6 +26,8 @@ import com.webabcd.androiddemo.R;
 import java.util.ArrayList;
 
 public class ViewPagerDemo1 extends AppCompatActivity {
+
+    private final String LOG_TAG = "ViewPagerDemo1";
 
     private ViewPager mViewPager1;
     private ViewPager mViewPager2;
@@ -87,7 +92,7 @@ public class ViewPagerDemo1 extends AppCompatActivity {
             return mViewList.size();
         }
 
-        // 不知道有啥用，固定这么写就好
+        // 固定这么写就好
         @Override
         public boolean isViewFromObject(View view, Object object) {
             return view == object;
@@ -99,6 +104,9 @@ public class ViewPagerDemo1 extends AppCompatActivity {
             View view = mViewList.get(position);
             container.addView(view);
 
+            // 用于验证 PagerAdapter 会缓存 3 个页，即当前页、左边页和右边页
+            Log.d(LOG_TAG, "instantiateItem: " + position);
+
             return view;
         }
 
@@ -106,6 +114,9 @@ public class ViewPagerDemo1 extends AppCompatActivity {
         @Override
         public void destroyItem(ViewGroup container, int position, Object object) {
             container.removeView(mViewList.get(position));
+
+            // 用于验证 PagerAdapter 会缓存 3 个页，即当前页、左边页和右边页
+            Log.d(LOG_TAG, "destroyItem: " + position);
         }
 
         // 返回 ViewPager 的指定索引位置的 view 的标题
