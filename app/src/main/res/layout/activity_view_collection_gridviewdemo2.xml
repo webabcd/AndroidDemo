@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--
+        horizontalSpacing - 水平方向单元格之间的间距
+        verticalSpacing - 垂直方向单元格之间的间距
+        gravity - 单元格内元素相对于单元格的对齐方式
+
+        numColumns - 当此值指定为一个大于 0 的整数时
+            指定网格控件的列数（网格列宽会平均分，行高和行数会自适应）
+
+        numColumns - 当此值指定为 auto_fit 时（auto_fit 就是 -1）
+            1、列数会自适应，列宽会参考 columnWidth 值，行高和行数会自适应
+            2、stretchMode - 列的拉伸方式
+                   none - 不拉伸，列的宽度就是 columnWidth 值
+                   spacingWidth - 列会填满 GridView 的宽度，列之间的间距会被拉伸，列的宽度就是 columnWidth 值
+                   columnWidth - 列会填满 GridView 的宽度，列本身会被拉伸，即列的宽度会大于等于 columnWidth 值
+                   spacingWidthUniform - 列会填满 GridView 的宽度，列本身和列之间的间距都 会被拉伸
+    -->
+    <GridView
+        android:id="@+id/gridView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:horizontalSpacing="5dp"
+        android:verticalSpacing="5dp"
+        android:gravity="center"
+        android:numColumns="auto_fit"
+        android:columnWidth="60dp"
+        android:stretchMode="none"/>
+
+    <!--
+        以下几个按钮用于动态修改 GridView 的 stretchMode 属性，以便观察效果
+    -->
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="stretchMode:none"/>
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="stretchMode:spacingWidth"/>
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="stretchMode:columnWidth"/>
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="stretchMode:spacingWidthUniform"/>
+
+</LinearLayout>

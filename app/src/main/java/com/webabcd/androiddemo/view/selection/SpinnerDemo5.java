@@ -138,7 +138,7 @@ public class SpinnerDemo5 extends AppCompatActivity implements AdapterView.OnIte
         // 返回指定索引位置的 item 的 id
         @Override
         public long getItemId(int position) {
-            return position * 10;
+            return position;
         }
 
         /*

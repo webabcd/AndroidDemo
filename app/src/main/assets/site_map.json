@@ -30,6 +30,14 @@
       {
         "title": "ViewPager 和 FragmentStatePagerAdapter",
         "url": ".view.collection.ViewPagerDemo4"
+      },
+      {
+        "title": "GridView 基础 1",
+        "url": ".view.collection.GridViewDemo1"
+      },
+      {
+        "title": "GridView 基础 2",
+        "url": ".view.collection.GridViewDemo2"
       }
     ]
   },

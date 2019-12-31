@@ -1,6 +1,8 @@
 /**
  * Spinner - 列表选择框控件
  *     setOnItemSelectedListener(OnItemSelectedListener listener) - 选择项发生变化时的回调
+ *
+ * 本例主要介绍 Spinner 的基础
  */
 
 package com.webabcd.androiddemo.view.selection;

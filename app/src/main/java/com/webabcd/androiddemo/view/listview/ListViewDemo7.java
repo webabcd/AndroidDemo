@@ -117,7 +117,7 @@ public class ListViewDemo7 extends AppCompatActivity {
         // 返回指定索引位置的 item 的 id
         @Override
         public long getItemId(int position) {
-            return position * 10;
+            return position;
         }
 
         // 返回指定索引位置的 item 的布局类别

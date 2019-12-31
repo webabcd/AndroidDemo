@@ -195,7 +195,7 @@ public class ListViewDemo6 extends AppCompatActivity {
         // 返回指定索引位置的 item 的 id
         @Override
         public long getItemId(int position) {
-            return position * 10;
+            return position;
         }
 
         // 每构造一个 item 就会调用一次 getView() 来获取这个 item 的 view

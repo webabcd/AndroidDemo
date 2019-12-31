@@ -1,5 +1,7 @@
 /**
  * Spinner - 列表选择框控件
+ *
+ * 本例主要介绍 Spinner 的样式
  */
 
 package com.webabcd.androiddemo.view.selection;
