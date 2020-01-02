@@ -6,9 +6,7 @@ import android.widget.EditText;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.webabcd.androiddemo.MainExpandableListAdapter;
 import com.webabcd.androiddemo.MainNavigationBean;
-import com.webabcd.androiddemo.OnGroupExpandedListener;
 import com.webabcd.androiddemo.R;
 import com.webabcd.androiddemo.utils.Helper;
 
@@ -42,7 +40,7 @@ public class GenerateReadme extends AppCompatActivity {
         for (MainNavigationBean l1 : navigationBeanList) {
             sb.append("#### " + l1.getTitle() + "\n");
             int i = 1;
-            for (MainNavigationBean.NodeBean l2 : l1.getNode()) {
+            for (MainNavigationBean.NodeBean l2 : l1.getNodeList()) {
                 sb.append(i + ". " + l2.getTitle() + "\n");
                 i++;
             }

@@ -1,57 +1,57 @@
+/**
+ * 本程序首页的 ExpandableListView 数据源的实体类
+ */
+
 package com.webabcd.androiddemo;
+
+import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
 public class MainNavigationBean {
-
-
-    /**
-     * title : 基础
-     * node : [{"title":"android 基础示例","url":"com.webabcd.androiddemo.basic.demo"}]
-     */
-
-    private String title;
-    private List<NodeBean> node;
+    @SerializedName("title")
+    private String mTitle; // 父节点 title
+    @SerializedName("node")
+    private List<NodeBean> mNodeList; // 子节点列表
 
     public String getTitle() {
-        return title;
+        return mTitle;
     }
 
     public void setTitle(String title) {
-        this.title = title;
+        this.mTitle = title;
     }
 
-    public List<NodeBean> getNode() {
-        return node;
+    public List<NodeBean> getNodeList() {
+        return mNodeList;
     }
 
-    public void setNode(List<NodeBean> node) {
-        this.node = node;
+    public void setNodeList(List<NodeBean> nodeList) {
+        this.mNodeList = nodeList;
     }
+
+
 
     public static class NodeBean {
-        /**
-         * title : android 基础示例
-         * url : com.webabcd.androiddemo.basic.demo
-         */
-
-        private String title;
-        private String url;
+        @SerializedName("title")
+        private String mTitle; // 子节点 title
+        @SerializedName("url")
+        private String mUrl; // 子节点 url
 
         public String getTitle() {
-            return title;
+            return mTitle;
         }
 
         public void setTitle(String title) {
-            this.title = title;
+            this.mTitle = title;
         }
 
         public String getUrl() {
-            return url;
+            return mUrl;
         }
 
         public void setUrl(String url) {
-            this.url = url;
+            this.mUrl = url;
         }
     }
 }

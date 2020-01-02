@@ -73,7 +73,7 @@ public class SpinnerDemo5 extends AppCompatActivity implements AdapterView.OnIte
     }
 
     // 自定义实体类
-    class MyData {
+    private static class MyData {
         private int _logoId;
         private String _name;
         private String _comment;

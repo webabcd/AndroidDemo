@@ -1,3 +1,7 @@
+/**
+ * 自定义 BaseExpandableListAdapter，用于为本程序首页的 ExpandableListView 提供数据和模板
+ */
+
 package com.webabcd.androiddemo;
 
 import android.util.Log;
@@ -10,13 +14,13 @@ import android.widget.TextView;
 import java.util.List;
 
 public class MainExpandableListAdapter extends BaseExpandableListAdapter {
-    private static final String TAG = "NormalExpandableListAda";
+    private final String LOG_TAG = "MainAdapter";
 
-    private List<MainNavigationBean> _navigationBeanList;
+    private List<MainNavigationBean> mNavigationBeanList;
     private OnGroupExpandedListener mOnGroupExpandedListener;
 
     public MainExpandableListAdapter(List<MainNavigationBean> navigationBeanList) {
-        _navigationBeanList = navigationBeanList;
+        mNavigationBeanList = navigationBeanList;
     }
 
     public void setOnGroupExpandedListener(OnGroupExpandedListener onGroupExpandedListener) {
@@ -25,22 +29,22 @@ public class MainExpandableListAdapter extends BaseExpandableListAdapter {
 
     @Override
     public int getGroupCount() {
-        return _navigationBeanList.size();
+        return mNavigationBeanList.size();
     }
 
     @Override
     public int getChildrenCount(int groupPosition) {
-        return _navigationBeanList.get(groupPosition).getNode().size();
+        return mNavigationBeanList.get(groupPosition).getNodeList().size();
     }
 
     @Override
     public Object getGroup(int groupPosition) {
-        return _navigationBeanList.get(groupPosition);
+        return mNavigationBeanList.get(groupPosition);
     }
 
     @Override
     public Object getChild(int groupPosition, int childPosition) {
-        return _navigationBeanList.get(groupPosition).getNode();
+        return mNavigationBeanList.get(groupPosition).getNodeList().get(childPosition);
     }
 
     @Override
@@ -50,7 +54,7 @@ public class MainExpandableListAdapter extends BaseExpandableListAdapter {
 
     @Override
     public long getChildId(int groupPosition, int childPosition) {
-        return childPosition;
+        return groupPosition * 10000 + childPosition;
     }
 
     @Override
@@ -64,12 +68,14 @@ public class MainExpandableListAdapter extends BaseExpandableListAdapter {
         if (convertView == null) {
             convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_expand_group, parent, false);
             groupViewHolder = new GroupViewHolder();
-            groupViewHolder.tvTitle = (TextView) convertView.findViewById(R.id.label_group_normal);
+            groupViewHolder.textViewTitle = (TextView) convertView.findViewById(R.id.textView1);
             convertView.setTag(groupViewHolder);
         } else {
             groupViewHolder = (GroupViewHolder) convertView.getTag();
         }
-        groupViewHolder.tvTitle.setText(_navigationBeanList.get(groupPosition).getTitle());
+
+        groupViewHolder.textViewTitle.setText(mNavigationBeanList.get(groupPosition).getTitle());
+
         return convertView;
     }
 
@@ -79,12 +85,14 @@ public class MainExpandableListAdapter extends BaseExpandableListAdapter {
         if (convertView == null) {
             convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_expand_child, parent, false);
             childViewHolder = new ChildViewHolder();
-            childViewHolder.tvTitle = (TextView) convertView.findViewById(R.id.label_expand_child);
+            childViewHolder.textViewTitle = (TextView) convertView.findViewById(R.id.textView1);
             convertView.setTag(childViewHolder);
         } else {
             childViewHolder = (ChildViewHolder) convertView.getTag();
         }
-        childViewHolder.tvTitle.setText(_navigationBeanList.get(groupPosition).getNode().get(childPosition).getTitle());
+
+        childViewHolder.textViewTitle.setText(mNavigationBeanList.get(groupPosition).getNodeList().get(childPosition).getTitle());
+
         return convertView;
     }
 
@@ -95,7 +103,7 @@ public class MainExpandableListAdapter extends BaseExpandableListAdapter {
 
     @Override
     public void onGroupExpanded(int groupPosition) {
-        Log.d(TAG, "onGroupExpanded() called with: groupPosition = [" + groupPosition + "]");
+        Log.d(LOG_TAG, "onGroupExpanded() " + groupPosition);
         if (mOnGroupExpandedListener != null) {
             mOnGroupExpandedListener.onGroupExpanded(groupPosition);
         }
@@ -103,14 +111,14 @@ public class MainExpandableListAdapter extends BaseExpandableListAdapter {
 
     @Override
     public void onGroupCollapsed(int groupPosition) {
-        Log.d(TAG, "onGroupCollapsed() called with: groupPosition = [" + groupPosition + "]");
+        Log.d(LOG_TAG, "onGroupCollapsed() " + groupPosition);
     }
 
     private static class GroupViewHolder {
-        TextView tvTitle;
+        TextView textViewTitle;
     }
 
     private static class ChildViewHolder {
-        TextView tvTitle;
+        TextView textViewTitle;
     }
 }

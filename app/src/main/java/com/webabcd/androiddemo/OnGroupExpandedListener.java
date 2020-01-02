@@ -1,9 +1,9 @@
+/**
+ * 本程序首页的 ExpandableListView 分组展开监听器
+ */
+
 package com.webabcd.androiddemo;
 
-/**
- * @author Richie on 2017.07.31
- *         分组展开监听器
- */
 public interface OnGroupExpandedListener {
     /**
      * 分组展开

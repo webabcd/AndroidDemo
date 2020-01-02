@@ -38,6 +38,10 @@
       {
         "title": "GridView 基础 2",
         "url": ".view.collection.GridViewDemo2"
+      },
+      {
+        "title": "ExpandableListView 基础",
+        "url": ".view.collection.ExpandableListViewDemo1"
       }
     ]
   },
