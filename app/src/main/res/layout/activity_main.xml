@@ -4,9 +4,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!--
+        divider - 父分隔线
+        childDivider - 子分隔线
+        dividerHeight - 分隔线的高度（包括父和子）
+        groupIndicator - 组图标（可以分别指定组收缩状态和组展开状态的图标）
+    -->
     <ExpandableListView
         android:id="@+id/expandableListView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:divider="@color/orange"
+        android:childDivider="@color/gray"
+        android:dividerHeight="2dp"
+        android:groupIndicator="@drawable/selector_expand_group"/>
 
 </LinearLayout>

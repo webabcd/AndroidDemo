@@ -1,7 +1,7 @@
 /**
+ * ExpandableListView - 可展开的 ListView
  *
- *
- * 注：关于 ExpandableListView 的基础应用请参见本程序的 MainActivity 中的代码
+ * 关于 ExpandableListView 的知识点，请参见本程序的 MainActivity 中的代码
  */
 
 package com.webabcd.androiddemo.view.collection;

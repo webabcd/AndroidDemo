@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--
+        组收缩状态的图标
+        为了能指定图标大小，所以用了 layer-list
+    -->
+    <item android:state_expanded="false" android:drawable="@drawable/layerlist_expand_group_collapsed" />       
+    <!--
+        组展开状态的图标
+        为了能指定图标大小，所以用了 layer-list
+    -->
+    <item android:state_expanded="true" android:drawable="@drawable/layerlist_expand_group_expanded" />
+</selector>
