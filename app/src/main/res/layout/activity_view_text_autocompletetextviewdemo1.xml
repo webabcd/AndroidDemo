@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--
+        completionHint/completionHintView - 下拉列表中的提示标题
+        completionThreshold - 指定至少输入多少字符后才会弹出下拉列表（默认值为 2）
+        dropDownWidth/dropDownHeight - 下拉列表的宽度和高度
+        dropDownHorizontalOffset/dropDownVerticalOffset - 下拉列表的水平偏移和垂直偏移
+        dropDownAnchor - 下拉列表显示位置关联的组件（默认是自己，也可以通过 @id/xxx 来指定）
+        dropDownSelector - 下拉列表中的某一项被点击后的背景
+    -->
+    <AutoCompleteTextView
+        android:id="@+id/autoCompleteTextView1"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:completionHint="建议列表"
+        android:completionThreshold="2"
+        android:dropDownSelector="@color/red" />
+
+    <AutoCompleteTextView
+        android:id="@+id/autoCompleteTextView2"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:completionHint="建议列表"
+        android:completionThreshold="1"
+        android:dropDownSelector="@color/orange" />
+
+</LinearLayout>

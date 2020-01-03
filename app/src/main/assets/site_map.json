@@ -9,43 +9,6 @@
     ]
   },
   {
-    "title": "view（集合类）",
-    "node": [
-      {
-        "title": "ViewFlipper 基础",
-        "url": ".view.collection.ViewFlipperDemo1"
-      },
-      {
-        "title": "ViewPager 基础 1",
-        "url": ".view.collection.ViewPagerDemo1"
-      },
-      {
-        "title": "ViewPager 基础 2",
-        "url": ".view.collection.ViewPagerDemo2"
-      },
-      {
-        "title": "ViewPager 和 FragmentPagerAdapter",
-        "url": ".view.collection.ViewPagerDemo3"
-      },
-      {
-        "title": "ViewPager 和 FragmentStatePagerAdapter",
-        "url": ".view.collection.ViewPagerDemo4"
-      },
-      {
-        "title": "GridView 基础 1",
-        "url": ".view.collection.GridViewDemo1"
-      },
-      {
-        "title": "GridView 基础 2",
-        "url": ".view.collection.GridViewDemo2"
-      },
-      {
-        "title": "ExpandableListView 基础",
-        "url": ".view.collection.ExpandableListViewDemo1"
-      }
-    ]
-  },
-  {
     "title": "view（基础）",
     "node": [
       {
@@ -100,6 +63,14 @@
       {
         "title": "EditText 软键盘",
         "url": ".view.text.EditTextDemo3"
+      },
+      {
+        "title": "AutoCompleteTextView 基础",
+        "url": ".view.text.AutoCompleteTextViewDemo1"
+      },
+      {
+        "title": "MultiAutoCompleteTextView 基础",
+        "url": ".view.text.MultiAutoCompleteTextViewDemo1"
       }
     ]
   },
@@ -343,6 +314,43 @@
       {
         "title": "ContextMenu 样式",
         "url": ".view.flyout.ContextMenuDemo2"
+      }
+    ]
+  },
+  {
+    "title": "view（集合类）",
+    "node": [
+      {
+        "title": "ViewFlipper 基础",
+        "url": ".view.collection.ViewFlipperDemo1"
+      },
+      {
+        "title": "ViewPager 基础 1",
+        "url": ".view.collection.ViewPagerDemo1"
+      },
+      {
+        "title": "ViewPager 基础 2",
+        "url": ".view.collection.ViewPagerDemo2"
+      },
+      {
+        "title": "ViewPager 和 FragmentPagerAdapter",
+        "url": ".view.collection.ViewPagerDemo3"
+      },
+      {
+        "title": "ViewPager 和 FragmentStatePagerAdapter",
+        "url": ".view.collection.ViewPagerDemo4"
+      },
+      {
+        "title": "GridView 基础 1",
+        "url": ".view.collection.GridViewDemo1"
+      },
+      {
+        "title": "GridView 基础 2",
+        "url": ".view.collection.GridViewDemo2"
+      },
+      {
+        "title": "ExpandableListView 基础",
+        "url": ".view.collection.ExpandableListViewDemo1"
       }
     ]
   },

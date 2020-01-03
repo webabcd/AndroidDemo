@@ -96,7 +96,7 @@ public class GridViewDemo2 extends AppCompatActivity {
     }
 
     // 自定义实体类
-    private static class MyData {
+    class MyData {
         private int _logoId;
 
         public MyData() {

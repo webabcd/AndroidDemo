@@ -88,7 +88,7 @@ public class ListViewDemo4 extends AppCompatActivity implements AdapterView.OnIt
     }
 
     // 自定义实体类
-    private static class MyData {
+    class MyData {
         private int _logoId;
         private String _name;
         private String _comment;

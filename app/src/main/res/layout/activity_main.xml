@@ -5,8 +5,8 @@
     android:layout_height="match_parent">
 
     <!--
-        divider - 父分隔线
-        childDivider - 子分隔线
+        divider - 父分隔线（不需要的话可以设置为 @null）
+        childDivider - 子分隔线（不需要的话可以设置为 @null）
         dividerHeight - 分隔线的高度（包括父和子）
         groupIndicator - 组图标（可以分别指定组收缩状态和组展开状态的图标）
     -->

@@ -15,10 +15,15 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp" />
     <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="获取光标的位置"/>
+    <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="获取光标位置"/>
+        android:text="设置光标的位置"/>
 
     <EditText
         android:id="@+id/editText3"

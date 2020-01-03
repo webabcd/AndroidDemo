@@ -1,6 +1,7 @@
 /**
  * ExpandableListView - 可展开的 ListView
  *
+ * ExpandableListView 的 Adapter 可以用 BaseExpandableListAdapter（最常用的）, SimpleExpandableListAdapter, SimpleCursorTreeAdapter
  * 关于 ExpandableListView 的知识点，请参见本程序的 MainActivity 中的代码
  */
 

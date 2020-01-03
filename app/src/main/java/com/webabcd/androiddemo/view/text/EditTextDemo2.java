@@ -1,14 +1,13 @@
 /**
  * EditText - 文本编辑控件（继承自 TextView）
  *
- * 演示 EditText 的选中和光标相关的知识点（获取焦点后自动选中全部内容，选中指定位置的内容，获取选中内容或光标的位置，隐藏光标，指定光标样式）
+ * 演示 EditText 的选中和光标相关的知识点（获取焦点后自动选中全部内容，选中指定位置的内容，获取选中内容或光标的位置，设置光标的位置，隐藏光标，指定光标样式）
  */
 
 package com.webabcd.androiddemo.view.text;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.InputFilter;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -22,6 +21,7 @@ public class EditTextDemo2 extends AppCompatActivity {
     private EditText _editText2;
     private EditText _editText3;
     private EditText _editText4;
+    private Button _button1;
     private Button _button2;
 
     @Override
@@ -33,6 +33,7 @@ public class EditTextDemo2 extends AppCompatActivity {
         _editText2 = (EditText) findViewById(R.id.editText2);
         _editText3 = (EditText) findViewById(R.id.editText3);
         _editText4 = (EditText) findViewById(R.id.editText4);
+        _button1 = (Button) findViewById(R.id.button1);
         _button2 = (Button) findViewById(R.id.button2);
 
         sample();
@@ -53,7 +54,9 @@ public class EditTextDemo2 extends AppCompatActivity {
         // _editText2.clearFocus();
         // 选中指定位置的文本
         _editText2.setSelection(3,11);
-        _button2.setOnClickListener(new View.OnClickListener() {
+
+        // 获取光标的位置
+        _button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // 选中文本的起始位置（如果没有选中文本，则为当前光标所在位置）
@@ -61,6 +64,15 @@ public class EditTextDemo2 extends AppCompatActivity {
                 // 选中文本的结束位置（如果没有选中文本，则为当前光标所在位置）
                 int selectionEnd = _editText2.getSelectionEnd();
                 Toast.makeText(EditTextDemo2.this, String.format("selectionStart:%d, selectionEnd:%d", selectionStart, selectionEnd), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        // 设置光标的位置
+        _button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // 将光标定位到文本的末尾
+                _editText2.setSelection(_editText2.getText().length());
             }
         });
 
