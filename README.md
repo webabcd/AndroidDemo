@@ -18,6 +18,8 @@
 7. EditText 常用属性
 8. EditText 选中和光标
 9. EditText 软键盘
+10. AutoCompleteTextView 基础
+11. MultiAutoCompleteTextView 基础
 
 #### view（按钮类）
 1. Button 响应单击事件的方法
@@ -33,6 +35,13 @@
 6. ConstraintLayout 约束布局（基础）
 7. ConstraintLayout 约束布局控件（链）
 8. ConstraintLayout 约束布局控件（屏障/分组/占位）
+9. ScrollView 滚动容器
+
+#### view（导航类）
+1. ToolBar 基础
+2. ToolBar 显示自定义 view，清除自定义 view 与 Toolbar 两侧的间距，自定义弹出的 OptionMenu 的样式
+3. TabBar 自己实现
+4. DrawerLayout 基础
 
 #### view（媒体类）
 1. ImageView 基础
@@ -77,6 +86,16 @@
 10. PopupMenu 样式
 11. ContextMenu 基础
 12. ContextMenu 样式
+
+#### view（集合类）
+1. ViewFlipper 基础
+2. ViewPager 基础 1
+3. ViewPager 基础 2
+4. ViewPager 和 FragmentPagerAdapter
+5. ViewPager 和 FragmentStatePagerAdapter
+6. GridView 基础 1
+7. GridView 基础 2
+8. ExpandableListView 基础
 
 #### view（ListView）
 1. ListView 通过 ArrayAdapter 显示数据
@@ -181,3 +200,4 @@
 
 #### 工具
 1. 生成 README.md
+
