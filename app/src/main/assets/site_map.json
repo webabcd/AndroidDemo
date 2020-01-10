@@ -9,6 +9,27 @@
     ]
   },
   {
+    "title": "输入",
+    "node": [
+      {
+        "title": "Touch 基础（点击，双击，长按；触摸按下，触摸移动，触摸抬起）",
+        "url": ".input.TouchDemo1"
+      },
+      {
+        "title": "Touch 基础（触摸位置，事件冒泡）",
+        "url": ".input.TouchDemo2"
+      },
+      {
+        "title": "Touch 多点触摸（单点拖拽，两点缩放）",
+        "url": ".input.TouchDemo3"
+      },
+      {
+        "title": "Touch 在自定义控件中处理触摸事件",
+        "url": ".input.TouchDemo4"
+      }
+    ]
+  },
+  {
     "title": "view（基础）",
     "node": [
       {

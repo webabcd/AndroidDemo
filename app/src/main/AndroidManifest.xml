@@ -11,7 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.text.MultiAutoCompleteTextViewDemo1"></activity>
+        <activity android:name=".input.TouchDemo4"></activity>
+        <activity android:name=".input.TouchDemo3" />
+        <activity android:name=".input.TouchDemo2" />
+        <activity android:name=".input.TouchDemo1" />
+        <activity android:name=".view.text.MultiAutoCompleteTextViewDemo1" />
         <activity android:name=".view.text.AutoCompleteTextViewDemo1" />
         <activity android:name=".view.collection.ExpandableListViewDemo1" />
         <activity android:name=".view.collection.GridViewDemo2" />
