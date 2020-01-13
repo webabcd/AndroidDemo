@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--
+        用于显示手势图形
+    -->
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="match_parent"
+        android:layout_height="100dp" />
+
+    <!--
+        GestureOverlayView - 手势绘制区域
+            gestureColor - 手势绘制的颜色
+            gestureStrokeWidth - 手势绘制线条的宽度
+            gestureStrokeType - 手势绘制类型
+                single - 只允许 1 笔
+                multiple - 允许多笔
+            fadeOffset - 手指离开后多长时间开始识别（单位：毫秒）
+                比如一个手势需要多笔绘制时，这个值可以设置的大一点，以避免还没绘制完就去识别了
+    -->
+    <android.gesture.GestureOverlayView
+        android:id="@+id/gestureOverlayView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/red"
+        android:gestureColor="@color/green"
+        android:gestureStrokeWidth="5"
+        android:gestureStrokeType="multiple"
+        android:fadeOffset="1000"/>
+
+</LinearLayout>

@@ -11,7 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".input.TouchDemo4"></activity>
+        <activity android:name=".input.TouchDemo5"></activity>
+        <activity android:name=".input.GestureDemo3" />
+        <activity android:name=".input.GestureDemo2" />
+        <activity android:name=".input.GestureDemo1" />
+        <activity android:name=".input.TouchDemo4" />
         <activity android:name=".input.TouchDemo3" />
         <activity android:name=".input.TouchDemo2" />
         <activity android:name=".input.TouchDemo1" />
