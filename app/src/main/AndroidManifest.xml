@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.webabcd.androiddemo">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -11,7 +13,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".input.TouchDemo5"></activity>
+        <activity android:name=".storage.StorageDemo3"></activity>
+        <activity android:name=".storage.StorageDemo2" />
+        <activity android:name=".storage.StorageDemo1" />
+        <activity android:name=".input.TouchDemo5" />
         <activity android:name=".input.GestureDemo3" />
         <activity android:name=".input.GestureDemo2" />
         <activity android:name=".input.GestureDemo1" />

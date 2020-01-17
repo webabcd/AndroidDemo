@@ -4,7 +4,7 @@
  * 本类的使用请参见 view/text/TextViewDemo4.java
  */
 
-package com.webabcd.androiddemo.utils;
+package com.webabcd.androiddemo.view.text.utils;
 
 import android.graphics.Color;
 import android.text.Editable;

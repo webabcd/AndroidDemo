@@ -9,6 +9,23 @@
     ]
   },
   {
+    "title": "存储",
+    "node": [
+      {
+        "title": "通过 context 操作 files 目录中的文件",
+        "url": ".storage.StorageDemo1"
+      },
+      {
+        "title": "文件和文件夹操作（通过 File 对象）",
+        "url": ".storage.StorageDemo2"
+      },
+      {
+        "title": "内部存储，外部存储，权限请求，存储大小，获取 assets 中的数据，获取 res/raw 中的数据",
+        "url": ".storage.StorageDemo3"
+      }
+    ]
+  },
+  {
     "title": "view（基础）",
     "node": [
       {

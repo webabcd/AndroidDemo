@@ -13,9 +13,9 @@ import android.text.method.LinkMovementMethod;
 import android.widget.TextView;
 
 import com.webabcd.androiddemo.R;
-import com.webabcd.androiddemo.utils.HelloTagHandler;
-import com.webabcd.androiddemo.utils.MyFontTagHandler;
-import com.webabcd.androiddemo.utils.URLImageGetter;
+import com.webabcd.androiddemo.view.text.utils.HelloTagHandler;
+import com.webabcd.androiddemo.view.text.utils.MyFontTagHandler;
+import com.webabcd.androiddemo.view.text.utils.URLImageGetter;
 
 public class TextViewDemo4 extends AppCompatActivity {
 

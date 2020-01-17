@@ -6,7 +6,7 @@
  * 本类的使用请参见 view/text/EditTextDemo3.java
  */
 
-package com.webabcd.androiddemo.utils;
+package com.webabcd.androiddemo.view.text.utils;
 
 import android.app.Activity;
 import android.graphics.Point;
@@ -20,6 +20,7 @@ import android.view.WindowManager;
 import android.widget.PopupWindow;
 
 import com.webabcd.androiddemo.R;
+import com.webabcd.androiddemo.utils.Helper;
 
 /**
  * 继承自 PopupWindow

@@ -5,13 +5,15 @@
  * 本类的使用请参见 view/text/TextViewDemo4.java
  */
 
-package com.webabcd.androiddemo.utils;
+package com.webabcd.androiddemo.view.text.utils;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.text.Html;
 import android.widget.TextView;
+
+import com.webabcd.androiddemo.utils.Helper;
 
 import java.io.InputStream;
 import java.net.HttpURLConnection;

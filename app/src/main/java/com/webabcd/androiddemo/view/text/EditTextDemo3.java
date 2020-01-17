@@ -13,11 +13,10 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.webabcd.androiddemo.R;
-import com.webabcd.androiddemo.utils.KeyboardHeightObserver;
-import com.webabcd.androiddemo.utils.KeyboardHeightProvider;
+import com.webabcd.androiddemo.view.text.utils.KeyboardHeightObserver;
+import com.webabcd.androiddemo.view.text.utils.KeyboardHeightProvider;
 
 public class EditTextDemo3 extends AppCompatActivity implements KeyboardHeightObserver {
 
