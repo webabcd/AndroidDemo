@@ -103,12 +103,13 @@ public class StorageDemo2 extends AppCompatActivity {
                         boolean result = directory.mkdirs();
                     }
 
-                    String content = Helper.formatDate(new Date(), "HH:mm:ss\n");
+                    String stringContent = Helper.formatDate(new Date(), "HH:mm:ss\n");
+                    byte[] bytesContent = stringContent.getBytes(StandardCharsets.UTF_8);
 
                     // 实例化 FileOutputStream 对象（没有文件则新建，有文件则覆盖）
                     FileOutputStream fos = new FileOutputStream(file);
-                    // 写入文本数据
-                    fos.write(content.getBytes(StandardCharsets.UTF_8));
+                    // 写入数据
+                    fos.write(bytesContent);
                     // 关闭流
                     fos.close();
 
@@ -136,12 +137,13 @@ public class StorageDemo2 extends AppCompatActivity {
                         boolean result = directory.mkdirs();
                     }
 
-                    String content = Helper.formatDate(new Date(), "HH:mm:ss\n");
+                    String stringContent = Helper.formatDate(new Date(), "HH:mm:ss\n");
+                    byte[] bytesContent = stringContent.getBytes(StandardCharsets.UTF_8);
 
                     // 实例化 FileOutputStream 对象，第 2 个参数传 true 代表追加数据（没有文件则新建，有文件则追加）
                     FileOutputStream fos = new FileOutputStream(file, true);
-                    // 写入文本数据
-                    fos.write(content.getBytes(StandardCharsets.UTF_8));
+                    // 写入数据
+                    fos.write(bytesContent);
                     // 关闭流
                     fos.close();
 

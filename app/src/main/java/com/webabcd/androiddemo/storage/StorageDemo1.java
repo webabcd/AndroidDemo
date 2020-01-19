@@ -63,13 +63,14 @@ public class StorageDemo1 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    String content = Helper.formatDate(new Date(), "HH:mm:ss\n");
+                    String stringContent = Helper.formatDate(new Date(), "HH:mm:ss\n");
+                    byte[] bytesContent = stringContent.getBytes(StandardCharsets.UTF_8);
 
                     // 通过 context 的 openFileOutput() 来实例化 FileOutputStream（Context.MODE_PRIVATE - 没有文件则新建，有文件则覆盖）
                     // 此种方式打开的文件是 /data/data/packagename/files 目录下的指定文件（不能有子目录）
                     FileOutputStream fileOutputStream = StorageDemo1.this.openFileOutput(FILE_NAME, Context.MODE_PRIVATE);
-                    // 写入文本数据
-                    fileOutputStream.write(content.getBytes(StandardCharsets.UTF_8));
+                    // 写入数据
+                    fileOutputStream.write(bytesContent);
                     // 关闭流
                     fileOutputStream.close();
 
@@ -85,13 +86,14 @@ public class StorageDemo1 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    String content = Helper.formatDate(new Date(), "HH:mm:ss\n");
+                    String stringContent = Helper.formatDate(new Date(), "HH:mm:ss\n");
+                    byte[] bytesContent = stringContent.getBytes(StandardCharsets.UTF_8);
 
                     // 通过 context 的 openFileOutput() 来实例化 FileOutputStream（Context.MODE_APPEND - 没有文件则新建，有文件则追加）
                     // 此种方式打开的文件是 /data/data/packagename/files 目录下的指定文件（不能有子目录）
                     FileOutputStream fileOutputStream = StorageDemo1.this.openFileOutput(FILE_NAME, Context.MODE_APPEND);
-                    // 写入文本数据
-                    fileOutputStream.write(content.getBytes(StandardCharsets.UTF_8));
+                    // 写入数据
+                    fileOutputStream.write(bytesContent);
                     // 关闭流
                     fileOutputStream.close();
 

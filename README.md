@@ -106,6 +106,7 @@
 6. ListView 的表头，表尾，分隔线，滚动条的显示与隐藏，数据更新与 ListView 刷新，滚动到指定位置，监听 ListView 的滚动状态
 7. ListView 的多布局（不同的 item 使用不同的项模板）
 8. ListView 滚动到底部加载更多数据
+9. ListView ddddddddddddd
 
 #### view（WebView）
 1. WebView 基础
@@ -144,6 +145,22 @@
 
 #### Resource
 1. 国际化（多语言）
+
+#### 存储
+1. 通过 context 操作 files 目录中的文件
+2. 文件和文件夹操作（通过 File 对象）
+3. 内部存储，外部存储，权限请求，存储大小，获取 assets 中的数据，获取 res/raw 中的数据
+4. SharedPreferences 用户偏好数据的管理
+
+#### 输入
+1. Touch 基础（点击，双击，长按；触摸按下，触摸移动，触摸抬起）
+2. Touch 基础（触摸位置，事件冒泡）
+3. Touch 多点触摸（单点拖拽，两点缩放）
+4. Touch 在自定义控件中处理触摸事件；处理 Activity 的触摸事件
+5. Touch 简单的涂鸦板
+6. Gesture 手势检测基础
+7. Gesture 添加手势（向手势库中添加自定义手势）
+8. Gesture 识别手势（遍历手势库中的手势，通过逐一比对来识别当前手势）
 
 #### Activity
 1. Activity 的生命周期
