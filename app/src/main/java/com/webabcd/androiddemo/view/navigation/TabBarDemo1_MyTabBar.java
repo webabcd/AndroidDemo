@@ -49,7 +49,7 @@ public class TabBarDemo1_MyTabBar extends LinearLayout {
 
             // 每个 tab 项是一个 LinearLayout（用于垂直排列此 tab 项的图标和文本）
             final LinearLayout linearLayoutChild = new LinearLayout(context);
-            linearLayoutChild.setLayoutParams(new LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.MATCH_PARENT, 1));
+            linearLayoutChild.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.MATCH_PARENT, 1));
             linearLayoutChild.setGravity(Gravity.CENTER);
             linearLayoutChild.setOrientation(LinearLayout.VERTICAL);
             linearLayoutChild.setWeightSum(1);
@@ -57,7 +57,7 @@ public class TabBarDemo1_MyTabBar extends LinearLayout {
             addView(linearLayoutChild);
 
             // 某个 tab 项的图标
-            LayoutParams lp = new LayoutParams(Helper.dp2px(context, 26), Helper.dp2px(context, 26));
+            LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(Helper.dp2px(context, 26), Helper.dp2px(context, 26));
             lp.setMargins(0, 5, 0, 0);
             ImageView imageView = new ImageView(context);
             imageView.setLayoutParams(lp);
@@ -66,7 +66,7 @@ public class TabBarDemo1_MyTabBar extends LinearLayout {
             linearLayoutChild.addView(imageView);
 
             // 某个 tab 项的文字
-            lp = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+            lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
             lp.setMargins(0, 10, 0, 0);
             TextView textView = new TextView(context);
             textView.setText(mTextList[i]);

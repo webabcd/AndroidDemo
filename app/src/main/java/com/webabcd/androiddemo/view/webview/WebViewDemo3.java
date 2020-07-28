@@ -164,7 +164,7 @@ public class WebViewDemo3 extends AppCompatActivity {
             // 通过 onShowFileChooser() 拦截文件选择框（WebView 不支持 js 的文件选择框，但是可以通过此特性在 android 中模拟实现文件选择框，然后再将用户选择文件的结果告知给页面）
             // 此方法在 android 5.0 或以上版本支持（android 5.0 以下版本可以重写别的方法）
             @Override
-            public boolean onShowFileChooser(WebView webView, ValueCallback<Uri[]> filePathCallback, FileChooserParams fileChooserParams) {
+            public boolean onShowFileChooser(WebView webView, ValueCallback<Uri[]> filePathCallback, WebChromeClient.FileChooserParams fileChooserParams) {
                 // 保存回调对象，之后获取到用户的选择结果后通过调用此对象的 onReceiveValue() 方法为页面告知结果
                 mFilePathCallback = filePathCallback;
 
