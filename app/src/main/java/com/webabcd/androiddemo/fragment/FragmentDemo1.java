@@ -78,7 +78,7 @@ public class FragmentDemo1 extends AppCompatActivity {
         setContentView(R.layout.activity_fragment_fragmentdemo1);
 
         // 通过如下方式获取 xml 中的 fragment 对象
-        // android.support.v4.app.Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.fragment1);
+        // androidx.fragment.app.Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.fragment1);
 
         mButton1 = findViewById(R.id.button1);
         mButton1.setOnClickListener(new View.OnClickListener() {

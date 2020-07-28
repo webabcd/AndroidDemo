@@ -4,14 +4,14 @@
  *
  * 开发环境查看 sdk 中的主题资源，其路径类似如下：
  *   C:\Android\sdk\platforms\android-28\data\res\values\themes.xml
- * 其中常用的主题说明如下（一般不会用到这些主题，因为通常习惯用 v7 包下的主题）：
+ * 其中常用的主题说明如下（一般不会用到这些主题，因为通常习惯用 androidx 包下的主题）：
  *   @android:style/Theme.Ligh - 白色背景
  *   @android:style/Theme.Light.NoTitleBar - 白色背景，无标题栏
  *   @android:style/Theme.Light.NoTitleBar.Fullscreen - 白色背景，无标题栏，全屏
  *
  *
- * v7 包中的主题，在 build.gradle 中通过类似这样 implementation 'com.android.support:appcompat-v7:27.1.1' 引用 v7 包
- * 然后再类似这样 Project -> External Libraries -> Gradle:com.android.support:appcompat-v7:27.1.1@arr -> res/values/values.xml 的路径下找到主题的定义
+ * androidx 包中的主题，在 build.gradle 中通过类似这样 implementation 'androidx.appcompat:appcompat:1.1.0' 引用 androidx 包
+ * 然后再类似这样 Project -> External Libraries -> Gradle:androidx.appcompat:appcompat:1.1.0@arr -> res/values/values.xml 的路径下找到主题的定义
  * 其中常用的主题说明如下：
  *   Theme.AppCompat.Light - 白色背景，浅色背景的 ActionBar
  *   Theme.AppCompat.Light.DarkActionBar - 白色背景，深色背景的 ActionBar
@@ -19,8 +19,10 @@
  *   Theme.AppCompat.Light.Dialog - 白色背景，类似对话框的样式去呈现 activity
  *
  * 注：
- * v7 包用于兼容老系统，但它不是只为了兼容 android 2.1 以下的操作系统
- * 实际上 google 会不断更新 v7 包的，比如本例中引用的 com.android.support:appcompat-v7:27.1.1，其表示兼容到 api 27
+ * v4 包具有 android 的新 api 并向下兼容到 android 1.6
+ * v7 包具有 android 的新 api 并向下兼容到 android 2.1
+ * 但是 android 1.6 和 2.1 都淘汰了，继续按这种方式命名不合适，所以干脆就把扩展库的名称定为 androidx
+ * 也就是说 android.* 下的 api 都是随着 android 操作系统发布的，而 androidx.* 下的 api 都是随着扩展库发布的（其不依赖于操作系统的版本）
  */
 
 package com.webabcd.androiddemo.ui;

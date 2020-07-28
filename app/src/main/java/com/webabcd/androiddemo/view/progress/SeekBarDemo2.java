@@ -40,7 +40,7 @@ public class SeekBarDemo2 extends AppCompatActivity {
         try {
             // 注：mMinHeight 和 mMaxHeight 在 SeekBar 的基类 ProgressBar 中
             // 注：要看看当前 SeekBar 到底是 AppCompatSeekBar 还是 SeekBar 以便决定调用几次 getSuperclass() 从而找到 ProgressBar
-            // _seekBar3.getClass() 是 android.support.v7.widget.AppCompatSeekBar
+            // _seekBar3.getClass() 是 androidx.appcompat.widget.AppCompatSeekBar
             // _seekBar3.getClass().getSuperclass() 是 android.widget.SeekBar
             // _seekBar3.getClass().getSuperclass().getSuperclass() 是 android.widget.AbsSeekBar
             // _seekBar3.getClass().getSuperclass().getSuperclass().getSuperclass() 是 android.widget.ProgressBar

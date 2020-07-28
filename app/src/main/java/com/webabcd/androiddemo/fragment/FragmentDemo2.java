@@ -1,7 +1,7 @@
 /**
  * Fragment 的动态加载和生命周期，以及 Fragment 的返回堆栈
  *
- * FragmentManager - fragment 管理器（v4 包通过 FragmentActivity 的 getSupportFragmentManager() 来获取 FragmentManager 对象）
+ * FragmentManager - fragment 管理器（androidx 包通过 FragmentActivity 的 getSupportFragmentManager() 来获取 FragmentManager 对象）
  *     beginTransaction()/commit() - 开头调用 beginTransaction()，结尾调用 commit()，中间的多个操作会当做一个事务来执行
  *         在 beginTransaction() 和 commit() 中间可以有多个操作，它们会当做一个事务提交
  *     add()/replace()/remove() - “添加/替换/删除”操作，会走 fragment 的生命周期

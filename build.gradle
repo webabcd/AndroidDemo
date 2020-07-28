@@ -8,11 +8,9 @@ buildscript {
         jcenter()
     }
     dependencies {
+        // 更新 gradle 版本后有的时候会遇到编译报错的问题，可以执行一下 gradlew clean, gradlew assemble 试试
         classpath "com.android.tools.build:gradle:4.0.1"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
     }
 }
 

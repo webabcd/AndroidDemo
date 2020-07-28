@@ -60,7 +60,7 @@
 
 
     <!--
-        继承 v7 包的 Widget.AppCompat.Button 样式，并重写其中的一些样式
+        继承 androidx 包的 Widget.AppCompat.Button 样式，并重写其中的一些样式
         引用示例参见 ui/StyleDemo1
     -->
     <style name="StyleDemo1ButtonStyle" parent="Widget.AppCompat.Button">

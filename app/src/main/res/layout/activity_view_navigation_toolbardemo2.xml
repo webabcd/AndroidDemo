@@ -11,7 +11,7 @@
             background - 背景
             navigationIcon - 左侧按钮的图标
 
-        注：本例中的 Toolbar 来自 v7 包，如果要使用自定义属性，则要引入 xmlns:app="http://schemas.android.com/apk/res-auto"
+        注：本例中的 Toolbar 来自 androidx 包，如果要使用自定义属性，则要引入 xmlns:app="http://schemas.android.com/apk/res-auto"
     -->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar1"
