@@ -1,5 +1,14 @@
 [
   {
+    "title": "ipc（Inter-Process Communication, 进程间通信）",
+    "node": [
+      {
+        "title": "URLSchemeDemo1",
+        "url": ".ipc.URLSchemeDemo1"
+      }
+    ]
+  },
+  {
     "title": "kotlin",
     "node": [
       {
