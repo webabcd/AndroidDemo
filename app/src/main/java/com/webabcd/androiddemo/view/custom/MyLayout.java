@@ -273,7 +273,7 @@ public class MyLayout extends ViewGroup {
          *               {@link #WRAP_CONTENT} or a fixed size in pixels
          * @param gravity the gravity
          *
-         * @see android.view.Gravity
+         * @see Gravity
          */
         public LayoutParams(int width, int height, int gravity) {
             super(width, height);
@@ -284,7 +284,7 @@ public class MyLayout extends ViewGroup {
             super(source);
         }
 
-        public LayoutParams(@NonNull ViewGroup.MarginLayoutParams source) {
+        public LayoutParams(@NonNull MarginLayoutParams source) {
             super(source);
         }
 
