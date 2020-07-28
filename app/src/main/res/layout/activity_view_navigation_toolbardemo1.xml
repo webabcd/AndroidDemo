@@ -16,7 +16,7 @@
 
         注：本例中的 Toolbar 来自 v7 包，如果要使用自定义属性，则要引入 xmlns:app="http://schemas.android.com/apk/res-auto"
     -->
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar1"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"

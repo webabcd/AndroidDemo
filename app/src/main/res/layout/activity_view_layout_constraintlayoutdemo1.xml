@@ -5,7 +5,7 @@
 
     本例由于演示 ConstraintLayout 的基础
 -->
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -90,14 +90,14 @@
             layout_constraintGuide_end - 辅助线相对于屏幕下侧的距离（horizontal）或辅助线相对于屏幕右侧的距离（vertical）
             layout_constraintGuide_percent - 辅助线相对于屏幕上侧到下侧的百分比（horizontal）或辅助线相对于屏幕左侧到右侧的百分比（vertical）
     -->
-    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+    <androidx.constraintlayout.widget.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="100dp" />
-    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+    <androidx.constraintlayout.widget.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_end="100dp" />
-    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+    <androidx.constraintlayout.widget.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.2" />
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,7 +7,7 @@
 
 package com.webabcd.androiddemo.view.selection;
 
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.CompoundButton;
 import android.widget.Switch;

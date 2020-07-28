@@ -9,7 +9,7 @@ import android.util.AttributeSet;
 
 // xml 中的 TextView 在编译时自动替换为 AppCompatTextView
 // 代码中的 TextView 在 Android 8.0 系统及以上与 AppCompatTextView 相同
-public class TextViewMarquee extends android.support.v7.widget.AppCompatTextView {
+public class TextViewMarquee extends androidx.appcompat.widget.AppCompatTextView {
 
     public TextViewMarquee(Context context) {
         super(context);

@@ -1,14 +1,11 @@
 package com.webabcd.androiddemo.ipc;
 
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.webabcd.androiddemo.R;
-
-import java.util.List;
 
 public class URLSchemeDemo1 extends AppCompatActivity {
 

@@ -36,7 +36,7 @@ package com.webabcd.androiddemo.animation;
 
 import android.animation.Animator;
 import android.animation.ValueAnimator;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.animation.BounceInterpolator;
 import android.widget.TextView;

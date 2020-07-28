@@ -2,13 +2,11 @@ package com.webabcd.androiddemo.service;
 
 import android.content.Intent;
 import android.os.Build;
-import android.os.Looper;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.webabcd.androiddemo.R;
-
-import com.webabcd.androiddemo.service.DownloadService;
 
 public class BasicDemo1 extends AppCompatActivity {
 

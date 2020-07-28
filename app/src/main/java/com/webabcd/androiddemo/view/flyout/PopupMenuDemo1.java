@@ -8,9 +8,9 @@
 
 package com.webabcd.androiddemo.view.flyout;
 
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.PopupMenu;
+import androidx.appcompat.widget.PopupMenu;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;

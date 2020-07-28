@@ -12,7 +12,7 @@
 
 package com.webabcd.androiddemo.view.webview;
 
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.ViewGroup;
 import android.webkit.CookieManager;

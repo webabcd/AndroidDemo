@@ -26,7 +26,7 @@
 package com.webabcd.androiddemo.ui;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.webabcd.androiddemo.R;
 

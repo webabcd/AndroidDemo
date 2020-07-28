@@ -8,8 +8,8 @@ package com.webabcd.androiddemo.view.text;
 
 import android.annotation.SuppressLint;
 import android.graphics.Typeface;
-import android.support.v4.graphics.TypefaceCompat;
-import android.support.v7.app.AppCompatActivity;
+import androidx.core.graphics.TypefaceCompat;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextPaint;
 import android.widget.TextView;

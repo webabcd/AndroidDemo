@@ -10,7 +10,7 @@ package com.webabcd.androiddemo.view.webview;
 
 import android.graphics.Bitmap;
 import android.net.http.SslError;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.ViewGroup;

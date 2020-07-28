@@ -40,7 +40,7 @@ import android.animation.Animator;
 import android.animation.AnimatorInflater;
 import android.animation.ValueAnimator;
 import android.graphics.Point;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.animation.AnimationUtils;
 import android.widget.TextView;

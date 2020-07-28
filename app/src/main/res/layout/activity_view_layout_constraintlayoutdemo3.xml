@@ -5,7 +5,7 @@
 
     本例由于演示 ConstraintLayout 的屏障/分组/占位
 -->
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -18,7 +18,7 @@
     <TextView android:id="@+id/textView1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="TextView1" />
     <TextView android:id="@+id/textView2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="TextView222222"
         app:layout_constraintTop_toBottomOf="@+id/textView1" />
-    <android.support.constraint.Barrier android:id="@+id/barrier" android:layout_width="wrap_content" android:layout_height="wrap_content"
+    <androidx.constraintlayout.widget.Barrier android:id="@+id/barrier" android:layout_width="wrap_content" android:layout_height="wrap_content"
         app:barrierDirection="right"
         app:constraint_referenced_ids="textView1,textView2" />
     <TextView android:id="@+id/textView3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="TextView3"
@@ -38,7 +38,7 @@
     <TextView android:id="@+id/textView6" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="TextView6"
         app:layout_constraintTop_toTopOf="@+id/textView5"
         app:layout_constraintLeft_toRightOf="@+id/textView5" />
-    <android.support.constraint.Group android:layout_width="wrap_content" android:layout_height="wrap_content"
+    <androidx.constraintlayout.widget.Group android:layout_width="wrap_content" android:layout_height="wrap_content"
         android:visibility="invisible"
         app:constraint_referenced_ids="textView4,textView6" />
 
@@ -47,11 +47,11 @@
         Placeholder - 占位器
             content - 使指定 id 的控件显示到 Placeholder 所在的位置
     -->
-    <android.support.constraint.Placeholder android:layout_width="wrap_content" android:layout_height="wrap_content"
+    <androidx.constraintlayout.widget.Placeholder android:layout_width="wrap_content" android:layout_height="wrap_content"
         app:content="@+id/textView7"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent" />
     <TextView android:id="@+id/textView7" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="TextView7" />
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

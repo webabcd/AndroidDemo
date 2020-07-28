@@ -19,7 +19,7 @@ import android.graphics.Matrix;
 import android.util.AttributeSet;
 
 // 自定义 TextView 控件
-public class MatrixDemo2CustomView extends android.support.v7.widget.AppCompatTextView {
+public class MatrixDemo2CustomView extends androidx.appcompat.widget.AppCompatTextView {
 
     public MatrixDemo2CustomView(Context context) {
         super(context);
