@@ -3,7 +3,11 @@
     "title": "ipc（Inter-Process Communication, 进程间通信）",
     "node": [
       {
-        "title": "URLSchemeDemo1",
+        "title": "ContentProvider",
+        "url": ".ipc.ContentProviderDemo1"
+      },
+      {
+        "title": "URLScheme(deep link)",
         "url": ".ipc.URLSchemeDemo1"
       }
     ]

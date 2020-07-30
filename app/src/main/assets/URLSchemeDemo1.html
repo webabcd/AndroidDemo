@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>html title</title>
+
+    <script>
+        function openDeepLink(url) {
+            var timeout = 1000;
+            var startTime = Date.now();
+            var ifr = document.createElement('iframe');
+            // 打开指定的协议
+            ifr.src = url;
+            ifr.style.display = 'none';
+            document.body.appendChild(ifr);
+            var t = setTimeout(function() {
+                var endTime = Date.now();
+                if (!startTime || endTime - startTime < timeout + 100) {
+                    // 指定的协议无法打开，则跳转到指定的页面
+                    window.location = "https://github.com/webabcd";
+                } else {
+
+                }
+            }, timeout);
+
+            // 如果指定的协议打开了（即跳转到了 app 中了），则 window 会 onblur
+            window.onblur = function() {
+                clearTimeout(t);
+            }
+        }
+    </script>
+
+</head>
+
+<p>
+    <button onclick="openDeepLink('webabcd://a.b.c/api?p1=v1&p2=v2');">打开有效协议（指定的 url 有 app 可以打开）</button>
+</p>
+
+<p>
+    <button onclick="openDeepLink('abc://a.b.c/api?p1=v1&p2=v2');">打开无效协议（指定的 url 无 app 可以打开）</button>
+</p>
+
+</html>
