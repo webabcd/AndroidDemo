@@ -42,8 +42,10 @@ public class ActivityDemo3_2 extends AppCompatActivity {
         /*
         // 获取 intent 的 bundle 对象，用于接收数据（与上面的两行代码所做的工作是一样的）
         Bundle bundle = intent.getExtras();
-        String p1 = bundle.getString("param1");
-        String p2 = bundle.getInt("param2", 0);
+        if (bundle != null) {
+            String p1 = bundle.getString("param1");
+            int p2 = bundle.getInt("param2", 0);
+        }
         */
         mTextView1.setText(String.format("接收到的数据 param1:%s, param2:%d", p1, p2));
 

@@ -9,6 +9,10 @@
       {
         "title": "URLScheme(deep link)",
         "url": ".ipc.URLSchemeDemo1"
+      },
+      {
+        "title": "通过指定 package, activity 打开指定的 apk",
+        "url": ".ipc.PackageDemo1"
       }
     ]
   },
