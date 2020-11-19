@@ -19,6 +19,7 @@ public class ColorDemo1 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ui_colordemo1);
+
         mTextView3 = findViewById(R.id.textView3);
 
         sample();

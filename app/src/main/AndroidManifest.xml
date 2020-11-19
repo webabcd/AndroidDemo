@@ -13,7 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ipc.BroadcastDemo3"></activity>
+        <activity android:name=".notification.ToastDemo1" />
+        <activity android:name=".ipc.BroadcastDemo3" />
         <activity android:name=".ipc.BroadcastDemo2" />
         <activity android:name=".ipc.BroadcastDemo1" />
         <activity android:name=".ipc.PackageDemo1" />

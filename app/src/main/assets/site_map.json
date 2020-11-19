@@ -1,5 +1,14 @@
 [
   {
+    "title": "Notification",
+    "node": [
+      {
+        "title": "Toast",
+        "url": ".notification.ToastDemo1"
+      }
+    ]
+  },
+  {
     "title": "ipc（Inter-Process Communication, 进程间通信）",
     "node": [
       {
