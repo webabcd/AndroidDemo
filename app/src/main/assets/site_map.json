@@ -5,6 +5,10 @@
       {
         "title": "Toast",
         "url": ".notification.ToastDemo1"
+      },
+      {
+        "title": "Notification",
+        "url": ".notification.NotificationDemo1"
       }
     ]
   },
