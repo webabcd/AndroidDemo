@@ -22,6 +22,8 @@ package com.webabcd.androiddemo.async;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.os.SystemClock;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -102,6 +104,7 @@ public class ThreadDemo6 extends AppCompatActivity {
         });
     }
     // 静态内部类，不会持有其外部类的引用
+    // 注：如果线程在某 activity 中是通过非静态内部类或匿名内部类创建的，则这个线程会隐式持有这个 activity
     static class MyRunnable2 implements Runnable {
         // 由于是静态内部类，所以不会持有外部类的引用，但是我们又需要用到 Activity，又不想 Thread 造成 Activity 的内泄漏，此时就可以用“弱引用”
         WeakReference<ThreadDemo6> mActivityReference;
@@ -111,24 +114,16 @@ public class ThreadDemo6 extends AppCompatActivity {
 
         @Override
         public void run() {
-            Thread thread = new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    // 实测中发现用这种方式写也会造成 Activity 的内存泄漏（退出 Activity 后 Activity 也没有被 GC 回收，不知道为什么，其实最好的解决办法还是本例中的第 3 个示例中介绍的方法）
-                    ThreadDemo6 activity = mActivityReference.get();
-                    if (activity != null) {
-                        activity.writeMessage("后台线程运行中，60 秒后退出");
-                    }
+            // 退出 activity 后，如果 GC 了，那么 activity 就会被清理掉
+            while (true) {
+                Log.i("ThreadDemo6", mActivityReference.get() == null ? "activity 被销毁了" : "activity 还活着呢");
 
-                    try {
-                        Thread.sleep(60 * 1000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
+                if (mActivityReference.get() != null) {
+                    SystemClock.sleep(1000);
+                } else {
+                    break;
                 }
-            });
-            thread.setDaemon(true);
-            thread.start();
+            }
         }
     }
 

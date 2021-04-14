@@ -13,7 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".optimize.Demo1"></activity>
+        <activity android:name=".optimize.Demo2"></activity>
+        <activity android:name=".optimize.Demo1" />
         <activity android:name=".notification.NotificationDemo1Content" />
         <activity android:name=".notification.NotificationDemo1" />
         <activity android:name=".notification.ToastDemo1" />
