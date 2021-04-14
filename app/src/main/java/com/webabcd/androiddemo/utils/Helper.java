@@ -8,6 +8,7 @@ import android.graphics.Canvas;
 import android.graphics.PixelFormat;
 import android.graphics.Point;
 import android.graphics.drawable.Drawable;
+import android.util.Log;
 import android.view.WindowManager;
 
 import java.io.BufferedReader;
@@ -16,6 +17,7 @@ import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -168,6 +170,24 @@ public class Helper {
     {
         SimpleDateFormat dateFormat = new SimpleDateFormat(pattern);
         return dateFormat.format(date);
+    }
+
+    /**
+     * 打印内存占用日志
+     */
+    public static void printMemoryLog(String logTag)
+    {
+        // 能拿到的最大内存（系统能非配给我的最大内存）
+        long maxMemory = Runtime.getRuntime().maxMemory();
+        // 已拿到的内存（我会根据我的需要从系统那拿内存的，但最大就是 maxMemory）
+        long totalMemory = Runtime.getRuntime().totalMemory();
+        // 在已拿到的内存中，剩余的可用内存（一般是一个很小的值）
+        long freeMemory = Runtime.getRuntime().freeMemory();
+
+        Log.d(logTag, String.format(Locale.US, "maxMemory:%.2fMB, totalMemory:%.2fMB, freeMemory:%.2fMB",
+                maxMemory * 1.0 / 1024 / 1024,
+                totalMemory * 1.0 / 1024 / 1024,
+                freeMemory * 1.0 / 1024 / 1024));
     }
 }
 

@@ -1,5 +1,14 @@
 [
   {
+    "title": "优化",
+    "node": [
+      {
+        "title": "强引用, 软引用, 弱引用",
+        "url": ".optimize.Demo1"
+      }
+    ]
+  },
+  {
     "title": "Notification",
     "node": [
       {
