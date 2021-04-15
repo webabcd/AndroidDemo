@@ -1,4 +1,4 @@
-/*
+/**
  * 强引用 - 宁可 oom（out of memory）也不回收
  * 软引用 - 快 oom（out of memory）的时候将被回收
  * 弱引用 - 遇到 gc（garbage collection）就被回收
@@ -103,7 +103,7 @@ public class Demo1 extends AppCompatActivity {
                         Thread.sleep(1000);
                     }
                 } catch (InterruptedException e) {
-
+                    Log.d(LOG_TAG, "线程被 interrupted 了");
                 }
             }
         });
@@ -146,7 +146,7 @@ public class Demo1 extends AppCompatActivity {
                         Thread.sleep(1000);
                     }
                 } catch (InterruptedException e) {
-
+                    Log.d(LOG_TAG, "线程被 interrupted 了");
                 }
             }
         });
@@ -189,7 +189,7 @@ public class Demo1 extends AppCompatActivity {
                         Thread.sleep(1000);
                     }
                 } catch (InterruptedException e) {
-
+                    Log.d(LOG_TAG, "线程被 interrupted 了");
                 }
             }
         });

@@ -1,3 +1,7 @@
+/**
+ * Context 的与优化相关的知识点
+ */
+
 package com.webabcd.androiddemo.optimize;
 
 import androidx.appcompat.app.AppCompatActivity;
