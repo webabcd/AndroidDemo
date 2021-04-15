@@ -14,7 +14,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".optimize.Demo3"></activity>
+        <activity android:name=".utils.Demo1"></activity>
+        <activity android:name=".service.ServiceDemo1" />
+        <activity android:name=".optimize.Demo3" />
         <activity android:name=".optimize.Demo2" />
         <activity android:name=".optimize.Demo1" />
         <activity android:name=".notification.NotificationDemo1Content" />
@@ -136,10 +138,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".view.ViewDemo1" />
-        <activity android:name=".service.BasicDemo1" />
-
-        <service android:name=".service.DownloadService" />
-
         <activity android:name=".view.text.TextViewDemo1" />
         <activity android:name=".view.text.TextViewDemo2" />
         <activity android:name=".view.text.TextViewDemo3" />

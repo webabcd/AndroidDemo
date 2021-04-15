@@ -1,5 +1,23 @@
 [
   {
+    "title": "常用工具",
+    "node": [
+      {
+        "title": "在 KeyStore 中保存秘钥",
+        "url": ".utils.Demo1"
+      }
+    ]
+  },
+  {
+    "title": "后台服务",
+    "node": [
+      {
+        "title": "Service",
+        "url": ".service.ServiceDemo1"
+      }
+    ]
+  },
+  {
     "title": "优化",
     "node": [
       {
@@ -834,15 +852,6 @@
     ]
   },
   {
-    "title": "服务",
-    "node": [
-      {
-        "title": "android 基础示例",
-        "url": ".service.BasicDemo1"
-      }
-    ]
-  },
-  {
     "title": "设计模式",
     "node": [
       {
@@ -852,7 +861,7 @@
     ]
   },
   {
-    "title": "工具",
+    "title": "项目工具",
     "node": [
       {
         "title": "生成 README.md",

@@ -173,6 +173,33 @@ public class Helper {
     }
 
     /**
+     * 字节数组转字十六进制字符串
+     */
+    public static String bytesToHexString(byte[] b)
+    {
+        StringBuilder stringBuilder = new StringBuilder("");
+
+        if (b == null || b.length <= 0)
+        {
+            return null;
+        }
+
+        for (int i = 0; i < b.length; i++)
+        {
+            int v = b[i] & 0xFF;
+            String hv = Integer.toHexString(v);
+
+            if (hv.length() < 2)
+            {
+                stringBuilder.append(0);
+            }
+            stringBuilder.append(hv);
+        }
+
+        return stringBuilder.toString();
+    }
+
+    /**
      * 打印内存占用日志
      */
     public static void printMemoryLog(String logTag)
