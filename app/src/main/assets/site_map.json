@@ -14,6 +14,14 @@
       {
         "title": "Service",
         "url": ".service.ServiceDemo1"
+      },
+      {
+        "title": "WorkerManager",
+        "url": ".service.WorkerManagerDemo1"
+      },
+      {
+        "title": "DownloadManager",
+        "url": ".service.DownloadManagerDemo1"
       }
     ]
   },
@@ -564,6 +572,10 @@
       {
         "title": "shape 形状（矩形，圆形，环形，直线）",
         "url": ".ui.ShapeDemo3"
+      },
+      {
+        "title": "图标",
+        "url": ".ui.IconDemo1"
       }
     ]
   },

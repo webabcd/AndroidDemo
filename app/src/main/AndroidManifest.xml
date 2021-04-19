@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
 
     <application
         android:name=".MyApplication"
@@ -14,7 +15,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".utils.Demo1"></activity>
+        <activity android:name=".service.DownloadManagerDemo1"></activity>
+        <activity android:name=".service.WorkerManagerDemo1" />
+        <activity android:name=".ui.IconDemo1" />
+        <activity android:name=".utils.Demo1" />
         <activity android:name=".service.ServiceDemo1" />
         <activity android:name=".optimize.Demo3" />
         <activity android:name=".optimize.Demo2" />
