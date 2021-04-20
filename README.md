@@ -7,7 +7,6 @@
 #### view（基础）
 1. 位置相关
 2. 边距相关，隐藏相关
-3. ccccccccccccccccccc
 
 #### view（文本类）
 1. TextView 常用属性
@@ -121,8 +120,6 @@
 2. 通过一个自定义 ViewGroup 来演示 measure, layout, draw
 3. 自定义组合控件
 4. 自定义控件的自定义属性
-5. aaaaaaaaaaa
-6. dddddddddddd
 
 #### UI
 1. 屏幕密度（物理分辨率, 逻辑分辨率, density, dpi, drawable 文件夹, mipmap 文件夹, dp, sp, px）
@@ -216,11 +213,20 @@
 #### Notification
 1. Toast
 2. Notification
+3. 自定义 ui 的 Notification
 
 #### 后台服务
 1. Service
 2. WorkerManager
 3. DownloadManager
+
+#### ipc（Inter-Process Communication, 进程间通信）
+1. ContentProvider
+2. URLScheme(deep link)
+3. 通过指定 package, activity 打开指定的 apk
+4. 发送广播（静态注册广播接收器）
+5. 发送广播（动态注册广播接收器）
+6. 发送广播（有序广播）
 
 #### 优化
 1. 强引用, 软引用, 弱引用

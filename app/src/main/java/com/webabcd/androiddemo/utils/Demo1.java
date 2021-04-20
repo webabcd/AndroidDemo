@@ -22,6 +22,7 @@ import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.GCMParameterSpec;
 
+@RequiresApi(api = Build.VERSION_CODES.M)
 public class Demo1 extends AppCompatActivity {
 
     private String _keyStoreProvider = "AndroidKeyStore"; // 固定值（在 KeyStore 中保存秘钥）
@@ -29,7 +30,6 @@ public class Demo1 extends AppCompatActivity {
 
     private TextView _textView1;
 
-    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,7 +57,6 @@ public class Demo1 extends AppCompatActivity {
     }
 
     // 加密
-    @RequiresApi(api = Build.VERSION_CODES.M)
     private byte[] encrypt(byte[] input) {
         try {
             byte[] iv = new byte[12];
@@ -84,7 +83,6 @@ public class Demo1 extends AppCompatActivity {
     }
 
     // 解密
-    @RequiresApi(api = Build.VERSION_CODES.M)
     private byte[] decrypt(byte[] input) {
         try {
             byte[] iv = new byte[12];
@@ -106,7 +104,6 @@ public class Demo1 extends AppCompatActivity {
     }
 
     // 从 KeyStore 中获取指定别名的 SecretKey，如果没有则新生成一个
-    @RequiresApi(api = Build.VERSION_CODES.M)
     private SecretKey getSecretKey() {
         SecretKey secretKey = loadSecretKey();
         if (secretKey == null) {
@@ -116,7 +113,6 @@ public class Demo1 extends AppCompatActivity {
     }
 
     // 在 KeyStore 中生成指定别名的 SecretKey
-    @RequiresApi(api = Build.VERSION_CODES.M)
     private SecretKey generateSecretKey() {
         try {
             KeyGenerator keyGenerator = KeyGenerator.getInstance(KeyProperties.KEY_ALGORITHM_AES, _keyStoreProvider);
@@ -139,7 +135,6 @@ public class Demo1 extends AppCompatActivity {
     }
 
     // 加载 KeyStore 中的指定别名的 SecretKey
-    @RequiresApi(api = Build.VERSION_CODES.M)
     private SecretKey loadSecretKey() {
         try {
             KeyStore keyStore = KeyStore.getInstance(_keyStoreProvider);

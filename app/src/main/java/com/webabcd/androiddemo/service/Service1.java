@@ -14,7 +14,6 @@ import android.app.NotificationManager;
 import android.app.Service;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
-import android.os.Build;
 import android.os.IBinder;
 import android.util.Log;
 import android.widget.Toast;
@@ -48,8 +47,6 @@ public class Service1 extends Service {
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
             NotificationChannel notificationChannel = new NotificationChannel("channel_id", "channel_name", NotificationManager.IMPORTANCE_DEFAULT);
             notificationManager.createNotificationChannel(notificationChannel);
-        }
-        if (Build.VERSION.SDK_INT >= 26) {
             mNotificationBuilder = new Notification.Builder(this, "channel_id");
         } else {
             mNotificationBuilder = new Notification.Builder(this);

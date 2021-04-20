@@ -1,34 +1,5 @@
 [
   {
-    "title": "ipc（Inter-Process Communication, 进程间通信）",
-    "node": [
-      {
-        "title": "ContentProvider",
-        "url": ".ipc.ContentProviderDemo1"
-      },
-      {
-        "title": "URLScheme(deep link)",
-        "url": ".ipc.URLSchemeDemo1"
-      },
-      {
-        "title": "通过指定 package, activity 打开指定的 apk",
-        "url": ".ipc.PackageDemo1"
-      },
-      {
-        "title": "发送广播（静态注册广播接收器）",
-        "url": ".ipc.BroadcastDemo1"
-      },
-      {
-        "title": "发送广播（动态注册广播接收器）",
-        "url": ".ipc.BroadcastDemo2"
-      },
-      {
-        "title": "发送广播（有序广播）",
-        "url": ".ipc.BroadcastDemo3"
-      }
-    ]
-  },
-  {
     "title": "kotlin",
     "node": [
       {
@@ -817,6 +788,10 @@
       {
         "title": "Notification",
         "url": ".notification.NotificationDemo1"
+      },
+      {
+        "title": "自定义 ui 的 Notification",
+        "url": ".notification.NotificationDemo2"
       }
     ]
   },
@@ -834,6 +809,35 @@
       {
         "title": "DownloadManager",
         "url": ".service.DownloadManagerDemo1"
+      }
+    ]
+  },
+  {
+    "title": "ipc（Inter-Process Communication, 进程间通信）",
+    "node": [
+      {
+        "title": "ContentProvider",
+        "url": ".ipc.ContentProviderDemo1"
+      },
+      {
+        "title": "URLScheme(deep link)",
+        "url": ".ipc.URLSchemeDemo1"
+      },
+      {
+        "title": "通过指定 package, activity 打开指定的 apk",
+        "url": ".ipc.PackageDemo1"
+      },
+      {
+        "title": "发送广播（静态注册广播接收器）",
+        "url": ".ipc.BroadcastDemo1"
+      },
+      {
+        "title": "发送广播（动态注册广播接收器）",
+        "url": ".ipc.BroadcastDemo2"
+      },
+      {
+        "title": "发送广播（有序广播）",
+        "url": ".ipc.BroadcastDemo3"
       }
     ]
   },

@@ -9,6 +9,9 @@
  *
  * 关于 OptionMenu 菜单的基础知识和样式修改可以参见 PopupMenu 的相关说明（请参见 view/flyout/PopupMenuDemo1, view/flyout/PopupMenuDemo2）
  * 注：如果觉得 OptionMenu 实现不了需求，就用 PopupWindow 吧
+ *
+ *
+ * 另：Toolbar 替代了 ActionBar
  */
 
 package com.webabcd.androiddemo.view.navigation;
