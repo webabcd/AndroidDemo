@@ -8,7 +8,14 @@
         android:id="@+id/button1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Notification"
+        android:text="弹出 Notification"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="移除 Notification"
         android:textAllCaps="false" />
 
 </LinearLayout>

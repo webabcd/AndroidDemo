@@ -16,14 +16,14 @@ import com.webabcd.androiddemo.R;
 
 import java.util.Locale;
 
-public class NotificationDemo1Content extends AppCompatActivity {
+public class NotificationDemo1Click extends AppCompatActivity {
 
     private TextView mTextView1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_notification_notificationdemo1content);
+        setContentView(R.layout.activity_notification_notificationdemo1click);
 
         mTextView1 = findViewById(R.id.textView1);
 
