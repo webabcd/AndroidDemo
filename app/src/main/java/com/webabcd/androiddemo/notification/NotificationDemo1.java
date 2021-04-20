@@ -28,6 +28,7 @@ public class NotificationDemo1 extends AppCompatActivity {
 
     private Button mButton1;
     private Button mButton2;
+    private Button mButton3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +37,7 @@ public class NotificationDemo1 extends AppCompatActivity {
 
         mButton1 = findViewById(R.id.button1);
         mButton2 = findViewById(R.id.button2);
+        mButton3 = findViewById(R.id.button3);
 
         sample();
     }
@@ -99,6 +101,17 @@ public class NotificationDemo1 extends AppCompatActivity {
                 // 移除通知
                 // 移除指定 id 的 notification 对象
                 notificationManager.cancel(123);
+            }
+        });
+
+        // 更新通知
+        Notification.Builder finalNotificationBuilder = notificationBuilder;
+        mButton3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // 更新通知和弹出通知是一样的，调用 notify() 就行，其会覆盖同 id 的 notification 对象
+                final Notification notification = finalNotificationBuilder.setContentTitle("aaa") .setContentText("bbb").build();
+                notificationManager.notify(123, notification);
             }
         });
     }

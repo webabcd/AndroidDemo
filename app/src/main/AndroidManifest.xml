@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <application
         android:name=".MyApplication"
@@ -15,7 +16,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".service.DownloadManagerDemo1"></activity>
+        <service android:name=".service.Service1" android:enabled="true" />
+        <activity android:name=".service.DownloadManagerDemo1" />
         <activity android:name=".service.WorkerManagerDemo1" />
         <activity android:name=".ui.IconDemo1" />
         <activity android:name=".utils.Demo1" />
@@ -23,7 +25,7 @@
         <activity android:name=".optimize.Demo3" />
         <activity android:name=".optimize.Demo2" />
         <activity android:name=".optimize.Demo1" />
-        <activity android:name=".notification.NotificationDemo1Content" />
+        <activity android:name=".notification.NotificationDemo1Click" />
         <activity android:name=".notification.NotificationDemo1" />
         <activity android:name=".notification.ToastDemo1" />
         <activity android:name=".ipc.BroadcastDemo3" />

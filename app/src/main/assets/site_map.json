@@ -1,61 +1,5 @@
 [
   {
-    "title": "常用工具",
-    "node": [
-      {
-        "title": "在 KeyStore 中保存秘钥",
-        "url": ".utils.Demo1"
-      }
-    ]
-  },
-  {
-    "title": "后台服务",
-    "node": [
-      {
-        "title": "Service",
-        "url": ".service.ServiceDemo1"
-      },
-      {
-        "title": "WorkerManager",
-        "url": ".service.WorkerManagerDemo1"
-      },
-      {
-        "title": "DownloadManager",
-        "url": ".service.DownloadManagerDemo1"
-      }
-    ]
-  },
-  {
-    "title": "优化",
-    "node": [
-      {
-        "title": "强引用, 软引用, 弱引用",
-        "url": ".optimize.Demo1"
-      },
-      {
-        "title": "Context",
-        "url": ".optimize.Demo2"
-      },
-      {
-        "title": "Application",
-        "url": ".optimize.Demo3"
-      }
-    ]
-  },
-  {
-    "title": "Notification",
-    "node": [
-      {
-        "title": "Toast",
-        "url": ".notification.ToastDemo1"
-      },
-      {
-        "title": "Notification",
-        "url": ".notification.NotificationDemo1"
-      }
-    ]
-  },
-  {
     "title": "ipc（Inter-Process Communication, 进程间通信）",
     "node": [
       {
@@ -860,6 +804,62 @@
       {
         "title": "atomic 原子操作",
         "url": ".concurrent.AtomicDemo1"
+      }
+    ]
+  },
+  {
+    "title": "Notification",
+    "node": [
+      {
+        "title": "Toast",
+        "url": ".notification.ToastDemo1"
+      },
+      {
+        "title": "Notification",
+        "url": ".notification.NotificationDemo1"
+      }
+    ]
+  },
+  {
+    "title": "后台服务",
+    "node": [
+      {
+        "title": "Service",
+        "url": ".service.ServiceDemo1"
+      },
+      {
+        "title": "WorkerManager",
+        "url": ".service.WorkerManagerDemo1"
+      },
+      {
+        "title": "DownloadManager",
+        "url": ".service.DownloadManagerDemo1"
+      }
+    ]
+  },
+  {
+    "title": "优化",
+    "node": [
+      {
+        "title": "强引用, 软引用, 弱引用",
+        "url": ".optimize.Demo1"
+      },
+      {
+        "title": "Context",
+        "url": ".optimize.Demo2"
+      },
+      {
+        "title": "Application",
+        "url": ".optimize.Demo3"
+      }
+    ]
+  },
+  {
+    "title": "常用工具",
+    "node": [
+      {
+        "title": "在 KeyStore 中保存秘钥",
+        "url": ".utils.Demo1"
       }
     ]
   },

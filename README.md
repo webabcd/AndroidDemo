@@ -7,6 +7,7 @@
 #### view（基础）
 1. 位置相关
 2. 边距相关，隐藏相关
+3. ccccccccccccccccccc
 
 #### view（文本类）
 1. TextView 常用属性
@@ -120,6 +121,8 @@
 2. 通过一个自定义 ViewGroup 来演示 measure, layout, draw
 3. 自定义组合控件
 4. 自定义控件的自定义属性
+5. aaaaaaaaaaa
+6. dddddddddddd
 
 #### UI
 1. 屏幕密度（物理分辨率, 逻辑分辨率, density, dpi, drawable 文件夹, mipmap 文件夹, dp, sp, px）
@@ -131,6 +134,7 @@
 7. shape 渐变色（线性渐变，放射性渐变，扫描式渐变）
 8. shape 之填充，描边，圆角，尺寸，内部间距
 9. shape 形状（矩形，圆形，环形，直线）
+10. 图标
 
 #### Animation
 1. Matrix 变换（用于做位移，旋转，缩放，扭曲等变换）
@@ -209,12 +213,26 @@
 12. Semaphore 许可证中心
 13. atomic 原子操作
 
-#### 服务
-1. android 基础示例
+#### Notification
+1. Toast
+2. Notification
+
+#### 后台服务
+1. Service
+2. WorkerManager
+3. DownloadManager
+
+#### 优化
+1. 强引用, 软引用, 弱引用
+2. Context
+3. Application
+
+#### 常用工具
+1. 在 KeyStore 中保存秘钥
 
 #### 设计模式
 1. Singleton（单例模式）
 
-#### 工具
+#### 项目工具
 1. 生成 README.md
 
