@@ -4,27 +4,4 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="你好 webabcd"
-        android:textColor="#FFFF0000"
-        android:background="#0000FF"/>
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="你好 webabcd"
-        android:textColor="#FF00"
-        android:background="#00F"
-        android:alpha="0.7"/>
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="你好 webabcd"/>
-
 </LinearLayout>

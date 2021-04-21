@@ -20,7 +20,7 @@
         "url": ".view.ViewDemo2"
       },
       {
-        "title": "ccccccccccccccccccc",
+        "title": "待定",
         "url": ".view.ViewDemo3"
       }
     ]
@@ -390,7 +390,7 @@
         "url": ".view.listview.ListViewDemo8"
       },
       {
-        "title": "ListView ddddddddddddd",
+        "title": "ListView 待定",
         "url": ".view.listview.ListViewDemo9"
       }
     ]
@@ -440,12 +440,8 @@
         "url": ".view.custom.CustomView4Demo"
       },
       {
-        "title": "aaaaaaaaaaa",
-        "url": ".view.custom.MyLayoutDemo1"
-      },
-      {
-        "title": "dddddddddddd",
-        "url": ".view.custom.CustomView3Demo"
+        "title": "自定义圆形带进度提示的 loading 控件",
+        "url": ".view.custom.MyLoadingDemo1"
       }
     ]
   },

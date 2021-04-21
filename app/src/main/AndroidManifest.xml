@@ -218,7 +218,6 @@
         <activity android:name=".view.progress.RatingBarDemo2" />
         <activity android:name=".view.selection.NumberPickerDemo1" />
         <activity android:name=".view.selection.NumberPickerDemo2" />
-        <activity android:name=".view.custom.MyLayoutDemo1" />
         <activity android:name=".view.custom.CustomView1Demo" />
         <activity android:name=".view.custom.CustomView2Demo" />
         <activity android:name=".view.custom.CustomView3Demo" />

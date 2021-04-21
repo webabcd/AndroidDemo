@@ -4,7 +4,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.webabcd.androiddemo.view.custom.MyLoading
+    <com.webabcd.androiddemo.view.custom.MyLoading1
+        android:id="@+id/myLoading1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
