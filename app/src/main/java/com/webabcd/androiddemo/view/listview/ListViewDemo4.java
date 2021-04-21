@@ -157,18 +157,11 @@ public class ListViewDemo4 extends AppCompatActivity implements AdapterView.OnIt
         }
 
         // 每构造一个 item 就会调用一次 getView() 来获取这个 item 的 view
-        // 每次绘制 item 都会调用 getView()，说明如下：
-        // 1、最开始绘制 ListView 时，每个可见的 item 都会通过调用 getView() 来获得
-        // 2、滚动 ListView 时，之前不可见滚动后可见的 item 都会通过调用 getView() 来获得
-        // 3、滚动 ListView 时，之前可见又变为不可见又再次变为可见的 item 都会通过调用 getView() 来获得
+        // 每次绘制 item 都会调用 getView()
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            // 多多上下滚动 ListView 来了解一下调用 getView() 的时机
-            Log.d(LOG_TAG, String.format("getView: %d", position));
-
             ViewHolder holder = null;
             if (convertView == null) {
-                // 只 inflate() 一次 xml
                 convertView = LayoutInflater.from(_context).inflate(R.layout.item_view_listview_listviewdemo4, parent, false);
 
                 holder = new ViewHolder();
@@ -187,7 +180,6 @@ public class ListViewDemo4 extends AppCompatActivity implements AdapterView.OnIt
                     }
                 });
             } else {
-                // 不再频繁地调用 findViewById()
                 holder = (ViewHolder) convertView.getTag();
             }
 

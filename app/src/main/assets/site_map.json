@@ -366,7 +366,7 @@
         "url": ".view.listview.ListViewDemo2"
       },
       {
-        "title": "ListView 通过自定义 BaseAdapter 显示数据",
+        "title": "ListView 通过自定义 BaseAdapter 显示数据（同时演示如何通过 convertView 复用的方式提高效率，以及 getView() 的调用时机）",
         "url": ".view.listview.ListViewDemo3"
       },
       {
@@ -374,7 +374,7 @@
         "url": ".view.listview.ListViewDemo4"
       },
       {
-        "title": "ListView 的单选和多选，以及 getView() 的调用时机",
+        "title": "ListView 的单选和多选",
         "url": ".view.listview.ListViewDemo5"
       },
       {
@@ -390,8 +390,12 @@
         "url": ".view.listview.ListViewDemo8"
       },
       {
-        "title": "ListView 待定",
+        "title": "ListView 长按弹出上下文菜单",
         "url": ".view.listview.ListViewDemo9"
+      },
+      {
+        "title": "ListView 多选删除",
+        "url": ".view.listview.ListViewDemo10"
       }
     ]
   },

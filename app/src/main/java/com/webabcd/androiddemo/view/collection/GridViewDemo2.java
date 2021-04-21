@@ -148,14 +148,12 @@ public class GridViewDemo2 extends AppCompatActivity {
         public View getView(int position, View convertView, ViewGroup parent) {
             ViewHolder holder = null;
             if (convertView == null) {
-                // 只 inflate() 一次 xml
                 convertView = LayoutInflater.from(_context).inflate(R.layout.item_view_collection_gridviewdemo2, parent, false);
 
                 holder = new ViewHolder();
                 holder.imgLogo = (ImageView) convertView.findViewById(R.id.imgLogo);
                 convertView.setTag(holder); // 将 holder 保存到 convertView 中
             } else {
-                // 不再频繁地调用 findViewById()
                 holder = (ViewHolder) convertView.getTag();
             }
 

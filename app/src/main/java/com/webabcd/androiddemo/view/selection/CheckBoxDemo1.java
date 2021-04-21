@@ -3,6 +3,8 @@
  *     setChecked(boolean checked) - 设置当前复选框的选中状态
  *     isChecked() - 获取当前复选框的选中状态
  *     setOnCheckedChangeListener(OnCheckedChangeListener listener) - 复选框的选中状态发生变化时的回调
+ *         手动使选中状态发生变化或用程序使选中状态发生变化都会触发此事件
+ *         如果不希望用程序使选中状态发生变化时会触发事件，则请使用 setOnClickListener()
  */
 
 package com.webabcd.androiddemo.view.selection;
@@ -35,8 +37,17 @@ public class CheckBoxDemo1 extends AppCompatActivity implements View.OnClickList
         // 将 _checkBox2 设置为选中状态
         _checkBox2.setChecked(true);
 
+        // 复选框的选中状态发生变化时的回调（手动使其发生变化或用程序使其发生变化都会触发此事件）
         _checkBox1.setOnCheckedChangeListener(this);
-        _checkBox2.setOnCheckedChangeListener(this);
+
+        // 复选框被单击时的回调（有的时候会用到这个，而不用 setOnCheckedChangeListener，比如你不希望用程序使选中状态发生变化时会触发事件）
+        _checkBox2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(CheckBoxDemo1.this, _checkBox2.getText() + " " + _checkBox2.isChecked(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
         _button1.setOnClickListener(this);
     }
 

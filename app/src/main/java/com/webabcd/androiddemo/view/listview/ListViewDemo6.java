@@ -86,8 +86,10 @@ public class ListViewDemo6 extends AppCompatActivity {
                     myData.setComment("comment " + random.nextInt(10000));
                 }
 
-                // 通过调用 BaseAdapter 的 notifyDataSetChanged() 来刷新 ListView
+                // 通过调用 BaseAdapter 的 notifyDataSetChanged() 来刷新 ListView（重绘可见区域，不改变当前的滚动位置）
                 myAdapter.notifyDataSetChanged();
+                // 通过调用 BaseAdapter 的 notifyDataSetInvalidated() 来刷新 ListView（重绘整个控件，且滚动到顶部）
+                // myAdapter.notifyDataSetInvalidated();
             }
         });
 
@@ -204,7 +206,6 @@ public class ListViewDemo6 extends AppCompatActivity {
         public View getView(int position, View convertView, ViewGroup parent) {
             ViewHolder holder = null;
             if (convertView == null) {
-                // 只 inflate() 一次 xml
                 convertView = LayoutInflater.from(_context).inflate(R.layout.item_view_listview_listviewdemo6, parent, false);
 
                 holder = new ViewHolder();
@@ -213,7 +214,6 @@ public class ListViewDemo6 extends AppCompatActivity {
                 holder.txtComment = (TextView) convertView.findViewById(R.id.txtComment);
                 convertView.setTag(holder); // 将 holder 保存到 convertView 中
             } else {
-                // 不再频繁地调用 findViewById()
                 holder = (ViewHolder) convertView.getTag();
             }
 

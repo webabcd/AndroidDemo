@@ -1,5 +1,5 @@
 /**
- * ListView 通过自定义 BaseAdapter 显示数据
+ * ListView 通过自定义 BaseAdapter 显示数据（同时演示如何通过 convertView 复用的方式提高效率，以及 getView() 的调用时机）
  *
  * 适配器中包含了数据和项模板
  */
@@ -9,6 +9,7 @@ package com.webabcd.androiddemo.view.listview;
 import android.content.Context;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,6 +24,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ListViewDemo3 extends AppCompatActivity {
+
+    private final String LOG_TAG = "ListViewDemo4";
 
     private ListView _listView1;
 
@@ -39,9 +42,9 @@ public class ListViewDemo3 extends AppCompatActivity {
     private void sample() {
         // 构造数据
         List<MyData> myDataList = new ArrayList<MyData>();
-        myDataList.add(new MyData(R.drawable.img_sample_son, "中国", "我是中国"));
-        myDataList.add(new MyData(R.drawable.img_sample_son, "美国", "我是美国"));
-        myDataList.add(new MyData(R.drawable.img_sample_son, "日本", "我是日本"));
+        for (int i = 0; i < 100; i++) {
+            myDataList.add(new MyData(R.drawable.img_sample_son, "name " + i, "comment " + i));
+        }
 
         // 实例化自定义的 BaseAdapter
         MyAdapter myAdapter = new MyAdapter(myDataList, this);
@@ -120,30 +123,40 @@ public class ListViewDemo3 extends AppCompatActivity {
         /*
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            convertView = LayoutInflater.from(_context).inflate(R.layout.item_view_listview_listviewdemo3,parent,false);
+            View view = LayoutInflater.from(_context).inflate(R.layout.item_view_listview_listviewdemo3, parent,false);
 
-            ImageView imgLogo = (ImageView) convertView.findViewById(R.id.imgLogo);
-            TextView txtName = (TextView) convertView.findViewById(R.id.txtName);
-            TextView txtComment = (TextView) convertView.findViewById(R.id.txtComment);
+            ImageView imgLogo = (ImageView) view.findViewById(R.id.imgLogo);
+            TextView txtName = (TextView) view.findViewById(R.id.txtName);
+            TextView txtComment = (TextView) view.findViewById(R.id.txtComment);
 
             imgLogo.setBackgroundResource(_myDataList.get(position).getLogoId());
             txtName.setText(_myDataList.get(position).getName());
             txtComment.setText(_myDataList.get(position).getComment());
 
-            return convertView;
+            return view;
         }
         */
 
         // 每构造一个 item 就会调用一次 getView() 来获取这个 item 的 view
-        // 数据量不大的话就可以像上面那样写，数量大的话则可以像下面这样写
-        // 下面这个写法是优化写法，其优化了如下两点
-        // 1、只 inflate() 一次 xml
-        // 2、不再频繁地调用 findViewById()
+        // 数据量不大的话就可以像上面注销的代码那样写，数量大的话则可以像下面这样写
+        // 以下演示通过 convertView 复用的方式提高效率
+        //
+        // 关于每次绘制 item 都会调用 getView()，说明如下：
+        // 1、最开始绘制 ListView 时，每个可见的 item 都会通过调用 getView() 来获得
+        // 2、滚动 ListView 时，之前不可见滚动后可见的 item 都会通过调用 getView() 来获得
+        // 3、滚动 ListView 时，之前可见又变为不可见又再次变为可见的 item 都会通过调用 getView() 来获得
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
+            // 多多上下滚动 ListView 来了解一下调用 getView() 的时机
+            Log.d(LOG_TAG, String.format("getView: %d", position));
+
             ViewHolder holder = null;
+            // 开始构造可见区域的 item 时，这个 convertView 都是 null
+            // 如果 item 从可见区域移动到不可见区域了，那么系统会把这个 item 的 view 保存起来
+            // 然后有的 item 会从不可见区域移动到可见区域，此时 convertView 就不是 null 了，它会是某一个之前被移出可视区域的 item 的 view
+            // 然后你就可以利用这个 convertView 了，通过 holder 的方式让其保存相关数据
+            // 这样就可以不用频繁的 inflate() 了，也不用频繁的 findViewById() 了，从而提高了效率
             if (convertView == null) {
-                // 只 inflate() 一次 xml
                 convertView = LayoutInflater.from(_context).inflate(R.layout.item_view_listview_listviewdemo3, parent, false);
 
                 holder = new ViewHolder();
@@ -152,7 +165,6 @@ public class ListViewDemo3 extends AppCompatActivity {
                 holder.txtComment = (TextView) convertView.findViewById(R.id.txtComment);
                 convertView.setTag(holder); // 将 holder 保存到 convertView 中
             } else {
-                // 不再频繁地调用 findViewById()
                 holder = (ViewHolder) convertView.getTag();
             }
 

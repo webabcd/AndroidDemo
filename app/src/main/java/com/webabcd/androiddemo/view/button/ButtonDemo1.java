@@ -37,10 +37,10 @@ public class ButtonDemo1 extends AppCompatActivity implements OnClickListener {
     }
 
     private void sample() {
-        // 内部类的方式响应 button 的单击事件
+        // 内部类的方式响应 button 的单击事件（也可以把下面的 new 后的结果放到一个变量里，然后这里指定这个变量）
         _button2.setOnClickListener(new MyClickListener());
 
-        // 匿名类的方式响应 button 的单击事件
+        // 匿名类的方式响应 button 的单击事件（也可以把下面的 new 后的结果放到一个变量里，然后这里指定这个变量）
         _button3.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {

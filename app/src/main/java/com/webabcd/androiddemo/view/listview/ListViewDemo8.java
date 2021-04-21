@@ -171,7 +171,6 @@ public class ListViewDemo8 extends AppCompatActivity {
         public View getView(int position, View convertView, ViewGroup parent) {
             ViewHolder holder = null;
             if (convertView == null) {
-                // 只 inflate() 一次 xml
                 convertView = LayoutInflater.from(_context).inflate(R.layout.item_view_listview_listviewdemo8, parent, false);
 
                 holder = new ViewHolder();
@@ -180,7 +179,6 @@ public class ListViewDemo8 extends AppCompatActivity {
                 holder.txtComment = (TextView) convertView.findViewById(R.id.txtComment);
                 convertView.setTag(holder); // 将 holder 保存到 convertView 中
             } else {
-                // 不再频繁地调用 findViewById()
                 holder = (ViewHolder) convertView.getTag();
             }
 

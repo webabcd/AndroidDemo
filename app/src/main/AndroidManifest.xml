@@ -132,6 +132,7 @@
         <activity android:name=".ui.ThemeDemo2" />
         <activity android:name=".ui.StyleDemo1" />
         <activity android:name=".ui.ThemeDemo1" />
+        <activity android:name=".view.listview.ListViewDemo10" />
         <activity android:name=".view.listview.ListViewDemo9" />
         <activity android:name=".view.listview.ListViewDemo8" />
         <activity android:name=".view.listview.ListViewDemo7" />

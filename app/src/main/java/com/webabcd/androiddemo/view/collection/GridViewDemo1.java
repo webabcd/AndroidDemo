@@ -126,30 +126,26 @@ public class GridViewDemo1 extends AppCompatActivity {
         /*
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            convertView = LayoutInflater.from(_context).inflate(R.layout.item_view_collection_gridviewdemo1,parent,false);
+            View view = LayoutInflater.from(_context).inflate(R.layout.item_view_collection_gridviewdemo1,parent,false);
 
-            ImageView imgLogo = (ImageView) convertView.findViewById(R.id.imgLogo);
-            TextView txtName = (TextView) convertView.findViewById(R.id.txtName);
-            TextView txtComment = (TextView) convertView.findViewById(R.id.txtComment);
+            ImageView imgLogo = (ImageView) view.findViewById(R.id.imgLogo);
+            TextView txtName = (TextView) view.findViewById(R.id.txtName);
+            TextView txtComment = (TextView) view.findViewById(R.id.txtComment);
 
             imgLogo.setBackgroundResource(_myDataList.get(position).getLogoId());
             txtName.setText(_myDataList.get(position).getName());
             txtComment.setText(_myDataList.get(position).getComment());
 
-            return convertView;
+            return view;
         }
         */
 
         // 每构造一个 item 就会调用一次 getView() 来获取这个 item 的 view
         // 数据量不大的话就可以像上面那样写，数量大的话则可以像下面这样写
-        // 下面这个写法是优化写法，其优化了如下两点
-        // 1、只 inflate() 一次 xml
-        // 2、不再频繁地调用 findViewById()
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
             ViewHolder holder = null;
             if (convertView == null) {
-                // 只 inflate() 一次 xml
                 convertView = LayoutInflater.from(_context).inflate(R.layout.item_view_collection_gridviewdemo1, parent, false);
 
                 holder = new ViewHolder();
@@ -158,7 +154,6 @@ public class GridViewDemo1 extends AppCompatActivity {
                 holder.txtComment = (TextView) convertView.findViewById(R.id.txtComment);
                 convertView.setTag(holder); // 将 holder 保存到 convertView 中
             } else {
-                // 不再频繁地调用 findViewById()
                 holder = (ViewHolder) convertView.getTag();
             }
 
