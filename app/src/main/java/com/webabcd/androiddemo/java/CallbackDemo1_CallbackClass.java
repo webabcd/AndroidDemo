@@ -22,7 +22,7 @@ public class CallbackDemo1_CallbackClass {
             if (new Date().getTime() % 2 == 0) {
                 _callback.ok();
             } else {
-                _callback.error();
+                _callback.error("错误信息");
             }
         }
     }

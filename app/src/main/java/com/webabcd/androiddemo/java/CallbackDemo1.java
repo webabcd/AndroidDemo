@@ -36,8 +36,8 @@ public class CallbackDemo1 extends AppCompatActivity {
             }
 
             @Override
-            public void error() {
-                mTextView1.setText("error");
+            public void error(String errMsg) {
+                mTextView1.setText("error: " + errMsg);
             }
         });
         xxx.execute();

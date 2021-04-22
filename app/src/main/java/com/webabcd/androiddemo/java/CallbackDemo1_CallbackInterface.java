@@ -9,5 +9,5 @@ package com.webabcd.androiddemo.java;
 
 public interface CallbackDemo1_CallbackInterface {
     void ok();
-    void error();
+    void error(String errMsg);
 }
