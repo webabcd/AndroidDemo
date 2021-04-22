@@ -1,6 +1,6 @@
 /**
  * Worker - 具体的后台任务逻辑
- * 需要在项目的 build.gradle 中配置好 implementation "androidx.work:work-runtime:x.x.x"
+ * 需要在 app 的 build.gradle 中配置好 implementation "androidx.work:work-runtime:x.x.x"
  *
  * 注：后台任务管理请参见 /service/WorkerManagerDemo1.java
  */
