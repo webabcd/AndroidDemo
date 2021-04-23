@@ -38,6 +38,16 @@
         android:drawableBottom="@drawable/shape_edittext_bottom_line" />
 
     <!--
+        多行的 EditText
+    -->
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:padding="10dp"
+        android:inputType="textMultiLine" />
+
+    <!--
         inputType 的详细说明如下：
             android:inputType="none" // 普通字符
             android:inputType="text" // 普通字符

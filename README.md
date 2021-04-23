@@ -1,6 +1,9 @@
 ﻿# Android Demo
 
 
+#### java
+1. Callback
+
 #### kotlin
 1. hello world
 
@@ -100,13 +103,14 @@
 #### view（ListView）
 1. ListView 通过 ArrayAdapter 显示数据
 2. ListView 通过 SimpleAdapter 显示数据
-3. ListView 通过自定义 BaseAdapter 显示数据
+3. ListView 通过自定义 BaseAdapter 显示数据（同时演示如何通过 convertView 复用的方式提高效率，以及 getView() 的调用时机）
 4. ListView 的 item 的点击事件和长按事件
-5. ListView 的单选和多选，以及 getView() 的调用时机
+5. ListView 的单选和多选
 6. ListView 的表头，表尾，分隔线，滚动条的显示与隐藏，数据更新与 ListView 刷新，滚动到指定位置，监听 ListView 的滚动状态
 7. ListView 的多布局（不同的 item 使用不同的项模板）
 8. ListView 滚动到底部加载更多数据
-9. ListView ddddddddddddd
+9. ListView 长按弹出上下文菜单
+10. ListView 多选删除
 
 #### view（WebView）
 1. WebView 基础
@@ -120,6 +124,7 @@
 2. 通过一个自定义 ViewGroup 来演示 measure, layout, draw
 3. 自定义组合控件
 4. 自定义控件的自定义属性
+5. 自定义圆形带进度提示的 loading 控件
 
 #### UI
 1. 屏幕密度（物理分辨率, 逻辑分辨率, density, dpi, drawable 文件夹, mipmap 文件夹, dp, sp, px）
@@ -227,6 +232,7 @@
 4. 发送广播（静态注册广播接收器）
 5. 发送广播（动态注册广播接收器）
 6. 发送广播（有序广播）
+7. Clipboard
 
 #### 优化
 1. 强引用, 软引用, 弱引用

@@ -16,7 +16,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".java.CallbackDemo1"></activity>
+        <activity android:name=".ipc.ClipboardDemo1"></activity>
+        <activity android:name=".java.CallbackDemo1" />
         <activity android:name=".notification.NotificationDemo2" />
 
         <service

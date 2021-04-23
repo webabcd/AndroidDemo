@@ -847,6 +847,10 @@
       {
         "title": "发送广播（有序广播）",
         "url": ".ipc.BroadcastDemo3"
+      },
+      {
+        "title": "Clipboard",
+        "url": ".ipc.ClipboardDemo1"
       }
     ]
   },
