@@ -2,7 +2,9 @@
  * DownloadManager 的示例（下载任务会在通知栏显示，即使 app 被杀也能继续下载）
  * 本例以一个 apk 文件下载为例，演示如何新增任务，删除任务，获取任务状态和下载进度，以及下载完成后弹出安装界面
  *
- * 注：我这里模拟器运行失败，真机运行正常
+ * 注：
+ * 1、我这里模拟器运行失败，真机运行正常
+ * 2、请先进入 /storage/StorageDemo3.java 动态申请权限（我懒得在这里写了）
  */
 
 package com.webabcd.androiddemo.service;

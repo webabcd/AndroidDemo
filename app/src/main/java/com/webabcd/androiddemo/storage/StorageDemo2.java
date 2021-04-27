@@ -24,6 +24,11 @@
  *     delete() - 删除文件（返回值代表是否成功）
  *     renameTo() - 文件重命名
  *     createNewFile() - 创建空的新文件（如果文件已存在则不创建，并返回 false）
+ * 关于 File 的构造函数需要注意的
+ *     File(String) - 构造的是文件夹对象
+ *     File(File, String) - 构造的是文件夹对象
+ *     File(String, String) - 构造的是文件对象。如果你的 file 是文件对象，但是调用了 file.mkdirs() 则这个 file 就会变为文件夹对象，所以通过文件对象创建目录的话，应该使用 file.getParentFile().mkdirs()
+ *
  *
  * FileOutputStream - 写文件的对象
  *     write() - 写入数据
@@ -37,6 +42,16 @@
  * 注：
  * 1、本例操作的是 files 目录（通过 getFilesDir() 获取）中的文件和文件夹。关于各种存储路径和权限请求的相关说明请参见 storage/StorageDemo3
  * 2、如果是 6.0 或以上系统（支持多用户），其 files 目录类似 /data/user/n/packagename/files （其中的 n 为整数，代表不同的用户，如果就一个用户那么 n 就是 0）
+ *
+ *
+ * 另：
+ * 关于 File 的 getPath(), getAbsolutePath(), getCanonicalPath() 的区别
+ * 如果你定义 File 时用的是绝对路径，则这 3 个方法返回的数据是一样的
+ * 如果你定义 File 时用的是相对路径，请看下面的说明
+ * File file = new File(".\\test.txt");
+ * file.getPath() - .\test.txt
+ * file.getAbsolutePath() - c:\directory1\directory2\.\test.txt
+ * file.getCanonicalPath() - c:\directory1\directory2\test.txt
  */
 
 package com.webabcd.androiddemo.storage;

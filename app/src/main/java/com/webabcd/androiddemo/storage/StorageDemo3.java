@@ -9,10 +9,10 @@
  * 程序的外部存储（机身存储）路径为 /storage/emulated/0/
  * 程序的外部存储（外部可移动存储）路径类似 /storage/B3E4-1711/（后面的这个挂载目录根据设备不同会有所不同）
  *
- * files 目录，存放的数据系统不会主动删除，用户在设置中的“应用信息”中单击“清除数据”后会删除
+ * files 目录，无论内部存储还是外部存储，存放的数据系统不会主动删除，用户在设置中的“应用信息”中单击“清除数据”后会删除
  * files 目录内部存储的路径为 /data/data/packagename/files 或 /data/user/n/packagename/files
  * files 目录外部存储的路径为 /storage/emulated/0/Android/data/packagename/files
- * cache 目录，存放的数据可能会被系统主动删除（比如系统认为存储空间不够的时候），用户在设置中的“应用信息”中单击“清除缓存”后会删除
+ * cache 目录，无论内部存储还是外部存储，存放的数据可能会被系统主动删除（比如系统认为存储空间不够的时候），用户在设置中的“应用信息”中单击“清除缓存”后会删除
  * cache 目录内部存储的路径为 /data/data/packagename/cache 或 /data/user/n/packagename/cache
  * cache 目录外部存储的路径为 /storage/emulated/0/Android/data/packagename/cache
  *
@@ -24,6 +24,21 @@
  * 2、如何获取各种存储的路径，以及如何获取存储的大小
  * 3、如何获取 assets 中的数据（不会映射到 R.java 文件中，允许有子目录）
  * 4、如何获取 res/raw 中的数据（会映射到 R.java 文件中，不允许有子目录）
+ *
+ *
+ * 注：
+ * 1、有包名的路径需要通过 Context 中的方法来获得，没有包名的路径可以直接调用 Environment 中的方法获得
+ * 2、你卸载程序的话，有包名的路径下的数据会被删除，没有包名的路径下的数据不会被删除
+ *
+ *
+ * 另：
+ * 关于 File 的 getPath(), getAbsolutePath(), getCanonicalPath() 的区别
+ * 如果你定义 File 时用的是绝对路径，则这 3 个方法返回的数据是一样的
+ * 如果你定义 File 时用的是相对路径，请看下面的说明
+ * File file = new File(".\\test.txt");
+ * file.getPath() - .\test.txt
+ * file.getAbsolutePath() - c:\directory1\directory2\.\test.txt
+ * file.getCanonicalPath() - c:\directory1\directory2\test.txt
  */
 
 package com.webabcd.androiddemo.storage;
@@ -121,7 +136,7 @@ public class StorageDemo3 extends AppCompatActivity {
             // 外部存储的 cache 目录（类似 /storage/emulated/0/Android/data/packagename/cache）
             mTextView1.append("getExternalCacheDir(): " + getExternalCacheDir().getCanonicalPath());
             mTextView1.append("\n");
-            // 默认外部存储目录（类似 /storage/emulated/0）
+            // 默认外部存储目录（类似 /storage/emulated/0），在这里操作是需要动态申请权限的
             mTextView1.append("getExternalStorageDirectory(): " + Environment.getExternalStorageDirectory().getCanonicalPath());
             mTextView1.append("\n");
 
