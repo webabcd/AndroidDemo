@@ -578,6 +578,10 @@
     "title": "输入",
     "node": [
       {
+        "title": "按键事件",
+        "url": ".input.KeyDemo1"
+      },
+      {
         "title": "Touch 基础（点击，双击，长按；触摸按下，触摸移动，触摸抬起）",
         "url": ".input.TouchDemo1"
       },
