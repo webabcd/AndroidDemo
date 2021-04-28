@@ -4,4 +4,20 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="main_textView1" />
+
+    <!--
+        通过 include 导入指定的 layout 文件
+            在 java 中可以直接通过 findViewById() 找到 include 进来的控件
+            如果主布局和 include 布局中有重名的控件，则以最先出现的为准（本例中主布局的 textView1 控件比 include 布局的 textView1 控件先出现，所以 findViewById() 获取到的是主布局的 textView1 控件）
+    -->
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/view_view_viewdemo3" />
+
 </LinearLayout>
