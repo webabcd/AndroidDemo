@@ -29,4 +29,20 @@
         android:textAllCaps="false"
         android:text="显示 statusBar"/>
 
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left|center_vertical"
+        android:textAllCaps="false"
+        android:text="改变 statusBar 的背景色"/>
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left|center_vertical"
+        android:textAllCaps="false"
+        android:text="改变 statusBar 的前景色"/>
+
 </LinearLayout>

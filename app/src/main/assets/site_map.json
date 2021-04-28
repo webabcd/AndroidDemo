@@ -639,7 +639,7 @@
         "url": ".activity.ActivityDemo5"
       },
       {
-        "title": "Activity 样式（隐藏状态栏；对话框样式）",
+        "title": "Activity 样式（隐藏状态栏；改变状态栏颜色；对话框样式的 activity）",
         "url": ".activity.ActivityDemo6"
       }
     ]
