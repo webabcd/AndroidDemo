@@ -12,8 +12,10 @@
  * File - 可以代表文件或文件夹（通过指定地址来实例化）
  *     getParentFile() - 获取父文件夹
  *     getCanonicalPath() - 获取绝对路径
- *     isFile(), isDirectory() - 判断 File 对象是代表文件还是文件夹（注：一个不存在的地址即不是文件也不是文件夹）
  *     exists() - 判断文件或文件夹是否存在
+ *     isFile(), isDirectory() - 判断 File 对象是代表文件还是文件夹
+ *         一个不存在的地址即不是文件也不是文件夹，所以应该先通过 exists() 判断地址存在，然后才能判断其是文件还是文件夹
+ *         针对一个不存在的文件地址创建目录时要注意，需要调用 file.getParentFile().mkdirs() 创建目录，如果你使用的是 file.mkdirs() 则会将文件地址创建为目录
  *     mkdir() - 创建当前路径的最后一级的文件夹（返回值代表是否成功）
  *     mkdirs() - 创建当前路径的全部级别的文件夹（返回值代表是否成功）
  *     list() - 获取文件夹中的全部文件和文件夹的名称
@@ -24,11 +26,6 @@
  *     delete() - 删除文件（返回值代表是否成功）
  *     renameTo() - 文件重命名
  *     createNewFile() - 创建空的新文件（如果文件已存在则不创建，并返回 false）
- * 关于 File 的构造函数需要注意的
- *     File(String) - 构造的是文件夹对象
- *     File(File, String) - 构造的是文件夹对象
- *     File(String, String) - 构造的是文件对象。如果你的 file 是文件对象，但是调用了 file.mkdirs() 则这个 file 就会变为文件夹对象，所以通过文件对象创建目录的话，应该使用 file.getParentFile().mkdirs()
- *
  *
  * FileOutputStream - 写文件的对象
  *     write() - 写入数据
