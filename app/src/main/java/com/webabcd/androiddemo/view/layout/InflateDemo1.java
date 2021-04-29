@@ -40,7 +40,7 @@ public class InflateDemo1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_layout_inflatedemo1);
 
-        _container = findViewById(R.id.root);
+        _container = findViewById(R.id.container);
         _button1 = findViewById(R.id.button1);
         _button2 = findViewById(R.id.button2);
         _button3 = findViewById(R.id.button3);

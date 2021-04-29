@@ -142,6 +142,10 @@
       {
         "title": "通过 inflate 动态加载布局文件",
         "url": ".view.layout.InflateDemo1"
+      },
+      {
+        "title": "setContentView() 和 addContentView()",
+        "url": ".view.layout.ContentViewDemo1"
       }
     ]
   },
