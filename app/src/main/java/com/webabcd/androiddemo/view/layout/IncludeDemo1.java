@@ -1,8 +1,8 @@
 /**
- * 演示布局文件中的 include 的用法
+ * 演示如何通过 include 静态加载布局文件（参见 /res/layout/activity_view_layout_includedemo1.xml）
  */
 
-package com.webabcd.androiddemo.view;
+package com.webabcd.androiddemo.view.layout;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import com.webabcd.androiddemo.R;
 
-public class ViewDemo3 extends AppCompatActivity {
+public class IncludeDemo1 extends AppCompatActivity {
 
     private TextView mTextView1;
     private TextView mTextView2;
@@ -21,7 +21,7 @@ public class ViewDemo3 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_viewdemo3);
+        setContentView(R.layout.activity_view_layout_includedemo1);
 
         mTextView1 = findViewById(R.id.textView1);
         mTextView2 = findViewById(R.id.textView2);

@@ -27,10 +27,6 @@
       {
         "title": "边距相关，隐藏相关",
         "url": ".view.ViewDemo2"
-      },
-      {
-        "title": "布局文件中的 include",
-        "url": ".view.ViewDemo3"
       }
     ]
   },
@@ -138,6 +134,14 @@
       {
         "title": "ScrollView 滚动容器",
         "url": ".view.layout.ScrollViewDemo1"
+      },
+      {
+        "title": "通过 include 静态加载布局文件",
+        "url": ".view.layout.IncludeDemo1"
+      },
+      {
+        "title": "通过 inflate 动态加载布局文件",
+        "url": ".view.layout.InflateDemo1"
       }
     ]
   },

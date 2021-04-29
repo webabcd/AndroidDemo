@@ -16,7 +16,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".input.KeyDemo1"></activity>
+        <activity android:name=".view.layout.InflateDemo1"></activity>
+        <activity android:name=".view.layout.IncludeDemo1" />
+        <activity android:name=".input.KeyDemo1" />
         <activity android:name=".ipc.ClipboardDemo1" />
         <activity android:name=".java.CallbackDemo1" />
         <activity android:name=".notification.NotificationDemo2" />
@@ -227,7 +229,7 @@
         <activity android:name=".view.custom.CustomView3Demo" />
         <activity android:name=".view.custom.CustomView4Demo" />
         <activity android:name=".view.ViewDemo2" />
-        <activity android:name=".view.ViewDemo3" />
+        <activity android:name=".view.layout.IncludeDemo1" />
         <activity android:name=".activity.ActivityDemo1" />
         <activity android:name=".view.webview.WebViewDemo1" />
     </application>
