@@ -154,7 +154,7 @@ public class ListViewDemo3 extends AppCompatActivity {
             // 开始构造可见区域的 item 时，这个 convertView 都是 null
             // 如果 item 从可见区域移动到不可见区域了，那么系统会把这个 item 的 view 保存起来
             // 然后有的 item 会从不可见区域移动到可见区域，此时 convertView 就不是 null 了，它会是某一个之前被移出可视区域的 item 的 view
-            // 然后你就可以利用这个 convertView 了，通过 holder 的方式让其保存相关数据
+            // 然后你就可以利用这个 convertView 了，通过 ViewHolder 的方式让其保存相关数据
             // 这样就可以不用频繁的 inflate() 了，也不用频繁的 findViewById() 了，从而提高了效率
             if (convertView == null) {
                 convertView = LayoutInflater.from(_context).inflate(R.layout.item_view_listview_listviewdemo3, parent, false);

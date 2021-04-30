@@ -1,5 +1,9 @@
 /**
  * ImageView - 图片控件
+ *
+ * 本例用于演示 ImageView 基础
+ *
+ * 注：关于网络图片的显示和缓存之类的建议使用 Picasso 框架
  */
 
 package com.webabcd.androiddemo.view.media;

@@ -40,4 +40,5 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation 'com.google.code.gson:gson:2.8.5'
     implementation "androidx.work:work-runtime:2.2.0"
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
 }
