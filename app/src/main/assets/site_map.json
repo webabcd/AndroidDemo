@@ -1,5 +1,14 @@
 [
   {
+    "title": "view（RecyclerView）",
+    "node": [
+      {
+        "title": "RecyclerView 基础，各种排列方式（垂直排列，水平排列，标准网格排列，错列网格排列），响应单击事件和长按事件",
+        "url": ".view.recyclerview.RecyclerViewDemo1"
+      }
+    ]
+  },
+  {
     "title": "java",
     "node": [
       {
@@ -184,6 +193,10 @@
       {
         "title": "9patch（nine patch）图片",
         "url": ".view.media.NinePatchDemo1"
+      },
+      {
+        "title": "Picasso 基础",
+        "url": ".view.media.PicassoDemo1"
       }
     ]
   },
