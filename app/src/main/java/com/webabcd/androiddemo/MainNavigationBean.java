@@ -32,6 +32,7 @@ public class MainNavigationBean {
 
 
 
+    // 注：可以安装一个名为 GsonFormat 的插件（安装后可通过快捷键 alt + s 调出），其用于将 json 字符串解析为实体类
     public static class NodeBean {
         @SerializedName("title")
         private String mTitle; // 子节点 title

@@ -113,7 +113,9 @@ public class StorageDemo3 extends AppCompatActivity {
 
         // requestCode - 就是通过 requestPermissions() 申请权限时的最后一个参数
         // permissions - 申请权限的名称列表
-        // grantResults - 申请权限的结果列表（-1 代表拒绝；1 代表允许）
+        // grantResults - 申请权限的结果列表
+        //     -1 代表拒绝，对应的常量是 PackageManager.PERMISSION_DENIED
+        //     0 代表允许，对应的常量是 PackageManager.PERMISSION_GRANTED
 
         for (int i = 0; i < permissions.length; i++) {
             Log.i(LOG_TAG, "申请的权限为：" + permissions[i] + "，申请结果：" + grantResults[i]);
