@@ -23,6 +23,11 @@ public class ButtonDemo1 extends AppCompatActivity implements OnClickListener {
     private Button _button2;
     private Button _button3;
     private Button _button4;
+    private Button _button5;
+    private Button _button6;
+
+    private OnClickListener _listener1;
+    private OnClickListener _listener2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,24 +37,43 @@ public class ButtonDemo1 extends AppCompatActivity implements OnClickListener {
         _button2 = (Button) findViewById(R.id.button2);
         _button3 = (Button) findViewById(R.id.button3);
         _button4 = (Button) findViewById(R.id.button4);
+        _button5 = (Button) findViewById(R.id.button5);
+        _button6 = (Button) findViewById(R.id.button6);
 
         sample();
     }
 
     private void sample() {
-        // 内部类的方式响应 button 的单击事件（也可以把下面的 new 后的结果放到一个变量里，然后这里指定这个变量）
+        // 内部类的方式响应 button 的单击事件
         _button2.setOnClickListener(new MyClickListener());
 
-        // 匿名类的方式响应 button 的单击事件（也可以把下面的 new 后的结果放到一个变量里，然后这里指定这个变量）
-        _button3.setOnClickListener(new OnClickListener() {
+
+        // 内部类的方式响应 button 的单击事件（new 一个内部类并放到一个变量里，然后这里指定这个变量）
+        _listener1 = new MyClickListener2();
+        _button3.setOnClickListener(_listener1);
+
+
+        // 匿名类的方式响应 button 的单击事件
+        _button4.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(ButtonDemo1.this, "button3 clicked", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ButtonDemo1.this, "button4 clicked", Toast.LENGTH_SHORT).show();
             }
         });
 
+
+        // 匿名类的方式响应 button 的单击事件（new 一个匿名类并放到一个变量里，然后这里指定这个变量）
+        _listener2 = new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(ButtonDemo1.this, "button5 clicked", Toast.LENGTH_SHORT).show();
+            }
+        };
+        _button5.setOnClickListener(_listener2);
+
+
         // 当前类的方式响应 button 的单击事件
-        _button4.setOnClickListener(this);
+        _button6.setOnClickListener(this);
     }
 
     // xml 的方式响应 button 的单击事件
@@ -71,11 +95,18 @@ public class ButtonDemo1 extends AppCompatActivity implements OnClickListener {
         }
     }
 
+    class MyClickListener2 implements OnClickListener {
+        @Override
+        public void onClick(View v) {
+            Toast.makeText(ButtonDemo1.this, "button3 clicked", Toast.LENGTH_SHORT).show();
+        }
+    }
+
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.button4:
-                Toast.makeText(ButtonDemo1.this, "button4 clicked", Toast.LENGTH_SHORT).show();
+            case R.id.button6:
+                Toast.makeText(ButtonDemo1.this, "button6 clicked", Toast.LENGTH_SHORT).show();
                 break;
             default:
                 break;
