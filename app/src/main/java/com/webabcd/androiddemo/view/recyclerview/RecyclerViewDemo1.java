@@ -1,17 +1,19 @@
 /**
- * RecyclerView 基础，各种排列方式（垂直排列，水平排列，标准网格排列，错列网格排列），响应单击事件和长按事件
+ * RecyclerView 基础，各种布局方式（垂直布局，水平布局，标准网格布局，错列网格布局），响应单击事件和长按事件，不同的 item 使用不同的项模板，表头和表尾
  *
  * 本例演示
  * 1、通过 RecyclerView.Adapter 显示数据
- * 2、线性排列方式，可纵向可横向
- * 3、标准网格排列方式（每个格子的宽高是一样的），可纵向可横向
- * 4、错列网格排列方式（每个格子的宽高可能是不一样的），可纵向可横向
- * 5、响应单击事件和长按事件
+ * 2、线性布局方式，可纵向可横向
+ * 3、标准网格布局方式（每个格子的宽高是一样的），可纵向可横向
+ * 4、错列网格布局方式（每个格子的宽高可能是不一样的），可纵向可横向
+ * 5、响应单击事件和长按事件（参见 MyRecyclerViewAdapter.java）
+ * 6、不同的 item 使用不同的项模板（参见 MyRecyclerViewAdapter.java）
+ * 7、表头和表尾（参见 MyRecyclerViewAdapter.java）
  *
  *
  * 注：
  * 1、需要在 app 的 build.gradle 中配置好 implementation 'androidx.recyclerview:recyclerview:x.x.x'
- * 2、本例使用的自定义 RecyclerView.Adapter 请参见 RecyclerViewDemo1Adapter.java
+ * 2、本例使用的自定义 RecyclerView.Adapter 请参见 MyRecyclerViewAdapter.java
  */
 
 package com.webabcd.androiddemo.view.recyclerview;
@@ -56,14 +58,14 @@ public class RecyclerViewDemo1 extends AppCompatActivity {
         // 构造数据
         List<MyData> myDataList = MyData.getDataList();
         // 实例化自定义的 RecyclerView.Adapter
-        RecyclerViewDemo1Adapter adapter = new RecyclerViewDemo1Adapter(myDataList);
+        MyRecyclerViewAdapter adapter = new MyRecyclerViewAdapter(myDataList);
         // 设置 RecyclerView 的 RecyclerView.Adapter
         _recyclerView.setAdapter(adapter);
 
         _button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // 最经典的排列方式，线性垂直排列
+                // 最经典的布局方式，线性垂直布局
                 LinearLayoutManager linearLayoutManager = new LinearLayoutManager(RecyclerViewDemo1.this);
                 _recyclerView.setLayoutManager(linearLayoutManager);
             }
@@ -72,8 +74,8 @@ public class RecyclerViewDemo1 extends AppCompatActivity {
         _button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // LinearLayoutManager - 线性排列
-                //   第 2 个参数 - 用于指定线性排列的方式，垂直或水平
+                // LinearLayoutManager - 线性布局
+                //   第 2 个参数 - 用于指定线性布局的方式，垂直或水平
                 //   第 3 个参数 - 当需要显示更多数据时，需要滑动的方向
                 //     false - 通过下滑或右滑来显示更多的数据
                 //     true - 通过上滑或左滑来显示更多的数据
@@ -85,27 +87,35 @@ public class RecyclerViewDemo1 extends AppCompatActivity {
         _button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // GridLayoutManager - 标准网格排列
+                // GridLayoutManager - 标准网格布局
                 //   第 2 个参数 - 用于指定网格的行数或列数
-                //   第 3 个参数 - 用于指定网格是垂直排列还是水平排列
+                //   第 3 个参数 - 用于指定网格是垂直布局还是水平布局
                 //   第 4 个参数 - 当需要显示更多数据时，需要滑动的方向
                 //     false - 通过下滑或右滑来显示更多的数据
                 //     true - 通过上滑或左滑来显示更多的数据
                 GridLayoutManager gridLayoutManager = new GridLayoutManager(RecyclerViewDemo1.this, 3, LinearLayoutManager.VERTICAL, false);
                 _recyclerView.setLayoutManager(gridLayoutManager);
+
+                // 修改指定索引位置的 item 的网格占用个数
+                gridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
+                    @Override
+                    public int getSpanSize(int position) {
+                        return 1;
+                    }
+                });
             }
         });
 
         _button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // StaggeredGridLayoutManager - 错列网格排列
+                // StaggeredGridLayoutManager - 错列网格布局
                 //   第 1 个参数 - 用于指定网格的行数或列数
-                //   第 2 个参数 - 用于指定网格是垂直排列还是水平排列
+                //   第 2 个参数 - 用于指定网格是垂直布局还是水平布局
                 //
-                // 什么是错列网格排列呢？用下面这个例子说明
-                // 这个例子是固定 3 列，垂直排列的，在这个前提下使用错列网格排列后，他的每个网格的宽度是一样的，但是高度可以不一样（当 wrap_content 时，其可以根据内容的多少来决定高度）
-                StaggeredGridLayoutManager staggeredGridLayoutManager = new StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.HORIZONTAL);
+                // 什么是错列网格布局呢？用下面这个例子说明
+                // 这个例子是固定 3 列，垂直布局的，在这个前提下使用错列网格布局后，他的每个网格的宽度是一样的，但是高度可以不一样（当 wrap_content 时，其可以根据内容的多少来决定高度）
+                StaggeredGridLayoutManager staggeredGridLayoutManager = new StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL);
                 _recyclerView.setLayoutManager(staggeredGridLayoutManager);
             }
         });

@@ -3,8 +3,12 @@
     "title": "view（RecyclerView）",
     "node": [
       {
-        "title": "RecyclerView 基础，各种排列方式（垂直排列，水平排列，标准网格排列，错列网格排列），响应单击事件和长按事件",
+        "title": "RecyclerView 基础，各种布局方式（垂直布局，水平布局，标准网格布局，错列网格布局），响应单击事件和长按事件，不同的 item 使用不同的项模板，表头和表尾",
         "url": ".view.recyclerview.RecyclerViewDemo1"
+      },
+      {
+        "title": "RecyclerView 分隔线",
+        "url": ".view.recyclerview.RecyclerViewDemo2"
       }
     ]
   },

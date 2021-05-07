@@ -14,19 +14,20 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.webabcd.androiddemo.R;
 
 import java.util.List;
 
-public class RecyclerViewDemo1Adapter extends RecyclerView.Adapter<RecyclerViewDemo1Adapter.ViewHolder>
+public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAdapter.ViewHolder>
 {
     private final String LOG_TAG = "RecyclerView.Adapter";
 
     private List<MyData> _myDataList;
 
-    public  RecyclerViewDemo1Adapter(List<MyData> myDataList) {
+    public MyRecyclerViewAdapter(List<MyData> myDataList) {
         _myDataList = myDataList;
     }
 
@@ -34,8 +35,14 @@ public class RecyclerViewDemo1Adapter extends RecyclerView.Adapter<RecyclerViewD
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
+        // 根据不同的布局类别加载不同的项模板，这个布局类别是在 getItemViewType() 中计算的（表头和表尾也可以通过此特性实现，我就不写示例了）
+        View view = null;
+        if (viewType == 0) {
+            view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_view_recyclerview_myrecyclerviewadapter_1, parent, false);
+        } else {
+            view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_view_recyclerview_myrecyclerviewadapter_2, parent, false);
+        }
         // 构造自定义 ViewHolder
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_view_recyclerview_recyclerviewdemo1, parent, false);
         ViewHolder holder = new ViewHolder(view);
 
         // item 中的 imgLogo 控件的点击事件
@@ -80,12 +87,28 @@ public class RecyclerViewDemo1Adapter extends RecyclerView.Adapter<RecyclerViewD
         holder.imgLogo.setImageResource(myData.getLogoId());
         holder.txtName.setText(myData.getName());
         holder.txtComment.setText(myData.getComment());
+
+        /*
+        // 如果使用的是 StaggeredGridLayoutManager 布局，则可以通过如下方式合并排列方向上的单元格
+        ViewGroup.LayoutParams lp = holder.itemView.getLayoutParams();
+        if (lp != null && lp instanceof StaggeredGridLayoutManager.LayoutParams)
+        {
+            StaggeredGridLayoutManager.LayoutParams sglmlp = (StaggeredGridLayoutManager.LayoutParams)lp;
+            sglmlp.setFullSpan(true);
+        }
+        */
     }
 
     // 需要呈现的 item 的总数
     @Override
     public int getItemCount() {
         return _myDataList.size();
+    }
+
+    // 返回指定索引位置的 item 的布局类别，然后可以在 onCreateViewHolder() 中根据不同的布局类别加载不同的项模板（表头和表尾也可以通过此特性实现，我就不写示例了）
+    @Override
+    public int getItemViewType(int position) {
+        return position % 2;
     }
 
     // 自定义 RecyclerView.ViewHolder
