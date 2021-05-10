@@ -596,6 +596,10 @@
       {
         "title": "SharedPreferences 用户偏好数据的管理",
         "url": ".storage.SharedPreferencesDemo1"
+      },
+      {
+        "title": "Sqlite 基础",
+        "url": ".storage.SqliteDemo1"
       }
     ]
   },

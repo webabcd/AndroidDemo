@@ -12,6 +12,7 @@
 
 package com.webabcd.androiddemo.storage;
 
+import android.content.Context;
 import android.content.SharedPreferences;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
@@ -54,7 +55,7 @@ public class SharedPreferencesDemo1 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // 通过指定的文件名实例化 SharedPreferences 对象（指定文件名时不需包含后缀名，SharedPreferences 保存的都是 xml 格式的文件，会自动为其添加 .xml 后缀名）
-                SharedPreferences sp = SharedPreferencesDemo1.this.getSharedPreferences(FILE_NAME, SharedPreferencesDemo1.this.MODE_PRIVATE);
+                SharedPreferences sp = SharedPreferencesDemo1.this.getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE);
                 // 通过 SharedPreferences.Editor 保存数据或删除数据
                 SharedPreferences.Editor editor = sp.edit();
 
@@ -63,8 +64,10 @@ public class SharedPreferencesDemo1 extends AppCompatActivity {
                 editor.putString("myKey", "myValue");
                 editor.putString("myKey2", "myValue2");
 
-                // 保存
-                editor.commit();
+                // 保存（同步）
+                boolean result = editor.commit();
+                // 保存（异步）
+                // editor.apply();
 
                 mTextView1.setText("保存成功");
             }
@@ -75,7 +78,7 @@ public class SharedPreferencesDemo1 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // 通过指定的文件名实例化 SharedPreferences 对象
-                SharedPreferences sp = SharedPreferencesDemo1.this.getSharedPreferences(FILE_NAME, SharedPreferencesDemo1.this.MODE_PRIVATE);
+                SharedPreferences sp = SharedPreferencesDemo1.this.getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE);
 
                 // 获取当前文件中的全部 key/value 数据
                 // sp.getAll();
@@ -103,7 +106,7 @@ public class SharedPreferencesDemo1 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // 通过指定的文件名实例化 SharedPreferences 对象
-                SharedPreferences sp = SharedPreferencesDemo1.this.getSharedPreferences(FILE_NAME, SharedPreferencesDemo1.this.MODE_PRIVATE);
+                SharedPreferences sp = SharedPreferencesDemo1.this.getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE);
                 // 通过 SharedPreferences.Editor 保存数据或删除数据
                 SharedPreferences.Editor editor = sp.edit();
 
@@ -112,8 +115,10 @@ public class SharedPreferencesDemo1 extends AppCompatActivity {
                 // 删除当前文件中的全部数据（不会删除文件本身）
                 editor.clear();
 
-                // 保存
-                editor.commit();
+                // 保存（同步）
+                boolean result = editor.commit();
+                // 保存（异步）
+                // editor.apply();
 
                 mTextView1.setText("数据删除成功");
             }
