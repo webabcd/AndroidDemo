@@ -525,6 +525,10 @@
       {
         "title": "图标",
         "url": ".ui.IconDemo1"
+      },
+      {
+        "title": "状态栏（statusBar）",
+        "url": ".ui.StatusBarDemo1"
       }
     ]
   },
