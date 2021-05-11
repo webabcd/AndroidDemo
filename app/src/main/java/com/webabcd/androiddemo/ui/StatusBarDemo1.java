@@ -39,11 +39,11 @@ public class StatusBarDemo1 extends AppCompatActivity {
         sample();
 
         // 状态栏全透明
-        setStatusBarTransparent();
+        // setStatusBarTransparent();
         // 当前布局与状态栏重合，状态栏在前，当前布局在后
         // setFitSystemWindow(false);
         // 当前布局与状态栏重合，状态栏在前，当前布局在后（但是当前布局的内容会根据状态栏的高度自动下移）
-        setFitSystemWindow(true);
+        // setFitSystemWindow(true);
 
         // 获取状态栏的高度（单位是 px）
         int statusBarHeight = 0;
