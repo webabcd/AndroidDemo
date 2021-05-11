@@ -38,7 +38,7 @@ public class StatusBarDemo1 extends AppCompatActivity {
 
         sample();
 
-        // 状态栏全透明
+        // 状态栏背景透明
         // setStatusBarTransparent();
         // 当前布局与状态栏重合，状态栏在前，当前布局在后
         // setFitSystemWindow(false);
