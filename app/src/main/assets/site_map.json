@@ -884,6 +884,10 @@
       {
         "title": "Clipboard",
         "url": ".ipc.ClipboardDemo1"
+      },
+      {
+        "title": "分享",
+        "url": ".ipc.ShareSourceDemo1"
       }
     ]
   },
