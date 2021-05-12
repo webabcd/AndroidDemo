@@ -38,8 +38,10 @@ public class StatusBarDemo1 extends AppCompatActivity {
 
         sample();
 
-        // 状态栏背景透明
-        // setStatusBarTransparent();
+        // 状态栏背景透明，前景白色
+        // setStatusBarTransparent(false);
+        // 状态栏背景透明，前景黑色
+        // setStatusBarTransparent(true);
         // 当前布局与状态栏重合，状态栏在前，当前布局在后
         // setFitSystemWindow(false);
         // 当前布局与状态栏重合，状态栏在前，当前布局在后（但是当前布局的内容会根据状态栏的高度自动下移）
@@ -98,10 +100,14 @@ public class StatusBarDemo1 extends AppCompatActivity {
         });
     }
 
-    protected void setStatusBarTransparent() {
+    protected void setStatusBarTransparent(boolean isLightStatusBar) {
         Window window = getWindow();
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-        window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
+        if (isLightStatusBar) {
+            window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+        } else {
+            window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
+        }
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
         window.setStatusBarColor(Color.TRANSPARENT);
     }
