@@ -95,4 +95,22 @@ public class ActivityDemo1 extends AppCompatActivity {
 
         super.onDestroy();
     }
+
+    // 用户按下了“返回”键，就会走到这里
+    @Override
+    public void onBackPressed() {
+        Log.d(LOG_TAG, "onBackPressed");
+
+        // 调用这句就走“返回”逻辑，不调用这句就阻止了“返回”
+        super.onBackPressed();
+    }
+
+    // 用户离开了当前的 activity 就会走到这里（比如通过 startActivity() 离开，或者通过“home”键离开等）
+    // 但是通过“返回”键离开，或者 finish() 离开则不会走到这里
+    @Override
+    protected void onUserLeaveHint() {
+        Log.d(LOG_TAG, "onUserLeaveHint");
+
+        super.onUserLeaveHint();
+    }
 }
