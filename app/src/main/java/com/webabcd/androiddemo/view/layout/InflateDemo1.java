@@ -23,6 +23,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
@@ -44,6 +45,11 @@ public class InflateDemo1 extends AppCompatActivity {
         _button1 = findViewById(R.id.button1);
         _button2 = findViewById(R.id.button2);
         _button3 = findViewById(R.id.button3);
+
+        // 获取当前 activity 的根布局的父容器
+        ViewGroup parent =  getWindow().getDecorView().findViewById(android.R.id.content);
+        // 获取当前 activity 的根布局（以本例为例，其获取到的结果和 _container 是一样的）
+        LinearLayout root = (LinearLayout)parent.getChildAt(0);
 
         sample();
     }

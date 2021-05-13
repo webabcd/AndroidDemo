@@ -11,6 +11,8 @@ import android.graphics.drawable.Drawable;
 import android.util.Log;
 import android.view.WindowManager;
 
+import com.webabcd.androiddemo.MyApplication;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -53,7 +55,7 @@ public class Helper {
     }
 
     /**
-     * 获取状态栏的高度
+     * 获取状态栏的高度（单位：px）
      */
     public static int getStatusBarHeight(Context context) {
         int result = 0;
@@ -66,7 +68,7 @@ public class Helper {
     }
 
     /**
-     * 获取屏幕的尺寸
+     * 获取屏幕的尺寸（单位：px）
      */
     public static Point getScreenSize(Context context) {
         WindowManager windowManager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
@@ -77,7 +79,7 @@ public class Helper {
     }
 
     /**
-     * 获取虚拟按键栏的高度
+     * 获取虚拟按键栏的高度（单位：px）
      */
     public static int getNavigationBarHeight(Context context) {
         int result = 0;
@@ -105,6 +107,16 @@ public class Helper {
         int pxValue = (int) (dpValue * scale + 0.5f);
 
         return pxValue;
+    }
+
+    /**
+     * px 转 dp
+     */
+    public static int px2dp(Context context, int pxValue) {
+        float scale = context.getResources().getDisplayMetrics().density;
+        int dpValue = (int) (pxValue / scale + 0.5f);
+
+        return dpValue;
     }
 
     /**

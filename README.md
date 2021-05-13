@@ -1,8 +1,13 @@
 ﻿# Android Demo
 
 
+#### view（RecyclerView）
+1. RecyclerView 基础，各种布局方式（垂直布局，水平布局，标准网格布局，错列网格布局），响应单击事件和长按事件，不同的 item 使用不同的项模板，表头和表尾
+2. RecyclerView 分隔线
+
 #### java
 1. Callback
+2. 位操作
 
 #### kotlin
 1. hello world
@@ -39,6 +44,9 @@
 7. ConstraintLayout 约束布局控件（链）
 8. ConstraintLayout 约束布局控件（屏障/分组/占位）
 9. ScrollView 滚动容器
+10. 通过 include 静态加载布局文件
+11. 通过 inflate 动态加载布局文件
+12. setContentView() 和 addContentView()
 
 #### view（导航类）
 1. ToolBar 基础
@@ -50,6 +58,7 @@
 1. ImageView 基础
 2. ImageView 的 scaleType
 3. 9patch（nine patch）图片
+4. Picasso 基础
 
 #### view（进度类）
 1. ProgressBar 基础
@@ -137,6 +146,10 @@
 8. shape 之填充，描边，圆角，尺寸，内部间距
 9. shape 形状（矩形，圆形，环形，直线）
 10. 图标
+11. 状态栏（statusBar）
+12. 导航栏（navigationBar）
+13. 沉浸式（immersive）
+14. 沉浸式（关于 statusBar 和 navigationBar 的常用效果）
 
 #### Animation
 1. Matrix 变换（用于做位移，旋转，缩放，扭曲等变换）
@@ -157,16 +170,18 @@
 2. 文件和文件夹操作（通过 File 对象）
 3. 内部存储，外部存储，权限请求，存储大小，获取 assets 中的数据，获取 res/raw 中的数据
 4. SharedPreferences 用户偏好数据的管理
+5. Sqlite 基础
 
 #### 输入
-1. Touch 基础（点击，双击，长按；触摸按下，触摸移动，触摸抬起）
-2. Touch 基础（触摸位置，事件冒泡）
-3. Touch 多点触摸（单点拖拽，两点缩放）
-4. Touch 在自定义控件中处理触摸事件；处理 Activity 的触摸事件
-5. Touch 简单的涂鸦板
-6. Gesture 手势检测基础
-7. Gesture 添加手势（向手势库中添加自定义手势）
-8. Gesture 识别手势（遍历手势库中的手势，通过逐一比对来识别当前手势）
+1. 按键事件
+2. Touch 基础（点击，双击，长按；触摸按下，触摸移动，触摸抬起）
+3. Touch 基础（触摸位置，事件冒泡）
+4. Touch 多点触摸（单点拖拽，两点缩放）
+5. Touch 在自定义控件中处理触摸事件；处理 Activity 的触摸事件
+6. Touch 简单的涂鸦板
+7. Gesture 手势检测基础
+8. Gesture 添加手势（向手势库中添加自定义手势）
+9. Gesture 识别手势（遍历手势库中的手势，通过逐一比对来识别当前手势）
 
 #### Activity
 1. Activity 的生命周期
@@ -174,7 +189,7 @@
 3. Activity 之间的跳转和数据传递
 4. Activity 之间的跳转动画（单独指定或全局指定）
 5. Activity 堆栈
-6. Activity 样式（隐藏状态栏；对话框样式）
+6. Activity 样式（隐藏状态栏；改变状态栏颜色；对话框样式的 activity）
 
 #### Fragment
 1. Fragment 的生命周期
@@ -233,6 +248,7 @@
 5. 发送广播（动态注册广播接收器）
 6. 发送广播（有序广播）
 7. Clipboard
+8. 分享
 
 #### 优化
 1. 强引用, 软引用, 弱引用

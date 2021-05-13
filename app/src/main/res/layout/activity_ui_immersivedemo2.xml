@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img_sample_son"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/button1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="隐藏 statusBar 和 navigationBar（屏幕上有操作也不会重新显示，通过手势从底部上滑时会重新显示，且均为半透明显示，且不会影响当前布局，且过一会会自动隐藏）"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="statusBar 透明，且使用根布局的背景，且不遮挡根布局的内容，navigationBar 黑色"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="statusBar 和 navigationBar 均半透明，且浮在根布局的前面"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="statusBar 透明，且使用根布局的背景，且不遮挡根布局的内容，navigationBar 隐藏（通过手势从底部上滑时会重新显示，且为半透明显示，且不会影响当前布局，且过一会会自动隐藏）"
+                android:textAllCaps="false" />
+
+            <Button android:layout_width="match_parent" android:layout_height="match_parent" android:text="无用按钮" />
+            <Button android:layout_width="match_parent" android:layout_height="match_parent" android:text="无用按钮" />
+            <Button android:layout_width="match_parent" android:layout_height="match_parent" android:text="无用按钮" />
+            <Button android:layout_width="match_parent" android:layout_height="match_parent" android:text="无用按钮" />
+            <Button android:layout_width="match_parent" android:layout_height="match_parent" android:text="无用按钮" />
+            <Button android:layout_width="match_parent" android:layout_height="match_parent" android:text="无用按钮" />
+            <Button android:layout_width="match_parent" android:layout_height="match_parent" android:text="无用按钮" />
+            <Button android:layout_width="match_parent" android:layout_height="match_parent" android:text="无用按钮" />
+            <Button android:layout_width="match_parent" android:layout_height="match_parent" android:text="无用按钮" />
+            <Button android:layout_width="match_parent" android:layout_height="match_parent" android:text="无用按钮" />
+            <Button android:layout_width="match_parent" android:layout_height="match_parent" android:text="无用按钮" />
+            <Button android:layout_width="match_parent" android:layout_height="match_parent" android:text="无用按钮" />
+            <Button android:layout_width="match_parent" android:layout_height="match_parent" android:text="无用按钮" />
+            <Button android:layout_width="match_parent" android:layout_height="match_parent" android:text="无用按钮" />
+            <Button android:layout_width="match_parent" android:layout_height="match_parent" android:text="无用按钮" />
+            <Button android:layout_width="match_parent" android:layout_height="match_parent" android:text="无用按钮" />
+            <Button android:layout_width="match_parent" android:layout_height="match_parent" android:text="无用按钮" />
+            <Button android:layout_width="match_parent" android:layout_height="match_parent" android:text="无用按钮" />
+            <Button android:layout_width="match_parent" android:layout_height="match_parent" android:text="无用按钮" />
+            <Button android:layout_width="match_parent" android:layout_height="match_parent" android:text="无用按钮" />
+            <Button android:layout_width="match_parent" android:layout_height="match_parent" android:text="无用按钮" />
+            <Button android:layout_width="match_parent" android:layout_height="match_parent" android:text="无用按钮" />
+            <Button android:layout_width="match_parent" android:layout_height="match_parent" android:text="无用按钮" />
+            <Button android:layout_width="match_parent" android:layout_height="match_parent" android:text="无用按钮" />
+            <Button android:layout_width="match_parent" android:layout_height="match_parent" android:text="无用按钮" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

@@ -9,34 +9,34 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAllCaps="false"
-        android:text="显示 statusBar"/>
+        android:text="显示 navigationBar"/>
 
     <Button
         android:id="@+id/button2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAllCaps="false"
-        android:text="隐藏 statusBar" />
+        android:text="隐藏 navigationBar（屏幕上有操作会重新显示）" />
 
     <Button
         android:id="@+id/button3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAllCaps="false"
-        android:text="改变 statusBar 的背景色"/>
+        android:text="改变 navigationBar 的背景色"/>
 
     <Button
         android:id="@+id/button4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAllCaps="false"
-        android:text="改变 statusBar 的前景色（第 1 种颜色）"/>
+        android:text="改变 navigationBar 的前景色（第 1 种颜色）"/>
 
     <Button
         android:id="@+id/button5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAllCaps="false"
-        android:text="改变 statusBar 的前景色（第 2 种颜色）"/>
+        android:text="改变 navigationBar 的前景色（第 2 种颜色）"/>
 
 </LinearLayout>
