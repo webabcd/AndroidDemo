@@ -31,6 +31,14 @@
       {
         "title": "hello world",
         "url": ".kotlin.HelloWorld"
+      },
+      {
+        "title": "基本数据类型，位操作，变量和常量，注释可嵌套，lateinit，by lazy",
+        "url": ".kotlin.Demo1"
+      },
+      {
+        "title": "aaaaa",
+        "url": ".kotlin.Demo2"
       }
     ]
   },
