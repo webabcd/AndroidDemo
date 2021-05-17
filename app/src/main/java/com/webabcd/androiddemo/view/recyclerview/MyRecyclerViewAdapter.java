@@ -36,6 +36,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
     }
 
     // 创建自定义 ViewHolder 实例
+    // 注：这里的返回类型 ViewHolder 是你在 RecyclerView.Adapter<MyRecyclerViewAdapter.ViewHolder> 中指定的泛型
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
@@ -82,6 +83,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
     }
 
     // 每次绘制 item 时都会调用 onBindViewHolder()，需要在此为 item 中的控件赋值
+    // 注：这里的参数 ViewHolder 的类型是你在 RecyclerView.Adapter<MyRecyclerViewAdapter.ViewHolder> 中指定的泛型
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         // 多多上下滚动 RecyclerView 来了解一下调用 onBindViewHolder() 的时机

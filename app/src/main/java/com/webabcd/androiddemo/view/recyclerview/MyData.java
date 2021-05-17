@@ -50,9 +50,13 @@ public class MyData {
     }
 
     public static List<MyData> generateDataList() {
+        return generateDataList(0, 100);
+    }
+
+    public static List<MyData> generateDataList(int skip, int take) {
         List<MyData> myDataList = new ArrayList<>();
         Random random = new Random();
-        for (int i = 0; i < 100; i++) {
+        for (int i = skip; i < skip + take; i++) {
             int randomLength = random.nextInt(100);
             StringBuilder stringBuilder = new StringBuilder();
             for (int x = 0; x < randomLength; x++) {

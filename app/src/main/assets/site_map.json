@@ -9,6 +9,14 @@
       {
         "title": "RecyclerView 分隔线",
         "url": ".view.recyclerview.RecyclerViewDemo2"
+      },
+      {
+        "title": "RecyclerView 下拉刷新（结合 SwipeRefreshLayout 控件实现）",
+        "url": ".view.recyclerview.RecyclerViewDemo3"
+      },
+      {
+        "title": "RecyclerView 上拉加载更多数据",
+        "url": ".view.recyclerview.RecyclerViewDemo4"
       }
     ]
   },
@@ -942,6 +950,10 @@
       {
         "title": "在 KeyStore 中保存秘钥",
         "url": ".utils.Demo1"
+      },
+      {
+        "title": "获取唯一标识",
+        "url": ".utils.Demo2"
       }
     ]
   },
