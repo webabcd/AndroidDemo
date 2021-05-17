@@ -56,7 +56,7 @@ public class RecyclerViewDemo1 extends AppCompatActivity {
 
     private void sample() {
         // 构造数据
-        List<MyData> myDataList = MyData.getDataList();
+        List<MyData> myDataList = MyData.generateDataList();
         // 实例化自定义的 RecyclerView.Adapter
         MyRecyclerViewAdapter adapter = new MyRecyclerViewAdapter(myDataList);
         // 设置 RecyclerView 的 RecyclerView.Adapter

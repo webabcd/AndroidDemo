@@ -49,17 +49,28 @@ public class MyData {
         this._comment = comment;
     }
 
-    public static List<MyData> getDataList() {
+    public static List<MyData> generateDataList() {
         List<MyData> myDataList = new ArrayList<>();
         Random random = new Random();
         for (int i = 0; i < 100; i++) {
             int randomLength = random.nextInt(100);
             StringBuilder stringBuilder = new StringBuilder();
             for (int x = 0; x < randomLength; x++) {
-                stringBuilder.append("abc");
+                stringBuilder.append(getRandomString(3));
             }
             myDataList.add(new MyData(R.drawable.img_sample_son, "n " + i, "comment " + stringBuilder.toString()));
         }
         return myDataList;
+    }
+
+    private static String getRandomString(int length) {
+        Random random = new Random();
+        String str = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < length; i++) {
+            int number = random.nextInt(62);
+            sb.append(str.charAt(number));
+        }
+        return sb.toString();
     }
 }

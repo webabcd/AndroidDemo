@@ -36,7 +36,7 @@ public class RecyclerViewDemo2 extends AppCompatActivity {
 
     private void sample() {
         _recyclerView.setLayoutManager(new LinearLayoutManager(RecyclerViewDemo2.this));
-        _recyclerView.setAdapter(new MyRecyclerViewAdapter(MyData.getDataList()));
+        _recyclerView.setAdapter(new MyRecyclerViewAdapter(MyData.generateDataList()));
 
         _button1.setOnClickListener(new View.OnClickListener() {
             @Override

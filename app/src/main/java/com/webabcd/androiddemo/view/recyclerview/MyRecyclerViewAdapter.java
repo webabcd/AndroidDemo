@@ -31,6 +31,10 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
         _myDataList = myDataList;
     }
 
+    public void updateData(List<MyData> myDataList) {
+        _myDataList = myDataList;
+    }
+
     // 创建自定义 ViewHolder 实例
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {

@@ -16,7 +16,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".kotlin.Demo1"></activity>
+        <activity android:name=".view.recyclerview.RecyclerViewDemo3"></activity>
+        <activity android:name=".utils.Demo2" />
+        <activity android:name=".kotlin.Demo1" />
         <activity android:name=".kotlin.Demo2" />
         <activity android:name=".ui.ImmersiveDemo2" />
         <activity android:name=".ui.ImmersiveDemo1" />
