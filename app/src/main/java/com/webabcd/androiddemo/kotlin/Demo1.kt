@@ -18,7 +18,7 @@ class Demo1 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_kotlin_demo1)
 
-        sample1(); // 基本数据类型
+        sample1(); // 基本数据类型，字符串模板
         sample2(); // 数组
         sample3(); // 位操作
         sample4(); // 变量和常量
@@ -82,7 +82,7 @@ class Demo1 : AppCompatActivity() {
         // 去掉指定的前缀
         var y = x.trimMargin("\\n"); // "$\n
 
-        // 字符串模板（$变量名 ${表达式}）
+        // 字符串模板（$变量名 或者 ${表达式}）
         appendMessage("$a, $b, $c, $d, $e, $f, $g, $h, $i, $j, $k, $l, $m, $n, $o, $p, $q, $r, $s, $t, $u, $v, $w, $x, $y, ${ 1 + 1 }");
     }
 
