@@ -1,5 +1,5 @@
 /**
- * 本例用于演示 kotlin 的可空类型，可空类型的相关操作符（let, ?:, !!, as?），== 和 ===
+ * 本例用于演示 kotlin 的可空类型，数据类型判断（is, !is），可空类型的相关操作符（let, ?:, !!, as?），== 和 ===
  */
 
 package com.webabcd.androiddemo.kotlin
@@ -20,6 +20,7 @@ class Demo2 : AppCompatActivity() {
         sample1(); // 定义可空类型
         sample2(); // == 和 ===
         sample3(); // 可空类型的相关操作符（let, ?:, !!, as?）
+        sample4(); // 数据类型判断（is, !is）
     }
 
     fun sample1() {
@@ -82,6 +83,14 @@ class Demo2 : AppCompatActivity() {
         // 以下两种转换方式都是会抛错的
         // appendMessage("${d as Int}"); // java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer
         // appendMessage("${d as Int?}"); // java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer
+    }
+
+    fun sample4() {
+        var a: String? = null;
+        // is 是否是指定的类型
+        appendMessage("${a is String?}"); // true
+        // !is 是否不是指定的类型
+        appendMessage("${a !is String}"); // true
     }
 
     fun appendMessage(message: String) {

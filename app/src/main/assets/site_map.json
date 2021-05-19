@@ -45,11 +45,15 @@
         "url": ".kotlin.Demo1"
       },
       {
-        "title": "可空类型，可空类型的相关操作符（let, ?:, !!, as?），== 和 ===",
+        "title": "可空类型，数据类型判断（is, !is），可空类型的相关操作符（let, ?:, !!, as?），== 和 ===",
         "url": ".kotlin.Demo2"
       },
       {
-        "title": "xxx",
+        "title": "控制语句（if..else, while, do..while, for, when, continue, break, return, 遍历 iterator 对象）",
+        "url": ".kotlin.Demo3"
+      },
+      {
+        "title": "字符串常用操作和数组常用操作，数组的 in !in 以及 .. 操作符",
         "url": ".kotlin.Demo3"
       }
     ]
