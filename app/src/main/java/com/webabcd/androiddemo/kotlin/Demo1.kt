@@ -1,5 +1,5 @@
 /**
- * 本例用于演示 kotlin 的基本数据类型，位操作，变量和常量，注释可嵌套，lateinit，by lazy
+ * 本例用于演示 kotlin 的基本数据类型，位操作，变量和常量，注释可嵌套，lateinit，by lazy，字符串模板
  */
 
 package com.webabcd.androiddemo.kotlin

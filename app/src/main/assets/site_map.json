@@ -41,12 +41,16 @@
         "url": ".kotlin.HelloWorld"
       },
       {
-        "title": "基本数据类型，位操作，变量和常量，注释可嵌套，lateinit，by lazy",
+        "title": "基本数据类型，位操作，变量和常量，注释可嵌套，lateinit，by lazy，字符串模板",
         "url": ".kotlin.Demo1"
       },
       {
-        "title": "aaaaa",
+        "title": "可空类型，可空类型的相关操作符（let, ?:, !!, as?），== 和 ===",
         "url": ".kotlin.Demo2"
+      },
+      {
+        "title": "xxx",
+        "url": ".kotlin.Demo3"
       }
     ]
   },
