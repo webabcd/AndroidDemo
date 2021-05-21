@@ -98,6 +98,7 @@ class Demo1 : AppCompatActivity() {
         var c: Array<String> = arrayOf("a", "b", "c"); // "a", "b", "c"
         var d: Array<Int> = arrayOf(1, 2, 3); // 1, 2, 3（每个元素的类型相当于 java 的 Integer，是引用类型）
         // 值类型数据数组 ByteArray, ShortArray, IntArray, LongArray, BooleanArray, CharArray, FloatArray, DoubleArray
+        // Array<Int> 如果需要转为 IntArray，可以通过 toIntArray() 方法实现，类似的 toXXX() 方法还有很多
         var e: IntArray = intArrayOf(1, 2, 3); // 1, 2, 3（每个元素的类型相当于 java 的 int，是值类型）
 
         // 第 1 个参数：数组长度

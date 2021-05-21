@@ -48,7 +48,9 @@ class Demo4 : AppCompatActivity() {
         var c: String = a.substring(1); // ebabcd
         var d: String = a.substring(2, 4); // ba
         var e: String = a.substring(IntRange(2, 4)); // bda
-        appendMessage("$c, $d, $e");
+        // 注：2..4 和 IntRange(2, 4)
+        var e2: String = a.substring(2..4); // bda
+        appendMessage("$c, $d, $e, $e2");
 
         // split() 或 splitToSequence() 分割字符串，两个的用法差不多
         var f: List<String> = a.split('e'); // w, babcd
@@ -138,7 +140,7 @@ class Demo4 : AppCompatActivity() {
     }
 
     fun sample4() {
-        // 可以用 plus 或 + 做字符串拼接（其实 plus() 就是 + 的重载）
+        // 可以用 plus 或 + 做字符串拼接（其实 plus() 就是 +）
         var a: String = "a".plus("b").plus("c") + "d";
         appendMessage("$a"); // abcd
 
