@@ -4,6 +4,8 @@
 #### view（RecyclerView）
 1. RecyclerView 基础，各种布局方式（垂直布局，水平布局，标准网格布局，错列网格布局），响应单击事件和长按事件，不同的 item 使用不同的项模板，表头和表尾
 2. RecyclerView 分隔线
+3. RecyclerView 下拉刷新（结合 SwipeRefreshLayout 控件实现）
+4. RecyclerView 上拉加载更多数据
 
 #### java
 1. Callback
@@ -11,6 +13,12 @@
 
 #### kotlin
 1. hello world
+2. 基本数据类型，位操作，变量和常量，注释可嵌套，lateinit，by lazy，字符串模板
+3. 可空类型，数据类型判断（is, !is），可空类型的相关操作符（let, ?:, !!, as?），== 和 ===
+4. 控制语句（if..else, while, do..while, for, when, continue, break, return, 遍历 iterator 对象）
+5. 字符串的常用操作
+6. 数组和集合的常用操作
+7. 函数（方法）
 
 #### view（基础）
 1. 位置相关
@@ -184,7 +192,7 @@
 9. Gesture 识别手势（遍历手势库中的手势，通过逐一比对来识别当前手势）
 
 #### Activity
-1. Activity 的生命周期
+1. Activity 的生命周期，监听返回键，监听当前 activity 的离开事件
 2. Activity 的横屏和竖屏，以及横竖屏切换与状态保存
 3. Activity 之间的跳转和数据传递
 4. Activity 之间的跳转动画（单独指定或全局指定）
@@ -257,6 +265,7 @@
 
 #### 常用工具
 1. 在 KeyStore 中保存秘钥
+2. 获取唯一标识
 
 #### 设计模式
 1. Singleton（单例模式）

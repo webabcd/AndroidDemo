@@ -59,6 +59,10 @@
       {
         "title": "数组和集合的常用操作",
         "url": ".kotlin.Demo5"
+      },
+      {
+        "title": "函数（方法）",
+        "url": ".kotlin.Demo6"
       }
     ]
   },
