@@ -32,6 +32,7 @@ class Demo5 : AppCompatActivity() {
     }
 
     fun sample1() {
+        // 关于数组的一些基础请参见 Demo1.kt 中的相关说明
         val a = arrayOf(1, 2, 3, 4, 5);
 
         // component1(), component2(), component3(), component4(), component5() - 获取第 n 个元素
