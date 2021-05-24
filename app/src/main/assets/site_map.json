@@ -65,12 +65,16 @@
         "url": ".kotlin.Demo6"
       },
       {
-        "title": "类相关 1",
+        "title": "类相关 1（基础）",
         "url": ".kotlin.Demo7"
       },
       {
-        "title": "类相关 2",
+        "title": "类相关 2（类继承，接口，抽象类）",
         "url": ".kotlin.Demo8"
+      },
+      {
+        "title": "类相关 3（）",
+        "url": ".kotlin.Demo9"
       }
     ]
   },
