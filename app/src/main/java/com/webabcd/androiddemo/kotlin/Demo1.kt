@@ -1,5 +1,7 @@
 /**
  * 本例用于演示 kotlin 的基本数据类型，位操作，变量和常量，注释可嵌套，lateinit，by lazy，字符串模板
+ *
+ * kotlin 语句结尾可以加分号，也可以不加分号（官方建议不加分号）
  */
 
 package com.webabcd.androiddemo.kotlin
@@ -148,7 +150,7 @@ class Demo1 : AppCompatActivity() {
     }
 
     // lateinit 延迟初始化
-    // 在类中声明变量的话，是必须要初始化的
+    // 声明类级别的变量必须要初始化
     // 如果不想初始化则可以用 lateinit 修饰（但是 Int, Float, Boolean 等值类型的变量是不支持的）
     lateinit var var_lateinit: String
     fun sample6() {
