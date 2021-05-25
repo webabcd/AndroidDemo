@@ -77,8 +77,12 @@
         "url": ".kotlin.Demo9"
       },
       {
-        "title": "aaa",
+        "title": "Lambda 表达式",
         "url": ".kotlin.Demo10"
+      },
+      {
+        "title": "aaa",
+        "url": ".kotlin.Demo11"
       }
     ]
   },

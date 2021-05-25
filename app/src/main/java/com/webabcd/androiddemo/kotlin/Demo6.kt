@@ -1,6 +1,6 @@
 /**
  * 本例用于演示 kotlin 的函数（方法）
- * 参数可以有默认值， 传参数时可以指定参数名称，支持可变数量参数
+ * 参数可以有默认值， 传参数时可以指定参数名称，支持可变数量参数，支持匿名函数，支持扩展函数
  *
  * 注：
  * fun 默认是 public 的
@@ -48,6 +48,12 @@ class Demo6 : AppCompatActivity() {
         function6(); // function6
         // 简单表达式的函数（有返回值的）
         appendMessage(function6(3, 7).toString()); // 21
+
+        // 匿名函数
+        appendMessage(function7(3, 7).toString()); // 21
+
+        // 扩展函数
+        appendMessage(3.function8(7).toString()) // 21
     }
 
     // 无返回值的函数
@@ -87,6 +93,15 @@ class Demo6 : AppCompatActivity() {
     fun function6() = appendMessage("function6");
     // 简单表达式的函数（有返回值的）
     fun function6(a: Int, b: Int) = a * b;
+
+    // 匿名函数（fun 后面没有函数名称）
+    val function7 = fun(a: Int, b: Int): Int {
+        return a * b
+    }
+
+    // 扩展函数
+    // 下面的例子为 Int 类型扩展出了一个 function8 方法
+    val function8 = fun Int.(other: Int): Int = this * other
 
 
     fun appendMessage(message: String) {
