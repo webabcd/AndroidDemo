@@ -73,8 +73,12 @@
         "url": ".kotlin.Demo8"
       },
       {
-        "title": "类相关 3（）",
+        "title": "类相关 3（枚举，密封类，数据类）",
         "url": ".kotlin.Demo9"
+      },
+      {
+        "title": "aaa",
+        "url": ".kotlin.Demo10"
       }
     ]
   },
