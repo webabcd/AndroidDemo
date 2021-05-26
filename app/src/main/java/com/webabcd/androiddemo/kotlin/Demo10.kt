@@ -1,5 +1,5 @@
 /**
- * 本例用于演示 Lambda 表达式
+ * 本例用于演示 Lambda 表达式，高阶函数
  */
 
 package com.webabcd.androiddemo.kotlin
@@ -64,6 +64,7 @@ class Demo10 : AppCompatActivity() {
     val fun6: (Int, Int) -> Int = { _ , b -> b }
 
 
+    // 演示高阶函数（High-Order Function），所谓高阶函数就是将函数用作另一个函数的传入参数或返回值
     fun sample3() {
         // lambda 表达式作为函数的传入参数的示例
         // 下面 2 种写法均可，但是建议用第 2 种
@@ -77,16 +78,21 @@ class Demo10 : AppCompatActivity() {
 
         // lambda 表达式作为函数的返回值的示例
         appendMessage("${funC(10)(1, 2)}") // 13
+
+        // lambda 表达式实现扩展方法的示例
+        appendMessage("${"abc".sumASCII { it.toInt() }}") // 会输出 294（就是 97 + 98 + 99）
     }
 
     // lambda 表达式作为函数的传入参数的示例
-    fun funA(a: Int, b: Int, result: (Int, Int) -> Int) : Int {
-        return result(a ,b)
+    // 这里有个建议的命名规范（operation - 多个传入参数；selector - 一个传入参数且返回值不是 bool 类型；predicate - 一个传入参数且返回值为 bool 类型）
+    fun funA(a: Int, b: Int, operation: (Int, Int) -> Int) : Int {
+        return operation(a ,b)
     }
 
     // lambda 表达式作为函数的传入参数的示例
-    fun funB(a: Int, result: (Int) -> Boolean) : Int {
-        return if (result(a)) {
+    // 这里有个建议的命名规范（operation - 多个传入参数；selector - 一个传入参数且返回值不是 bool 类型；predicate - 一个传入参数且返回值为 bool 类型）
+    fun funB(a: Int, predicate: (Int) -> Boolean) : Int {
+        return if (predicate(a)) {
             a
         } else {
             0
@@ -100,6 +106,15 @@ class Demo10 : AppCompatActivity() {
         }
     }
 
+    // lambda 表达式实现扩展方法
+    // 这里有个建议的命名规范（operation - 多个传入参数；selector - 一个传入参数且返回值不是 bool 类型；predicate - 一个传入参数且返回值为 bool 类型）
+    fun CharSequence.sumASCII(selector: (Char) -> Int): Int {
+        var sum: Int = 0
+        for (element in this) {
+            sum += selector(element)
+        }
+        return sum
+    }
 
 
 

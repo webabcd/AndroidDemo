@@ -77,11 +77,11 @@
         "url": ".kotlin.Demo9"
       },
       {
-        "title": "Lambda 表达式",
+        "title": "Lambda 表达式，高阶函数",
         "url": ".kotlin.Demo10"
       },
       {
-        "title": "aaa",
+        "title": "泛型",
         "url": ".kotlin.Demo11"
       }
     ]
