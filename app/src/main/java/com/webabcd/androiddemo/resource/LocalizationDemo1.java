@@ -31,6 +31,7 @@ public class LocalizationDemo1 extends AppCompatActivity {
     private TextView mTextView1;
     private TextView mTextView2;
     private TextView mTextView3;
+    private TextView mTextView4;
     private Button mButton1;
     private Button mButton2;
     private Button mButton3;
@@ -46,6 +47,7 @@ public class LocalizationDemo1 extends AppCompatActivity {
         mTextView1 = findViewById(R.id.textView1);
         mTextView2 = findViewById(R.id.textView2);
         mTextView3 = findViewById(R.id.textView3);
+        mTextView4 = findViewById(R.id.textView4);
         mButton1 = findViewById(R.id.button1);
         mButton2 = findViewById(R.id.button2);
         mButton3 = findViewById(R.id.button3);
@@ -104,9 +106,11 @@ public class LocalizationDemo1 extends AppCompatActivity {
         }
 
 
-        // 引用指定语言的资源
-        Context myContext = applyLanguage(this, Locale.SIMPLIFIED_CHINESE);
-        mTextView3.setText("中文资源：" + myContext.getResources().getString(R.string.localization_demo));
+        // 引用指定语言的资源（建议做多语言时用这种方式）
+        Context myContext = applyLanguage(this, Locale.ENGLISH);
+        mTextView3.setText("英文资源：" + myContext.getResources().getString(R.string.localization_demo));
+        myContext = applyLanguage(this, Locale.SIMPLIFIED_CHINESE);
+        mTextView4.setText("中文资源：" + myContext.getResources().getString(R.string.localization_demo));
 
 
         // 以下用于演示如何动态切换语言（参见 @Override attachBaseContext() 中的逻辑和说明）
