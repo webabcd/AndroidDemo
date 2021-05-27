@@ -1,5 +1,7 @@
 /**
  * 本例用于演示 kotlin 的可空类型，数据类型判断（is, !is），可空类型的相关操作符（let, ?:, !!, as?），== 和 ===
+ *
+ * 注：任何类型，如果声明时不加 ? 的话都是不可为 null 的，要想为 null 则声明时必须加 ?
  */
 
 package com.webabcd.androiddemo.kotlin

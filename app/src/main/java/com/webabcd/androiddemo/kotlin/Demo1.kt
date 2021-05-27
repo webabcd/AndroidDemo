@@ -20,6 +20,12 @@ class Demo1 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_kotlin_demo1)
 
+        // Any - 是根类型，但是不可空
+        // Any? - 是根类型，且可空
+        var a: Any = "abc"
+        var b: Any? = null
+        appendMessage("$a, $b") // abc, null
+
         sample1(); // 基本数据类型，字符串模板
         sample2(); // 数组
         sample3(); // 位操作
