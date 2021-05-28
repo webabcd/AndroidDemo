@@ -12,14 +12,14 @@ import android.widget.TextView;
 import com.webabcd.androiddemo.R;
 import com.webabcd.androiddemo.designpattern.singleton.SingletonPattern;
 
-public class SingletonDemo extends AppCompatActivity {
+public class Singleton extends AppCompatActivity {
 
     private TextView mTextView1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_designpattern_singletondemo);
+        setContentView(R.layout.activity_designpattern_singleton);
 
         mTextView1 = findViewById(R.id.textView1);
 

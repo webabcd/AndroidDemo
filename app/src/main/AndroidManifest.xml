@@ -115,7 +115,7 @@
         <activity android:name=".fragment.FragmentDemo2" />
         <activity android:name=".activity.ActivityDemo1_2" />
         <activity android:name=".fragment.FragmentDemo1" />
-        <activity android:name=".designpattern.SingletonDemo" />
+        <activity android:name=".designpattern.Singleton" />
         <activity
             android:name=".activity.ActivityDemo6_2"
             android:theme="@style/MyActivityDialog" />

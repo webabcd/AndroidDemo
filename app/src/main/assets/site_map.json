@@ -1,26 +1,5 @@
 [
   {
-    "title": "view（RecyclerView）",
-    "node": [
-      {
-        "title": "RecyclerView 基础，各种布局方式（垂直布局，水平布局，标准网格布局，错列网格布局），响应单击事件和长按事件，不同的 item 使用不同的项模板，表头和表尾",
-        "url": ".view.recyclerview.RecyclerViewDemo1"
-      },
-      {
-        "title": "RecyclerView 分隔线",
-        "url": ".view.recyclerview.RecyclerViewDemo2"
-      },
-      {
-        "title": "RecyclerView 下拉刷新（结合 SwipeRefreshLayout 控件实现）",
-        "url": ".view.recyclerview.RecyclerViewDemo3"
-      },
-      {
-        "title": "RecyclerView 上拉加载更多数据",
-        "url": ".view.recyclerview.RecyclerViewDemo4"
-      }
-    ]
-  },
-  {
     "title": "java",
     "node": [
       {
@@ -486,6 +465,27 @@
       {
         "title": "ListView 多选删除",
         "url": ".view.listview.ListViewDemo10"
+      }
+    ]
+  },
+  {
+    "title": "view（RecyclerView）",
+    "node": [
+      {
+        "title": "RecyclerView 基础，各种布局方式（垂直布局，水平布局，标准网格布局，错列网格布局），响应单击事件和长按事件，不同的 item 使用不同的项模板，表头和表尾",
+        "url": ".view.recyclerview.RecyclerViewDemo1"
+      },
+      {
+        "title": "RecyclerView 分隔线",
+        "url": ".view.recyclerview.RecyclerViewDemo2"
+      },
+      {
+        "title": "RecyclerView 下拉刷新（结合 SwipeRefreshLayout 控件实现）",
+        "url": ".view.recyclerview.RecyclerViewDemo3"
+      },
+      {
+        "title": "RecyclerView 上拉加载更多数据",
+        "url": ".view.recyclerview.RecyclerViewDemo4"
       }
     ]
   },
@@ -998,7 +998,7 @@
     "node": [
       {
         "title": "Singleton（单例模式）",
-        "url": ".designpattern.SingletonDemo"
+        "url": ".designpattern.Singleton"
       }
     ]
   },
