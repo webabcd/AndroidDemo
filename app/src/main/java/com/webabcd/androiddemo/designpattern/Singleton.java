@@ -10,7 +10,6 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.webabcd.androiddemo.R;
-import com.webabcd.androiddemo.designpattern.singleton.SingletonPattern;
 
 public class Singleton extends AppCompatActivity {
 

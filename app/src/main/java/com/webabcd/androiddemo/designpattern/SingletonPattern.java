@@ -2,7 +2,7 @@
  * 单例模式
  */
 
-package com.webabcd.androiddemo.designpattern.singleton;
+package com.webabcd.androiddemo.designpattern;
 
 import android.os.SystemClock;
 
