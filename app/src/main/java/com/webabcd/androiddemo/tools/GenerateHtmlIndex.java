@@ -6,7 +6,6 @@ import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.EditText;
 
 import com.google.gson.Gson;
@@ -17,17 +16,17 @@ import com.webabcd.androiddemo.utils.Helper;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
-public class GenerateReadme extends AppCompatActivity {
+public class GenerateHtmlIndex extends AppCompatActivity {
 
     private EditText mEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tools_generatereadme);
+        setContentView(R.layout.activity_tools_generatehtmlindex);
 
         mEditText = findViewById(R.id.editText1);
 
@@ -42,16 +41,19 @@ public class GenerateReadme extends AppCompatActivity {
         Gson gson = new Gson();
         final ArrayList<MainNavigationBean> navigationBeanList = gson.fromJson(jsonString, type);
 
-        sb.append("# Android Demo\n\n\n");
+        sb.append("<li>");
+        sb.append("<a title=\"一手遮天 Android 系列文章\" href=\"#\" target=\"_blank\">一手遮天 Android 系列文章</a>\n");
+        sb.append("<ul>\n");
+        int i = 1;
         for (MainNavigationBean l1 : navigationBeanList) {
-            sb.append("#### " + l1.getTitle() + "\n");
-            int i = 1;
             for (MainNavigationBean.NodeBean l2 : l1.getNodeList()) {
-                sb.append(i + ". " + l2.getTitle() + "\n");
+                sb.append(String.format(Locale.ENGLISH, "<li><a title=\"一手遮天 Android (%d) - %s: %s\" href=\"http://www.cnblogs.com/webabcd/p/%s.html\" target=\"_blank\">一手遮天 Android (%d) - %s: %s</a></li>\n",
+                        i, l1.getTitle(), l2.getTitle(), "android" + l2.getUrl().replace(".", "_"), i, l1.getTitle(), l2.getTitle()));
                 i++;
             }
-            sb.append("\n");
         }
+        sb.append("</ul>\n");
+        sb.append("</li>");
 
         mEditText.setText(sb.toString());
 

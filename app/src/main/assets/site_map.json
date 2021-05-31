@@ -767,7 +767,7 @@
     ]
   },
   {
-    "title": "异步，多线程",
+    "title": "异步和多线程",
     "node": [
       {
         "title": "Thread 基础",
@@ -836,7 +836,7 @@
     ]
   },
   {
-    "title": "锁，并发处理",
+    "title": "锁和并发处理",
     "node": [
       {
         "title": "Lock 基础",
@@ -927,7 +927,7 @@
     ]
   },
   {
-    "title": "ipc（Inter-Process Communication, 进程间通信）",
+    "title": "ipc（跨进程通信）",
     "node": [
       {
         "title": "ContentProvider",
@@ -1008,6 +1008,10 @@
       {
         "title": "生成 README.md",
         "url": ".tools.GenerateReadme"
+      },
+      {
+        "title": "生成 html index",
+        "url": ".tools.GenerateHtmlIndex"
       }
     ]
   }

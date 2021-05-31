@@ -16,7 +16,9 @@
  * cache 目录内部存储的路径为 /data/data/packagename/cache 或 /data/user/n/packagename/cache
  * cache 目录外部存储的路径为 /storage/emulated/0/Android/data/packagename/cache
  *
- * 在 6.0 或以上系统操作外部存储（不包括外部存储的 files 目录和 cache 目录），需要动态申请权限
+ * 要记住：
+ * 1、在 android 6.0 或以上系统操作外部存储（不包括外部存储的 files 目录和 cache 目录），需要动态申请权限
+ * 2、在 android 10.0 或以上系统操作外部存储，需要在 AndroidManifest.xml 的 application 中增加 android:requestLegacyExternalStorage="true"
  *
  *
  * 本例演示

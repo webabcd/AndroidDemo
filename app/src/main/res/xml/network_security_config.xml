@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true" />
+</network-security-config>
+
+<!--
+    android 9.0 或以上默认是禁止 http 请求的（只能是 https 的请求）
+    如果需要 http 请求的话，这里就要配置 cleartextTrafficPermitted="true"，然后在 AndroidManifest.xml 的 application 中增加 android:networkSecurityConfig="@xml/network_security_config"
+-->

@@ -86,7 +86,7 @@ class Demo1 : AppCompatActivity() {
         // 转义符符
         // \t, \r, \n, \b, \\, \', \", \$
         // 通过左右各 3 个双引号包围起来的字符串不解释转义符
-        var x = """\n"$\n"""; // \n"$\n"
+        var x = """\n"$\n"""; // \n"$\n
         // 去掉指定的前缀
         var y = x.trimMargin("\\n"); // "$\n
 

@@ -9,15 +9,22 @@
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
+    <!--
+        android:requestLegacyExternalStorage="true"（在 android 10.0 或以上系统操作外部存储，需要配置这个）
+        android:networkSecurityConfig="@xml/network_security_config"（在 android 9.0 或以上系统请求 http 资源，需要配置这个）
+    -->
     <application
         android:name=".MyApplication"
+        android:requestLegacyExternalStorage="true"
+        android:networkSecurityConfig="@xml/network_security_config"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".kotlin.Demo11"></activity>
+        <activity android:name=".tools.GenerateHtmlIndex"></activity>
+        <activity android:name=".kotlin.Demo11" />
         <activity android:name=".kotlin.Demo10" />
         <activity android:name=".kotlin.Demo9" />
         <activity android:name=".kotlin.Demo8" />

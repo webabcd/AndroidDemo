@@ -154,6 +154,10 @@ class Demo4 : AppCompatActivity() {
         val f2 = DecimalFormat("0.###");
         appendMessage("${f1.format(c)}, ${f2.format(c)}"); // 1234.100, 1234.1
         appendMessage(String.format(Locale.ENGLISH, "%,.2f", c)); // 1,234.10
+
+        // 通过左右各 3 个双引号包围起来的字符串不解释转义符
+        var d = """\n"$\n""";
+        appendMessage("$d"); // \n"$\n
     }
 
     fun appendMessage(message: String) {
