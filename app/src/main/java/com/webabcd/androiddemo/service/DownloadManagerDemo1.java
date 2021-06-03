@@ -5,6 +5,7 @@
  * 注：
  * 1、我这里模拟器运行失败，真机运行正常
  * 2、请先进入 /storage/StorageDemo3.java 动态申请权限（我懒得在这里写了）
+ * 3、经测试，大部分华为手机的支持都有问题，会报错 java.lang.SecurityException: Unsupported path xxx 
  */
 
 package com.webabcd.androiddemo.service;
