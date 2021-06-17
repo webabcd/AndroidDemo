@@ -1,5 +1,5 @@
 /**
- * 本例用于演示类的定义和使用（实例化对象，调用属性，调用方法，静态属性，静态方法，嵌套类，内部类，局部类，匿名内部类）
+ * 本例用于演示类的定义和使用（实例化对象，调用属性，调用方法，下标运算符 [] 的使用，静态属性，静态方法，嵌套类，内部类，局部类，匿名内部类）
  */
 
 package com.webabcd.androiddemo.kotlin
@@ -40,6 +40,10 @@ class Demo7 : AppCompatActivity() {
         appendMessage(b.getInfo())
         b.height = 20;
         appendMessage(b.getInfo())
+
+        // 下标运算符 [] 的使用
+        a[0] = "123"
+        appendMessage(a[0])
     }
 
     fun sample2() {

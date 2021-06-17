@@ -1,5 +1,5 @@
 /**
- * 本例用于演示类的定义（类，属性，方法，属性的 getter 和 setter，静态属性，静态方法）
+ * 本例用于演示类的定义（类，属性，方法，属性的 getter 和 setter，下标，静态属性，静态方法）
  *
  * 别管是类，还是属性，还是方法其默认都是 public 的，除了 public 外还有 private, protected, internal
  * var, val, const val, lateinit 也适用于属性，其概念参见 Demo1.kt 中的说明
@@ -48,6 +48,16 @@ class Demo7_Class constructor(name: String, var country: String) {
         set(value) {
             field = value * 2
         }
+
+    // 下标运算符（subscript operator）[]
+    // 在 kotlin 中通过如下的 operator fun get 和 operator fun set 的方式实现 []
+    var dict: MutableMap<Int, String> = mutableMapOf()
+    operator fun get(index: Int): String {
+        return dict[index] ?: ""
+    }
+    operator fun set(index: Int, value: String) {
+        dict[index] = value
+    }
 
 
     // 伴生对象
