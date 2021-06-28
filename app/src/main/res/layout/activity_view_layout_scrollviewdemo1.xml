@@ -14,6 +14,7 @@
                 none - 不显示
                 vertical - 显示垂直滚动条
                 horizontal - 显示水平滚动条
+            fillViewport - 对于 ScrollView 来说，如果需要其子 view 的高度和 ScrollView 的高度一致，除了设置子 view 的 layout_height="match_parent" 外，还需要将 ScrollView 的 fillViewport 设置为 true
     -->
     <ScrollView
         android:id="@+id/scrollView1"
