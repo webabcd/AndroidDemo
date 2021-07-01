@@ -1,5 +1,14 @@
 [
   {
+    "title": "view（基础）",
+    "node": [
+      {
+        "title": "剪裁",
+        "url": ".view.ViewDemo3"
+      }
+    ]
+  },
+  {
     "title": "java",
     "node": [
       {
