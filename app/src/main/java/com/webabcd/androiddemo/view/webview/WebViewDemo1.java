@@ -4,6 +4,13 @@
  *     loadUrl("file:///android_asset/xxx.html"), loadUrl("file:///android_res/xxx.html") - 加载包内的 html 文件
  *     loadUrl("file://" + Environment.getExternalStorageDirectory().getAbsolutePath() + "/xxx.html") - 加载存储中的 html 文件
  *     loadDataWithBaseURL(null, "html content", "text/html", "utf-8", null) - 加载指定的 html 字符串
+ *
+ * WebView 调试
+ *   1、按如下方式配置为允许调试
+ *      WebView.setWebContentsDebuggingEnabled(true); - 所有 WebView 均允许调试
+ *      mWebView1.setWebContentsDebuggingEnabled(true); - 某一 WebView 允许调试
+ *   2、在电脑端的 chrome 中进入如下地址 chrome://inspect
+ *   3、需要 fq
  */
 
 package com.webabcd.androiddemo.view.webview;
