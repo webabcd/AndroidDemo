@@ -15,6 +15,7 @@ import android.provider.Settings;
 import android.text.TextUtils;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.identifier.AdvertisingIdClient;
 import com.webabcd.androiddemo.R;
 
 import java.io.IOException;
@@ -71,6 +72,39 @@ public class Demo2 extends AppCompatActivity {
                 Build.ID, Build.MANUFACTURER, Build.MODEL, Build.PRODUCT, Build.TAGS, Build.TYPE, Build.USER, Build.TIME);
         _textView1.append("phone info: " + phoneInfo);
         _textView1.append("\n");
+
+
+        // 获取 Google Advertising ID（这个 adid 用户是可以重置的）
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    // 先在 build.gradle 中配置 implementation 'com.google.android.gms:play-services:x.x.x'
+                    // 然后通过如下方式获取 adid（注：不能在主线程获取）
+                    // 如果你的设备安装了 google play services 则可以获取到 adid，反之则会收到异常信息
+                    AdvertisingIdClient.Info info = AdvertisingIdClient.getAdvertisingIdInfo(Demo2.this);
+                    String adid = info.getId();
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            _textView1.append("adid: " + adid);
+                            _textView1.append("\n");
+                        }
+                    });
+                } catch (Exception ex) {
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            _textView1.append("get adid error: " + ex.toString());
+                            _textView1.append("\n");
+                        }
+                    });
+                }
+            }
+        });
+        thread.setDaemon(true);
+        thread.setName("Demo2_thread");
+        thread.start();
     }
 
 
