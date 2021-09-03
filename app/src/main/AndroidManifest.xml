@@ -8,11 +8,8 @@
     <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
 
-    <!--
-        android:requestLegacyExternalStorage="true"（在 android 10.0 或以上系统操作外部存储，需要配置这个）
-        android:networkSecurityConfig="@xml/network_security_config"（在 android 9.0 或以上系统请求 http 资源，需要配置这个）
-    -->
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
@@ -23,7 +20,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".storage.Android11Demo1"></activity>
+        <activity android:name=".storage.Android11Demo2"></activity>
+        <activity android:name=".storage.Android11Demo1" />
         <activity android:name=".view.ViewDemo3" />
         <activity android:name=".tools.GenerateHtmlIndex" />
         <activity android:name=".kotlin.Demo11" />

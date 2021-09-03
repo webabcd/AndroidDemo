@@ -1,0 +1,6 @@
+关于 application 节点的几个属性的说明
+
+1、extractNativeLibs="true" 会通过 zip 压缩 so，否则不压缩 so
+   minSdkVersion >= 23 且 Android Gradle plugin >= 3.6.0 时，extractNativeLibs 默认值为 false，否则其默认值为 true
+
+2、networkSecurityConfig="@xml/network_security_config"（在 android 9.0 或以上系统请求 http 资源，需要配置这个）
