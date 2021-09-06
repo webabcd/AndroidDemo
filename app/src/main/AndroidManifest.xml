@@ -20,7 +20,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".storage.Android11Demo2"></activity>
+        <activity android:name=".optimize.Demo4"></activity>
+        <activity android:name=".storage.Android11Demo2" />
         <activity android:name=".storage.Android11Demo1" />
         <activity android:name=".view.ViewDemo3" />
         <activity android:name=".tools.GenerateHtmlIndex" />

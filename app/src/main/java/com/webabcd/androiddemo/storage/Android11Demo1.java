@@ -19,6 +19,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.Settings;
@@ -62,6 +63,12 @@ public class Android11Demo1 extends AppCompatActivity {
     }
 
     private void createFile() {
+
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.R) {
+            appendLog("本例需要在 android 11 或以上系统中运行");
+            return;
+        }
+
         // 判断是否有使用外部存储的权限
         if (Environment.isExternalStorageManager()) {
             String dirPath = Environment.getExternalStorageDirectory() + "/wanglei_test/";
@@ -92,7 +99,20 @@ public class Android11Demo1 extends AppCompatActivity {
             // 跳转到 ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION 权限设置页
             Intent intent = new Intent(Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION);
             intent.setData(Uri.parse("package:" + this.getPackageName()));
-            startActivity(intent);
+            startActivityForResult(intent, 123);
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == 123) {
+            if (Environment.isExternalStorageManager()) {
+                appendLog("打开了 ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION 权限");
+            } else {
+                appendLog("关闭了 ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION 权限");
+            }
         }
     }
 

@@ -7,6 +7,8 @@ package com.webabcd.androiddemo;
 import android.app.Application;
 import android.util.Log;
 
+import com.webabcd.androiddemo.optimize.MyUncaughtExceptionHandler;
+
 // 使用自定义 Application 的话，需要继承 Application 类，并在 AndroidManifest.xml 中做好类似配置 <application android:name=".MyApplication" />
 // 使用时在 activity 中通过 (MyApplication)getApplication() 方法获取
 public class MyApplication extends Application {
@@ -22,6 +24,10 @@ public class MyApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+
+        // 初始化自定义的未处理异常处理器
+        MyUncaughtExceptionHandler myUncaughtExceptionHandler = MyUncaughtExceptionHandler.getInstance();
+        myUncaughtExceptionHandler.init(getApplicationContext());
 
         mInstance = this;
     }
