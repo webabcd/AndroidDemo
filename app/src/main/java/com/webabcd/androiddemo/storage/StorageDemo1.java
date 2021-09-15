@@ -11,7 +11,7 @@
  *
  * 注：
  * 1、本例所用的方法是通过 context 来操作 /data/data/packagename/files 目录中的文件，用法简单，但是不够强大（比如不支持子目录）。更多的文件和文件夹操作的相关说明请参见 storage/StorageDemo2
- * 2、如果是 6.0 以上的系统（支持多用户），其 files 目录类似 /data/user/n/packagename/files （其中的 n 为整数，代表不同的用户，如果就一个用户那么 n 就是 0）
+ * 2、如果是 6.0 以上的系统（开启多用户的支持时），其 files 目录类似 /data/user/n/packagename/files （其中的 n 为整数，代表不同的用户，如果就一个用户那么 n 就是 0）
  */
 
 package com.webabcd.androiddemo.storage;

@@ -2,38 +2,39 @@
  * 内部存储，外部存储，权限请求，存储路径，存储大小，获取 assets 中的数据，获取 res/raw 中的数据
  *
  *
- * 内部存储和外部存储
- * 机身存储包括内部存储和外部存储，外部可移动存储就是外部存储
+ * 从硬件上来说，包括机身存储和外部可移动存储
+ * 从程序上来说，包括程序的内部存储和程序的外部存储（一般说的内部存储和外部存储就就是指的这个）
+ *     程序的内部存储包括内部存储（肯定在机身存储）和扩展内部存储（可能在机身存储也可能在外部可移动存储）
+ *     程序的外部存储可能在机身存储也可能在外部可移动存
+ *     卸载程序后，内部存储的数据会被删除，外部存储的数据会被保留
  *
- * 程序的内部存储路径为 /data/data/packagename/， 如果是 6.0 或以上系统则为 /data/user/n/packagename/（其中的 n 为整数，代表不同的用户，如果就一个用户那么 n 就是 0）
+ *
+ * 程序的内部存储（机身存储）路径为 /data/data/packagename/， 如果是 6.0 以上的系统（开启多用户的支持时）则为 /data/user/n/packagename/（其中的 n 为整数，代表不同的用户，如果就一个用户那么 n 就是 0）
+ * 程序的扩展内部存储（机身存储）路径类似 /storage/emulated/0/Android/data/packagename/
+ * 程序的扩展内部存储（外部可移动存储）路径类似 /storage/emulated/B3E4-1711/Android/data/packagename/（中间的那个 B3E4-1711 是挂载目录，以实际为准）
  * 程序的外部存储（机身存储）路径为 /storage/emulated/0/
- * 程序的外部存储（外部可移动存储）路径类似 /storage/B3E4-1711/（后面的这个挂载目录根据设备不同会有所不同）
+ * 程序的外部存储（外部可移动存储）路径类似 /storage/B3E4-1711/（后面的那个 B3E4-1711 是挂载目录，以实际为准）
  *
- * files 目录，无论内部存储还是外部存储，存放的数据系统不会主动删除，用户在设置中的“应用信息”中单击“清除数据”后会删除
- * files 目录内部存储的路径为 /data/data/packagename/files 或 /data/user/n/packagename/files
- * files 目录外部存储的路径为 /storage/emulated/0/Android/data/packagename/files
- * cache 目录，无论内部存储还是外部存储，存放的数据可能会被系统主动删除（比如系统认为存储空间不够的时候），用户在设置中的“应用信息”中单击“清除缓存”后会删除
- * cache 目录内部存储的路径为 /data/data/packagename/cache 或 /data/user/n/packagename/cache
- * cache 目录外部存储的路径为 /storage/emulated/0/Android/data/packagename/cache
+ * 内部存储有 files 目录和 cache 目录
+ * files 目录，存放的数据系统不会主动删除，用户在设置中的“应用信息”中单击“清除数据”后会删除
+ * files 目录路径类似 /data/data/packagename/files, /data/user/n/packagename/files, /storage/emulated/0/Android/data/packagename/files 等
+ * cache 目录，存放的数据可能会被系统主动删除（比如系统认为存储空间不够的时候），用户在设置中的“应用信息”中单击“清除缓存”后会删除
+ * cache 目录路径类似 /data/data/packagename/cache, /data/user/n/packagename/cache, /storage/emulated/0/Android/data/packagename/cache 等
  *
  * 要记住：
- * 1、在 android 6.0 或以上系统操作外部存储（不包括外部存储的 files 目录和 cache 目录），需要动态申请权限
- * 2、在 android 10.0 或以上系统操作外部存储，需要在 AndroidManifest.xml 的 application 中增加 android:requestLegacyExternalStorage="true"
+ * 1、在 android 6.0 或以上系统操作外部存储，需要动态申请权限
+ * 2、关于 android 10.0, android 11.0 或以上系统, targetSdkVersion 版本之间的问题，请参见其他相关示例的说明
  *
  *
  * 本例演示
- * 1、如何动态申请存储权限（注：files 目录和 cache 目录不用申请权限）
+ * 1、如何动态申请存储权限（外部存储需要申请权限，内部存储不需要申请权限）
  * 2、如何获取各种存储的路径，以及如何获取存储的大小
+ *    内部存储的路径通过 Context 中的方法来获得，外部存储的路径通过 Environment 中的方法获得
  * 3、如何获取 assets 中的数据（不会映射到 R.java 文件中，允许有子目录）
  * 4、如何获取 res/raw 中的数据（会映射到 R.java 文件中，不允许有子目录）
  *
  *
  * 注：
- * 1、有包名的路径需要通过 Context 中的方法来获得，没有包名的路径可以直接调用 Environment 中的方法获得
- * 2、你卸载程序的话，有包名的路径下的数据会被删除，没有包名的路径下的数据不会被删除
- *
- *
- * 另：
  * 关于 File 的 getPath(), getAbsolutePath(), getCanonicalPath() 的区别
  * 如果你定义 File 时用的是绝对路径，则这 3 个方法返回的数据是一样的
  * 如果你定义 File 时用的是相对路径，请看下面的说明
@@ -93,9 +94,9 @@ public class StorageDemo3 extends AppCompatActivity {
     }
 
 
-    // 演示如何动态申请存储权限（注：files 目录和 cache 目录不用申请权限）
+    // 演示如何动态申请存储权限（外部存储需要申请权限，内部存储不需要申请权限）
     private void sample1() {
-        // 在 6.0 或以上系统操作外部存储，需要动态申请权限（注：外部存储的 files 目录和 cache 目录不需要权限）
+        // 在 6.0 或以上系统操作外部存储，需要动态申请权限
         // 需要先在 AndroidManifest.xml 中做如下配置
         // <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
         // <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -134,20 +135,21 @@ public class StorageDemo3 extends AppCompatActivity {
             // 内部存储的 cache 目录（类似 /data/data/packagename/cache）
             mTextView1.append("getCacheDir(): " + getCacheDir().getCanonicalPath());
             mTextView1.append("\n");
-            // 外部存储的 files 目录（类似 /storage/emulated/0/Android/data/packagename/files）
+            // 扩展内部存储的 files 目录（类似 /storage/emulated/0/Android/data/packagename/files）
             mTextView1.append("getExternalFilesDir(): " + getExternalFilesDir("").getCanonicalPath());
             mTextView1.append("\n");
-            // 外部存储的 cache 目录（类似 /storage/emulated/0/Android/data/packagename/cache）
+            // 扩展内部存储的 cache 目录（类似 /storage/emulated/0/Android/data/packagename/cache）
             mTextView1.append("getExternalCacheDir(): " + getExternalCacheDir().getCanonicalPath());
             mTextView1.append("\n");
-            // 默认外部存储目录（类似 /storage/emulated/0），在这里操作是需要动态申请权限的
+
+            // 外部存储目录（类似 /storage/emulated/0），在这里操作是需要动态申请权限的
             mTextView1.append("getExternalStorageDirectory(): " + Environment.getExternalStorageDirectory().getCanonicalPath());
             mTextView1.append("\n");
 
-            // getExternalFilesDirs(Environment.MEDIA_MOUNTED) - 获取所有已挂载的外部存储
-            // 比如既有机身内的外部存储，又有 sd 卡外部存储的时候，会获取到 2 条记录，类似如下
-            // /storage/emulated/0/Android/data/packagename/files/mounted（其中的 /storage/emulated/0 就是机身内的外部存储的路径）
-            // /storage/B3E4-1711/Android/data/packagename/files/mounted（其中的 /storage/B3E4-1711 就是 sd 卡外部存储的路径）
+            // getExternalFilesDirs(Environment.MEDIA_MOUNTED) - 获取多个挂载点的扩展内部存储目录
+            // 比如既有机身存储又有外部可移动存储的时候，会获取到 2 条记录，类似如下
+            // /storage/emulated/0/Android/data/packagename/files/mounted（其中的 /storage/emulated/0 就是机身存储中的扩展内部存储路径）
+            // /storage/B3E4-1711/Android/data/packagename/files/mounted（其中的 /storage/B3E4-1711 就是可移动存储中的扩展内部存储路径）
             File[] fileList = getExternalFilesDirs(Environment.MEDIA_MOUNTED);
             for (int i = 0; i < fileList.length; i++) {
                 mTextView1.append("getExternalFilesDirs(): " + fileList[i].getCanonicalPath());
