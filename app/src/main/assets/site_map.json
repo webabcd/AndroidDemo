@@ -22,6 +22,15 @@
     ]
   },
   {
+    "title": "view（媒体类）",
+    "node": [
+      {
+        "title": "Glide 基础",
+        "url": ".view.media.GlideDemo1"
+      }
+    ]
+  },
+  {
     "title": "优化",
     "node": [
       {

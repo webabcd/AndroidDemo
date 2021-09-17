@@ -43,6 +43,7 @@ dependencies {
     implementation "androidx.work:work-runtime:2.2.0"
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
     implementation 'com.squareup.picasso:picasso:2.5.2'
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
     implementation 'com.google.android.gms:play-services:12.0.1'
 }

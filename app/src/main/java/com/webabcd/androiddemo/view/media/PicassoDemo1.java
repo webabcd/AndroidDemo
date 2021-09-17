@@ -1,6 +1,13 @@
 /**
  * Picasso 基础
  * 需要在 app 的 build.gradle 中配置好 implementation 'com.squareup.picasso:picasso:x.x.x'
+ *
+ * 注：对比 Picasso 和 Glide
+ * 1、Picasso 库比较小，Glide 库比较大
+ * 2、Picasso 不支持 gif 动画，Glide 支持 gif 动画
+ * 3、缓存对比
+ *   Picasso 下载图片后会完整保存，每次显示时 resize 之后再显示
+ *   Glide 的缓存逻辑是可以设置的
  */
 
 package com.webabcd.androiddemo.view.media;
