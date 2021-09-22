@@ -13,6 +13,8 @@
  *
  * 注：
  * 1、如果你卸载 app 后再重装 app，则会失去卸载 app 之前通过 MediaStore 创建的文件的所有权
+ *    对于你有所有权的文件可以通过 MediaStore 访问和删除
+ *    对于你没有所有权的文件，不可以通过 MediaStore 删除，但是可以通过 MediaStore 访问（前提是先要申请 READ_EXTERNAL_STORAGE 权限）
  * 2、各种公共目录并不是物理文件夹，而是将其他相关文件夹中的相关文件集中管理
  *    比如视频目录会包括 DCIM 文件夹, Movies 文件夹, Pictures 文件夹中的视频文件
  */
@@ -82,7 +84,7 @@ public class Android11Demo2 extends AppCompatActivity {
         _button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                insertFile();
+                createFile();
             }
         });
 
@@ -127,7 +129,7 @@ public class Android11Demo2 extends AppCompatActivity {
     }
 
     // 通过 MediaStore 在图片目录新建一个图片文件
-    private void insertFile() {
+    private void createFile() {
 
         // 需要创建的图片对象
         BitmapDrawable bitmapDrawable = (BitmapDrawable) getResources().getDrawable(R.drawable.son01, null);
@@ -210,7 +212,7 @@ public class Android11Demo2 extends AppCompatActivity {
             // 获取文件名
             String title = cursor.getString(cursor.getColumnIndex(MediaStore.MediaColumns.TITLE));
             // 获取文件的真实路径，类似 /storage/emulated/0/Pictures/wanglei_test/son.jpg
-            String path = cursor.getString(cursor.getColumnIndex(MediaStore.MediaColumns.RELATIVE_PATH));
+            String path = cursor.getString(cursor.getColumnIndex(MediaStore.Images.Media.DATA));
 
             Log.d(LOG_TAG, String.format("id:%d, title:%s, path:%s", id, title, path));
             contentId = id;
