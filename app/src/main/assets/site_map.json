@@ -1,51 +1,5 @@
 [
   {
-    "title": "view（基础）",
-    "node": [
-      {
-        "title": "剪裁",
-        "url": ".view.ViewDemo3"
-      }
-    ]
-  },
-  {
-    "title": "存储",
-    "node": [
-      {
-        "title": "Android 11 使用外部存储",
-        "url": ".storage.Android11Demo1"
-      },
-      {
-        "title": "Android 11 通过 MediaStore 管理文件",
-        "url": ".storage.Android11Demo2"
-      },
-      {
-        "title": "Android 11 通过 Storage Access Framework 管理文件",
-        "url": ".storage.Android11Demo3"
-      }
-    ]
-  },
-  {
-    "title": "view（媒体类）",
-    "node": [
-      {
-        "title": "Glide 基础",
-        "url": ".view.media.GlideDemo1"
-      }
-    ]
-  },
-  {
-    "title": "优化",
-    "node": [
-      {
-        "title": "捕获未处理异常",
-        "url": ".optimize.Demo4"
-      }
-    ]
-  },
-
-
-  {
     "title": "java",
     "node": [
       {
@@ -121,6 +75,10 @@
       {
         "title": "边距相关，隐藏相关",
         "url": ".view.ViewDemo2"
+      },
+      {
+        "title": "剪裁",
+        "url": ".view.ViewDemo3"
       }
     ]
   },
@@ -282,6 +240,10 @@
       {
         "title": "Picasso 基础",
         "url": ".view.media.PicassoDemo1"
+      },
+      {
+        "title": "Glide 基础",
+        "url": ".view.media.GlideDemo1"
       }
     ]
   },
@@ -718,6 +680,18 @@
       {
         "title": "Sqlite 基础",
         "url": ".storage.SqliteDemo1"
+      },
+      {
+        "title": "Android 11 使用外部存储",
+        "url": ".storage.Android11Demo1"
+      },
+      {
+        "title": "Android 11 通过 MediaStore 管理文件",
+        "url": ".storage.Android11Demo2"
+      },
+      {
+        "title": "Android 11 通过 Storage Access Framework 管理文件",
+        "url": ".storage.Android11Demo3"
       }
     ]
   },
@@ -1023,6 +997,10 @@
       {
         "title": "Application",
         "url": ".optimize.Demo3"
+      },
+      {
+        "title": "捕获未处理异常",
+        "url": ".optimize.Demo4"
       }
     ]
   },
