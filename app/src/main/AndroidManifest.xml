@@ -20,7 +20,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".storage.Android11Demo4"></activity>
+        <activity android:name=".ndk.NdkDemo1"></activity>
+        <activity android:name=".storage.Android11Demo4" />
         <activity android:name=".storage.Android11Demo3" />
         <activity android:name=".view.media.GlideDemo1" />
         <activity android:name=".optimize.Demo4" />
