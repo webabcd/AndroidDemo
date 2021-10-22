@@ -1,11 +1,8 @@
 ﻿# Android Demo
 
 
-#### view（RecyclerView）
-1. RecyclerView 基础，各种布局方式（垂直布局，水平布局，标准网格布局，错列网格布局），响应单击事件和长按事件，不同的 item 使用不同的项模板，表头和表尾
-2. RecyclerView 分隔线
-3. RecyclerView 下拉刷新（结合 SwipeRefreshLayout 控件实现）
-4. RecyclerView 上拉加载更多数据
+#### Native Development Kit
+1. NDK 简单示例
 
 #### java
 1. Callback
@@ -28,6 +25,7 @@
 #### view（基础）
 1. 位置相关
 2. 边距相关，隐藏相关
+3. 剪裁
 
 #### view（文本类）
 1. TextView 常用属性
@@ -72,6 +70,7 @@
 2. ImageView 的 scaleType
 3. 9patch（nine patch）图片
 4. Picasso 基础
+5. Glide 基础
 
 #### view（进度类）
 1. ProgressBar 基础
@@ -134,8 +133,14 @@
 9. ListView 长按弹出上下文菜单
 10. ListView 多选删除
 
+#### view（RecyclerView）
+1. RecyclerView 基础，各种布局方式（垂直布局，水平布局，标准网格布局，错列网格布局），响应单击事件和长按事件，不同的 item 使用不同的项模板，表头和表尾
+2. RecyclerView 分隔线
+3. RecyclerView 下拉刷新（结合 SwipeRefreshLayout 控件实现）
+4. RecyclerView 上拉加载更多数据
+
 #### view（WebView）
-1. WebView 基础
+1. WebView 基础，WebView 调试
 2. WebView 和 javascript 交互
 3. WebView 拦截 url 跳转，拦截 alert, confirm, prompt 弹出框，拦截文件选择框
 4. WebView 拦截 url 请求并返回自定义数据
@@ -184,6 +189,9 @@
 3. 内部存储，外部存储，权限请求，存储大小，获取 assets 中的数据，获取 res/raw 中的数据
 4. SharedPreferences 用户偏好数据的管理
 5. Sqlite 基础
+6. Android 11 使用外部存储
+7. Android 11 通过 MediaStore 管理文件
+8. Android 11 通过 Storage Access Framework 管理文件
 
 #### 输入
 1. 按键事件
@@ -210,7 +218,7 @@
 3. Fragment 与 Activity 的交互
 4. Fragment 动画
 
-#### 异步，多线程
+#### 异步和多线程
 1. Thread 基础
 2. Thread 演示 Object 的 wait() notify() notifyAll() 的使用
 3. Thread 演示 join() 的用法
@@ -228,7 +236,7 @@
 15. Timer 和 TimerTask 的使用
 16. ThreadLocal 的使用
 
-#### 锁，并发处理
+#### 锁和并发处理
 1. Lock 基础
 2. Lock 可 interrupt 的 Lock
 3. Lock 演示 Condition 的 await() signal() signalAll() 的使用
@@ -253,7 +261,7 @@
 2. WorkerManager
 3. DownloadManager
 
-#### ipc（Inter-Process Communication, 进程间通信）
+#### ipc（跨进程通信）
 1. ContentProvider
 2. URLScheme(deep link)
 3. 通过指定 package, activity 打开指定的 apk
@@ -267,6 +275,7 @@
 1. 强引用, 软引用, 弱引用
 2. Context
 3. Application
+4. 捕获未处理异常
 
 #### 常用工具
 1. 在 KeyStore 中保存秘钥
@@ -277,4 +286,4 @@
 
 #### 项目工具
 1. 生成 README.md
-
+2. 生成 html index
