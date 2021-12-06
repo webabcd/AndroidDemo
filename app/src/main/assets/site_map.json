@@ -1,5 +1,14 @@
 [
   {
+    "title": "常用工具",
+    "node": [
+      {
+        "title": "监听 logcat 日志",
+        "url": ".utils.Demo3"
+      }
+    ]
+  },
+  {
     "title": "Native Development Kit",
     "node": [
       {
@@ -8,6 +17,9 @@
       }
     ]
   },
+
+
+
   {
     "title": "java",
     "node": [
