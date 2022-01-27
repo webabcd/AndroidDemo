@@ -12,7 +12,13 @@ class HelloWorld : AppCompatActivity() {
         setContentView(R.layout.activity_kotlin_helloworld)
 
         button1.setOnClickListener {
-            textView1.text = "hello world";
+            textView1.append("hello world\n");
+
+            // 用于演示 java 调用 kotlin
+            textView1.append(HelloWorld_Java().javaToKotlin() + "\n");
+
+            // 用于演示 kotlin 调用 java
+            textView1.append(HelloWorld_Kotlin().kotlinToJava() + "\n");
         }
     }
 }

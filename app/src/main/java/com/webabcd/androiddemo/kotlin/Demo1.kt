@@ -91,7 +91,8 @@ class Demo1 : AppCompatActivity() {
         var y = x.trimMargin("\\n"); // "$\n
 
         // 字符串模板（$变量名 或者 ${表达式}）
-        appendMessage("$a, $b, $c, $d, $e, $f, $g, $h, $i, $j, $k, $l, $m, $n, $o, $p, $q, $r, $s, $t, $u, $v, $w, $x, $y, ${ 1 + 1 }");
+        // 如果我只是想输出字符串 $a 而不是输出变量 a 的值要怎么办呢，那就 \$a 即可
+        appendMessage("\$a, $a, $b, $c, $d, $e, $f, $g, $h, $i, $j, $k, $l, $m, $n, $o, $p, $q, $r, $s, $t, $u, $v, $w, $x, $y, ${ 1 + 1 }");
     }
 
     fun sample2() {

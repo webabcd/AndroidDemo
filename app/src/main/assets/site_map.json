@@ -37,7 +37,7 @@
     "title": "kotlin",
     "node": [
       {
-        "title": "hello world",
+        "title": "hello world，kotlin 调用 java，java 调用 kotlin",
         "url": ".kotlin.HelloWorld"
       },
       {
