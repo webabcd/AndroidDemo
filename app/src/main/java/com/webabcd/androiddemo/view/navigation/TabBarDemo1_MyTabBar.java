@@ -28,11 +28,11 @@ public class TabBarDemo1_MyTabBar extends LinearLayout {
     // TabBar 的图标（选中状态）
     private int[] mIconSelectedList = {R.drawable.ic_expand_more, R.drawable.ic_expand_more, R.drawable.ic_expand_more};
     // TabBar 的文字颜色（非选中状态）
-    private int mColorDefault = getResources().getColor(R.color.red);
+    private int mColorDefault = getResources().getColor(R.color.red, null);
     // TabBar 的文字颜色（选中状态）
-    private int mColorSelected = getResources().getColor(R.color.green);
+    private int mColorSelected = getResources().getColor(R.color.green, null);
     // TabBar 的背景颜色
-    private int mColorBackground = getResources().getColor(R.color.white);
+    private int mColorBackground = getResources().getColor(R.color.white, null);
 
     // 当前选中的 tab 项的索引位置
     private int mSelectedIndex = 0;

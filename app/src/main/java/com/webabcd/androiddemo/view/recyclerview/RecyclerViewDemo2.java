@@ -45,7 +45,7 @@ public class RecyclerViewDemo2 extends AppCompatActivity {
                     _recyclerView.removeItemDecorationAt(0);
                 }
                 // 指定自定义分隔线（指定高度和颜色）
-                _recyclerView.addItemDecoration(new MyVerticalLinearLayoutManagerDivider(20, getResources().getColor(R.color.orange)));
+                _recyclerView.addItemDecoration(new MyVerticalLinearLayoutManagerDivider(20, getResources().getColor(R.color.orange, null)));
             }
         });
 
@@ -56,7 +56,7 @@ public class RecyclerViewDemo2 extends AppCompatActivity {
                     _recyclerView.removeItemDecorationAt(0);
                 }
                 // 指定自定义分隔线（指定高度和 Drawable 对象）
-                _recyclerView.addItemDecoration(new MyVerticalLinearLayoutManagerDivider(20, getResources().getDrawable(R.drawable.shape_recyclerview_divider)));
+                _recyclerView.addItemDecoration(new MyVerticalLinearLayoutManagerDivider(20, getResources().getDrawable(R.drawable.shape_recyclerview_divider, null)));
             }
         });
     }

@@ -6,6 +6,8 @@ package com.webabcd.androiddemo.ui;
 
 import android.graphics.Color;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -30,6 +32,6 @@ public class ColorDemo1 extends AppCompatActivity {
         mTextView3.setTextColor(Color.argb(0xff, 0xff, 0x00, 0x00));
 
         // 从资源文件中获取颜色值
-        mTextView3.setBackgroundColor(getResources().getColor(R.color.blue));
+        mTextView3.setBackgroundColor(ContextCompat.getColor(this, R.color.blue));
     }
 }

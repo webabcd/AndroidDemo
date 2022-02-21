@@ -17,7 +17,15 @@
       }
     ]
   },
-
+  {
+    "title": "Resource",
+    "node": [
+      {
+        "title": "布局 xml 基础",
+        "url": ".resource.XmlDemo1"
+      }
+    ]
+  },
 
 
   {

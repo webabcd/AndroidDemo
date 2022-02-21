@@ -7,6 +7,8 @@
 package com.webabcd.androiddemo.view.selection;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+
 import android.os.Bundle;
 
 import com.webabcd.androiddemo.R;
@@ -33,7 +35,7 @@ public class NumberPickerDemo2 extends AppCompatActivity {
         _numberPicker1.setValue(12);
 
         // 设置 NumberPicker 的分隔线的颜色
-        _numberPicker1.setDividerColor(getResources().getColor(R.color.blue));
+        _numberPicker1.setDividerColor(ContextCompat.getColor(this, R.color.blue));
         // 设置 NumberPicker 的分隔线的粗细
         _numberPicker1.setDividerHeight(Helper.dp2px(this, 5));
     }

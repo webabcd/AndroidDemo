@@ -81,7 +81,7 @@ public class StatusBarDemo1 extends AppCompatActivity {
             public void onClick(View v) {
                 // 改变 statusBar 的背景色
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                    getWindow().setStatusBarColor(getResources().getColor(R.color.green));
+                    getWindow().setStatusBarColor(getResources().getColor(R.color.green, null));
                 }
             }
         });

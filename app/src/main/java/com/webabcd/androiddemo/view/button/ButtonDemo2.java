@@ -35,6 +35,6 @@ public class ButtonDemo2 extends AppCompatActivity {
         _button3.setBackgroundResource(R.drawable.selector_button_background);
 
         // 设置 button 的各种状态下的文字颜色（详见 color/selector_button_textcolor.xml）
-        _button3.setTextColor(getResources().getColorStateList(R.color.selector_button_textcolor));
+        _button3.setTextColor(getResources().getColorStateList(R.color.selector_button_textcolor, null));
     }
 }

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--
+        1、资源中的 xml 文件命名只能包含小写的 a 到 z，0 到 9，下划线（不能包含大写字母）
+        2、资源目录下的目录不能再包含子目录
+        3、@+id 的意思是 R.java 中存在则使用存在的值，没有则生成一个并使用
+        4、@id 的意思是 R.java 中存在则使用存在的值，没有则编译报错
+        5、新版本的 Android Studio 的 R.java 文件在类似如下的路径中 D:\gitroot\AndroidDemo\app\build\intermediates\runtime_symbol_list\debug\R.txt
+    -->
+
+    <TextView
+        android:id="@+id/xmldemo1_textView1"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@color/red" />
+
+    <TextView
+        android:id="@+id/xmldemo1_textView2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/xmldemo1_textView1"
+        android:background="@color/green" />
+
+    <!--下面的 id 和上面的 id 重名了，但是不会影响编译（注：在 java 中根据 id 查找控件的时候找到的是上面的控件）-->
+    <TextView
+        android:id="@+id/xmldemo1_textView2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_toRightOf="@id/xmldemo1_textView1"
+        android:background="@color/blue" />
+
+</RelativeLayout>

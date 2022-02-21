@@ -68,7 +68,7 @@ public class ActivityDemo6 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // 改变 statusBar 的背景色
-                getWindow().setStatusBarColor(getResources().getColor(R.color.green));
+                getWindow().setStatusBarColor(getResources().getColor(R.color.green, null));
             }
         });
 
