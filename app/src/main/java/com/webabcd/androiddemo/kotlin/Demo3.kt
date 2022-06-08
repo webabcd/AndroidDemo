@@ -1,5 +1,5 @@
 /**
- * 本例用于演示 kotlin 的控制语句（if..else, while, do..while, for, when, continue, break, return, 遍历 iterator 对象）
+ * 本例用于演示 kotlin 的语句（if..else, while, do..while, for, when, continue, break, return, 遍历 iterator 对象, try/catch/finally）
  */
 
 package com.webabcd.androiddemo.kotlin
@@ -8,6 +8,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.webabcd.androiddemo.R
 import kotlinx.android.synthetic.main.activity_kotlin_helloworld.*
+import java.io.IOException
+import java.lang.Exception
 import java.util.*
 
 class Demo3 : AppCompatActivity() {
@@ -23,6 +25,7 @@ class Demo3 : AppCompatActivity() {
         sample2(); // for 语句
         sample3(); // 遍历 iterator 对象
         sample4(); // when 语句
+        sample5(); // 异常处理 try/catch/finally
     }
 
     fun sample1() {
@@ -144,6 +147,19 @@ class Demo3 : AppCompatActivity() {
             is Int -> appendMessage("is Int")
             !is Int -> appendMessage("!is Int")
             else -> appendMessage("else")
+        }
+    }
+
+    // 异常处理 try/catch/finally
+    fun sample5() {
+        try {
+            throw IOException("I am a IOException")
+        } catch (e: IOException) {
+            appendMessage("catch $e")
+        } catch (e: Exception) {
+            appendMessage("catch $e")
+        } finally {
+            appendMessage("finally")
         }
     }
 
