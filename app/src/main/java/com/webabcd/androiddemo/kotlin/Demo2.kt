@@ -62,6 +62,10 @@ class Demo2 : AppCompatActivity() {
         // ?.let 左侧为 null 就不执行右边的大括号，反之则执行
         a?.let { appendMessage("aaa") }; // 会输出 aaa
         b?.let { appendMessage("bbb") }; // 不会输出 bbb
+        // ?.let 有一个名为 it 的默认参数，其代表 ?.let 左侧对象的值
+        a?.let { appendMessage("$it") }     // 1234
+        // ?.let 中你也可以为 it 指定其他名称
+        a?.let { p -> appendMessage("$p") } // 1234
 
         // ?: 左侧为 null 则返回右边的值，反之则返回左边的值
         a = a ?: 123456;
