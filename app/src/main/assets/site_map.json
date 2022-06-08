@@ -57,7 +57,7 @@
         "url": ".kotlin.Demo2"
       },
       {
-        "title": "控制语句（if..else, while, do..while, for, when, continue, break, return, 遍历 iterator 对象）",
+        "title": "语句（if..else, while, do..while, for, repeat, when, continue, break, return, 遍历 iterator 对象, try/catch/finally）",
         "url": ".kotlin.Demo3"
       },
       {

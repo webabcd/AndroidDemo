@@ -1,5 +1,5 @@
 /**
- * 本例用于演示 kotlin 的语句（if..else, while, do..while, for, when, continue, break, return, 遍历 iterator 对象, try/catch/finally）
+ * 本例用于演示 kotlin 的语句（if..else, while, do..while, for, repeat, when, continue, break, return, 遍历 iterator 对象, try/catch/finally）
  */
 
 package com.webabcd.androiddemo.kotlin
@@ -22,7 +22,7 @@ class Demo3 : AppCompatActivity() {
         // if..else, while, do..while, continue, break, return 都和 java 差不多
 
         sample1(); // 通过 if..else 直接给变量赋值
-        sample2(); // for 语句
+        sample2(); // for 语句, repeat 语句
         sample3(); // 遍历 iterator 对象
         sample4(); // when 语句
         sample5(); // 异常处理 try/catch/finally
@@ -90,6 +90,11 @@ class Demo3 : AppCompatActivity() {
             g += value;
         }
         appendMessage("$g"); // 0112233445
+
+        // repeat() - 重复执行指定的次数
+        repeat(5) {
+            appendMessage("x")
+        }
     }
 
     fun sample3() {

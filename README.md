@@ -12,7 +12,7 @@
 1. hello world
 2. 基本数据类型，位操作，变量和常量，注释可嵌套，lateinit，by lazy，字符串模板
 3. 可空类型，数据类型判断（is, !is），可空类型的相关操作符（let, ?:, !!, as?），== 和 ===
-4. 语句（if..else, while, do..while, for, when, continue, break, return, 遍历 iterator 对象, try/catch/finally）
+4. 语句（if..else, while, do..while, for, repeat, when, continue, break, return, 遍历 iterator 对象, try/catch/finally）
 5. 字符串的常用操作
 6. 数组和集合的常用操作
 7. 函数（方法）
