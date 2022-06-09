@@ -26,6 +26,9 @@ class Demo1 : AppCompatActivity() {
         var b: Any? = null
         appendMessage("$a, $b") // abc, null
 
+        // 获取一个对象的类型
+        appendMessage("${a::class.simpleName}, ${a::class.qualifiedName}") // String, kotlin.String
+
         sample1(); // 基本数据类型，字符串模板
         sample2(); // 数组
         sample3(); // 位操作
@@ -142,7 +145,10 @@ class Demo1 : AppCompatActivity() {
         // 1、在顶层声明，参见本文件的 MY_CONST1
         // 2. 在 object 修饰的类中声明，参见本文件的 MY_CONST2
         // 3. 在伴生对象中声明，参见本文件的 MY_CONST3
-        // 注：不可变变量和常量的区别：不可变变量是运行时初始化的，常量是编译时初始化的
+        //
+        // 不可变变量和常量的区别
+        // 1、不可变变量是运行时初始化的，其可以在声明的时候初始化，也可以在构造函数中初始化
+        // 2、常量是编译时初始化的
 
         appendMessage("$a, $b, $MY_CONST1, ${MyObject.MY_CONST2}, ${MyClass.MY_CONST3}");
     }

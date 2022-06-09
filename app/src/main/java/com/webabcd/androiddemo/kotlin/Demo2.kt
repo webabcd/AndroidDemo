@@ -73,13 +73,15 @@ class Demo2 : AppCompatActivity() {
         appendMessage("$a"); // 1234
         appendMessage("$b"); // 123456
 
-        // 因为对象 null 是可以 toString() 的
-        // 那如果我想 null 调用 toString() 时抛异常该怎么做呢，可以通过 !! 来实现
+        // 对象 null 是可以 toString() 的
+        // 通过 !! 可以对一个可空对象强行取值，如果是 null 则会抛出异常
         var c: String? = null;
         try {
-            appendMessage("${c!!.toString()}"); // 抛异常
+            appendMessage("${c.toString()}");   // null
+            appendMessage("${a!!}");            // 1234
+            appendMessage("${c!!}");            // 抛异常
         } catch (ex: Exception) {
-            appendMessage(ex.toString()); // kotlin.KotlinNullPointerException
+            appendMessage(ex.toString());       // kotlin.KotlinNullPointerException
         }
 
         // as? 转换为可空类型
