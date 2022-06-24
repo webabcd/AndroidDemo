@@ -92,8 +92,13 @@ class Demo3 : AppCompatActivity() {
         appendMessage("$g"); // 0112233445
 
         // repeat() - 重复执行指定的次数
-        repeat(5) {
-            appendMessage("x")
+        // 有一个名为 it 的默认参数，其代表当前的重复次数，从 0 开始
+        repeat(3) {
+            appendMessage("x$it")   // x0 x1 x2
+        }
+        // 你也可以为 it 指定其他名称
+        repeat(3) { p ->
+            appendMessage("x$p")    // x0 x1 x2
         }
     }
 
