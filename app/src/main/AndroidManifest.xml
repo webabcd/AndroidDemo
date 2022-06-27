@@ -23,6 +23,7 @@
         <activity android:name=".kotlin.coroutine.Demo1" />
         <activity android:name=".kotlin.coroutine.Demo2" />
         <activity android:name=".kotlin.coroutine.Demo3" />
+        <activity android:name=".kotlin.coroutine.Demo4" />
         <activity android:name=".resource.XmlDemo1" />
         <activity android:name=".utils.Demo3" />
         <activity android:name=".ndk.NdkDemo1" />

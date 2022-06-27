@@ -38,8 +38,12 @@
         "url": ".kotlin.coroutine.Demo2"
       },
       {
-        "title": "cccccccc",
+        "title": "协程的顺序执行，并行执行，async 的立即执行与懒启动，以及 async/await 的其他说明",
         "url": ".kotlin.coroutine.Demo3"
+      },
+      {
+        "title": "ccccc",
+        "url": ".kotlin.coroutine.Demo4"
       }
     ]
   },

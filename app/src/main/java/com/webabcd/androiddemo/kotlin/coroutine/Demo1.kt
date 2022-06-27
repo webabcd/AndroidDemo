@@ -8,9 +8,10 @@
  *   一个线程内，同一时刻只会有一个协程在运行，其他协程挂起等待，不同协程之间的切换不涉及内核（线程的切换会涉及到内核），所以切换代价更小，更轻量级
  *   一个协程内出现挂起时只是暂停，其所属线程可以运行其他逻辑
  *     比如你在主线程启动一个协程然后挂起，其并不会阻塞主线程
- *   一个协程并不绑定在任何特定的线程上，它可以在一个线程中暂停执行，在另一个线程中继续执行
+ *   一个协程并不绑定在任何特定的线程上（如果你不强制指定某一特定线程的话），它可以在一个线程中暂停执行，在另一个线程中继续执行
  *     比如你在 Dispatchers.Default 启动一个协程，它开始可能运行在 worker-1 线程，然后协程挂起，然后协程再恢复，此时它可能会运行在 worker-2 线程
- *     当然，如果你是在 Dispatchers.Main 启动一个协程，则它只会运行在主线程中
+ *     如果你是在 Dispatchers.Main 启动一个协程，则它只会运行在主线程中
+ *     如果你是在 newSingleThreadContext("myThread") 启动一个协程，则它只会运行在 myThread 线程中
  */
 
 package com.webabcd.androiddemo.kotlin.coroutine
@@ -68,6 +69,7 @@ class Demo1 : AppCompatActivity() {
          * CoroutineScope(Dispatchers.IO).launch { } - 在子线程中启动一个新的协程（适合存储或网络等 IO 操作的工作）
          * CoroutineScope(Dispatchers.Main).launch { } - 在主线程（UI 线程）中启动一个新的协程
          * CoroutineScope(Dispatchers.Unconfined).launch { } - 在当前线程中启动一个新的协程，然后在第一个挂起点恢复后再从其他某线程中恢复协程
+         * CoroutineScope(newSingleThreadContext("myThread")).launch { } - 新开一个名为 myThread 的线程，并在此线程中启动一个新的协程
          */
 
         // launch 的返回值是一个 Job 对象，后续再说
@@ -134,7 +136,7 @@ class Demo1 : AppCompatActivity() {
 
     fun sample4() {
         /**
-         * async - 其和 launch 的区别是：launch 返回的是 Job 对象，async 返回的是 Deferred<T> 对象
+         * async - 其和 launch 的区别是：launch 返回的是 Job 对象，async 返回的是 Deferred<T> 对象（注：Deferred<T> 继承自 Job）
          *   Deferred<T> 可以通过 await() 在当前线程阻塞，直到他执行完
          */
         val task1 = CoroutineScope(Dispatchers.Default).async {
@@ -168,7 +170,7 @@ class Demo1 : AppCompatActivity() {
 
     fun sample5() {
         /**
-         * 在 launch 或 async 中调用的函数必须是 suspend 函数
+         * 在协程中调用的函数必须是 suspend 函数，也就是说在 launch 或 async 中调用的函数必须是 suspend 函数
          */
         var job = CoroutineScope(Dispatchers.Default).launch {
             // fun1() 执行完后执行 fun2()，fun2() 执行完后执行 fun3()
@@ -177,7 +179,7 @@ class Demo1 : AppCompatActivity() {
             fun3()  // c（DefaultDispatcher-worker-1）
         }
     }
-    // suspend 函数，可以在 launch 或 async 中被调用
+    // suspend 函数，可以在协程或其他 suspend 函数中被调用
     suspend fun fun1() {
         delay(1000)
         appendMessage("a")

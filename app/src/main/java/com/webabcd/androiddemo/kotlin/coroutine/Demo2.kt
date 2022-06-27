@@ -53,7 +53,7 @@ class Demo2 : AppCompatActivity() {
         CoroutineScope(Dispatchers.Default).launch {
             /**
              * Job - 通过 launch 返回的对象
-             *   join() - 阻塞，直到 Job 执行完
+             *   join() - 阻塞，直到 Job 执行完，包括 Job 中的所有子 Job（除了 GlobalScope）
              *   cancel() - 取消 Job，如果一个 Job 里有子 Job，那么这些子 Job 也都会被取消（除了 GlobalScope）
              *   cancelAndJoin() - 先 cancel() 然后 join()
              * 注：Job 的上述方法必须在协程中或 suspend 函数中调用
@@ -75,7 +75,7 @@ class Demo2 : AppCompatActivity() {
         CoroutineScope(Dispatchers.Default).launch {
             /**
              * Job - 通过 launch 返回的对象
-             *   join() - 阻塞，直到 Job 执行完
+             *   join() - 阻塞，直到 Job 执行完，包括 Job 中的所有子 Job（除了 GlobalScope）
              *   cancel() - 取消 Job，如果一个 Job 里有子 Job，那么这些子 Job 也都会被取消（除了 GlobalScope）
              *   cancelAndJoin() - 先 cancel() 然后 join()
              * 注：Job 的上述方法必须在协程中或 suspend 函数中调用
