@@ -1,6 +1,6 @@
 /**
  * coroutine - 协程
- * 本利用于演示协程基础，包括 CoroutineScope, launch, async, await, withContext, suspend
+ * 本利用于演示协程基础，包括 CoroutineScope, 为 CoroutineScope 扩展方法, launch, async, await, withContext, suspend
  *
  * 进程是资源分配的最小单位，不同进程之间资源都是独立的
  * 线程是 CPU 调度的基本单位，本身并不拥有系统资源，所有线程会共享进程的资源
@@ -29,7 +29,7 @@ import java.util.*
 class Demo1 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_kotlin_coroutine_demo3)
+        setContentView(R.layout.activity_kotlin_coroutine_demo1)
 
         // 演示 CoroutineScope.launch
         button1.setOnClickListener {
@@ -51,7 +51,7 @@ class Demo1 : AppCompatActivity() {
             sample4()
         }
 
-        // 演示 suspend
+        // 演示 suspend 函数以及如何为 CoroutineScope 扩展方法
         button5.setOnClickListener {
             sample5()
         }
@@ -136,8 +136,10 @@ class Demo1 : AppCompatActivity() {
 
     fun sample4() {
         /**
-         * async - 其和 launch 的区别是：launch 返回的是 Job 对象，async 返回的是 Deferred<T> 对象（注：Deferred<T> 继承自 Job）
+         * async - 其和 launch 的区别是：
+         * 1、launch 返回的是 Job 对象，async 返回的是 Deferred<T> 对象（注：Deferred<T> 继承自 Job）
          *   Deferred<T> 可以通过 await() 在当前线程阻塞，直到他执行完
+         * 2、launch 启动的协程是没有返回值的，async 启动的协程可以有返回值
          */
         val task1 = CoroutineScope(Dispatchers.Default).async {
             delay(2000)
@@ -171,12 +173,16 @@ class Demo1 : AppCompatActivity() {
     fun sample5() {
         /**
          * 在协程中调用的函数必须是 suspend 函数，也就是说在 launch 或 async 中调用的函数必须是 suspend 函数
+         * 也可以为 CoroutineScope 扩展方法，然后在协程中调用
          */
         var job = CoroutineScope(Dispatchers.Default).launch {
             // fun1() 执行完后执行 fun2()，fun2() 执行完后执行 fun3()
-            fun1()  // a（DefaultDispatcher-worker-1）
-            fun2()  // b（DefaultDispatcher-worker-1）
-            fun3()  // c（DefaultDispatcher-worker-1）
+            // fun3() 执行完后执行 fun4()，不等 fun4() 执行完就执行 fun5()
+            fun1()  // 04:17:37.168: a（DefaultDispatcher-worker-1）
+            fun2()  // 04:17:38.193: b（DefaultDispatcher-worker-1）
+            fun3()  // 04:17:39.214: c（DefaultDispatcher-worker-1）
+            fun4()  // 04:17:40.222: d（DefaultDispatcher-worker-1）
+            fun5()  // 04:17:40.253: e（DefaultDispatcher-worker-1）
         }
     }
     // suspend 函数，可以在协程或其他 suspend 函数中被调用
@@ -203,6 +209,16 @@ class Demo1 : AppCompatActivity() {
 
         delay(1000)
         appendMessage("c")
+    }
+    // 为 CoroutineScope 扩展一个 fun4() 方法
+    fun CoroutineScope.fun4() = launch {
+        delay(1000)
+        appendMessage("d")
+    }
+    // 为 CoroutineScope 扩展一个 fun5() 方法
+    fun CoroutineScope.fun5() = async {
+        delay(1000)
+        appendMessage("e")
     }
 
     fun sample6() {

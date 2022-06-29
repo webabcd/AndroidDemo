@@ -1,6 +1,8 @@
 /**
  * coroutine - 协程
  * 本利用于演示 Job 的等待与取消，超时处理，取消协程
+ *
+ * 注：async 返回的是 Deferred<T> 对象，其继承自 Job，所以关于 Deferred<T> 的等待与取消和超时处理等与 Job 是一样的
  */
 
 package com.webabcd.androiddemo.kotlin.coroutine
@@ -79,6 +81,8 @@ class Demo2 : AppCompatActivity() {
              *   cancel() - 取消 Job，如果一个 Job 里有子 Job，那么这些子 Job 也都会被取消（除了 GlobalScope）
              *   cancelAndJoin() - 先 cancel() 然后 join()
              * 注：Job 的上述方法必须在协程中或 suspend 函数中调用
+             *
+             * 另外：可以通过 joinAll(job1, job2, job3...) 同时 join 多个 Job
              */
             val job = launch {
                 repeat(1000) { i ->
@@ -112,6 +116,7 @@ class Demo2 : AppCompatActivity() {
                         delay(500)
                     } catch (e: CancellationException) {
                         // 运行到 suspend 函数时，如果发现取消了，则会抛出异常，你的 Job 就退出了
+                        // 所有处理程序都会忽略 CancellationException 异常（也就是说抛出此异常并不会导致崩溃），因为它就是用于退出 Job 用的
                         throw e
                     }
                 }

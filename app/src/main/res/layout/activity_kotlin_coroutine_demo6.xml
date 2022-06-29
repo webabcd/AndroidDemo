@@ -9,42 +9,42 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAllCaps="false"
-        android:text="通过信道在不同协程之间发送和接收数据"/>
+        android:text="顺序执行"/>
 
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAllCaps="false"
-        android:text="生产者/消费者模式"/>
+        android:text="并行执行（launch 方式）"/>
 
     <Button
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAllCaps="false"
-        android:text="多个协程使用一个信道发送数据"/>
+        android:text="并行执行（async 方式）"/>
 
     <Button
         android:id="@+id/button4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAllCaps="false"
-        android:text="多个协程使用一个信道接收数据"/>
+        android:text="调用 async { } 时立即执行"/>
 
     <Button
         android:id="@+id/button5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAllCaps="false"
-        android:text="信道缓冲区"/>
+        android:text="调用 async { } 时懒启动，等调用 await() 时再执行"/>
 
     <Button
         android:id="@+id/button6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAllCaps="false"
-        android:text="从多个信道同时接收数据"/>
+        android:text="async 返回的是 Deferred&lt;T&gt; 对象，其继承自 Job"/>
 
     <TextView
         android:id="@+id/textView1"

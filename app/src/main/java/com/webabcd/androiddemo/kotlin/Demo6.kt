@@ -53,7 +53,8 @@ class Demo6 : AppCompatActivity() {
         appendMessage(function7(3, 7).toString()); // 21
 
         // 扩展函数
-        appendMessage(3.function8(7).toString()) // 21
+        appendMessage(3.function8_1(7).toString()) // 21
+        appendMessage(3.function8_2(7).toString()) // 21
 
         // 函数作为参数
         // 通过 :: 把一个函数当做一个参数传递到另一个函数中（如果作为参数的函数在其他对象中的话，则写成类似 obj::func 即可）
@@ -104,8 +105,10 @@ class Demo6 : AppCompatActivity() {
     }
 
     // 扩展函数
-    // 下面的例子为 Int 类型扩展出了一个 function8 方法
-    val function8 = fun Int.(other: Int): Int = this * other
+    // 下面的例子为 Int 类型扩展出了一个 function8_1 方法
+    val function8_1 = fun Int.(other: Int): Int = this * other
+    // 下面的例子为 Int 类型扩展出了一个 function8_2 方法
+    fun Int.function8_2(other: Int): Int { return this * other }
 
     // 下面两个函数用于演示函数作为参数
     fun function9(name: String, age: Int): String = "function9 name:$name, age:$age"

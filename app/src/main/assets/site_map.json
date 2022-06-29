@@ -30,7 +30,7 @@
     "title": "kotlin 协程",
     "node": [
       {
-        "title": "协程基础（CoroutineScope, launch, async, await, withContext, suspend）",
+        "title": "协程基础（CoroutineScope, 为 CoroutineScope 扩展方法, launch, async, await, withContext, suspend）",
         "url": ".kotlin.coroutine.Demo1"
       },
       {
@@ -42,8 +42,16 @@
         "url": ".kotlin.coroutine.Demo3"
       },
       {
-        "title": "ccccc",
+        "title": "Channel（信道，用于在不同协程之间传输数据）",
         "url": ".kotlin.coroutine.Demo4"
+      },
+      {
+        "title": "通过 ticker 信道实现类似计时器的效果，协程的异常处理，解决协程的并发问题",
+        "url": ".kotlin.coroutine.Demo5"
+      },
+      {
+        "title": "ccccc",
+        "url": ".kotlin.coroutine.Demo6"
       }
     ]
   },

@@ -169,6 +169,8 @@ class Demo3 : AppCompatActivity() {
          *   1、Deferred<T> 继承自 Job，所以关于 Deferred<T> 的等待与取消和超时处理等与 Job 是一样的，请参见 Demo2.kt
          *   2、Deferred<T> 可以通过 await() 在当前线程阻塞，直到他执行完
          *   3、Deferred<T> 中的 T 指的是返回值的类型
+         *
+         * 另外：launch 启动的协程是没有返回值的，async 启动的协程可以有返回值
          */
         CoroutineScope(Dispatchers.Default).launch {
             val task1 = this.async {
