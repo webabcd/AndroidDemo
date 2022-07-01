@@ -116,7 +116,8 @@ class Demo2 : AppCompatActivity() {
                         delay(500)
                     } catch (e: CancellationException) {
                         // 运行到 suspend 函数时，如果发现取消了，则会抛出异常，你的 Job 就退出了
-                        // 所有处理程序都会忽略 CancellationException 异常（也就是说抛出此异常并不会导致崩溃），因为它就是用于退出 Job 用的
+                        // 注意，所有处理程序都会忽略 CancellationException 异常（也就是说抛出此异常并不会导致崩溃），因为它就是用于退出 Job 用的
+                        // 本例仅演示用，实际开发中你可以不必捕获 CancellationException 异常
                         throw e
                     }
                 }

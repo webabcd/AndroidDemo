@@ -1,6 +1,6 @@
 /**
  * coroutine - 协程
- * 本利用于演示协程基础，包括 CoroutineScope, 为 CoroutineScope 扩展方法, launch, async, await, withContext, suspend
+ * 本利用于演示协程基础，包括 CoroutineScope, 为 CoroutineScope 扩展方法, runBlocking, launch, async, await, suspend, withContext, 设置/获取 CoroutineScope 的名称
  *
  * 进程是资源分配的最小单位，不同进程之间资源都是独立的
  * 线程是 CPU 调度的基本单位，本身并不拥有系统资源，所有线程会共享进程的资源
@@ -59,6 +59,11 @@ class Demo1 : AppCompatActivity() {
         // 演示 withContext
         button6.setOnClickListener {
             sample6()
+        }
+
+        // 演示如何设置/获取 CoroutineScope 的名称
+        button7.setOnClickListener {
+            sample7()
         }
     }
 
@@ -245,6 +250,18 @@ class Demo1 : AppCompatActivity() {
         }
 
         appendMessage("a")          // a（main）
+    }
+
+    fun sample7() {
+        /**
+         * CoroutineName() - 指定 CoroutineScope 的名称
+         * currentCoroutineContext()[CoroutineName]?.name - 获取当前 CoroutineScope 的名称
+         */
+        // 如需为 CoroutineContext 定义多个元素的话，就用 + 运算符，比如本例中的 Dispatchers.Default + CoroutineName("myCoroutine")
+        val job = CoroutineScope(Dispatchers.Default + CoroutineName("myCoroutine")).launch {
+            var coroutineName = currentCoroutineContext()[CoroutineName]?.name
+            appendMessage("coroutineName:$coroutineName")
+        }
     }
 
 

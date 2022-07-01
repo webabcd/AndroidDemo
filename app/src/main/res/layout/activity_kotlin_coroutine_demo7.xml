@@ -9,42 +9,42 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAllCaps="false"
-        android:text="通过 flow 发送和接收数据"/>
+        android:text="顺序执行"/>
 
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAllCaps="false"
-        android:text="flow 的超时处理"/>
+        android:text="并行执行（launch 方式）"/>
 
     <Button
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAllCaps="false"
-        android:text="flow 的取消处理"/>
+        android:text="并行执行（async 方式）"/>
 
     <Button
         android:id="@+id/button4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAllCaps="false"
-        android:text="flow 的异常处理"/>
+        android:text="调用 async { } 时立即执行"/>
 
     <Button
         android:id="@+id/button5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAllCaps="false"
-        android:text="指定 flow 阶段的运行协程，使其不同于 collect 阶段的运行协程"/>
+        android:text="调用 async { } 时懒启动，等调用 await() 时再执行"/>
 
     <Button
         android:id="@+id/button6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAllCaps="false"
-        android:text="让 collect 阶段运行到其他协程，从而不阻塞当前协程"/>
+        android:text="async 返回的是 Deferred&lt;T&gt; 对象，其继承自 Job"/>
 
     <TextView
         android:id="@+id/textView1"
