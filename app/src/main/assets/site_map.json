@@ -50,11 +50,11 @@
         "url": ".kotlin.coroutine.Demo5"
       },
       {
-        "title": "Flow（异步流，通过 flow 发送和接收数据，flow 的超时处理，取消处理，异常处理，指定 flow 阶段的运行协程使其不同于 collect 阶段的运行协程，让 collect 阶段运行到其他协程从而不阻塞当前协程）",
+        "title": "Flow（异步流，通过 flow 发送和接收数据，flow 的超时处理，取消处理，异常处理，重试处理，指定 flow 阶段的运行协程使其不同于 collect 阶段的运行协程，让 collect 阶段运行到其他协程从而不阻塞当前协程）",
         "url": ".kotlin.coroutine.Demo6"
       },
       {
-        "title": "ccccc",
+        "title": "Flow（异步流，各种操作符的使用 buffer, conflate, collectLatest, drop, take, filter, map, transform, onEach, first, last, single, reduce, zip, combine, flatMapConcat, flatMapMerge 等)",
         "url": ".kotlin.coroutine.Demo7"
       }
     ]

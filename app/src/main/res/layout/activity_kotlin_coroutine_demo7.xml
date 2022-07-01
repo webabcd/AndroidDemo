@@ -9,42 +9,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAllCaps="false"
-        android:text="顺序执行"/>
+        android:text="优化发送/接收数据（buffer, conflate, collectLatest）"/>
 
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAllCaps="false"
-        android:text="并行执行（launch 方式）"/>
+        android:text="数组转换为 flow 以及 flow 的数据处理相关的操作符（drop, take, filter, map, transform, onEach, first, last, single, reduce 等）"/>
 
     <Button
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAllCaps="false"
-        android:text="并行执行（async 方式）"/>
+        android:text="将两个 flow 组合为一个 flow（zip, combine）"/>
 
     <Button
         android:id="@+id/button4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAllCaps="false"
-        android:text="调用 async { } 时立即执行"/>
-
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        android:text="调用 async { } 时懒启动，等调用 await() 时再执行"/>
-
-    <Button
-        android:id="@+id/button6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        android:text="async 返回的是 Deferred&lt;T&gt; 对象，其继承自 Job"/>
+        android:text="flow 内嵌套 flow（flatMapConcat, flatMapMerge）"/>
 
     <TextView
         android:id="@+id/textView1"

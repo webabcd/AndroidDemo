@@ -2,7 +2,7 @@
  * flow - 异步流
  * 流程上简单来说就是，collect 的时候会去异步执行 flow，然后接收 flow 发送的数据
  *
- * 本例用于演示通过 flow 发送和接收数据，flow 的超时处理，取消处理，异常处理，指定 flow 阶段的运行协程使其不同于 collect 阶段的运行协程，让 collect 阶段运行到其他协程从而不阻塞当前协程
+ * 本例用于演示通过 flow 发送和接收数据，flow 的超时处理，取消处理，异常处理，重试处理，指定 flow 阶段的运行协程使其不同于 collect 阶段的运行协程，让 collect 阶段运行到其他协程从而不阻塞当前协程
  */
 
 package com.webabcd.androiddemo.kotlin.coroutine
@@ -41,14 +41,19 @@ class Demo6 : AppCompatActivity() {
             sample4()
         }
 
-        // 指定 flow 阶段的运行协程，使其不同于 collect 阶段的运行协程
+        // flow 的重试处理
         button5.setOnClickListener {
             sample5()
         }
 
-        // 让 collect 阶段运行到其他协程，从而不阻塞当前协程
+        // 指定 flow 阶段的运行协程，使其不同于 collect 阶段的运行协程
         button6.setOnClickListener {
             sample6()
+        }
+
+        // 让 collect 阶段运行到其他协程，从而不阻塞当前协程
+        button7.setOnClickListener {
+            sample7()
         }
     }
 
@@ -195,6 +200,52 @@ class Demo6 : AppCompatActivity() {
     }
 
     fun sample5() {
+        CoroutineScope(Dispatchers.Default).launch {
+            flow<Unit> {
+                appendMessage("a")
+                throw Exception("ex")
+            }.retry (2) { e ->
+                // 在 retry() 时指定重试次数
+                // 发生了指定次数或指定次数内的异常就会走到这里，返回 true 则重新走 flow{} 内的逻辑，返回 false 则不重试
+                appendMessage("retry, exception:$e")
+                e is Exception // 返回值，用于指定是否需要重试
+            }.catch { e ->
+                appendMessage("catch: $e")
+            }.collect()
+            // a（DefaultDispatcher-worker-1）
+            // retry, exception:java.lang.Exception: ex（DefaultDispatcher-worker-1）
+            // a（DefaultDispatcher-worker-1）
+            // retry, exception:java.lang.Exception: ex（DefaultDispatcher-worker-1）
+            // a（DefaultDispatcher-worker-1）
+            // catch: java.lang.Exception: ex（DefaultDispatcher-worker-1）
+
+
+            flow<Unit> {
+                appendMessage("a")
+                throw Exception("ex")
+            }.retryWhen { e, retryTimes ->
+                // retryWhen {} 的第 2 个参数代表重试次数，你可以根据此值自行决定是否需要重试，即是否需要重新走 flow{} 内的逻辑
+                // 返回 true 则重试，返回 false 则不重试
+                appendMessage("retryWhen, exception:$e, retryTimes:$retryTimes")
+                if (retryTimes > 1) {
+                    false
+                } else {
+                    e is Exception
+                }
+            }.catch { e ->
+                appendMessage("catch: $e")
+            }.collect()
+            // a（DefaultDispatcher-worker-1）
+            // retryWhen, exception:java.lang.Exception: ex, retryTimes:0（DefaultDispatcher-worker-1）
+            // a（DefaultDispatcher-worker-1）
+            // retryWhen, exception:java.lang.Exception: ex, retryTimes:1（DefaultDispatcher-worker-1）
+            // a（DefaultDispatcher-worker-1）
+            // retryWhen, exception:java.lang.Exception: ex, retryTimes:2（DefaultDispatcher-worker-1）
+            // catch: java.lang.Exception: ex（DefaultDispatcher-worker-1）
+        }
+    }
+
+    fun sample6() {
         val flow = flow {
             for (i in 1..2) {
                 delay(500)
@@ -216,7 +267,7 @@ class Demo6 : AppCompatActivity() {
         // collect 2, c2（DefaultDispatcher-worker-1）
     }
 
-    fun sample6() {
+    fun sample7() {
         val flow = flow {
             for (i in 1..2) {
                 delay(500)
