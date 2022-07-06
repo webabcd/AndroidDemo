@@ -56,7 +56,8 @@ class Demo6 : AppCompatActivity() {
         appendMessage(myNested("webabcd")) // hello: webabcd
 
         // 匿名函数
-        appendMessage(function7(3, 7).toString()); // 21
+        appendMessage(function7_1(3, 7).toString()); // 21
+        appendMessage(function7_2(3, 7).toString()); // 21
 
         // 扩展函数
         appendMessage(3.function8_1(7).toString()) // 21
@@ -111,9 +112,11 @@ class Demo6 : AppCompatActivity() {
     fun function6(a: Int, b: Int) = a * b;
 
     // 匿名函数（fun 后面没有函数名称）
-    val function7 = fun(a: Int, b: Int): Int {
+    val function7_1 = fun(a: Int, b: Int): Int {
         return a * b
     }
+    // 匿名函数，使用简单表达式
+    val function7_2 = fun(a: Int, b: Int) = a * b
 
     // 扩展函数
     // 下面的例子用于为 Int 类型扩展方法，用这种方式扩展可以类似这么调用 3.function8_1(7)
