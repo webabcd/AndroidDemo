@@ -1,5 +1,5 @@
 /**
- * 本例用于演示类的定义（类，属性，方法，属性的 getter 和 setter，下标，静态属性，静态方法）
+ * 本例用于演示类的定义（类，构造函数，属性，方法，属性的 getter 和 setter，下标，通过伴生对象实现静态属性和静态方法，扩展方法，扩展属性）
  *
  * 别管是类，还是属性，还是方法其可见性默认都是 public 的，除了 public 外还有 private, protected, internal（同项目可见）
  * var, val, const val, lateinit 也适用于属性，其概念参见 Demo1.kt 中的说明
@@ -61,7 +61,7 @@ class Demo7_Class constructor(name: String, var country: String) {
 
 
     // 伴生对象
-    // 用于定义静态属性和静态方法
+    // 用于为主类定义静态属性和静态方法
     companion object {
         var name = "wanglei"
         fun hello(name: String): String {
@@ -70,4 +70,13 @@ class Demo7_Class constructor(name: String, var country: String) {
     }
 }
 
-
+// 扩展方法
+fun Demo7_Class.myExtensionMethod(): String { return "my extension method" }
+// 扩展属性
+val Demo7_Class.myExtensionProperty: String
+    get() = "my extension property"
+// 为伴生对象扩展方法
+fun Demo7_Class.Companion.myCompanionExtensionMethod(): String { return "my companion extension method" }
+// 为伴生对象扩展属性
+val Demo7_Class.Companion.myCompanionExtensionProperty: String
+    get() = "my companion extension property"

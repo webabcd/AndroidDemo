@@ -20,9 +20,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".Demo7"
-            android:exported="false" />
         <activity android:name=".kotlin.coroutine.Demo1" />
         <activity android:name=".kotlin.coroutine.Demo2" />
         <activity android:name=".kotlin.coroutine.Demo3" />
@@ -41,6 +38,7 @@
         <activity android:name=".storage.Android11Demo1" />
         <activity android:name=".view.ViewDemo3" />
         <activity android:name=".tools.GenerateHtmlIndex" />
+        <activity android:name=".kotlin.Demo12" />
         <activity android:name=".kotlin.Demo11" />
         <activity android:name=".kotlin.Demo10" />
         <activity android:name=".kotlin.Demo9" />

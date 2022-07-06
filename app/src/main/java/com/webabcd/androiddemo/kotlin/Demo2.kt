@@ -1,5 +1,5 @@
 /**
- * 本例用于演示 kotlin 的可空类型，数据类型判断（is, !is），可空类型的相关操作符（let, ?:, !!, as?），== 和 ===
+ * 本例用于演示 kotlin 的可空类型，数据类型判断（is, !is），类型转换，可空类型的相关操作符（let, ?:, ?, !!, as?），== 和 ===
  *
  * 注：任何类型，如果声明时不加 ? 的话都是不可为 null 的，要想为 null 则声明时必须加 ?
  */
@@ -21,8 +21,8 @@ class Demo2 : AppCompatActivity() {
 
         sample1(); // 定义可空类型
         sample2(); // == 和 ===
-        sample3(); // 可空类型的相关操作符（let, ?:, !!, as?）
-        sample4(); // 数据类型判断（is, !is）
+        sample3(); // 可空类型的相关操作符（let, ?:, ?, !!, as?）
+        sample4(); // 数据类型判断（is, !is）和类型转换
     }
 
     fun sample1() {
@@ -55,16 +55,15 @@ class Demo2 : AppCompatActivity() {
         var a: Int? = 1234;
         var b: Int? = null;
 
-        // 对象 null 是可以 toString() 的，他的结果是字符串 null
+        // 虽然对象 null 是不可以 toString() 的，但是 toString() 方法里会有判断，如果是 null 则返回字符串 null
         // ? 左侧为 null 的话就不走右边了，并返回对象 null
         appendMessage("${b.toString() == null}, ${b.toString() == "null"}, ${b?.toString() == null}"); // false, true, true
 
         // ?.let 左侧为 null 就不执行右边的大括号，反之则执行
         a?.let { appendMessage("aaa") }; // 会输出 aaa
         b?.let { appendMessage("bbb") }; // 不会输出 bbb
-        // ?.let 有一个名为 it 的默认参数，其代表 ?.let 左侧对象的值
+        // ?.let 有一个参数，其代表 ?.let 左侧对象的值
         a?.let { appendMessage("$it") }     // 1234
-        // ?.let 中你也可以为 it 指定其他名称
         a?.let { p -> appendMessage("$p") } // 1234
 
         // ?: 左侧为 null 则返回右边的值，反之则返回左边的值
@@ -73,7 +72,7 @@ class Demo2 : AppCompatActivity() {
         appendMessage("$a"); // 1234
         appendMessage("$b"); // 123456
 
-        // 对象 null 是可以 toString() 的
+        // 虽然对象 null 是不可以 toString() 的，但是 toString() 方法里会有判断，如果是 null 则返回字符串 null
         // 通过 !! 可以对一个可空对象强行取值，如果是 null 则会抛出异常
         var c: String? = null;
         try {
@@ -99,6 +98,20 @@ class Demo2 : AppCompatActivity() {
         appendMessage("${a is String?}"); // true
         // !is 是否不是指定的类型
         appendMessage("${a !is String}"); // true
+
+        // 类型转换的方法（包括 toString(), toByte(), toShort(), toInt(), toLong(), toFloat(), toDouble(), toChar() 等）
+        var b = "123".toInt()
+        // 有继承关系的类型的转换可以用 as 或 as?
+        var c = 123L as Number
+        var d = c as Long
+        // 隐式类型转换
+        var e = "abc" + 123
+        appendMessage("$b, $c, $d, $e") // 123, 123, 123, abc123
+
+        // 对于没有继承关系的类型，如果你用 as 或 as? 转换的话
+        // "123" as Int     // 这个会报错 java.lang.String cannot be cast to java.lang.Integer
+        // "123" as Int?    // 这个会报错 java.lang.String cannot be cast to java.lang.Integer
+        // "123" as? Int    // 这个转换结果为 null
     }
 
     fun appendMessage(message: String) {

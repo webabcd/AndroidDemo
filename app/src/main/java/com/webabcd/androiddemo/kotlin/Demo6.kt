@@ -49,15 +49,26 @@ class Demo6 : AppCompatActivity() {
         // 简单表达式的函数（有返回值的）
         appendMessage(function6(3, 7).toString()); // 21
 
+        // 嵌套函数
+        fun myNested(name: String): String {
+            return "hello: $name"
+        }
+        appendMessage(myNested("webabcd")) // hello: webabcd
+
         // 匿名函数
         appendMessage(function7(3, 7).toString()); // 21
 
         // 扩展函数
         appendMessage(3.function8_1(7).toString()) // 21
         appendMessage(3.function8_2(7).toString()) // 21
+        appendMessage(function8_2(3, 7).toString()) // 21
+        // infix 扩展函数的调用方式 1
+        appendMessage(3.function8_3(7).toString()) // 21
+        // infix 扩展函数的调用方式 2
+        appendMessage((3 function8_3 7).toString()) // 21
 
         // 函数作为参数
-        // 通过 :: 把一个函数当做一个参数传递到另一个函数中（如果作为参数的函数在其他对象中的话，则写成类似 obj::func 即可）
+        // 通过 :: 把指定的函数当做一个参数传递到另一个函数中（如果作为参数的函数定义在其他类中的话，则写成类似 className::functionName 即可）
         appendMessage(function10("webabcd", 40, ::function9)) // function10 function9 name:webabcd, age:40
     }
 
@@ -105,10 +116,12 @@ class Demo6 : AppCompatActivity() {
     }
 
     // 扩展函数
-    // 下面的例子为 Int 类型扩展出了一个 function8_1 方法
-    val function8_1 = fun Int.(other: Int): Int = this * other
-    // 下面的例子为 Int 类型扩展出了一个 function8_2 方法
-    fun Int.function8_2(other: Int): Int { return this * other }
+    // 下面的例子用于为 Int 类型扩展方法，用这种方式扩展可以类似这么调用 3.function8_1(7)
+    fun Int.function8_1(other: Int): Int { return this * other }
+    // 下面的例子用于为 Int 类型扩展方法，用这种方式扩展可以类似这么调用 3.function8_2(7)，也可以类似这么调用 function8_2(3, 7)
+    val function8_2 = fun Int.(other: Int): Int = this * other
+    // 扩展函数可以通过 infix 修饰，其除了可以类似这么调用 function8_3(3, 7) 外，还可以类似这么调用 3 function8_3 7
+    infix fun Int.function8_3(other: Int): Int { return this * other }
 
     // 下面两个函数用于演示函数作为参数
     fun function9(name: String, age: Int): String = "function9 name:$name, age:$age"

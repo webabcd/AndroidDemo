@@ -59,6 +59,16 @@
       }
     ]
   },
+  {
+    "title": "kotlin",
+    "node": [
+      {
+        "title": "let, also, with, run, apply",
+        "url": ".kotlin.Demo12"
+      }
+    ]
+  },
+
 
 
   {
@@ -82,11 +92,11 @@
         "url": ".kotlin.HelloWorld"
       },
       {
-        "title": "基本数据类型，位操作，变量和常量，注释可嵌套，lateinit，by lazy，字符串模板",
+        "title": "包的定义和导入，基本数据类型，位操作，变量和常量，注释可嵌套，lateinit，by lazy，字符串模板",
         "url": ".kotlin.Demo1"
       },
       {
-        "title": "可空类型，数据类型判断（is, !is），可空类型的相关操作符（let, ?:, !!, as?），== 和 ===",
+        "title": "可空类型，数据类型判断（is, !is），类型转换，可空类型的相关操作符（let, ?:, ?, !!, as?），== 和 ===",
         "url": ".kotlin.Demo2"
       },
       {
@@ -110,7 +120,7 @@
         "url": ".kotlin.Demo7"
       },
       {
-        "title": "类相关 2（类继承，接口，抽象类）",
+        "title": "类相关 2（类继承，接口，抽象类，by 委托）",
         "url": ".kotlin.Demo8"
       },
       {

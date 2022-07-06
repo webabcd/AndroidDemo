@@ -1,24 +1,25 @@
 /**
- * 本例用于演示 kotlin 的基本数据类型，位操作，变量和常量，注释可嵌套，lateinit，by lazy，字符串模板
+ * 本例用于演示 kotlin 的包的定义和导入，基本数据类型，位操作，变量和常量，注释可嵌套，lateinit，by lazy，字符串模板
  *
  * kotlin 语句结尾可以加分号，也可以不加分号（官方建议不加分号）
  */
 
-package com.webabcd.androiddemo.kotlin
+// 包的定义和导入
+package com.webabcd.androiddemo.kotlin // 定义包名时，不需要目录名和包名匹配了
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.webabcd.androiddemo.R
-import kotlinx.android.synthetic.main.activity_kotlin_helloworld.*
+import com.webabcd.androiddemo.R as xxx // 导入时允许通过 as 为类名指定别名了
+import kotlinx.android.synthetic.main.activity_kotlin_helloworld.* // 导入时支持 * 了
 
-// 常量（用 const val 修饰）,在顶层声明的示例
+// 常量（用 const val 修饰），必须在顶层声明
 const val MY_CONST1: String = "MY_CONST1";
 
 class Demo1 : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_kotlin_demo1)
+        setContentView(xxx.layout.activity_kotlin_demo1)
 
         // Any - 是根类型，但是不可空
         // Any? - 是根类型，且可空
@@ -30,7 +31,7 @@ class Demo1 : AppCompatActivity() {
         appendMessage("${a::class.simpleName}, ${a::class.qualifiedName}") // String, kotlin.String
 
         sample1(); // 基本数据类型，字符串模板
-        sample2(); // 数组
+        sample2(); // 数组，Range
         sample3(); // 位操作
         sample4(); // 变量和常量
         sample5(); // 注释可嵌套
@@ -64,8 +65,8 @@ class Demo1 : AppCompatActivity() {
 
         // 数据类型隐式转换
         var n: String = "n" + 1; // n1
-        // 数据类型强制转换
-        var o: String = "o" + 1.toString(); // o1
+        // 数据类型强制转换（包括 toString(), toByte(), toShort(), toInt(), toLong(), toFloat(), toDouble(), toChar() 等）
+        var o: String = "o" + 1.toString() + "2".toInt().toLong().toString(); // o12
 
         // && || ! 的用法和 java 中是一样的
         var p = true && true;
@@ -73,7 +74,7 @@ class Demo1 : AppCompatActivity() {
         var r = !false;
 
         // 字符转 ASCII 码
-        var s = 'a'.toInt(); // 97
+        var s = 'a'.code; // 97
         // ASCII 码转字符 // a
         var t = 97.toChar();
         // Unicode 码转字符串
@@ -96,6 +97,8 @@ class Demo1 : AppCompatActivity() {
         // 字符串模板（$变量名 或者 ${表达式}）
         // 如果我只是想输出字符串 $a 而不是输出变量 a 的值要怎么办呢，那就 \$a 即可
         appendMessage("\$a, $a, $b, $c, $d, $e, $f, $g, $h, $i, $j, $k, $l, $m, $n, $o, $p, $q, $r, $s, $t, $u, $v, $w, $x, $y, ${ 1 + 1 }");
+        // 当然，下面这种字符串格式化的方式也是支持的
+        appendMessage(String.format("%s, %d, %b, %.2f", "abc", 123, false, 3.14159)) // abc, 123, false, 3.14
     }
 
     fun sample2() {
@@ -117,7 +120,14 @@ class Demo1 : AppCompatActivity() {
         // 第 2 个参数：一个表达式，根据元素的索引位置指定元素值
         var f = Array(5, { index -> (index * 2).toString() }); // "0", "2", "4", "6", "8"
 
-        appendMessage("${a[1]}, ${b[1]}, ${c[1]}, ${d[1]}, ${e[1]}, ${f[1]}");
+        // 通过 .. 定义一个 Range（范围），这个范围大于等于左边的，小于等于右边的
+        var g = 1..3 // 这个范围包括 1 2 3
+        // 通过 in 判断某个数是否在指定范围中
+        var h = 1 in g // true
+        // 通过 !in 判断某个数是否不在指定范围中
+        var i = 3 !in g // false
+
+        appendMessage("${a[1]}, ${b[1]}, ${c[1]}, ${d[1]}, ${e[1]}, ${f[1]}, $h, $i");
     }
 
     fun sample3() {
@@ -162,18 +172,18 @@ class Demo1 : AppCompatActivity() {
          */
     }
 
-    // lateinit 延迟初始化
-    // 声明类级别的变量必须要初始化
-    // 如果不想初始化则可以用 lateinit 修饰（但是 Int, Float, Boolean 等值类型的变量是不支持的）
+    // lateinit - 属性延迟初始化
+    // 声明类级别的变量必须要初始化，如果不想初始化则可以用 lateinit 修饰（但是 Int, Float, Boolean 等值类型的变量是不支持的）
     lateinit var var_lateinit: String
     fun sample6() {
         var_lateinit = "abc"
         appendMessage("$var_lateinit");
     }
 
-    // by lazy 延迟初始化（第一次调用时初始化）
+    // by lazy - 属性懒初始化
+    // 当你第一次调用的时候才会初始化
     val var_lazy: String by lazy {
-        appendMessage("xxxxxxxxxx"); // 只有第一次调用时会走到这里
+        appendMessage("xxxxxxxxxx"); // 第一次调用的时候才会初始化，才会走到这里
         "var_lazy"
     }
     fun sample7() {

@@ -53,19 +53,21 @@ class Demo9 : AppCompatActivity() {
     }
 
     fun sample3() {
-        var a = Demo9_DataClass("webabcd", 40);
-        appendMessage("$a") // Demo9_DataClass{name=webabcd,age=40}
+        var a = Demo9_DataClass("webabcd", 40)
+        a.salary = 5000
+        // 数据对象支持 toString(), componentN()
+        appendMessage("$a, ${a.component1()}, ${a.component2()}") // Demo9_DataClass(name=webabcd,age=40), webabcd, 40
 
-        a.name = "wanglei"
-        appendMessage("$a") // Demo9_DataClass{name=wanglei,age=40}
+        // 数据对象支持 equals()
+        appendMessage("${a == Demo9_DataClass("webabcd", 40)}") // true
 
-        // copy() - 复制数据对象，且可以同时修改只读变量
+        // 数据对象支持 copy()，其用于复制数据对象，且可以同时修改只读变量
         var b = a.copy(age = 100)
-        appendMessage("$b")  // Demo9_DataClass{name=wanglei,age=100}
+        appendMessage("$b")  // Demo9_DataClass(name=wanglei,age=100)
 
         // 数据对象支持解构
         val (name, age) = b
-        appendMessage("name:$name, age$age") // name:wanglei, age:100
+        appendMessage("name:$name, age:$age") // name:wanglei, age:100
 
         // 系统自带的 Pair 就是一个数据类
         var p = Pair(1, "abc")

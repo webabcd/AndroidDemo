@@ -23,9 +23,10 @@ class Demo3 : AppCompatActivity() {
 
         sample1(); // 通过 if..else 直接给变量赋值
         sample2(); // for 语句, repeat 语句
-        sample3(); // 遍历 iterator 对象
-        sample4(); // when 语句
-        sample5(); // 异常处理 try/catch/finally
+        sample3(); // continue, break, return 跳出指定的循环
+        sample4(); // 遍历 iterator 对象
+        sample5(); // when 语句
+        sample6(); // 异常处理 try/catch/finally
     }
 
     fun sample1() {
@@ -92,17 +93,35 @@ class Demo3 : AppCompatActivity() {
         appendMessage("$g"); // 0112233445
 
         // repeat() - 重复执行指定的次数
-        // 有一个名为 it 的默认参数，其代表当前的重复次数，从 0 开始
+        // repeat() { } 有一个参数，其代表当前的重复次数，从 0 开始
         repeat(3) {
             appendMessage("x$it")   // x0 x1 x2
         }
-        // 你也可以为 it 指定其他名称
         repeat(3) { p ->
             appendMessage("x$p")    // x0 x1 x2
         }
     }
 
     fun sample3() {
+        // kotlin 中的 continue, break, return 可以退出指定的循环
+
+        // 为循环打标签，本例中为这个 for 打了一个名为 myfor 的标签
+        myfor@ for (i in 0 .. 5) {
+            appendMessage("$i")
+            for (j in 10 .. 15) {
+                appendMessage("$j")
+                for (k in 20 .. 25) {
+                    appendMessage("$k")
+
+                    // 一般的 break 是退出最近的循环，kotlin 可以根据标签名退出指定的循环
+                    // 本例为退出标签名为 myfor 的循环
+                    break@myfor
+                }
+            }
+        }
+    }
+
+    fun sample4() {
         var array = arrayOf(1, "2", false, 4, 5)
 
         // 获取 iterator 对象
@@ -117,30 +136,53 @@ class Demo3 : AppCompatActivity() {
     }
 
     // when 类似 switch，但是 when 没有 break，因为其一旦匹配到就自动 break
-    fun sample4() {
-        var a = Random().nextInt(10);
+    fun sample5() {
+        var a = Random().nextInt(10)
+        appendMessage("a=$a")
 
         // 判断 when 指定的变量
         when(a) {
             0, 1, 2, 3, 4 -> {
-                appendMessage("01234");
+                appendMessage("01234")
             }
             5 -> {
-                appendMessage("5");
+                appendMessage("5")
             }
             else -> {
-                appendMessage("6789");
+                appendMessage("6789")
             }
         }
 
         // 判断 when 指定的表达式
-        when (a < 5){
+        when (a < 5) {
             true -> {
                 appendMessage("a < 5")
             }
             false ->{
                 appendMessage("a >= 5")
             }
+        }
+
+        // 可以通过 when 直接给变量赋值
+        var b = when (a) {
+            0 -> {
+                "0"
+            }
+            1 ->{
+                "0"
+            }
+            else ->
+            {
+                "23456789"
+            }
+        }
+        appendMessage("$b")
+
+        // 可以不给 when 提供参数，这样的 when 其实就是 if..else
+        when {
+            a == 0 -> appendMessage("0")
+            a == 1 -> appendMessage("1")
+            else -> appendMessage("23456789")
         }
 
         // 在 when 中使用 in 或 !in
@@ -161,7 +203,7 @@ class Demo3 : AppCompatActivity() {
     }
 
     // 异常处理 try/catch/finally
-    fun sample5() {
+    fun sample6() {
         try {
             throw IOException("I am a IOException")
         } catch (e: IOException) {

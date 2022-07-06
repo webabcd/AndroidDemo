@@ -20,6 +20,9 @@ class Demo4 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_kotlin_demo4)
 
+        // 字符串比较
+        appendMessage("${"a" == "a"}, ${"a".equals("A", true)}") // true, true
+
         sample1(); // 字符串的查找、替换、截取、分割
         sample2(); // 正则表达式
         sample3(); // 字符串的空判断，前缀判断，后缀判断，包含判断，其他操作

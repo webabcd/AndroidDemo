@@ -21,7 +21,7 @@ class Demo5 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_kotlin_demo5)
 
-        sample1(); // 数组
+        sample1(); // 数组，Range
         sample2(); // 集合 List, Set, Map
         sample3(); // 查找某个位置的元素，遍历元素
         sample4(); // 查找符合指定条件的元素，查找指定范围的元素，元素排重
@@ -39,6 +39,14 @@ class Demo5 : AppCompatActivity() {
         // in - 用于判断指定的元素是否在数组中
         // !in - 用于判断指定的元素是否不在数组中
         appendMessage("${a[0]}, ${a.component1()}, ${ 1 in a}, ${1 !in a}"); // 1, 1, true, false
+
+        // 通过 .. 定义一个 Range（范围），这个范围大于等于左边的，小于等于右边的
+        var b = 1..3 // 这个范围包括 1 2 3
+        // 通过 in 判断某个数是否在指定范围中
+        var c = 1 in b
+        // 通过 !in 判断某个数是否不在指定范围中
+        var d = 3 !in b
+        appendMessage("$c, $d") // true, false
     }
 
     fun sample2() {
