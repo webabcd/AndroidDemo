@@ -1,5 +1,5 @@
 /**
- * 本例用于演示 let, also, with, run, apply 的用法
+ * 本例用于演示 let, also, with, run, runCatching, apply 的用法
  */
 
 package com.webabcd.androiddemo.kotlin
@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.webabcd.androiddemo.R
 import kotlinx.android.synthetic.main.activity_kotlin_helloworld.*
+import java.io.IOException
 
 class Demo12 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,7 +18,7 @@ class Demo12 : AppCompatActivity() {
         sample1() // let
         sample2() // also
         sample3() // with
-        sample4() // run
+        sample4() // run, runCatching
         sample5() // apply
     }
 
@@ -81,6 +82,27 @@ class Demo12 : AppCompatActivity() {
             "xyz" // 这是返回值。当然，你也可以通过 return 显式的返回一个值，比如 return@run  "xyz"
         }
         appendMessage("$b") // xyz
+
+        // runCatching 就是 run 和 try/catch/finally 的结合体
+        val c = a?.runCatching {
+            throw Exception("I am an Exception")
+        }?.onSuccess {
+            appendMessage("onSuccess")
+        }?.onFailure {
+            appendMessage("onFailure: $it") // onFailure: java.lang.Exception: I am an Exception
+        }
+        // 获取返回值，有异常则返回 null
+        appendMessage("${c?.getOrNull()}") // null
+
+        val d = a!!.runCatching {
+            "xyz" // 最后一个表达式的值就是返回值。当然，你也可以通过 return 显式的返回一个值，比如 return@runCatching "xyz"
+        }.onSuccess {
+            appendMessage("onSuccess") // onSuccess
+        }.onFailure {
+            appendMessage("onFailure: $it")
+        }
+        // 获取返回值，有异常则返回 null
+        appendMessage("${d.getOrNull()}") // xyz
     }
 
     fun sample5() {

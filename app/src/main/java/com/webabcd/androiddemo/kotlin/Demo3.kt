@@ -1,5 +1,5 @@
 /**
- * 本例用于演示 kotlin 的语句（if..else, while, do..while, for, repeat, when, continue, break, return, 遍历 iterator 对象, try/catch/finally）
+ * 本例用于演示 kotlin 的语句（if..else, while, do..while, for, repeat, when, continue, break, return, 遍历 iterator 对象, try/catch/finally, kotlin.runCatching）
  */
 
 package com.webabcd.androiddemo.kotlin
@@ -26,7 +26,7 @@ class Demo3 : AppCompatActivity() {
         sample3(); // continue, break, return 跳出指定的循环
         sample4(); // 遍历 iterator 对象
         sample5(); // when 语句
-        sample6(); // 异常处理 try/catch/finally
+        sample6(); // 异常处理 try/catch/finally, kotlin.runCatching
     }
 
     fun sample1() {
@@ -202,17 +202,38 @@ class Demo3 : AppCompatActivity() {
         }
     }
 
-    // 异常处理 try/catch/finally
     fun sample6() {
+        // 异常处理 try/catch/finally
         try {
             throw IOException("I am a IOException")
         } catch (e: IOException) {
-            appendMessage("catch $e")
+            appendMessage("catch $e") // catch java.io.IOException: I am a IOException
         } catch (e: Exception) {
             appendMessage("catch $e")
         } finally {
-            appendMessage("finally")
+            appendMessage("finally") // finally
         }
+
+        // 异常处理 kotlin.runCatching
+        val a = kotlin.runCatching {
+            throw Exception("I am an Exception")
+        }.onSuccess {
+            appendMessage("onSuccess")
+        }.onFailure {
+            appendMessage("onFailure: $it") // onFailure: java.lang.Exception: I am an Exception
+        }
+        // 获取返回值，有异常则返回 null
+        appendMessage("${a.getOrNull()}") // null
+
+        val b = kotlin.runCatching {
+            "xyz" // 最后一个表达式的值就是返回值。当然，你也可以通过 return 显式的返回一个值，比如 return@runCatching "xyz"
+        }.onSuccess {
+            appendMessage("onSuccess") // onSuccess
+        }.onFailure {
+            appendMessage("onFailure: $it")
+        }
+        // 获取返回值，有异常则返回 null
+        appendMessage("${b.getOrNull()}") // xyz
     }
 
     fun appendMessage(message: String) {
