@@ -27,6 +27,15 @@
     ]
   },
   {
+    "title": "UI",
+    "node": [
+      {
+        "title": "监听配置变化（比如横竖屏切换等）",
+        "url": ".ui.ConfigurationChangeDemo1"
+      }
+    ]
+  },
+  {
     "title": "kotlin 协程",
     "node": [
       {
@@ -72,8 +81,16 @@
     "title": "jetpack",
     "node": [
       {
-        "title": "LiveData",
-        "url": ".jetpack.lifecycle.LiveDataDemo"
+        "title": "Lifecycle",
+        "url": ".jetpack.lifecycle.LifecycleDemo"
+      },
+      {
+        "title": "LiveData 和 ViewModel 基础",
+        "url": ".jetpack.lifecycle.LiveDataViewModel"
+      },
+      {
+        "title": "LiveData 指定的对象的某个属性发生了变化时通知给观察者",
+        "url": ".jetpack.lifecycle.LiveDataViewModel2"
       }
     ]
   },

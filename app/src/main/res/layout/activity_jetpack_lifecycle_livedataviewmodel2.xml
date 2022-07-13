@@ -9,7 +9,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAllCaps="false"
-        android:text="aaaaa"/>
+        android:text="更新 LiveData 指定的对象的某个属性"/>
 
     <TextView
         android:id="@+id/textView1"

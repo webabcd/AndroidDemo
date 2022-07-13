@@ -7,6 +7,7 @@ package com.webabcd.androiddemo.kotlin.coroutine
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import com.webabcd.androiddemo.R
 import kotlinx.android.synthetic.main.activity_kotlin_coroutine_demo5.*
 import kotlinx.coroutines.*
@@ -156,7 +157,7 @@ class Demo5 : AppCompatActivity() {
             textView1.append(log);
             textView1.append("\n");
 
-            println(log)
+            Log.d("coroutine", log)
         }
     }
 }

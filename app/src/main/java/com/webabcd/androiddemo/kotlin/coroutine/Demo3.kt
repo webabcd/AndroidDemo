@@ -5,11 +5,10 @@
 
 package com.webabcd.androiddemo.kotlin.coroutine
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import com.webabcd.androiddemo.R
-import com.webabcd.androiddemo.kotlin.HelloWorld_Java
-import com.webabcd.androiddemo.kotlin.HelloWorld_Kotlin
 import kotlinx.android.synthetic.main.activity_kotlin_coroutine_demo2.*
 import kotlinx.android.synthetic.main.activity_kotlin_coroutine_demo3.*
 import kotlinx.android.synthetic.main.activity_kotlin_coroutine_demo3.button1
@@ -21,9 +20,7 @@ import kotlinx.android.synthetic.main.activity_kotlin_coroutine_demo3.button6
 import kotlinx.android.synthetic.main.activity_kotlin_coroutine_demo3.textView1
 import kotlinx.coroutines.*
 import java.text.SimpleDateFormat
-import java.time.format.DateTimeFormatter
 import java.util.*
-import kotlin.system.measureTimeMillis
 
 class Demo3 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -195,7 +192,7 @@ class Demo3 : AppCompatActivity() {
             textView1.append(log);
             textView1.append("\n");
 
-            println(log)
+            Log.d("coroutine", log)
         }
     }
 }

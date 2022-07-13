@@ -41,12 +41,12 @@ class Demo8 : AppCompatActivity() {
     }
 
     fun sample4() {
-        // 接口的实现委托给指定的参数（通过 by 委托）
+        // 接口的实现委托给指定的参数（即通过 by 委托实现接口代理）
         var a = MyClass1("webabcd")
         var b = MyClass2(a)
         appendMessage("${a.hello()}, ${b.hello()}") // hello: webabcd, hello: webabcd
 
-        // 属性的实现委托给指定的类（通过 by 委托）
+        // 属性的实现委托给指定的类（即通过 by 委托实现属性代理）
         var c = MyClass3()
         c.myName = "webabcd"
         appendMessage("${c.myName}") // property name:myName, value:webabcd
