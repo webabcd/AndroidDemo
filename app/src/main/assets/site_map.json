@@ -1,102 +1,5 @@
 [
   {
-    "title": "常用工具",
-    "node": [
-      {
-        "title": "监听 logcat 日志",
-        "url": ".utils.Demo3"
-      }
-    ]
-  },
-  {
-    "title": "Native Development Kit",
-    "node": [
-      {
-        "title": "NDK 简单示例",
-        "url": ".ndk.NdkDemo1"
-      }
-    ]
-  },
-  {
-    "title": "Resource",
-    "node": [
-      {
-        "title": "布局 xml 基础",
-        "url": ".resource.XmlDemo1"
-      }
-    ]
-  },
-  {
-    "title": "UI",
-    "node": [
-      {
-        "title": "监听配置变化（比如横竖屏切换等）",
-        "url": ".ui.ConfigurationChangeDemo1"
-      }
-    ]
-  },
-  {
-    "title": "kotlin 协程",
-    "node": [
-      {
-        "title": "协程基础（CoroutineScope, 为 CoroutineScope 扩展方法, runBlocking, launch, async, await, suspend, withContext, 设置/获取 CoroutineScope 的名称）",
-        "url": ".kotlin.coroutine.Demo1"
-      },
-      {
-        "title": "Job 的等待与取消，超时处理，取消协程",
-        "url": ".kotlin.coroutine.Demo2"
-      },
-      {
-        "title": "协程的顺序执行，并行执行，async 的立即执行与懒启动，以及 async/await 的其他说明",
-        "url": ".kotlin.coroutine.Demo3"
-      },
-      {
-        "title": "Channel（信道，用于在不同协程之间传输数据）",
-        "url": ".kotlin.coroutine.Demo4"
-      },
-      {
-        "title": "通过 ticker 信道实现类似计时器的效果，协程的异常处理，解决协程的并发问题",
-        "url": ".kotlin.coroutine.Demo5"
-      },
-      {
-        "title": "Flow（异步流，通过 flow 发送和接收数据，flow 的超时处理，取消处理，异常处理，重试处理，指定 flow 阶段的运行协程使其不同于 collect 阶段的运行协程，让 collect 阶段运行到其他协程从而不阻塞当前协程）",
-        "url": ".kotlin.coroutine.Demo6"
-      },
-      {
-        "title": "Flow（异步流，各种操作符的使用 buffer, conflate, collectLatest, drop, take, filter, map, transform, onEach, first, last, single, reduce, zip, combine, flatMapConcat, flatMapMerge 等)",
-        "url": ".kotlin.coroutine.Demo7"
-      }
-    ]
-  },
-  {
-    "title": "kotlin",
-    "node": [
-      {
-        "title": "let, also, with, run, runCatching, apply",
-        "url": ".kotlin.Demo12"
-      }
-    ]
-  },
-  {
-    "title": "jetpack",
-    "node": [
-      {
-        "title": "Lifecycle",
-        "url": ".jetpack.lifecycle.LifecycleDemo"
-      },
-      {
-        "title": "LiveData 和 ViewModel 基础",
-        "url": ".jetpack.lifecycle.LiveDataViewModel"
-      },
-      {
-        "title": "LiveData 指定的对象的某个属性发生了变化时通知给观察者",
-        "url": ".jetpack.lifecycle.LiveDataViewModel2"
-      }
-    ]
-  },
-
-
-  {
     "title": "java",
     "node": [
       {
@@ -159,6 +62,60 @@
       {
         "title": "泛型",
         "url": ".kotlin.Demo11"
+      },
+      {
+        "title": "let, also, with, run, runCatching, apply",
+        "url": ".kotlin.Demo12"
+      }
+    ]
+  },
+  {
+    "title": "kotlin 协程",
+    "node": [
+      {
+        "title": "协程基础（CoroutineScope, 为 CoroutineScope 扩展方法, runBlocking, launch, async, await, suspend, withContext, 设置/获取 CoroutineScope 的名称）",
+        "url": ".kotlin.coroutine.Demo1"
+      },
+      {
+        "title": "Job 的等待与取消，超时处理，取消协程",
+        "url": ".kotlin.coroutine.Demo2"
+      },
+      {
+        "title": "协程的顺序执行，并行执行，async 的立即执行与懒启动，以及 async/await 的其他说明",
+        "url": ".kotlin.coroutine.Demo3"
+      },
+      {
+        "title": "Channel（信道，用于在不同协程之间传输数据）",
+        "url": ".kotlin.coroutine.Demo4"
+      },
+      {
+        "title": "通过 ticker 信道实现类似计时器的效果，协程的异常处理，解决协程的并发问题",
+        "url": ".kotlin.coroutine.Demo5"
+      },
+      {
+        "title": "Flow（异步流，通过 flow 发送和接收数据，flow 的超时处理，取消处理，异常处理，重试处理，指定 flow 阶段的运行协程使其不同于 collect 阶段的运行协程，让 collect 阶段运行到其他协程从而不阻塞当前协程）",
+        "url": ".kotlin.coroutine.Demo6"
+      },
+      {
+        "title": "Flow（异步流，各种操作符的使用 buffer, conflate, collectLatest, drop, take, filter, map, transform, onEach, first, last, single, reduce, zip, combine, flatMapConcat, flatMapMerge 等)",
+        "url": ".kotlin.coroutine.Demo7"
+      }
+    ]
+  },
+  {
+    "title": "jetpack",
+    "node": [
+      {
+        "title": "Lifecycle",
+        "url": ".jetpack.lifecycle.LifecycleDemo"
+      },
+      {
+        "title": "LiveData 和 ViewModel 基础",
+        "url": ".jetpack.lifecycle.LiveDataViewModel"
+      },
+      {
+        "title": "LiveData 指定的对象的某个属性发生了变化时通知给观察者",
+        "url": ".jetpack.lifecycle.LiveDataViewModel2"
       }
     ]
   },
@@ -702,6 +659,10 @@
       {
         "title": "沉浸式（关于 statusBar 和 navigationBar 的常用效果）",
         "url": ".ui.ImmersiveDemo2"
+      },
+      {
+        "title": "监听配置变化（比如横竖屏切换等）",
+        "url": ".ui.ConfigurationChangeDemo1"
       }
     ]
   },
@@ -749,6 +710,10 @@
   {
     "title": "Resource",
     "node": [
+      {
+        "title": "布局 xml 基础",
+        "url": ".resource.XmlDemo1"
+      },
       {
         "title": "国际化（多语言）",
         "url": ".resource.LocalizationDemo1"
@@ -1111,6 +1076,10 @@
       {
         "title": "获取唯一标识",
         "url": ".utils.Demo2"
+      },
+      {
+        "title": "监听 logcat 日志",
+        "url": ".utils.Demo3"
       }
     ]
   },
@@ -1120,6 +1089,15 @@
       {
         "title": "Singleton（单例模式）",
         "url": ".designpattern.Singleton"
+      }
+    ]
+  },
+  {
+    "title": "Native Development Kit",
+    "node": [
+      {
+        "title": "NDK 简单示例",
+        "url": ".ndk.NdkDemo1"
       }
     ]
   },

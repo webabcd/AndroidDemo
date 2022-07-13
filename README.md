@@ -1,26 +1,38 @@
 ﻿# Android Demo
 
 
-#### Native Development Kit
-1. NDK 简单示例
-
 #### java
 1. Callback
 2. 位操作
 
 #### kotlin
-1. hello world
-2. 基本数据类型，位操作，变量和常量，注释可嵌套，lateinit，by lazy，字符串模板
-3. 可空类型，数据类型判断（is, !is），可空类型的相关操作符（let, ?:, !!, as?），== 和 ===
-4. 语句（if..else, while, do..while, for, repeat, when, continue, break, return, 遍历 iterator 对象, try/catch/finally）
+1. hello world，kotlin 调用 java，java 调用 kotlin
+2. 包的定义和导入，基本数据类型，位操作，变量和常量，注释可嵌套，lateinit，by lazy，字符串模板
+3. 可空类型，数据类型判断（is, !is），类型转换，可空类型的相关操作符（let, ?:, ?, !!, as?），== 和 ===
+4. 语句（if..else, while, do..while, for, repeat, when, continue, break, return, 遍历 iterator 对象, try/catch/finally, kotlin.runCatching）
 5. 字符串的常用操作
 6. 数组和集合的常用操作
 7. 函数（方法）
 8. 类相关 1（基础）
-9. 类相关 2（类继承，接口，抽象类）
+9. 类相关 2（类继承，接口，抽象类，by 委托）
 10. 类相关 3（枚举，密封类，数据类）
 11. Lambda 表达式，高阶函数
 12. 泛型
+13. let, also, with, run, runCatching, apply
+
+#### kotlin 协程
+1. 协程基础（CoroutineScope, 为 CoroutineScope 扩展方法, runBlocking, launch, async, await, suspend, withContext, 设置/获取 CoroutineScope 的名称）
+2. Job 的等待与取消，超时处理，取消协程
+3. 协程的顺序执行，并行执行，async 的立即执行与懒启动，以及 async/await 的其他说明
+4. Channel（信道，用于在不同协程之间传输数据）
+5. 通过 ticker 信道实现类似计时器的效果，协程的异常处理，解决协程的并发问题
+6. Flow（异步流，通过 flow 发送和接收数据，flow 的超时处理，取消处理，异常处理，重试处理，指定 flow 阶段的运行协程使其不同于 collect 阶段的运行协程，让 collect 阶段运行到其他协程从而不阻塞当前协程）
+7. Flow（异步流，各种操作符的使用 buffer, conflate, collectLatest, drop, take, filter, map, transform, onEach, first, last, single, reduce, zip, combine, flatMapConcat, flatMapMerge 等)
+
+#### jetpack
+1. Lifecycle
+2. LiveData 和 ViewModel 基础
+3. LiveData 指定的对象的某个属性发生了变化时通知给观察者
 
 #### view（基础）
 1. 位置相关
@@ -168,6 +180,7 @@
 12. 导航栏（navigationBar）
 13. 沉浸式（immersive）
 14. 沉浸式（关于 statusBar 和 navigationBar 的常用效果）
+15. 监听配置变化（比如横竖屏切换等）
 
 #### Animation
 1. Matrix 变换（用于做位移，旋转，缩放，扭曲等变换）
@@ -181,7 +194,8 @@
 9. 属性动画（Property Animation）中的 ViewPropertyAnimator
 
 #### Resource
-1. 国际化（多语言）
+1. 布局 xml 基础
+2. 国际化（多语言）
 
 #### 存储
 1. 通过 context 操作 files 目录中的文件
@@ -280,9 +294,13 @@
 #### 常用工具
 1. 在 KeyStore 中保存秘钥
 2. 获取唯一标识
+3. 监听 logcat 日志
 
 #### 设计模式
 1. Singleton（单例模式）
+
+#### Native Development Kit
+1. NDK 简单示例
 
 #### 项目工具
 1. 生成 README.md
