@@ -1,8 +1,8 @@
 /**
- * LiveData 和 ViewModel
+ * LiveData
  * 本例用于演示如何实现 LiveData 指定的对象的某个属性发生了变化时通知给观察者
  *
- * 关于 LiveData 指定的对象发生了变化时通知给观察者，以及 LiveData 和 ViewModel 的基础请参见 LiveDataViewModel.kt
+ * 关于 LiveData 指定的对象发生了变化时通知给观察者，以及 LiveData 的基础请参见 LiveDataDemo.kt
  */
 
 package com.webabcd.androiddemo.jetpack.lifecycle
@@ -13,17 +13,17 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.webabcd.androiddemo.R
-import kotlinx.android.synthetic.main.activity_jetpack_lifecycle_livedataviewmodel2.*
+import kotlinx.android.synthetic.main.activity_jetpack_lifecycle_livedatademo2.*
 import java.text.SimpleDateFormat
 import java.util.*
 
-class LiveDataViewModel2 : AppCompatActivity() {
+class LiveDataDemo2 : AppCompatActivity() {
 
     private lateinit var viewModel: MyViewModel2
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_jetpack_lifecycle_livedataviewmodel2)
+        setContentView(R.layout.activity_jetpack_lifecycle_livedatademo2)
 
         viewModel = ViewModelProvider(this)[MyViewModel2::class.java]
         viewModel.myLiveData.observe(this) {

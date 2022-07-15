@@ -28,11 +28,12 @@ package com.webabcd.androiddemo.jetpack.lifecycle
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.LifecycleObserver
-import androidx.lifecycle.OnLifecycleEvent
+import androidx.lifecycle.*
 import kotlinx.android.synthetic.main.activity_jetpack_lifecycle_lifecycledemo.*
 import com.webabcd.androiddemo.R
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class LifecycleDemo : AppCompatActivity() {
 
@@ -49,10 +50,43 @@ class LifecycleDemo : AppCompatActivity() {
             textView1.text = "${this.lifecycle.currentState}"
         }
 
+        /**
+         * 引用 implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.5.0" 后
+         * LifecycleOwner 会有一个扩展属性 lifecycleScope，其可以将协程绑定到 LifecycleOwner 生命周期，即 LifecycleOwner 销毁时，协程也会自动被取消
+         */
+        lifecycleScope.launch {
+            withContext(Dispatchers.IO) {
+
+            }
+        }
+        lifecycleScope.launch(Dispatchers.IO){
+
+        }
+        lifecycleScope.launch {
+            whenCreated {
+                // 最后一个表达式就是 whenCreated 的返回值
+            }
+            whenStarted {
+                // 最后一个表达式就是 whenStarted 的返回值
+            }
+            whenResumed {
+                // 最后一个表达式就是 whenResumed 的返回值
+            }
+        }
+        lifecycleScope.launchWhenCreated {
+            // 返回值是 Job 对象
+        }
+        lifecycleScope.launchWhenStarted {
+            // 返回值是 Job 对象
+        }
+        lifecycleScope.launchWhenResumed {
+            // 返回值是 Job 对象
+        }
     }
 }
 
 // 继承 LifecycleObserver 实现一个自定义的生命周期观察者
+// 注：下面的 @OnLifecycleEvent 在 androidx.lifecycle 2.4.0 中废弃了，建议使用 LifecycleEventObserver 替代 LifecycleObserver
 class MyLifecycleObserver : LifecycleObserver {
 
     // 触发任何事件前都会先触发这个事件

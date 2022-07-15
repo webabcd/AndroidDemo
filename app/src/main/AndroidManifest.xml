@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.webabcd.androiddemo">
+    package="com.webabcd.androiddemo" >
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -19,10 +19,11 @@
         android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme" >
         <activity android:name=".jetpack.lifecycle.LifecycleDemo" />
-        <activity android:name=".jetpack.lifecycle.LiveDataViewModel" />
-        <activity android:name=".jetpack.lifecycle.LiveDataViewModel2" />
+        <activity android:name=".jetpack.lifecycle.LiveDataDemo" />
+        <activity android:name=".jetpack.lifecycle.LiveDataDemo2" />
+        <activity android:name=".jetpack.lifecycle.ViewModelDemo" />
         <activity android:name=".kotlin.coroutine.Demo1" />
         <activity android:name=".kotlin.coroutine.Demo2" />
         <activity android:name=".kotlin.coroutine.Demo3" />
@@ -55,7 +56,9 @@
         <activity android:name=".utils.Demo2" />
         <activity android:name=".kotlin.Demo1" />
         <activity android:name=".kotlin.Demo2" />
-        <activity android:name=".ui.ConfigurationChangeDemo1" android:configChanges="orientation|screenSize" />
+        <activity
+            android:name=".ui.ConfigurationChangeDemo1"
+            android:configChanges="orientation|screenSize" />
         <activity android:name=".ui.ImmersiveDemo2" />
         <activity android:name=".ui.ImmersiveDemo1" />
         <activity android:name=".java.BitDemo1" />
@@ -198,8 +201,9 @@
         <activity android:name=".view.listview.ListViewDemo3" />
         <activity android:name=".view.listview.ListViewDemo2" />
         <activity android:name=".view.listview.ListViewDemo1" />
-        <activity android:name=".MainActivity"
-            android:exported="true">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -1,5 +1,5 @@
 /**
- * LiveData 和 ViewModel
+ * LiveData
  * 本例用于演示如何通过 LiveData 实现数据变化的通知与接收，以及 LiveData 如何结合 ViewModel 使用
  *
  * LiveData
@@ -8,7 +8,7 @@
  *   activity 不在前台就不通知，当 activity 返回前台时会先通知一次之前没能通知的最近一次的通知，然后继续正常的通知
  * ViewModel
  *   注重结合生命周期管理数据，发生 configuration change（比如横竖屏切换等）时不会销毁数据（关于 configuration change 请参见 /ui/ConfigurationChangeDemo1.java）
- *   当不需要 ViewModel 时，比如 activity 调用 finish() 了，此时绑定到此 activity 的 ViewModel 会自动调用自己的 onCleared() 方法，然后销毁自己
+ *   当不需要 ViewModel 时，比如 activity 将要销毁时，此时绑定到此 activity 的 ViewModel 会自动调用自己的 onCleared() 方法，然后销毁自己
  * 官方建议 LiveData 和 ViewModel 配合使用，在 ViewModel 中使用 LiveData，这样当 ViewModel 销毁的时候，LiveData 就跟着销毁了
  *
  *
@@ -36,20 +36,20 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.webabcd.androiddemo.R
-import kotlinx.android.synthetic.main.activity_jetpack_lifecycle_livedataviewmodel.*
+import kotlinx.android.synthetic.main.activity_jetpack_lifecycle_livedatademo.*
 import kotlinx.coroutines.*
 import java.text.SimpleDateFormat
 import java.util.*
 
-class LiveDataViewModel : AppCompatActivity() {
+class LiveDataDemo : AppCompatActivity() {
 
     private lateinit var viewModel: MyViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_jetpack_lifecycle_livedataviewmodel)
+        setContentView(R.layout.activity_jetpack_lifecycle_livedatademo)
 
-        // 创建一个指定的 ViewModel 对象，并绑定到当前的 activity
+        // 创建一个指定的 ViewModel 对象，并绑定到指定的 activity
         viewModel = ViewModelProvider(this)[MyViewModel::class.java]
         // 为 ViewModel 中的 LiveData 指定观察者，并将这个观察者绑定到当前的 activity
         viewModel.myName.observe(this) {
@@ -73,7 +73,7 @@ class LiveDataViewModel : AppCompatActivity() {
 
         // 跳转到其他 activity 然后再返回来，观察一下这个过程中的效果
         button1.setOnClickListener {
-            startActivity(Intent(this@LiveDataViewModel, LifecycleDemo::class.java))
+            startActivity(Intent(this@LiveDataDemo, LifecycleDemo::class.java))
         }
     }
 }
@@ -97,7 +97,7 @@ class MyViewModel: ViewModel() {
         // _myName.value = name
     }
 
-    // 当不需要 ViewModel 时，比如 activity 调用 finish() 了，此时绑定到此 activity 的 ViewModel 会自动调用自己的 onCleared() 方法，然后销毁自己
+    // 当不需要 ViewModel 时，比如 activity 将要销毁时，此时绑定到此 activity 的 ViewModel 会自动调用自己的 onCleared() 方法，然后销毁自己
     // 如果需要的话，你可以在这里清理相关资源
     override fun onCleared() {
         super.onCleared()
