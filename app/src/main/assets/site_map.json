@@ -5,6 +5,10 @@
       {
         "title": "ViewModel 基础以及 viewModelScope",
         "url": ".jetpack.lifecycle.ViewModelDemo"
+      },
+      {
+        "title": "DataBinding（MVVM）",
+        "url": ".jetpack.lifecycle.DataBindingDemo"
       }
     ]
   },

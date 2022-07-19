@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--如需使用 DataBinding，则布局的根节点必须是 layout-->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--
+        本布局文件的文件名为 activity_jetpack_lifecycle_databindingdemo.xml
+        gradle 会为其生成一个名为 com.webabcd.androiddemo.databinding.ActivityJetpackLifecycleDatabindingdemoBinding 的类
+    -->
+    <data>
+
+        <!--
+            在 data 中也可以指定生成的类的类名
+            下面这句 gradle 会为其生成一个名为 com.webabcd.androiddemo.databinding.MyBinding 的类
+        -->
+        <!--data class="MyBinding"-->
+
+        <!--
+            在 data 中也可以指定生成的类的类全名
+            下面这句 gradle 会为其生成一个名为 com.webabcd.CustomBinding 的类
+        -->
+        <!--data class="com.webabcd.CustomBinding"-->
+
+        <!--声明一个指定名称的变量，并指定其类全名-->
+        <variable name="myModel" type="com.webabcd.androiddemo.jetpack.lifecycle.MyDataBindingModel" />
+
+        <!--先通过类全名导入一个类，然后再声明一个指定名称的变量，并指定其类名-->
+        <import type="com.webabcd.androiddemo.jetpack.lifecycle.MyDataBindingModel" />
+        <variable name="myModel2" type="MyDataBindingModel" />
+
+        <!--先通过类全名导入一个类并指定其别名，然后再声明一个指定名称的变量，并指定其类别名-->
+        <import type="com.webabcd.androiddemo.jetpack.lifecycle.MyDataBindingModel" alias="MyAlias" />
+        <variable name="myModel3" type="MyAlias" />
+
+        <!--声明基本类型的变量-->
+        <variable name="buttonText" type="String" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!--
+            @{} - 单项绑定
+            @={} - 双向绑定
+            @{()->...} - 事件绑定并传参
+        -->
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:text="@{buttonText}"
+            android:onClick="@{()->myModel.showName(myModel.name)}"/>
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{myModel.name}"/>
+        <EditText
+            android:id="@+id/editText1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@={myModel.country}"/>
+
+        <!--绑定静态方法-->
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{MyDataBindingModel.substr8(myModel.name)}"/>
+
+        <!--绑定支持简单表达式-->
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="输入框中的字符长度小于 1 个我就显示，否则我就隐藏"
+            android:visibility="@{myModel.country.length() &lt; 1 ? android.view.View.VISIBLE : android.view.View.GONE}"/>
+
+        <!--
+            本例用于演示 @BindingAdapter 注解的用法
+            app:imageUrl 的绑定数据由后台指定函数接管（注：通过 @{} 绑定的数据才会被接管）
+        -->
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:imageUrl='@{"https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png"}'/>
+
+    </LinearLayout>
+</layout>
