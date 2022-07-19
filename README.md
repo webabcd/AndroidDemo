@@ -30,9 +30,11 @@
 7. Flow（异步流，各种操作符的使用 buffer, conflate, collectLatest, drop, take, filter, map, transform, onEach, first, last, single, reduce, zip, combine, flatMapConcat, flatMapMerge 等)
 
 #### jetpack
-1. Lifecycle
-2. LiveData 和 ViewModel 基础
-3. LiveData 指定的对象的某个属性发生了变化时通知给观察者
+1. Lifecycle 基础以及 lifecycleScope
+2. ViewModel 基础以及 viewModelScope
+3. LiveData 基础，以及 LiveData 和 ViewModel 结合使用
+4. LiveData 指定的对象的某个属性发生了变化时通知给观察者
+5. DataBinding（MVVM）
 
 #### view（基础）
 1. 位置相关
@@ -305,3 +307,4 @@
 #### 项目工具
 1. 生成 README.md
 2. 生成 html index
+

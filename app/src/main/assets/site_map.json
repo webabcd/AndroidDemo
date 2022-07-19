@@ -1,25 +1,5 @@
 [
   {
-    "title": "jetpack",
-    "node": [
-      {
-        "title": "ViewModel 基础以及 viewModelScope",
-        "url": ".jetpack.lifecycle.ViewModelDemo"
-      },
-      {
-        "title": "DataBinding（MVVM）",
-        "url": ".jetpack.lifecycle.DataBindingDemo"
-      }
-    ]
-  },
-
-
-
-
-
-
-
-  {
     "title": "java",
     "node": [
       {
@@ -130,12 +110,20 @@
         "url": ".jetpack.lifecycle.LifecycleDemo"
       },
       {
+        "title": "ViewModel 基础以及 viewModelScope",
+        "url": ".jetpack.lifecycle.ViewModelDemo"
+      },
+      {
         "title": "LiveData 基础，以及 LiveData 和 ViewModel 结合使用",
         "url": ".jetpack.lifecycle.LiveDataDemo"
       },
       {
         "title": "LiveData 指定的对象的某个属性发生了变化时通知给观察者",
         "url": ".jetpack.lifecycle.LiveDataDemo2"
+      },
+      {
+        "title": "DataBinding（MVVM）",
+        "url": ".jetpack.lifecycle.DataBindingDemo"
       }
     ]
   },
