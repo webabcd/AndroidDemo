@@ -184,6 +184,7 @@
 13. 沉浸式（immersive）
 14. 沉浸式（关于 statusBar 和 navigationBar 的常用效果）
 15. 监听配置变化（比如横竖屏切换等）
+16. 闪屏页（启动页）
 
 #### Animation
 1. Matrix 变换（用于做位移，旋转，缩放，扭曲等变换）
@@ -199,6 +200,7 @@
 #### Resource
 1. 布局 xml 基础
 2. 国际化（多语言）
+3. 读取 meta-data 数据
 
 #### 存储
 1. 通过 context 操作 files 目录中的文件

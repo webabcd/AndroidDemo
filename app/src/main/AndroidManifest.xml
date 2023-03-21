@@ -20,6 +20,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity"></activity>
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="com.webabcd.androiddemo.MetaData1"
+            android:value="abc" />
+        <meta-data
+            android:name="com.webabcd.androiddemo.MetaData2"
+            android:value="@string/sample_hello1" />
+
+        <activity android:name=".resource.MetaDataDemo1" />
         <activity android:name=".jetpack.lifecycle.LifecycleDemo" />
         <activity android:name=".jetpack.lifecycle.LiveDataDemo" />
         <activity android:name=".jetpack.lifecycle.LiveDataDemo2" />
@@ -202,15 +222,6 @@
         <activity android:name=".view.listview.ListViewDemo3" />
         <activity android:name=".view.listview.ListViewDemo2" />
         <activity android:name=".view.listview.ListViewDemo1" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
         <activity android:name=".view.ViewDemo1" />
         <activity android:name=".view.text.TextViewDemo1" />
         <activity android:name=".view.text.TextViewDemo2" />

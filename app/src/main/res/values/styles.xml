@@ -1,12 +1,23 @@
 <resources>
 
+    <!--闪屏页的主题-->
+    <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!--顶部 StatusBar 的背景-->
+        <item name="android:statusBarColor">@color/white</item>
+        <!--底部 NavigationBar 的背景-->
+        <item name="android:navigationBarColor">@color/white</item>
+        <!--window 窗口背景-->
+        <item name="android:windowBackground">@drawable/layerlist_splash_background</item>
+    </style>
+
+
     <!--
-        默认主题，继承 Theme.AppCompat.Light.DarkActionBar 主题
+        默认主题，继承 Theme.AppCompat.Light.NoActionBar 主题
         引用示例参见 AndroidManifest.xml（作用于整个 application）
     -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar" />
     <!--
-        继承上面的 AppTheme 主题，即继承 Theme.AppCompat.Light.DarkActionBar 主题，并重写其中的一些样式（关于修改主题中指定控件的默认样式请参见 ui/ThemeDemo3）
+        继承上面的 AppTheme 主题，即继承 Theme.AppCompat.Light.NoActionBar 主题，并重写其中的一些样式（关于修改主题中指定控件的默认样式请参见 ui/ThemeDemo3）
         引用示例参见 ui/ThemeDemo1
     -->
     <style name="ThemeDemo1Theme" parent="AppTheme">

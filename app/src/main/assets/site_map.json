@@ -671,6 +671,10 @@
       {
         "title": "监听配置变化（比如横竖屏切换等）",
         "url": ".ui.ConfigurationChangeDemo1"
+      },
+      {
+        "title": "闪屏页（启动页）",
+        "url": ".SplashActivity"
       }
     ]
   },
@@ -725,6 +729,10 @@
       {
         "title": "国际化（多语言）",
         "url": ".resource.LocalizationDemo1"
+      },
+      {
+        "title": "读取 meta-data 数据",
+        "url": ".resource.MetaDataDemo1"
       }
     ]
   },
