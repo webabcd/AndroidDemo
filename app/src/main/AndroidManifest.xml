@@ -38,6 +38,9 @@
         <meta-data
             android:name="com.webabcd.androiddemo.MetaData2"
             android:value="@string/sample_hello1" />
+        <meta-data
+            android:name="com.webabcd.androiddemo.MetaData3"
+            android:resource="@string/sample_hello1" />
 
         <activity android:name=".resource.MetaDataDemo1" />
         <activity android:name=".jetpack.lifecycle.LifecycleDemo" />
