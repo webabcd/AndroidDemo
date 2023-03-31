@@ -28,26 +28,29 @@ package com.webabcd.androiddemo.jetpack.lifecycle
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.*
-import kotlinx.android.synthetic.main.activity_jetpack_lifecycle_lifecycledemo.*
 import com.webabcd.androiddemo.R
+import com.webabcd.androiddemo.databinding.ActivityJetpackLifecycleDatabindingdemoBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class LifecycleDemo : AppCompatActivity() {
 
+    private lateinit var mBinding: ActivityJetpackLifecycleDatabindingdemoBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_jetpack_lifecycle_lifecycledemo)
+        mBinding = DataBindingUtil.setContentView(this, R.layout.activity_jetpack_lifecycle_lifecycledemo)
 
         // 实例化一个自定义的生命周期观察者（也就是说你准备用这个组件来监听 Activity 的生命周期）
         val myLifecycleObserver = MyLifecycleObserver()
         // 为 Lifecycle 增加一个指定的观察者
         this.lifecycle.addObserver(myLifecycleObserver) // 这个 this.lifecycle 就是 Activity 的 getLifecycle() 方法，其返回的是 LifecycleRegistry 对象（继承自 Lifecycle）
-        button1.setOnClickListener {
+        mBinding.button1.setOnClickListener {
             // 获取 Lifecycle 当前的状态
-            textView1.text = "${this.lifecycle.currentState}"
+            mBinding.textView1.text = "${this.lifecycle.currentState}"
         }
 
         /**

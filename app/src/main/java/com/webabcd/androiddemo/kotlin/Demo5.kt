@@ -12,14 +12,16 @@ package com.webabcd.androiddemo.kotlin
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.webabcd.androiddemo.R
-import kotlinx.android.synthetic.main.activity_kotlin_helloworld.*
+import com.webabcd.androiddemo.databinding.ActivityKotlinDemo5Binding
 
 class Demo5 : AppCompatActivity() {
 
+    private lateinit var mBinding: ActivityKotlinDemo5Binding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_kotlin_demo5)
+        mBinding = ActivityKotlinDemo5Binding.inflate(layoutInflater)
+        setContentView(mBinding.root)
 
         sample1(); // 数组，Range
         sample2(); // 集合 List, Set, Map
@@ -212,7 +214,7 @@ partition : 判断元素是否满足条件把集合拆分为有两个Pair组成�
     }
 
     fun appendMessage(message: String) {
-        textView1.append(message);
-        textView1.append("\n");
+        mBinding.textView1.append(message);
+        mBinding.textView1.append("\n");
     }
 }

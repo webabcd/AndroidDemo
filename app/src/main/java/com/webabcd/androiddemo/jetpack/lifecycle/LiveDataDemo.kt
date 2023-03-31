@@ -31,12 +31,13 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.webabcd.androiddemo.R
-import kotlinx.android.synthetic.main.activity_jetpack_lifecycle_livedatademo.*
+import com.webabcd.androiddemo.databinding.ActivityJetpackLifecycleDatabindingdemoBinding
 import kotlinx.coroutines.*
 import java.text.SimpleDateFormat
 import java.util.*
@@ -45,16 +46,18 @@ class LiveDataDemo : AppCompatActivity() {
 
     private lateinit var viewModel: MyViewModel
 
+    private lateinit var mBinding: ActivityJetpackLifecycleDatabindingdemoBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_jetpack_lifecycle_livedatademo)
+        mBinding = DataBindingUtil.setContentView(this, R.layout.activity_jetpack_lifecycle_livedatademo)
 
         // 创建一个指定的 ViewModel 对象，并绑定到指定的 activity
         viewModel = ViewModelProvider(this)[MyViewModel::class.java]
         // 为 ViewModel 中的 LiveData 指定观察者，并将这个观察者绑定到当前的 activity
         viewModel.myName.observe(this) {
             // 调用 LiveData 的 postValue() 或 setValue() 后，观察者就会收到通知
-            textView1.text = it
+            mBinding.textView1.text = it
 
             // 正常来说，这里每秒会收到一个通知，但是如果 activity 走到后台了，这里就收不到了
             // 当 activity 重新变回前台时，则会先收到之前没收到的最近一次的通知，之后会继续每秒都收到通知
@@ -72,7 +75,7 @@ class LiveDataDemo : AppCompatActivity() {
         }
 
         // 跳转到其他 activity 然后再返回来，观察一下这个过程中的效果
-        button1.setOnClickListener {
+        mBinding.button1.setOnClickListener {
             startActivity(Intent(this@LiveDataDemo, LifecycleDemo::class.java))
         }
     }

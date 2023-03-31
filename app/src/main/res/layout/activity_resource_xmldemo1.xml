@@ -25,11 +25,13 @@
         android:background="@color/green" />
 
     <!--下面的 id 和上面的 id 重名了，但是不会影响编译（注：在 java 中根据 id 查找控件的时候找到的是上面的控件）-->
+    <!--后来下面这句被我注销了，因为项目里使用了 viewBinding 技术，如果出现重名的话则会报错 conflicts with another tag that has the same ID-->
+    <!--
     <TextView
         android:id="@+id/xmldemo1_textView2"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_toRightOf="@id/xmldemo1_textView1"
         android:background="@color/blue" />
-
+    -->
 </RelativeLayout>

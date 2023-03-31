@@ -13,12 +13,7 @@ package com.webabcd.androiddemo.kotlin.coroutine
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import com.webabcd.androiddemo.R
-import kotlinx.android.synthetic.main.activity_kotlin_coroutine_demo7.button1
-import kotlinx.android.synthetic.main.activity_kotlin_coroutine_demo7.button2
-import kotlinx.android.synthetic.main.activity_kotlin_coroutine_demo7.button3
-import kotlinx.android.synthetic.main.activity_kotlin_coroutine_demo7.button4
-import kotlinx.android.synthetic.main.activity_kotlin_coroutine_demo7.textView1
+import com.webabcd.androiddemo.databinding.ActivityKotlinCoroutineDemo7Binding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -28,27 +23,31 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 class Demo7 : AppCompatActivity() {
+
+    private lateinit var mBinding: ActivityKotlinCoroutineDemo7Binding;
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_kotlin_coroutine_demo7)
+        mBinding = ActivityKotlinCoroutineDemo7Binding.inflate(layoutInflater)
+        setContentView(mBinding.root)
 
         // 优化发送/接收数据（buffer, conflate, collectLatest）
-        button1.setOnClickListener {
+        mBinding.button1.setOnClickListener {
             sample1()
         }
 
         // 数组转换为 flow 以及 flow 的数据处理相关的操作符（drop, take, filter, map, transform, onEach, first, last, single, reduce 等）
-        button2.setOnClickListener {
+        mBinding.button2.setOnClickListener {
             sample2()
         }
 
         // 将两个 flow 组合为一个 flow（zip, combine）
-        button3.setOnClickListener {
+        mBinding.button3.setOnClickListener {
             sample3()
         }
 
         // flow 内嵌套 flow（flatMapConcat, flatMapMerge）
-        button4.setOnClickListener {
+        mBinding.button4.setOnClickListener {
             sample4()
         }
     }
@@ -244,8 +243,8 @@ class Demo7 : AppCompatActivity() {
 
         CoroutineScope(Dispatchers.Main).launch{
             val log = "$time: $message（$threadName）"
-            textView1.append(log);
-            textView1.append("\n");
+            mBinding.textView1.append(log);
+            mBinding.textView1.append("\n");
 
             Log.d("coroutine", log)
         }

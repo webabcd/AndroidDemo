@@ -10,44 +10,47 @@ package com.webabcd.androiddemo.kotlin.coroutine
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import com.webabcd.androiddemo.R
-import kotlinx.android.synthetic.main.activity_kotlin_coroutine_demo2.*
+import com.webabcd.androiddemo.databinding.ActivityKotlinCoroutineDemo2Binding
 import kotlinx.coroutines.*
 import java.text.SimpleDateFormat
 import java.util.*
 
 class Demo2 : AppCompatActivity() {
+
+    private lateinit var mBinding: ActivityKotlinCoroutineDemo2Binding;
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_kotlin_coroutine_demo2)
+        mBinding = ActivityKotlinCoroutineDemo2Binding.inflate(layoutInflater)
+        setContentView(mBinding.root)
 
         // 等待 Job 执行完
-        button1.setOnClickListener {
+        mBinding.button1.setOnClickListener {
             sample1()
         }
 
         // 取消 Job
-        button2.setOnClickListener {
+        mBinding.button2.setOnClickListener {
             sample2()
         }
 
         // 取消 Job 需要强调的知识点（声明为 suspend 的函数才可以检查取消）
-        button3.setOnClickListener {
+        mBinding.button3.setOnClickListener {
             sample3()
         }
 
         // 取消无 suspend 函数的 Job
-        button4.setOnClickListener {
+        mBinding.button4.setOnClickListener {
             sample4()
         }
 
         // 超时处理
-        button5.setOnClickListener {
+        mBinding.button5.setOnClickListener {
             sample5()
         }
 
         // 取消协程
-        button6.setOnClickListener {
+        mBinding.button6.setOnClickListener {
             sample6()
         }
     }
@@ -261,8 +264,8 @@ class Demo2 : AppCompatActivity() {
 
         CoroutineScope(Dispatchers.Main).launch{
             val log = "$time: $message（$threadName）"
-            textView1.append(log);
-            textView1.append("\n");
+            mBinding.textView1.append(log);
+            mBinding.textView1.append("\n");
 
             Log.d("coroutine", log)
         }

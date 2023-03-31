@@ -8,8 +8,7 @@ package com.webabcd.androiddemo.kotlin.coroutine
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import com.webabcd.androiddemo.R
-import kotlinx.android.synthetic.main.activity_kotlin_coroutine_demo5.*
+import com.webabcd.androiddemo.databinding.ActivityKotlinCoroutineDemo5Binding
 import kotlinx.coroutines.*
 import kotlinx.coroutines.channels.ticker
 import kotlinx.coroutines.sync.Mutex
@@ -19,22 +18,26 @@ import java.util.*
 import java.util.concurrent.atomic.AtomicInteger
 
 class Demo5 : AppCompatActivity() {
+
+    private lateinit var mBinding: ActivityKotlinCoroutineDemo5Binding;
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_kotlin_coroutine_demo5)
+        mBinding = ActivityKotlinCoroutineDemo5Binding.inflate(layoutInflater)
+        setContentView(mBinding.root)
 
         // 通过 ticker 信道实现类似计时器的效果
-        button1.setOnClickListener {
+        mBinding.button1.setOnClickListener {
             sample1()
         }
 
         // 协程的异常处理
-        button2.setOnClickListener {
+        mBinding.button2.setOnClickListener {
             sample2()
         }
 
         // 解决协程的并发问题
-        button3.setOnClickListener {
+        mBinding.button3.setOnClickListener {
             sample3()
         }
     }
@@ -154,8 +157,8 @@ class Demo5 : AppCompatActivity() {
 
         CoroutineScope(Dispatchers.Main).launch{
             val log = "$time: $message（$threadName）"
-            textView1.append(log);
-            textView1.append("\n");
+            mBinding.textView1.append(log);
+            mBinding.textView1.append("\n");
 
             Log.d("coroutine", log)
         }

@@ -6,17 +6,19 @@ package com.webabcd.androiddemo.kotlin
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.webabcd.androiddemo.R
-import kotlinx.android.synthetic.main.activity_kotlin_helloworld.*
+import com.webabcd.androiddemo.databinding.ActivityKotlinDemo3Binding
 import java.io.IOException
 import java.lang.Exception
 import java.util.*
 
 class Demo3 : AppCompatActivity() {
 
+    private lateinit var mBinding: ActivityKotlinDemo3Binding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_kotlin_demo3)
+        mBinding = ActivityKotlinDemo3Binding.inflate(layoutInflater)
+        setContentView(mBinding.root)
 
         // 没有三元运算符 ? : 了
         // if..else, while, do..while, continue, break, return 都和 java 差不多
@@ -237,7 +239,7 @@ class Demo3 : AppCompatActivity() {
     }
 
     fun appendMessage(message: String) {
-        textView1.append(message);
-        textView1.append("\n");
+        mBinding.textView1.append(message);
+        mBinding.textView1.append("\n");
     }
 }

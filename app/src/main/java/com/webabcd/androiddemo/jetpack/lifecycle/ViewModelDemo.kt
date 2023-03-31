@@ -9,27 +9,31 @@ package com.webabcd.androiddemo.jetpack.lifecycle
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
-import kotlinx.android.synthetic.main.activity_jetpack_lifecycle_viewmodeldemo.*
 import com.webabcd.androiddemo.R
+import com.webabcd.androiddemo.databinding.ActivityJetpackLifecycleDatabindingdemoBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class ViewModelDemo : AppCompatActivity() {
+
+    private lateinit var mBinding: ActivityJetpackLifecycleDatabindingdemoBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_jetpack_lifecycle_viewmodeldemo)
+        mBinding = DataBindingUtil.setContentView(this, R.layout.activity_jetpack_lifecycle_viewmodeldemo)
 
         // 引用 implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.0" 后
         // 就可以使用下面这种简单的方式创建创建一个指定的 ViewModel 对象，并绑定到指定的 activity
         // 否则的话需要自己写 ViewModelProvider.Factory，那样会比较麻烦
         val viewModel = ViewModelProvider(this)[CustomViewModel::class.java]
-        textView1.text = viewModel.name
+        mBinding.textView1.text = viewModel.name
 
-        button1.setOnClickListener {
+        mBinding.button1.setOnClickListener {
             finish()
         }
     }

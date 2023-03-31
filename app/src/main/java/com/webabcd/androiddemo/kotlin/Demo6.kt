@@ -10,14 +10,16 @@ package com.webabcd.androiddemo.kotlin
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.webabcd.androiddemo.R
-import kotlinx.android.synthetic.main.activity_kotlin_helloworld.*
+import com.webabcd.androiddemo.databinding.ActivityKotlinDemo6Binding
 
 class Demo6 : AppCompatActivity() {
 
+    private lateinit var mBinding: ActivityKotlinDemo6Binding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_kotlin_demo6)
+        mBinding = ActivityKotlinDemo6Binding.inflate(layoutInflater)
+        setContentView(mBinding.root)
 
         // 无返回值的函数
         var f1 = function1(); // function1
@@ -134,7 +136,7 @@ class Demo6 : AppCompatActivity() {
 
 
     fun appendMessage(message: String) {
-        textView1.append(message);
-        textView1.append("\n");
+        mBinding.textView1.append(message);
+        mBinding.textView1.append("\n");
     }
 }

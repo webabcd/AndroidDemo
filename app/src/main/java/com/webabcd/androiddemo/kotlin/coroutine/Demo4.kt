@@ -7,8 +7,7 @@ package com.webabcd.androiddemo.kotlin.coroutine
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import com.webabcd.androiddemo.R
-import kotlinx.android.synthetic.main.activity_kotlin_coroutine_demo3.*
+import com.webabcd.androiddemo.databinding.ActivityKotlinCoroutineDemo4Binding
 import kotlinx.coroutines.*
 import kotlinx.coroutines.channels.*
 import kotlinx.coroutines.selects.select
@@ -16,37 +15,41 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 class Demo4 : AppCompatActivity() {
+
+    private lateinit var mBinding: ActivityKotlinCoroutineDemo4Binding;
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_kotlin_coroutine_demo4)
+        mBinding = ActivityKotlinCoroutineDemo4Binding.inflate(layoutInflater)
+        setContentView(mBinding.root)
 
         // 通过信道在不同协程之间发送和接收数据
-        button1.setOnClickListener {
+        mBinding.button1.setOnClickListener {
             sample1()
         }
 
         // 生产者/消费者模式
-        button2.setOnClickListener {
+        mBinding.button2.setOnClickListener {
             sample2()
         }
 
         // 多个协程使用一个信道发送数据
-        button3.setOnClickListener {
+        mBinding.button3.setOnClickListener {
             sample3()
         }
 
         // 多个协程使用一个信道接收数据
-        button4.setOnClickListener {
+        mBinding.button4.setOnClickListener {
             sample4()
         }
 
         // 信道缓冲区
-        button5.setOnClickListener {
+        mBinding.button5.setOnClickListener {
             sample5()
         }
 
         // 从多个信道同时接收数据
-        button6.setOnClickListener {
+        mBinding.button6.setOnClickListener {
             sample6()
         }
     }
@@ -256,8 +259,8 @@ class Demo4 : AppCompatActivity() {
 
         CoroutineScope(Dispatchers.Main).launch{
             val log = "$time: $message（$threadName）"
-            textView1.append(log);
-            textView1.append("\n");
+            mBinding.textView1.append(log);
+            mBinding.textView1.append("\n");
 
             Log.d("coroutine", log)
         }

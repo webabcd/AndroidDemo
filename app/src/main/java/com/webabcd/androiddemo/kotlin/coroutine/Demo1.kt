@@ -19,51 +19,52 @@ package com.webabcd.androiddemo.kotlin.coroutine
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import com.webabcd.androiddemo.R
-import kotlinx.android.synthetic.main.activity_kotlin_coroutine_demo1.*
-import kotlinx.android.synthetic.main.activity_kotlin_helloworld.button1
-import kotlinx.android.synthetic.main.activity_kotlin_helloworld.textView1
+import com.webabcd.androiddemo.databinding.ActivityKotlinCoroutineDemo1Binding
 import kotlinx.coroutines.*
 import java.text.SimpleDateFormat
 import java.util.*
 
 class Demo1 : AppCompatActivity() {
+
+    private lateinit var mBinding: ActivityKotlinCoroutineDemo1Binding;
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_kotlin_coroutine_demo1)
+        mBinding = ActivityKotlinCoroutineDemo1Binding.inflate(layoutInflater)
+        setContentView(mBinding.root)
 
         // 演示 CoroutineScope.launch
-        button1.setOnClickListener {
+        mBinding.button1.setOnClickListener {
             sample1()
         }
 
         // 演示 runBlocking
-        button2.setOnClickListener {
+        mBinding.button2.setOnClickListener {
             sample2()
         }
 
         // 演示 MainScope, GlobalScope
-        button3.setOnClickListener {
+        mBinding.button3.setOnClickListener {
             sample3()
         }
 
         // 演示 async, await
-        button4.setOnClickListener {
+        mBinding.button4.setOnClickListener {
             sample4()
         }
 
         // 演示 suspend 函数以及如何为 CoroutineScope 扩展方法
-        button5.setOnClickListener {
+        mBinding.button5.setOnClickListener {
             sample5()
         }
 
         // 演示 withContext
-        button6.setOnClickListener {
+        mBinding.button6.setOnClickListener {
             sample6()
         }
 
         // 演示如何设置/获取 CoroutineScope 的名称
-        button7.setOnClickListener {
+        mBinding.button7.setOnClickListener {
             sample7()
         }
     }
@@ -274,8 +275,8 @@ class Demo1 : AppCompatActivity() {
 
         CoroutineScope(Dispatchers.Main).launch{
             val log = "$time: $message（$threadName）"
-            textView1.append(log);
-            textView1.append("\n");
+            mBinding.textView1.append(log);
+            mBinding.textView1.append("\n");
 
             Log.d("coroutine", log)
         }

@@ -10,50 +10,53 @@ package com.webabcd.androiddemo.kotlin.coroutine
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import com.webabcd.androiddemo.R
-import kotlinx.android.synthetic.main.activity_kotlin_coroutine_demo6.*
+import com.webabcd.androiddemo.databinding.ActivityKotlinCoroutineDemo6Binding
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.*
 import java.text.SimpleDateFormat
 import java.util.*
 
 class Demo6 : AppCompatActivity() {
+
+    private lateinit var mBinding: ActivityKotlinCoroutineDemo6Binding;
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_kotlin_coroutine_demo6)
+        mBinding = ActivityKotlinCoroutineDemo6Binding.inflate(layoutInflater)
+        setContentView(mBinding.root)
 
         // 通过 flow 发送和接收数据
-        button1.setOnClickListener {
+        mBinding.button1.setOnClickListener {
             sample1()
         }
 
         // flow 的超时处理
-        button2.setOnClickListener {
+        mBinding.button2.setOnClickListener {
             sample2()
         }
 
         // flow 的取消处理
-        button3.setOnClickListener {
+        mBinding.button3.setOnClickListener {
             sample3()
         }
 
         // flow 的异常处理
-        button4.setOnClickListener {
+        mBinding.button4.setOnClickListener {
             sample4()
         }
 
         // flow 的重试处理
-        button5.setOnClickListener {
+        mBinding.button5.setOnClickListener {
             sample5()
         }
 
         // 指定 flow 阶段的运行协程，使其不同于 collect 阶段的运行协程
-        button6.setOnClickListener {
+        mBinding.button6.setOnClickListener {
             sample6()
         }
 
         // 让 collect 阶段运行到其他协程，从而不阻塞当前协程
-        button7.setOnClickListener {
+        mBinding.button7.setOnClickListener {
             sample7()
         }
     }
@@ -308,8 +311,8 @@ class Demo6 : AppCompatActivity() {
 
         CoroutineScope(Dispatchers.Main).launch{
             val log = "$time: $message（$threadName）"
-            textView1.append(log);
-            textView1.append("\n");
+            mBinding.textView1.append(log);
+            mBinding.textView1.append("\n");
 
             Log.d("coroutine", log)
         }

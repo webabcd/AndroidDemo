@@ -30,7 +30,7 @@ import java.util.*
 
 class DataBindingDemo : AppCompatActivity() {
 
-    // ActivityJetpackLifecycleDatabindingdemoBinding 是 gradle 生成的类，其对应的 xml 是 activity_jetpack_lifecycle_databindingdemo.xml
+    // ActivityJetpackLifecycleDatabindingdemoBinding 是 gradle 自动生成的类，其对应的 xml 是 activity_jetpack_lifecycle_databindingdemo.xml
     private lateinit var mBinding: ActivityJetpackLifecycleDatabindingdemoBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {

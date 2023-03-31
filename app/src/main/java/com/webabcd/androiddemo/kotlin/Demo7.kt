@@ -6,17 +6,19 @@ package com.webabcd.androiddemo.kotlin
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.webabcd.androiddemo.R
-import kotlinx.android.synthetic.main.activity_kotlin_helloworld.*
+import com.webabcd.androiddemo.databinding.ActivityKotlinDemo7Binding
 
 // 类型别名，必须在顶层声明
 typealias MyType = String
 
 class Demo7 : AppCompatActivity() {
 
+    private lateinit var mBinding: ActivityKotlinDemo7Binding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_kotlin_demo7)
+        mBinding = ActivityKotlinDemo7Binding.inflate(layoutInflater)
+        setContentView(mBinding.root)
 
         sample1() // 实例化对象，调用属性，调用方法，自定义 getter 和 setter，下标运算符 [] 的使用，扩展方法，扩展属性
         sample2() // 静态属性，静态方法
@@ -178,7 +180,7 @@ class Demo7 : AppCompatActivity() {
 
 
     fun appendMessage(message: String) {
-        textView1.append(message)
-        textView1.append("\n")
+        mBinding.textView1.append(message);
+        mBinding.textView1.append("\n");
     }
 }

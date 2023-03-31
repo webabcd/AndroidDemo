@@ -1,23 +1,23 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
     ext {
-        kotlin_version = '1.6.10'
+        kotlin_version = '1.8.0'
     }
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
     dependencies {
         // 更新 gradle 版本后有的时候会遇到编译报错的问题，可以执行一下 gradlew clean, gradlew assemble 试试
         classpath 'com.android.tools.build:gradle:4.2.2'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.10"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
 
 allprojects {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
 }
 

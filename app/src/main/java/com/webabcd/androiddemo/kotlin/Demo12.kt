@@ -6,14 +6,16 @@ package com.webabcd.androiddemo.kotlin
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.webabcd.androiddemo.R
-import kotlinx.android.synthetic.main.activity_kotlin_helloworld.*
-import java.io.IOException
+import com.webabcd.androiddemo.databinding.ActivityKotlinDemo12Binding
 
 class Demo12 : AppCompatActivity() {
+
+    private lateinit var mBinding: ActivityKotlinDemo12Binding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_kotlin_demo12)
+        mBinding = ActivityKotlinDemo12Binding.inflate(layoutInflater)
+        setContentView(mBinding.root)
 
         sample1() // let
         sample2() // also
@@ -120,7 +122,7 @@ class Demo12 : AppCompatActivity() {
 
 
     fun appendMessage(message: String) {
-        textView1.append(message)
-        textView1.append("\n")
+        mBinding.textView1.append(message);
+        mBinding.textView1.append("\n");
     }
 }

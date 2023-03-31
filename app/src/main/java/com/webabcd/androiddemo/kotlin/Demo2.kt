@@ -8,16 +8,17 @@ package com.webabcd.androiddemo.kotlin
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.webabcd.androiddemo.R
-import kotlinx.android.synthetic.main.activity_kotlin_helloworld.*
+import com.webabcd.androiddemo.databinding.ActivityKotlinDemo2Binding
 import java.lang.Exception
 
 class Demo2 : AppCompatActivity() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    private lateinit var mBinding: ActivityKotlinDemo2Binding
 
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_kotlin_demo2)
+        mBinding = ActivityKotlinDemo2Binding.inflate(layoutInflater)
+        setContentView(mBinding.root)
 
         sample1(); // 定义可空类型
         sample2(); // == 和 ===
@@ -115,7 +116,7 @@ class Demo2 : AppCompatActivity() {
     }
 
     fun appendMessage(message: String) {
-        textView1.append(message);
-        textView1.append("\n");
+        mBinding.textView1.append(message);
+        mBinding.textView1.append("\n");
     }
 }

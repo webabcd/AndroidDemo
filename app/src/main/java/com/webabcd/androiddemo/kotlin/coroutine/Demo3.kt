@@ -8,52 +8,47 @@ package com.webabcd.androiddemo.kotlin.coroutine
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import com.webabcd.androiddemo.R
-import kotlinx.android.synthetic.main.activity_kotlin_coroutine_demo2.*
-import kotlinx.android.synthetic.main.activity_kotlin_coroutine_demo3.*
-import kotlinx.android.synthetic.main.activity_kotlin_coroutine_demo3.button1
-import kotlinx.android.synthetic.main.activity_kotlin_coroutine_demo3.button2
-import kotlinx.android.synthetic.main.activity_kotlin_coroutine_demo3.button3
-import kotlinx.android.synthetic.main.activity_kotlin_coroutine_demo3.button4
-import kotlinx.android.synthetic.main.activity_kotlin_coroutine_demo3.button5
-import kotlinx.android.synthetic.main.activity_kotlin_coroutine_demo3.button6
-import kotlinx.android.synthetic.main.activity_kotlin_coroutine_demo3.textView1
+import com.webabcd.androiddemo.databinding.ActivityKotlinCoroutineDemo3Binding
 import kotlinx.coroutines.*
 import java.text.SimpleDateFormat
 import java.util.*
 
 class Demo3 : AppCompatActivity() {
+
+    private lateinit var mBinding: ActivityKotlinCoroutineDemo3Binding;
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_kotlin_coroutine_demo3)
+        mBinding = ActivityKotlinCoroutineDemo3Binding.inflate(layoutInflater)
+        setContentView(mBinding.root)
 
         // 顺序执行
-        button1.setOnClickListener {
+        mBinding.button1.setOnClickListener {
             sample1()
         }
 
         // 并行执行（launch 方式）
-        button2.setOnClickListener {
+        mBinding.button2.setOnClickListener {
             sample2()
         }
 
         // 并行执行（async 方式）
-        button3.setOnClickListener {
+        mBinding.button3.setOnClickListener {
             sample3()
         }
 
         // 调用 async { } 时立即执行
-        button4.setOnClickListener {
+        mBinding.button4.setOnClickListener {
             sample4()
         }
 
         // 调用 async { } 时懒启动，等调用 await() 时再执行
-        button5.setOnClickListener {
+        mBinding.button5.setOnClickListener {
             sample5()
         }
 
         // async 返回的是 Deferred<T> 对象，其继承自 Job
-        button6.setOnClickListener {
+        mBinding.button6.setOnClickListener {
             sample6()
         }
     }
@@ -189,8 +184,8 @@ class Demo3 : AppCompatActivity() {
 
         CoroutineScope(Dispatchers.Main).launch{
             val log = "$time: $message（$threadName）"
-            textView1.append(log);
-            textView1.append("\n");
+            mBinding.textView1.append(log);
+            mBinding.textView1.append("\n");
 
             Log.d("coroutine", log)
         }

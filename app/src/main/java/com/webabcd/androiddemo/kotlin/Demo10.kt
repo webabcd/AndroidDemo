@@ -8,20 +8,17 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-import com.webabcd.androiddemo.R
-import kotlinx.android.synthetic.main.activity_kotlin_demo10.*
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.CoroutineStart
-import kotlinx.coroutines.Job
-import kotlin.coroutines.CoroutineContext
-import kotlin.coroutines.EmptyCoroutineContext
+import com.webabcd.androiddemo.databinding.ActivityKotlinDemo10Binding
 
 class Demo10 : AppCompatActivity() {
 
+    private lateinit var mBinding: ActivityKotlinDemo10Binding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_kotlin_demo10)
-        
+        mBinding = ActivityKotlinDemo10Binding.inflate(layoutInflater)
+        setContentView(mBinding.root)
+
         sample1()
         sample2()
         sample3()
@@ -29,7 +26,7 @@ class Demo10 : AppCompatActivity() {
 
     fun sample1() {
         // 传统方式监听按钮的点击事件
-        button1.setOnClickListener(object: View.OnClickListener{
+        mBinding.button1.setOnClickListener(object: View.OnClickListener{
             override fun onClick(v: View?) {
                 // 这里的 this@Demo10 相当于 java 中的 Demo10.this
                 Toast.makeText(this@Demo10, "button1 clicked", Toast.LENGTH_SHORT).show()
@@ -38,7 +35,7 @@ class Demo10 : AppCompatActivity() {
 
         // lambda 方式监听按钮的点击事件
         // 因为 OnClickListener 接口只有一个方法，所以可以转换成如下的简单方式（如果接口有多个方法，则不能用这种简单方式）
-        button2.setOnClickListener {
+        mBinding.button2.setOnClickListener {
             // 这里的 this 指向的就是 activity
             Toast.makeText(this, "button2 clicked", Toast.LENGTH_SHORT).show()
         }
@@ -182,7 +179,7 @@ class Demo10 : AppCompatActivity() {
 
 
     fun appendMessage(message: String) {
-        textView1.append(message)
-        textView1.append("\n")
+        mBinding.textView1.append(message);
+        mBinding.textView1.append("\n");
     }
 }

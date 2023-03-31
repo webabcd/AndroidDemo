@@ -7,19 +7,21 @@
 // 包的定义和导入
 package com.webabcd.androiddemo.kotlin // 定义包名时，不需要目录名和包名匹配了
 
-import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity as XXX // 导入时允许通过 as 为类名指定别名了
 import android.os.Bundle
-import com.webabcd.androiddemo.R as xxx // 导入时允许通过 as 为类名指定别名了
-import kotlinx.android.synthetic.main.activity_kotlin_helloworld.* // 导入时支持 * 了
+import com.webabcd.androiddemo.databinding.* // 导入时支持 * 了
 
 // 常量（用 const val 修饰），必须在顶层声明
 const val MY_CONST1: String = "MY_CONST1";
 
-class Demo1 : AppCompatActivity() {
+class Demo1 : XXX() {
+
+    private lateinit var mBinding: ActivityKotlinDemo1Binding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(xxx.layout.activity_kotlin_demo1)
+        mBinding = ActivityKotlinDemo1Binding.inflate(layoutInflater)
+        setContentView(mBinding.root)
 
         // Any - 是根类型，但是不可空
         // Any? - 是根类型，且可空
@@ -203,8 +205,8 @@ class Demo1 : AppCompatActivity() {
 
 
     fun appendMessage(message: String) {
-        textView1.append(message);
-        textView1.append("\n");
+        mBinding.textView1.append(message);
+        mBinding.textView1.append("\n");
     }
 
     object MyObject{

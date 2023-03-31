@@ -6,14 +6,16 @@ package com.webabcd.androiddemo.kotlin
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.webabcd.androiddemo.R
-import kotlinx.android.synthetic.main.activity_kotlin_helloworld.*
+import com.webabcd.androiddemo.databinding.ActivityKotlinDemo9Binding
 
 class Demo9 : AppCompatActivity() {
 
+    private lateinit var mBinding: ActivityKotlinDemo9Binding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_kotlin_demo9)
+        mBinding = ActivityKotlinDemo9Binding.inflate(layoutInflater)
+        setContentView(mBinding.root)
 
         sample1() // 枚举
         sample2() // 密封类
@@ -81,7 +83,7 @@ class Demo9 : AppCompatActivity() {
 
 
     fun appendMessage(message: String) {
-        textView1.append(message)
-        textView1.append("\n")
+        mBinding.textView1.append(message);
+        mBinding.textView1.append("\n");
     }
 }

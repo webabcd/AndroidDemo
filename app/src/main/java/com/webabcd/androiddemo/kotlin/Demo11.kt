@@ -6,14 +6,16 @@ package com.webabcd.androiddemo.kotlin
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.webabcd.androiddemo.R
-import kotlinx.android.synthetic.main.activity_kotlin_helloworld.*
+import com.webabcd.androiddemo.databinding.ActivityKotlinDemo11Binding
 
 class Demo11 : AppCompatActivity() {
 
+    private lateinit var mBinding: ActivityKotlinDemo11Binding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_kotlin_demo11)
+        mBinding = ActivityKotlinDemo11Binding.inflate(layoutInflater)
+        setContentView(mBinding.root)
 
         sample1() // 泛型类，泛型接口，泛型方法
         sample2() // 泛型约束
@@ -118,7 +120,7 @@ class Demo11 : AppCompatActivity() {
 
 
     fun appendMessage(message: String) {
-        textView1.append(message)
-        textView1.append("\n")
+        mBinding.textView1.append(message);
+        mBinding.textView1.append("\n");
     }
 }

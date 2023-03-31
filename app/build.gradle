@@ -1,15 +1,14 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions' // 这个可以让 kotlin 省去 findViewById()
 apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdkVersion 31
+    compileSdkVersion 33
 
     defaultConfig {
         applicationId "com.webabcd.androiddemo"
         minSdkVersion 23
-        targetSdkVersion 31
+        targetSdkVersion 33
         versionCode 1
         versionName "1.0"
 
@@ -22,14 +21,18 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = '11'
     }
 
+    buildFeatures {
+        viewBinding = true
+    }
     dataBinding {
         enabled = true;
     }
@@ -52,8 +55,47 @@ dependencies {
     implementation 'com.google.android.gms:play-services:12.0.1'
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2"
-    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.5.0"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.0"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.6.1"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1"
+
+    implementation files(getSdkDir() + '/platforms/android-33/android.jar')
 }
+
+def getSdkDir() {
+    File file = rootProject.file('local.properties')
+    if (file.exists()) {
+        InputStream inputStream = rootProject.file('local.properties').newDataInputStream();
+        Properties properties = new Properties()
+        properties.load(inputStream)
+
+        if (properties.containsKey("sdk.dir")) {
+            return properties.getProperty("sdk.dir")
+        }
+    }
+    return ""
+}
+
+/**
+ * 问题记录：
+ *
+ * 1、编译时 Build 窗口有乱码，则在 Help -> Edit Custom VM Options... 中追加如下参数即可
+ * -Dconsole.encoding=UTF-8
+ * -Dfile.encoding=UTF-8
+ *
+ * 2、如果出现类似 java.lang.AssertionError: annotationType(): unrecognized Attribute name MODULE 的错误，则需要升级到 jdk 11 类似如下
+ * compileOptions {
+ *   sourceCompatibility JavaVersion.VERSION_11
+ *   targetCompatibility JavaVersion.VERSION_11
+ * }
+ * kotlinOptions {
+ *   jvmTarget = '11'
+ * }
+ *
+ * 3、如果编译时，在 compileDebugJavaWidthJavac 阶段出现类似 package xxx does not exist 的错误，则需要在 dependencies 中导入 android.jar，类似如下
+ * implementation files('C:/Android/sdk/platforms/android-33/android.jar')
+ *
+ * 4、如果报错 Entry name xxx collided 则可能是新的打包程序的问题，可以用回旧的打包程序就好了，在 gradle.properties 中追加如下配置
+ * android.useNewApkCreator=false
+ */

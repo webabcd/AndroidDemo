@@ -6,15 +6,18 @@ package com.webabcd.androiddemo.kotlin
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.webabcd.androiddemo.R
-import kotlinx.android.synthetic.main.activity_kotlin_helloworld.*
+import com.webabcd.androiddemo.databinding.ActivityJetpackLifecycleDatabindingdemoBinding
+import com.webabcd.androiddemo.databinding.ActivityKotlinDemo8Binding
 import kotlin.reflect.KProperty
 
 class Demo8 : AppCompatActivity() {
 
+    private lateinit var mBinding: ActivityKotlinDemo8Binding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_kotlin_demo8)
+        mBinding = ActivityKotlinDemo8Binding.inflate(layoutInflater)
+        setContentView(mBinding.root)
 
         sample1() // 类继承
         sample2() // 接口
@@ -83,7 +86,8 @@ class Demo8 : AppCompatActivity() {
 
 
     fun appendMessage(message: String) {
-        textView1.append(message)
-        textView1.append("\n")
+        val binding = ActivityJetpackLifecycleDatabindingdemoBinding.inflate(layoutInflater)
+        binding.textView1.append(message);
+        binding.textView1.append("\n");
     }
 }
