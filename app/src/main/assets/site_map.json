@@ -306,6 +306,18 @@
       {
         "title": "Glide 基础",
         "url": ".view.media.GlideDemo1"
+      },
+      {
+        "title": "截图",
+        "url": ".view.media.ScreenshotDemo1"
+      },
+      {
+        "title": "MediaPlayer（在 SurfaceView 上播放）",
+        "url": ".view.media.MediaPlayerDemo1"
+      },
+      {
+        "title": "MediaPlayer（在 TextureView 上播放，可截图）",
+        "url": ".view.media.MediaPlayerDemo2"
       }
     ]
   },
