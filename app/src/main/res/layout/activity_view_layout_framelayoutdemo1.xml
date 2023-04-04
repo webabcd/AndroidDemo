@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-    FrameLayout - 叠加布局控件（就是把控件一个一个地放到左上角）
-        foreground - 前景图片（永远处于帧布局的最上面）
+    FrameLayout - 叠加布局控件（就是把控件按照定义的顺序，从后到前依次排列）
+        foreground - 前景图片（永远处于最前面）
         foregroundGravity - 前景图片的显示位置
 -->
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:foreground="@drawable/img_sample_son"
-    android:foregroundGravity="center_horizontal|top">
+    android:foregroundGravity="center_horizontal|left">
 
+    <!--
+        默认 FrameLayout 中的子元素会按照定义的顺序，从后到前依次排列
+        elevation 是用于定义阴影大小的，其也可以用于定义 FrameLayout 中的子元素的权重，权重越大显示越靠前
+    -->
     <TextView
-        android:layout_width="160dp"
-        android:layout_height="160dp"
-        android:background="@color/red"/>
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@color/red"
+        android:elevation="100dp"/>
 
     <TextView
         android:layout_width="140dp"
@@ -24,4 +29,26 @@
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:background="@color/blue"/>
+
+    <!--
+        android:layout_gravity - 设置当前元素相对于父的对齐方式（对于本例来说就是设置 TextView 相对于 FrameLayout 的对齐方式）
+        android:gravity - 设置当前元素的子相对于当前元素的对齐方式（对于本例来说就是设置 text 相对于 TextView 的对齐方式）
+    -->
+    <TextView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:background="@color/orange"
+        android:layout_gravity="bottom|right"
+        android:gravity="center_horizontal|top"
+        android:text="webabcd"/>
+
+    <!--
+        用于演示如何在 java 中设置 gravity 和 layout_gravity
+    -->
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:background="@color/yellow"
+        android:text="webabcd"/>
 </FrameLayout>
