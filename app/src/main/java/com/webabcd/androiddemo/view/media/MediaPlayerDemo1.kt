@@ -12,15 +12,11 @@ import android.media.MediaPlayer.*
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
-import android.view.Gravity
 import android.view.SurfaceHolder
 import android.view.WindowInsets
-import android.widget.FrameLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.webabcd.androiddemo.databinding.ActivityViewMediaMediaplayerdemo1Binding
 import java.util.*
-import kotlin.math.ceil
-import kotlin.math.max
 
 
 class MediaPlayerDemo1 : AppCompatActivity(), SurfaceHolder.Callback,
@@ -102,7 +98,13 @@ class MediaPlayerDemo1 : AppCompatActivity(), SurfaceHolder.Callback,
         }
     }
 
+    override fun onDestroy() {
+        stopVideo()
+        super.onDestroy()
+    }
+
     override fun onPrepared(p0: MediaPlayer?) {
+        printLog("onPrepared")
         _mediaPlayer!!.start()
     }
 

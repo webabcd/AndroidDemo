@@ -119,6 +119,11 @@ class MediaPlayerDemo2 : AppCompatActivity(), TextureView.SurfaceTextureListener
         }
     }
 
+    override fun onDestroy() {
+        stopVideo()
+        super.onDestroy()
+    }
+
     // 对 TextureView 截图
     private fun showFrameImage() {
         mBinding.imageView.visibility = View.VISIBLE
@@ -129,6 +134,7 @@ class MediaPlayerDemo2 : AppCompatActivity(), TextureView.SurfaceTextureListener
     }
 
     override fun onPrepared(p0: MediaPlayer?) {
+        printLog("onPrepared")
         _mediaPlayer!!.start()
     }
 
