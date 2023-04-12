@@ -42,7 +42,10 @@ public class GenerateReadme extends AppCompatActivity {
         Gson gson = new Gson();
         final ArrayList<MainNavigationBean> navigationBeanList = gson.fromJson(jsonString, type);
 
-        sb.append("# Android Demo\n\n\n");
+        sb.append("# Android Demo");
+        sb.append("\n\n");
+        sb.append("## Flutter Demo](https://github.com/webabcd/FlutterDemo)");
+        sb.append("\n\n");
         for (MainNavigationBean l1 : navigationBeanList) {
             sb.append("#### " + l1.getTitle() + "\n");
             int i = 1;

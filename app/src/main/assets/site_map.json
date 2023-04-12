@@ -1,5 +1,17 @@
 [
   {
+    "title": "view（媒体类）",
+    "node": [
+      {
+        "title": "MediaPlayer（视频中插广告）",
+        "url": ".view.media.MediaPlayerDemo3"
+      }
+    ]
+  },
+
+
+
+  {
     "title": "java",
     "node": [
       {

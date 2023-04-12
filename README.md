@@ -1,6 +1,6 @@
 ﻿# Android Demo
 
-#### [Flutter Demo](https://github.com/webabcd/FlutterDemo)
+## [Flutter Demo](https://github.com/webabcd/FlutterDemo)
 
 #### java
 1. Callback
@@ -86,6 +86,10 @@
 3. 9patch（nine patch）图片
 4. Picasso 基础
 5. Glide 基础
+6. 截图
+7. MediaPlayer（在 SurfaceView 上播放）
+8. MediaPlayer（在 TextureView 上播放，可截图）
+9. MediaPlayer（视频中插广告）
 
 #### view（进度类）
 1. ProgressBar 基础

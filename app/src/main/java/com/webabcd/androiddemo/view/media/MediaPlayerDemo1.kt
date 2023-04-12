@@ -61,13 +61,13 @@ class MediaPlayerDemo1 : AppCompatActivity(), SurfaceHolder.Callback,
     }
 
     override fun surfaceChanged(p0: SurfaceHolder, p1: Int, p2: Int, p3: Int) {
-
+        printLog("surfaceChanged")
     }
     override fun surfaceDestroyed(p0: SurfaceHolder) {
-
+        printLog("surfaceDestroyed")
     }
     override fun surfaceCreated(p0: SurfaceHolder) {
-        printLog("surface created")
+        printLog("surfaceCreated")
     }
 
     private fun playVideo() {
