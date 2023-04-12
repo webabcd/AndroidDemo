@@ -72,22 +72,20 @@ class MediaPlayerDemo3 : AppCompatActivity(), SurfaceHolder.Callback,
     private fun initAdPlayer() {
         // 实例化广告播放器
         _adPlayer = AdPlayer(this)
-        _adPlayer!!.setOnAdListener(object: AdPlayer.OnAdStatusListener {
-            override fun onAdStatus(status: String) {
-                // 广告播放完成后的回调
-                if (status == "completion") {
-                    // 停止并隐藏广告
-                    _adPlayer!!.stop()
+        _adPlayer!!.setOnAdListener {
+            // 广告播放完成后的回调
+            if (it == "completion") {
+                // 停止并隐藏广告
+                _adPlayer!!.stop()
 
-                    // 显示并继续正片
-                    _mediaPlayer!!.setDisplay(_surfaceHolder)
-                    _mediaPlayer!!.start()
-                    mBinding.button1.visibility = View.VISIBLE
+                // 显示并继续正片
+                _mediaPlayer!!.setDisplay(_surfaceHolder)
+                _mediaPlayer!!.start()
+                mBinding.button1.visibility = View.VISIBLE
 
-                    initAdPlayer()
-                }
+                initAdPlayer()
             }
-        })
+        }
     }
 
     override fun surfaceChanged(p0: SurfaceHolder, p1: Int, p2: Int, p3: Int) {
@@ -254,17 +252,14 @@ class AdPlayer(context: Context):
         // printLog(String.format(Locale.US, "onBufferingUpdate, percent:%d", percent));
     }
 
-    // 广告播放器的状态的回调接口
-    var mOnAdStatusListener: OnAdStatusListener? = null
-    interface OnAdStatusListener {
-        fun onAdStatus(status: String)
-    }
-    fun setOnAdListener(listener: OnAdStatusListener?) {
+    // 广告播放器的状态的回调
+    var mOnAdStatusListener: ((String) -> Unit)? = null
+    fun setOnAdListener(listener: ((String) -> Unit)?) {
         mOnAdStatusListener = listener
     }
     private fun performAdStatus(status: String) {
         if (mOnAdStatusListener != null) {
-            mOnAdStatusListener!!.onAdStatus(status)
+            mOnAdStatusListener!!(status)
         }
     }
 
