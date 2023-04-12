@@ -44,7 +44,7 @@ public class GenerateReadme extends AppCompatActivity {
 
         sb.append("# Android Demo");
         sb.append("\n\n");
-        sb.append("## Flutter Demo](https://github.com/webabcd/FlutterDemo)");
+        sb.append("### Flutter Demo](https://github.com/webabcd/FlutterDemo)");
         sb.append("\n\n");
         for (MainNavigationBean l1 : navigationBeanList) {
             sb.append("#### " + l1.getTitle() + "\n");
