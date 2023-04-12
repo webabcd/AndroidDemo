@@ -7,6 +7,7 @@ package com.webabcd.androiddemo.kotlin
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import android.widget.Toast
 import com.webabcd.androiddemo.databinding.ActivityKotlinDemo10Binding
 
@@ -19,25 +20,34 @@ class Demo10 : AppCompatActivity() {
         mBinding = ActivityKotlinDemo10Binding.inflate(layoutInflater)
         setContentView(mBinding.root)
 
+        // setOnClickListener 之类的简单写法
         sample1()
+        // Lambda 表达式
         sample2()
+        // 高阶函数
         sample3()
+        // 回调
+        sample4()
     }
 
     fun sample1() {
         // 传统方式监听按钮的点击事件
         mBinding.button1.setOnClickListener(object: View.OnClickListener{
             override fun onClick(v: View?) {
+                val button = v as Button
+
                 // 这里的 this@Demo10 相当于 java 中的 Demo10.this
-                Toast.makeText(this@Demo10, "button1 clicked", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@Demo10, "${button.text} clicked", Toast.LENGTH_SHORT).show()
             }
         })
 
-        // lambda 方式监听按钮的点击事件
-        // 因为 OnClickListener 接口只有一个方法，所以可以转换成如下的简单方式（如果接口有多个方法，则不能用这种简单方式）
+        // 在 kotlin 中 setOnClickListener 之类的简单写法
         mBinding.button2.setOnClickListener {
+            // it 就是被点击的按钮
+            val button = it as Button
+
             // 这里的 this 指向的就是 activity
-            Toast.makeText(this, "button2 clicked", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "${button.text} clicked", Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -82,7 +92,7 @@ class Demo10 : AppCompatActivity() {
         appendMessage("${funA(1, 2, fun(x: Int, y: Int): Int { return x + y })}") // 3
 
         // lambda 表达式作为函数的传入参数的示例
-        // 以下面的例子为例，当 lambda 表达式只有一个参数时，可以用简便写法，通过 it 替代 x -> x
+        // 以下面的例子为例，当 lambda 表达式只有一个参数时，可以用简便写法，自动通过 it 代表这个参数
         appendMessage("${funB(3) { x -> x > 5 }}") // 0
         appendMessage("${funB(10) { it > 5 }}") // 10
 
@@ -174,6 +184,43 @@ class Demo10 : AppCompatActivity() {
         }
         // 函数返回的函数就是闭包（闭包引用的闭包外的变量的生命周期会拉长到与闭包一致）
         return myFun
+    }
+
+
+    fun sample4() {
+        // 经典的回调方式
+        setOnXxxListener(object: OnXxxListener{
+            override fun onOk() {
+                appendMessage("onOk")
+            }
+            override fun onError(id: Int, message: String) {
+                appendMessage("onError: $id, $message")
+            }
+        })
+        mOnXxxListener!!.onOk()
+        mOnXxxListener!!.onError(-999, "unknown error")
+
+        // 通过高阶函数实现单一方法的回调
+        // setOnYyyListener { result -> appendMessage(result) }
+        // 如果这个单一方法只有一个参数的话，则上面的可以简写为下面的（自动通过 it 代表这个参数）
+        setOnYyyListener { appendMessage(it) }
+        mOnYyyListener!!("webabcd")
+    }
+
+    // 经典的回调方式
+    private var mOnXxxListener: OnXxxListener? = null
+    interface OnXxxListener {
+        fun onOk()
+        fun onError(id:Int, message:String)
+    }
+    private fun setOnXxxListener(listener: OnXxxListener?) {
+        mOnXxxListener = listener
+    }
+
+    // 通过高阶函数实现单一方法的回调
+    private var mOnYyyListener: ((String) -> Unit)? = null
+    private fun setOnYyyListener(listener: ((String) -> Unit)?) {
+        mOnYyyListener = listener
     }
 
 
