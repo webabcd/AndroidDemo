@@ -15,11 +15,18 @@
  * 程序的外部存储（机身存储）路径为 /storage/emulated/0/
  * 程序的外部存储（外部可移动存储）路径类似 /storage/B3E4-1711/（后面的那个 B3E4-1711 是挂载目录，以实际为准）
  *
- * 内部存储有 files 目录和 cache 目录
+ * 内部存储的根目录下有 files 目录和 cache 目录
  * files 目录，存放的数据系统不会主动删除，用户在设置中的“应用信息”中单击“清除数据”后会删除
  * files 目录路径类似 /data/data/packagename/files, /data/user/n/packagename/files, /storage/emulated/0/Android/data/packagename/files 等
  * cache 目录，存放的数据可能会被系统主动删除（比如系统认为存储空间不够的时候），用户在设置中的“应用信息”中单击“清除缓存”后会删除
  * cache 目录路径类似 /data/data/packagename/cache, /data/user/n/packagename/cache, /storage/emulated/0/Android/data/packagename/cache 等
+ *
+ * 另外
+ * 1、内部存储的根目录下的 shared_prefs 目录（类似 /data/data/packagename/shared_prefs ）用于保存 SharedPreferences 数据
+ *    如果用户在设置中的“应用信息”中单击“清除数据”的话，会删除 shared_prefs 中的全部文件
+ * 2、内部存储的根目录（类似 /data/data/packagename）下的文件，以及其内其他目录中的文件不会被系统主动删除，只有在程序卸载后会被删除
+ *    如果你的文件不想被系统主动删除，又想程序卸载后会被删除，就可以在这里保存文件或新建目录保存文件
+ *
  *
  * 要记住：
  * 1、在 android 6.0 或以上系统操作外部存储，需要动态申请权限
@@ -49,6 +56,7 @@ package com.webabcd.androiddemo.storage;
 import android.Manifest;
 import android.content.pm.PackageManager;
 import android.content.res.AssetManager;
+import android.os.Build;
 import android.os.Environment;
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
@@ -129,8 +137,13 @@ public class StorageDemo3 extends AppCompatActivity {
     // 演示如何获取各种存储的路径，以及如何获取存储的大小
     private void sample2() {
         try {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                // 内部存储根目录（类似 /data/data/packagename）
+                mTextView1.append("getDataDir(): " + getDataDir().getCanonicalPath());
+                mTextView1.append("\n");
+            }
             // 内部存储的 files 目录（类似 /data/data/packagename/files）
-            mTextView1.setText("getFilesDir(): " + getFilesDir().getCanonicalPath());
+            mTextView1.append("getFilesDir(): " + getFilesDir().getCanonicalPath());
             mTextView1.append("\n");
             // 内部存储的 cache 目录（类似 /data/data/packagename/cache）
             mTextView1.append("getCacheDir(): " + getCacheDir().getCanonicalPath());
