@@ -163,6 +163,13 @@ class Demo4 : AppCompatActivity() {
         // 通过左右各 3 个双引号包围起来的字符串不解释转义符
         var d = """\n"$\n""";
         appendMessage("$d"); // \n"$\n
+
+        // 也可以通过 """""" 定义多行字符串
+        var e = """aaa
+  bbb
+    ccc
+        """;
+        appendMessage("$e"); // \n"$\n
     }
 
     fun appendMessage(message: String) {
